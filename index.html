@@ -1114,7 +1114,7 @@ function stabilityHTML(){
       <td class="n ${d>=1?"up":d<=-1?"dn":""}">${d>=1?"↑":d<=-1?"↓":"→"} ${Math.abs(d).toFixed(1)}</td>
       <td class="n">${inf!=null?inf.toFixed(1)+"%":"—"}</td>
       <td class="st-last">${last?`last national protest ${dfmt(last.date)}`:"no national protest recorded"}</td></tr>`}).join("");
-  return `<section class="ov-sec"><div class="ov-sh"><p class="ov-eyebrow">8 · Quiet countries</p><h2>${esc(head)}</h2>
+  return `<section class="ov-sec"><div class="ov-sh"><p class="ov-eyebrow">7 · Quiet countries</p><h2>${esc(head)}</h2>
     <p>${quiet.length} countries had no national protest day in 60 days and none announced. The World Bank's political stability score (0–100) measures the likelihood of political instability or politically motivated violence${iq!=null&&ip!=null?`; median inflation is ${iq.toFixed(1)}% in quiet countries and ${ip.toFixed(1)}% where people protest (Eurostat, Sep 2026)`:""}.</p></div>
     <div class="ov-sc"><svg viewBox="0 0 ${W} ${H+4}" role="img" aria-label="Political stability scores by protest level">${s}</svg></div>
     <div class="ov-mx-w"><table class="st-t"><thead><tr><th>Country</th><th>Stability 2025</th><th>vs 2022</th><th>Inflation</th><th>Protests</th></tr></thead><tbody>${rows}</tbody></table></div>
@@ -1128,28 +1128,6 @@ function ovRows(){return C.filter(x=>{const m=mob(x.c);return typeof m.k==="numb
   .sort((a,b)=>b.m.k-a.m.k||((b.p?b.p.score:-1)-(a.p?a.p.score:-1))||a.x.n.localeCompare(b.x.n))}
 function openCountry(c){if(location.hash!=="#map")location.hash="#map";state.sel=c;renderPanel();renderAll();setTimeout(()=>{if(mapReady){base=null;fitBase();zoomCountry(c)}},60);window.scrollTo(0,0)}
 function ovName(x,m){return `<button type="button" class="ov-cn" data-c="${x.c}"><i style="background:var(--${lvKey(m)})"></i>${esc(x.n)}</button>`}
-function RP_SCATTER(rows){let h="";
-  const pts=rows.filter(r=>r.p);
-  if(pts.length){const W=720,H=380,L=96,R=16,T=18,B=44,lo=.01,hi2=20,lane=L-58;
-    const X=v=>L+(Math.log10(v)-Math.log10(lo))/(Math.log10(hi2)-Math.log10(lo))*(W-L-R),Y=s=>H-B-Math.min(s,10)/10*(H-B-T);
-    let s=`<rect x="${L}" y="${Y(10)}" width="${W-L-R}" height="${Y(6)-Y(10)}" class="sc-b2"/><rect x="${L}" y="${Y(6)}" width="${W-L-R}" height="${Y(3)-Y(6)}" class="sc-b1"/>`;
-    s+=`<text x="${W-R-6}" y="${Y(10)+14}" text-anchor="end" class="sc-bl">High</text><text x="${W-R-6}" y="${Y(6)+14}" text-anchor="end" class="sc-bl">Rising</text><text x="${W-R-6}" y="${Y(3)+14}" text-anchor="end" class="sc-bl">Low</text>`;
-    [.01,.1,1,10].forEach(v=>{s+=`<line x1="${X(v)}" x2="${X(v)}" y1="${T}" y2="${H-B}" class="sc-g"/><text x="${X(v)}" y="${H-B+16}" text-anchor="middle" class="sc-ax">${v}</text>`});
-    s+=`<line x1="${X(1)}" x2="${X(1)}" y1="${T}" y2="${H-B}" class="sc-t"/><text x="${X(1)+4}" y="${T+10}" class="sc-ax">Major size</text>`;
-    s+=`<rect x="${lane-26}" y="${T}" width="52" height="${H-B-T}" rx="6" class="sc-lane"/><text x="${lane}" y="${H-B+16}" text-anchor="middle" class="sc-ax">no count</text>`;
-    s+=`<text x="${(L+W-R)/2}" y="${H-6}" text-anchor="middle" class="sc-at">Biggest day, official count per 1,000 inhabitants →</text>`;
-    s+=`<text transform="translate(12 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle" class="sc-at">Pressure on government (points) →</text>`;
-    [0,3,6,10].forEach(v=>{s+=`<text x="${L-6}" y="${Y(v)+3}" text-anchor="end" class="sc-ax">${v}</text>`});
-    const grp={};pts.forEach(r=>{const cx=r.m.pk?X(Math.max(lo,Math.min(hi2,r.m.per))):lane,cy=Y(r.p.score),key=Math.round(cx/14)+":"+Math.round(cy/14);(grp[key]=grp[key]||{cx,cy,r:[]}).r.push(r)});
-    Object.values(grp).forEach(g=>{const r0=g.r[0],lab=g.r.map(r=>r.x.n).join(", "),left=g.cx>W-170;
-      s+=`<g class="sc-pt" data-c="${r0.x.c}" tabindex="0" role="button"><title>${esc(g.r.map(r=>`${r.x.n}: ${r.m.name}, pressure ${r.p.name} (${r.p.score} pts)${r.m.pk?`, peak ${r.m.per.toFixed(2)} per 1,000`:""}`).join("\n"))}</title>
-        <circle cx="${g.cx}" cy="${g.cy}" r="${g.r.length>1?8:6.5}" style="fill:var(--${lvKey(r0.m)})"/>${g.r.length>1?`<text x="${g.cx}" y="${g.cy+3.5}" text-anchor="middle" class="sc-n">${g.r.length}</text>`:""}
-        <text x="${left?g.cx-11:g.cx+11}" y="${g.cy+4}" text-anchor="${left?"end":"start"}" class="sc-lb">${esc(lab.length>44?lab.slice(0,42)+"…":lab)}</text></g>`});
-    h+=`<section class="ov-sec" id="rp-size"><div class="ov-sh"><p class="ov-eyebrow">6 · Size vs. danger</p><h2>Big crowds are not always the biggest threat</h2>
-      <p>Each dot is an Active or Major country, coloured by level. Right means bigger crowds for the population; up means more pressure on the government (demands, coalition, response, fragility). Countries with no official count sit in the left lane.</p></div>
-      <div class="rp-fig"><div class="ov-sc"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Scatter chart of protest size against pressure on government">${s}</svg></div></div>
-      <div class="ov-q"><span><b>Top left</b>: smaller crowds, high pressure</span><span><b>Bottom right</b>: big crowds, contained</span><span><b>Top right</b>: big and threatening</span></div></section>`}
-  return h}
 /* ---------- report ---------- */
 const RPC={d:"#007F9E",m:"#C98200",g:"#C2412F"};
 const RPF=[["d","Demands & coalition"],["m","Mobilisation & repression"],["g","Government position"]];
@@ -1220,7 +1198,7 @@ function renderOverview(){const O=document.getElementById("overview");if(!O)retu
     ${kt(strikes.length,"national strikes ahead",esc(strikes.map(s=>`${s.x.n} ${dfmt(s.d)}`).join(" · "))||"none called")}
     ${kt(arr.length?nf(arrests):"–","arrests in 30 days",arr.length?`where reported (${new Set(arr.map(e=>e.c)).size} countries)`:"not reported")}
     ${kt(dead,"deaths in 30 days",dead?"":"none reported in our sources")}</div>
-    <nav class="rp-nav" aria-label="Report sections"><a href="#rp-timeline">Timeline</a><a href="#rp-big">Biggest days</a><a href="#rp-who">Who</a><a href="#rp-why">Why</a><a href="#rp-pressure">Pressure</a><a href="#rp-size">Size vs pressure</a><a href="#rp-dates">Dates</a><a href="#rp-calm">Quiet countries</a><a href="#rp-method">Method</a></nav>`;
+    <nav class="rp-nav" aria-label="Report sections"><a href="#rp-timeline">Timeline</a><a href="#rp-big">Biggest days</a><a href="#rp-who">Who</a><a href="#rp-why">Why</a><a href="#rp-pressure">Pressure</a><a href="#rp-dates">Dates</a><a href="#rp-calm">Quiet countries</a><a href="#rp-method">Method</a></nav>`;
   // timeline
   h+=sec("rp-timeline","1 · The last 30 days and the next 3 weeks","Where and when people took to the streets","One row per Active or Major country. Circles are national protest days, sized by official count; diamonds are dates already announced. Hover any mark for details, click a country name for its briefing.",rpTimeline(rows));
   // biggest days
@@ -1241,17 +1219,15 @@ function renderOverview(){const O=document.getElementById("overview");if(!O)retu
   // pressure ladder
   const pr=rpPressure(rows);
   if(pr)h+=sec("rp-pressure","5 · Pressure on government","How much pressure each government is under, and what drives it","Each bar adds up the points behind the score: what people demand, how sustained and heavy the mobilisation is, and how the government is placed. Lines mark the thresholds: Rising from 3 points, High from 6 points when people also demand a resignation or the government is in crisis.",pr);
-  // size vs pressure
-  h+=RP_SCATTER(rows);
   // dates
   const cal=all.filter(x=>{const P=PROT[x.c];if(!P.nextDate)return false;const a=ageDays(P.nextDate);return a<=1&&a>=-42}).map(x=>({x,P:PROT[x.c],d:PROT[x.c].nextDate})).sort((a,b)=>a.d.localeCompare(b.d));
-  h+=sec("rp-dates","7 · Coming up","Dates to watch","The next announced national date in each country, from organisers and unions, over the next 6 weeks.",
+  h+=sec("rp-dates","6 · Coming up","Dates to watch","The next announced national date in each country, from organisers and unions, over the next 6 weeks.",
     `<div class="ov-cal">${cal.length?cal.map(c=>{const dd=Math.round((new Date(c.d+"T12:00:00")-new Date())/864e5);
       return `<button type="button" class="ov-ci${c.P.nextStrike?" st":""}" data-c="${c.x.c}"><span class="ov-cd"><b>${dfmt(c.d).split(" ")[0]}</b><span>${dfmt(c.d).split(" ")[1]}</span></span>
       <span class="ov-ct"><span class="ov-cc">${esc(c.x.n)}${c.P.nextStrike?` <em>National strike</em>`:""}<small>${dd<=0?"today":dd===1?"tomorrow":`in ${dd} days`}</small></span><span class="ov-cx">${esc(c.P.next||"")}</span></span></button>`}).join(""):`<p class="note">No dates announced in our sources.</p>`}</div>`);
   h+=stabilityHTML().replace('<section class="ov-sec">','<section class="ov-sec" id="rp-calm">');
   // method
-  h+=sec("rp-method","9 · Method and sources","How to read this report","",`<div class="rp-meth">
+  h+=sec("rp-method","8 · Method and sources","How to read this report","",`<div class="rp-meth">
     <div><h3>Levels</h3><p>Quiet, Active and Major follow fixed rules applied to the last 30 to 60 days: size of the biggest national day per 1,000 inhabitants, national strikes held or called, deaths, the number of groups and days involved, and announced dates. <a href="#method" data-meth>Full rules</a>.</p></div>
     <div><h3>Pressure on government</h3><p>A points score built from the demand (policy, programme or resignation), opposition involvement, duration, strikes, repression, the government's response and its fragility. Low under 3 points, Rising from 3, High from 6 when resignation is demanded or the government is in crisis.</p></div>
     <div><h3>Figures</h3><p>Taken from news agencies, public broadcasters and official statements, linked in each country briefing. Official (police) counts are used for levels because they are the cautious figure; organisers' counts are shown alongside. Where a source gives no number we show none.</p></div>
