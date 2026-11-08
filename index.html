@@ -103,7 +103,7 @@ html.full body{padding-block:0;overflow:auto}
 .full .fullonly{display:inline-flex}
 .full .controls{gap:8px 14px}
 .full .controls .ctl{flex-direction:row;align-items:center;gap:8px}
-.full .main{display:flex;flex:1;min-height:0}
+.full .main{display:flex;flex:1;min-height:0;align-items:stretch;gap:0}
 .full .mapbox{flex:1;min-height:0;padding:10px;gap:8px;overflow:auto}
 .full .mapwrap{aspect-ratio:auto;flex:1 0 auto;min-height:max(360px,calc(100dvh - 230px))}
 .full .panel{position:fixed;z-index:30;top:calc(12px + env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px));
@@ -511,8 +511,61 @@ a:focus-visible,button:focus-visible,input:focus-visible,tbody tr:focus-visible{
 .full .fullonly{order:2;gap:14px!important}
 @media (max-width:600px){.tablewrap table{table-layout:fixed}.tablewrap th:nth-child(1){width:24%}.tablewrap th:nth-child(2){width:26%}td.reason{min-width:0;overflow-wrap:anywhere}.tablewrap td{overflow-wrap:anywhere}}
 </style>
+<style>
+/* ===== Full-screen map page (#full) ===== */
+.fbar,.fui,.flegend{display:none}
+html.full body{padding-inline:0;overflow:hidden}
+.full .wrap{gap:0;padding-block:0;max-width:none;height:100%}
+.full header,.full .tabs,.full .controls,.full .views,.full #regions,.full #legend,.full #wnote,.full #vnote,.full #hotsec,.full #method{display:none!important}
+.fbar{align-items:center;justify-content:space-between;gap:12px;height:56px;flex:none;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));background:var(--surface);border-bottom:1px solid var(--line)}
+.full .fbar{display:flex}
+.fbrand{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;color:var(--fg)}
+.fbrand i{font-style:normal;color:#B93F2E}
+.fbar nav{display:flex;align-items:center;gap:16px;font-size:14px}
+.fbar nav a{font-weight:600;color:var(--accent);text-decoration:none}.fbar nav a:hover{text-decoration:underline}
+.fstamp{color:var(--muted);font-size:13px}
+.full .main{display:flex;flex:1;min-height:0;align-items:stretch;gap:0}
+.full .mapbox{flex:1;display:flex;flex-direction:column;min-height:0;min-width:0;padding:0;gap:0;border:0;border-radius:0;overflow:hidden}
+.full .mapwrap{flex:1;min-height:0;aspect-ratio:auto;border-radius:0}
+.full .fui{display:flex;position:absolute;z-index:6;left:max(12px,env(safe-area-inset-left,0px));top:12px;flex-direction:column;align-items:flex-start;gap:8px;width:min(340px,calc(100% - 76px));pointer-events:none}
+.fui>*{pointer-events:auto}
+.fsearch{position:relative;width:100%}
+.fsearch input{width:100%;font:500 14px var(--body);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;box-shadow:0 2px 10px rgba(30,25,15,.14)}
+.fsearch input:focus{outline:2px solid var(--accent);outline-offset:1px}
+#fres{position:absolute;left:0;right:0;top:calc(100% + 4px);margin:0;padding:4px;list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(30,25,15,.18);max-height:min(320px,50vh);overflow:auto}
+#fres li{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;border-radius:7px;cursor:pointer;font-size:14px}
+#fres li[aria-selected="true"],#fres li:hover{background:var(--bg)}
+#fres li small{color:var(--muted);font-size:12px}
+#fres li.none{cursor:default;color:var(--muted)}
+.fflt{display:flex;flex-wrap:wrap;gap:6px}
+.fflt button{display:inline-flex;align-items:center;gap:6px;font:600 13px var(--body);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 11px;cursor:pointer;box-shadow:0 1px 6px rgba(30,25,15,.12)}
+.fflt button i{width:10px;height:10px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.fflt button b{font-weight:500;color:var(--muted)}
+.fflt button[aria-pressed="true"]{background:var(--fg);color:var(--surface);border-color:var(--fg)}
+.fflt button[aria-pressed="true"] b{color:inherit;opacity:.8}
+.fmode{box-shadow:0 1px 6px rgba(30,25,15,.12)}
+.full .flegend{display:block;position:absolute;z-index:6;left:max(12px,env(safe-area-inset-left,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));max-width:min(300px,calc(100% - 24px));background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 2px 10px rgba(30,25,15,.16);font-size:12px;color:var(--muted)}
+.flegend summary{cursor:pointer;list-style:none;padding:8px 12px;font:600 12px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--fg);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.flegend summary::-webkit-details-marker{display:none}
+.flegend summary::after{content:"–";font-size:16px;line-height:1}
+.flegend:not([open]) summary::after{content:"+"}
+.flegend summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:10px}
+.flegbody{display:flex;flex-direction:column;gap:6px;padding:2px 12px 12px;max-height:min(46vh,360px);overflow:auto}
+.flegbody .dashonly{display:none}
+.mapwrap path.trk.dim{fill:#D9D6CF!important;stroke:#C9C5BC;opacity:.5}
+.full .panel{top:calc(56px + 12px)}
+.full.drawer #pclose{top:calc(56px + 22px)}
+@media (max-width:640px){
+  .fbar nav .fstamp{display:none}
+  .full .fui{width:calc(100% - 72px)}
+  .full.drawer #pclose{top:auto}
+  .full .panel{top:auto}
+  .full.drawer .flegend,.full.drawer .fui{display:none}
+}
+</style>
 
 <div class="wrap">
+  <div class="fbar" id="fbar"><a class="fbrand" href="#home" aria-label="Protest Atlas, home">Protest<i>/</i>Atlas</a><nav aria-label="Site"><span class="fstamp" id="fstamp"></span><a href="#report">Report</a><a href="#map">Briefings list</a></nav></div>
   <section id="home" aria-label="Protest Atlas home"></section>
   <header>
     <div>
@@ -551,6 +604,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,tbody tr:focus-visible{
         <svg id="map" role="img" aria-label="Map of Europe coloured by protest mobilisation"></svg>
         <div class="marks" id="marks" aria-hidden="true"></div><div class="zoom"><button type="button" id="z-in" aria-label="Zoom in">+</button><button type="button" id="z-out" aria-label="Zoom out">−</button><button type="button" id="z-reset" aria-label="Show all of Europe">⟲</button></div>
         <div class="tip" id="tip" hidden></div>
+        <div class="fui" id="fui">
+          <div class="fsearch"><input id="fq" type="search" placeholder="Search a country…" aria-label="Search a country" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="fres" aria-autocomplete="list"><ul id="fres" role="listbox" hidden></ul></div>
+          <div class="fflt" id="fflt" role="group" aria-label="Highlight countries by level"></div>
+          <div class="seg fmode" id="fmode" role="group" aria-label="Colour the map by"><button type="button" data-v="level" aria-pressed="true">Mobilisation</button><button type="button" data-v="infl" aria-pressed="false">Inflation</button></div>
+        </div>
+        <details class="flegend" id="flegend"><summary>Legend</summary><div class="flegbody" id="flegbody"></div></details>
       </div>
       <div class="grid" id="grid" aria-label="Map of Europe as country tiles" hidden></div>
       <div class="tablewrap" id="listwrap" hidden><table><thead><tr><th>Country</th><th id="th-v">Level</th><th>What is happening</th></tr></thead><tbody id="tbody"></tbody></table></div>
@@ -672,7 +731,7 @@ const REGIONS=[["all","All Europe",null],["west","Western",["FR","BE","NL","GB",
  ["north","Nordic & Baltic",["NO","SE","FI","DK","EE","LV","LT"]],["south","Southern",["PT","ES","IT","GR","CY","HR","SI"]],
  ["balkans","Balkans",["RS","HR","BA","AL","MK","GR","BG","RO","SI"]],["east","Eastern",["UA","BY","MD","RO","PL","LT","LV","EE"]]];
 
-const state={mode:"level",sel:"FR",view:(window.innerWidth<600?"list":"map"),region:"all"};
+const state={mode:"level",sel:"FR",view:(window.innerWidth<600?"list":"map"),region:"all",flt:"all"};
 // Population in millions (approx. 2025), used to scale turnout
 const POP={ME:.62,XK:1.59,IS:.39,NO:5.6,SE:10.6,FI:5.6,IE:5.4,GB:69,DK:6,EE:1.37,RU:146,NL:18,DE:83.6,PL:36.6,LV:1.86,BY:9.1,BE:11.8,CZ:10.9,SK:5.4,LT:2.89,UA:33,FR:68.6,CH:9,AT:9.2,HU:9.6,RO:19,MD:2.4,PT:10.7,ES:49,IT:58.9,SI:2.1,HR:3.86,RS:6.6,BG:6.4,BA:3.2,AL:2.4,MK:1.8,TR:86,GR:10.4,CY:.97};
 const RESTRICTED=new Set(["RU","BY"]);
@@ -762,8 +821,8 @@ function zoomCountry(c){if(!mapReady||state.view!=="map"||c==="RU")return;const 
 function renderMap(){
   if(!mapReady)return;
   svg.querySelectorAll("path.trk").forEach(p=>{const x=by[p.dataset.c],L=look(x);p.style.fill=`var(--${L.key})`;
-    p.setAttribute("aria-label",`${x.n}: ${L.long}`);p.classList.toggle("sel",x.c===state.sel)});
-  {const rw=document.getElementById("ruw");if(rw&&by.RU)rw.style.fill=`var(--${look(by.RU).key})`}
+    p.setAttribute("aria-label",`${x.n}: ${L.long}`);p.classList.toggle("sel",x.c===state.sel);p.classList.toggle("dim",dimmed(x))});
+  {const rw=document.getElementById("ruw");if(rw&&by.RU){rw.style.fill=`var(--${look(by.RU).key})`;rw.classList.toggle("dim",dimmed(by.RU))}}
   const s=svg.querySelector(`path.trk[data-c="${state.sel}"]`),so=document.getElementById("selo");if(so)so.setAttribute("d",s?s.getAttribute("d"):"");
 }
 
@@ -782,6 +841,7 @@ function quick(x){const ev=evs(x.c);
     if(!parts.length)parts.push("No protest day in the last 30 days");return parts.join(" · ")}
   return mob(x.c).why[0]}
 const LV=["Quiet","Active","Major"];
+const dimmed=x=>state.mode==="level"&&state.flt!=="all"&&mob(x.c).name!==state.flt;
 function recent(c){const P=PROT[c];return P&&Array.isArray(P.events)?P.events.filter(e=>{const a=ageDays(e.date);return a>=-1&&a<=30}):[]}
 function mob(c){
   if(RESTRICTED.has(c))return{k:"r",name:"Restricted",why:["Public protest is heavily restricted, so low numbers do not mean calm."],reasons:["public protest is heavily restricted, so low numbers do not mean calm"]};
@@ -841,7 +901,7 @@ const MK_LEGEND=`<span class="sw"><em class="up" style="font-style:normal;font-s
 function renderMarks(){const box=document.getElementById("marks");if(!box||!mapReady||state.view!=="map"||!vb)return;
   const m=svg.getScreenCTM();if(!m)return;const r=wrap.getBoundingClientRect();let h="";const taken=[];
   const pri=x=>{const k=state.mode==="level"?mob(x.c).k:0;return typeof k==="number"?k*100+(mob(x.c).per||0):0};
-  [...C].sort((a,b)=>pri(b)-pri(a)).forEach(x=>{const b=BOX[x.c];if(!b||x.c==="RU")return;
+  [...C].sort((a,b)=>pri(b)-pri(a)).forEach(x=>{const b=BOX[x.c];if(!b||x.c==="RU"||dimmed(x))return;
     const an=ANC[x.c],cx=an?an[0]:b.x+b.w/2,cy=an?an[1]:b.y+b.h/2,sx=m.a*cx+m.e-r.left,sy=m.d*cy+m.f-r.top;if(sx<-20||sy<-20||sx>r.width+20||sy>r.height+20)return;
     const ev=evs(x.c).filter(e=>ageDays(e.date)<=7&&ageDays(e.date)>=0),n=upcoming(x.c),parts=[];
     if(ev.length){const t=Math.max(...ev.map(e=>e.off||e.orgc||0)),sz=Math.round(Math.max(8,Math.min(16,8+8*Math.sqrt(t/600000))));parts.push(`<i class="dot" style="width:${sz}px;height:${sz}px"></i>`)}
@@ -954,7 +1014,7 @@ function showView(){
   document.querySelectorAll("#view button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.view));
   if(state.view==="map"){fitBase();renderMarks()}
 }
-function renderAll(){renderGrid();renderMap();renderList();renderHot();renderMarks();renderOverview();renderHome()}
+function renderAll(){renderGrid();renderMap();renderList();renderHot();renderMarks();renderOverview();renderHome();renderFui()}
 function seg(id,key){document.querySelectorAll(`#${id} button`).forEach(b=>b.onclick=()=>{state[key]=b.dataset.v;document.querySelectorAll(`#${id} button`).forEach(o=>o.setAttribute("aria-pressed",o===b));renderAll()})}
 
 // World Bank Worldwide Governance Indicators, "Political Stability" score 0–100 (GOV_WGI_PV.SC): [2025, 2022]. Data updated 25 Sep 2026.
@@ -1155,6 +1215,37 @@ function findCountry(){const v=q.value.trim().toLowerCase();if(!v)return;const x
   if(x){pick(x.c);zoomCountry(x.c);q.value=""}}
 q.addEventListener("change",findCountry);q.addEventListener("keydown",e=>{if(e.key==="Enter")findCountry()});
 seg("mode","mode");
+/* ---------- full-screen map overlays: search, level filter, mode, legend ---------- */
+const FLT=[["Major","lv2"],["Active","lv1"],["Quiet","lv0"]];
+function renderFui(){
+  const fl=document.getElementById("fflt");if(!fl)return;
+  const n={Major:0,Active:0,Quiet:0};C.forEach(x=>{const k=mob(x.c).name;if(k in n)n[k]++});
+  fl.innerHTML=[["all","",""],...FLT.map(([t,k])=>[t,k,n[t]])].map(([t,k,c])=>`<button type="button" data-f="${t}" aria-pressed="${state.flt===t}">${k?`<i style="background:var(--${k})"></i>`:""}${t==="all"?"All":t}${c!==""?` <b>${c}</b>`:""}</button>`).join("");
+  fl.hidden=state.mode!=="level";
+  document.querySelectorAll("#fmode button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===state.mode));
+  document.getElementById("flegbody").innerHTML=document.getElementById("legend").innerHTML;
+  const st=document.getElementById("fstamp"),upd=Object.values(PROT).map(x=>x&&x.checkedAt).filter(Boolean).sort().at(-1);if(st&&upd)st.textContent="Updated "+dfmt(upd);
+}
+document.getElementById("fflt").addEventListener("click",e=>{const b=e.target.closest("button[data-f]");if(!b)return;state.flt=state.flt===b.dataset.f?"all":b.dataset.f;renderMap();renderMarks();renderFui()});
+document.querySelectorAll("#fmode button").forEach(b=>b.onclick=()=>{state.mode=b.dataset.v;document.querySelectorAll("#mode button").forEach(o=>o.setAttribute("aria-pressed",o.dataset.v===state.mode));renderAll()});
+{const fq=document.getElementById("fq"),res=document.getElementById("fres");let items=[],cur=-1;
+ const close=()=>{res.hidden=true;fq.setAttribute("aria-expanded","false");cur=-1};
+ const mark=()=>{[...res.children].forEach((li,i)=>li.setAttribute("aria-selected",i===cur))};
+ const choose=c=>{close();fq.value="";fq.blur();pick(c);zoomCountry(c)};
+ const show=()=>{const v=fq.value.trim().toLowerCase();if(!v){close();return}
+  items=C.filter(x=>x.n.toLowerCase().includes(v)||x.c.toLowerCase()===v).sort((a,b)=>(b.n.toLowerCase().startsWith(v))-(a.n.toLowerCase().startsWith(v))||a.n.localeCompare(b.n)).slice(0,8);
+  res.innerHTML=items.length?items.map((x,i)=>`<li role="option" id="fr-${i}" data-c="${x.c}">${esc(x.n)}<small>${mob(x.c).name}</small></li>`).join(""):`<li class="none" role="option">No country found</li>`;
+  res.hidden=false;fq.setAttribute("aria-expanded","true");cur=items.length?0:-1;mark()};
+ fq.addEventListener("input",show);fq.addEventListener("focus",show);
+ fq.addEventListener("keydown",e=>{if(e.key==="ArrowDown"&&items.length){e.preventDefault();cur=(cur+1)%items.length;mark()}
+  else if(e.key==="ArrowUp"&&items.length){e.preventDefault();cur=(cur-1+items.length)%items.length;mark()}
+  else if(e.key==="Enter"&&cur>=0&&items[cur]){e.preventDefault();choose(items[cur].c)}
+  else if(e.key==="Escape"){close()}});
+ res.addEventListener("mousedown",e=>{const li=e.target.closest("li[data-c]");if(li){e.preventDefault();choose(li.dataset.c)}});
+ document.addEventListener("click",e=>{if(!e.target.closest(".fsearch"))close()});
+}
+{const fg=document.getElementById("flegend");if(window.innerWidth<640)fg.open=false;else fg.open=true}
+
 document.querySelectorAll("#view button").forEach(b=>b.onclick=()=>{state.view=b.dataset.v;showView()});
 renderAll();showView();renderPanel();
 document.getElementById("vnote").textContent="Loading map borders…";
