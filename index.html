@@ -1,5 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Protest Atlas</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Protest Atlas · Where people are protesting in Europe, and why</title><meta name="description" content="A daily protest watch for Europe: where people are taking to the streets, how many, why, and how much pressure it puts on governments. Sourced briefings for 38 countries."><meta property="og:type" content="website"><meta property="og:site_name" content="Protest Atlas"><meta property="og:title" content="Protest Atlas"><meta property="og:description" content="Where people are taking to the streets in Europe, how big it is, and why. Sourced briefings, updated daily."><meta property="og:url" content="https://protestatlas.org/"><link rel="canonical" href="https://protestatlas.org/"><meta name="theme-color" content="#F5F6F7"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%231F5F73%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%273%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%272%27 fill=%27%23fff%27/%3E%3C/svg%3E"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap">
@@ -505,6 +504,12 @@ body,.mapbox,.panel,.hot,.tablewrap,#overview{--lv0:#EEE2C9;--lvn:#EEE2C9;--lvr:
 .mapwrap{background:var(--sea)}
 .mapwrap path.trk,.mapwrap path.sel,.mapwrap path.wld{stroke:#5A4D3F;stroke-width:.6}
 .mapwrap path.selo{stroke:#2A2219;stroke-width:2.2}
+.brand{color:inherit;text-decoration:none}.brand:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible,tbody tr:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.full .fullonly a{color:var(--muted);padding:4px 2px}.full .fullonly a:hover{color:var(--fg)}
+.full header>div{display:flex;align-items:center;gap:12px 20px;flex-wrap:wrap}
+.full .fullonly{order:2;gap:14px!important}
+@media (max-width:600px){.tablewrap table{table-layout:fixed}.tablewrap th:nth-child(1){width:24%}.tablewrap th:nth-child(2){width:26%}td.reason{min-width:0;overflow-wrap:anywhere}.tablewrap td{overflow-wrap:anywhere}}
 </style>
 
 <div class="wrap">
@@ -512,7 +517,7 @@ body,.mapbox,.panel,.hot,.tablewrap,#overview{--lv0:#EEE2C9;--lvn:#EEE2C9;--lvr:
   <header>
     <div>
       <div class="fullonly" style="gap:14px;flex-wrap:wrap"><a href="#home" style="font-size:13px;font-weight:600;text-decoration:none">Home</a><a href="#report" style="font-size:13px;font-weight:600;text-decoration:none">Report</a><a href="#map" style="font-size:13px;font-weight:600;text-decoration:none">Map &amp; briefings</a></div>
-      <h1>Protest Atlas</h1>
+      <h1><a href="#home" class="brand">Protest Atlas</a></h1>
       <p class="sub">Where people are taking to the streets, how big it is, and why. Click a country to read its briefing.</p>
     </div>
     <div class="sample" role="note">Mobilisation levels are a Protest Atlas assessment built from press-reported protest figures, using <a href="#method">fixed rules</a>. They are not an official measure. Economic figures: Eurostat.</div>
@@ -1163,7 +1168,7 @@ Promise.resolve().then(()=>buildMap()).catch(e=>{MAP_ERR=String(e&&e.message||e)
 // Full-page map mode
 let prevView=state.view;
 function applyMode(){const H=document.documentElement,hs=location.hash,full=hs==="#full",was=H.classList.contains("full"),hm=hs===""||hs==="#"||hs==="#home",ov=hs==="#report"||hs==="#overview",wasOv=H.classList.contains("ov"),wasHm=H.classList.contains("hm");
-  H.classList.toggle("ov",ov);H.classList.toggle("hm",hm);const cur=hm?"hm":ov?"ov":"map";
+  H.classList.toggle("ov",ov);H.classList.toggle("hm",hm);const cur=hm?"hm":ov?"ov":"map";document.title=hm?"Protest Atlas · Where people are protesting in Europe, and why":ov?"Report · Protest Atlas":full?"Europe map · Protest Atlas":"Map & briefings · Protest Atlas";
   document.querySelectorAll(".tabs a[data-t]").forEach(a=>{if(a.dataset.t===cur)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
   if(ov){renderOverview();if(!wasOv)window.scrollTo(0,0)}if(hm){renderHome();if(!wasHm)window.scrollTo(0,0)}
   if(full===was&&was)return;
