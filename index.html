@@ -564,6 +564,72 @@ html.full body{padding-inline:0;overflow:hidden}
   .full.drawer .flegend,.full.drawer .fui{display:none}
 }
 </style>
+<style>
+/* ===== Report page (#report) ===== */
+.ov .fbar{display:flex;padding-inline:0;background:transparent;margin-bottom:18px}
+.ov header,.ov .tabs{display:none!important}
+.ov #overview{gap:0}
+.ov .ov-sec{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:34px 0 40px;gap:20px;scroll-margin-top:72px}
+.ov .ov-sh h2{font-size:clamp(26px,3.4vw,36px);max-width:26ch;text-wrap:balance}
+.ov .ov-sh p:not(.ov-eyebrow){font-size:15px;max-width:68ch}
+.rp-hero{display:flex;flex-direction:column;gap:14px;padding:10px 0 28px}
+.rp-h1{font-family:var(--display);font-weight:700;font-size:clamp(34px,5.6vw,60px);line-height:1;letter-spacing:-.005em;margin:0;max-width:22ch;text-wrap:balance}
+.rp-take{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:16px;color:var(--muted);max-width:68ch}
+.rp-take li{padding-left:18px;position:relative}.rp-take li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:2px;background:var(--accent)}
+.rp-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));border-top:2px solid var(--fg);border-bottom:1px solid var(--line)}
+.rp-k{padding:16px 18px 16px 0;margin-right:18px;border-right:1px solid var(--line);min-width:0}
+.rp-k:last-child{border-right:0}
+.rp-nav{display:flex;gap:2px 6px;flex-wrap:wrap;margin:20px 0 6px;position:sticky;top:0;z-index:15;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}
+.rp-nav a{font:600 13px var(--body);color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:999px}
+.rp-nav a:hover{background:var(--surface);color:var(--fg)}
+/* charts sit on a light card in both themes */
+.rp-fig,.ov .ov-sc{--bg:#F7F4EE;--surface:#FCFCFB;--fg:#2A2730;--muted:#6B6152;--line:#E6E0D3;--accent:#2F5D62;background:#FCFCFB;color:#2A2730;border:1px solid #E6E0D3;border-radius:14px;padding:16px 18px}
+.rp-fig .ov-sc{border:0;padding:0;background:none}
+.rp-fig a,.rp-fig .ov-cn{color:#2A2730}
+.rp-tls{min-width:760px}
+.ov #overview a:not(.ov-cn){color:var(--accent)}.rp-fig a{color:#2F5D62!important}
+.rp-h1{max-width:26ch}
+.rp-fut{fill:#EFE9DB;opacity:.65}.rp-band{fill:#F7F4EE}
+.rp-today{stroke:#2A2730;stroke-width:1.5;stroke-dasharray:3 3}.rp-tl{font:700 11px var(--body);fill:#2A2730;text-anchor:middle}
+.rp-rl{font:600 12.5px var(--body);fill:#2A2730}
+.rp-nd{stroke:#FCFCFB;stroke-width:2;opacity:.92;cursor:pointer}.rp-nv{fill:#FCFCFB;stroke-width:2.2}
+.rp-sk{fill:none;stroke:#2A2730;stroke-width:1.6}
+.rp-mn{stroke:#FCFCFB;stroke-width:1.5;cursor:pointer;opacity:.9}
+.rp-an{fill:#FCFCFB;stroke-width:2.2;cursor:pointer}
+.rp-lg{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;color:#6B6152;margin-top:12px}
+.rp-lg span{display:inline-flex;align-items:center;gap:6px}
+.rp-sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+.rp-sd{width:10px;height:10px;border-radius:50%;background:#2A2730;display:inline-block}
+.rp-big{display:flex;flex-direction:column;gap:12px}
+.rp-br{display:grid;grid-template-columns:minmax(120px,230px) minmax(0,1fr) 96px;gap:14px;align-items:center}
+.rp-bl{display:flex;flex-direction:column;min-width:0}.rp-bl b{font-size:14px}.rp-bl small{font-size:12px;color:#6B6152;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rp-bt{position:relative;height:18px}
+.rp-bo{position:absolute;left:0;top:3px;height:12px;border-radius:2px 6px 6px 2px}
+.rp-bg{position:absolute;top:8px;height:2px;background:#2A2730;opacity:.55}
+.rp-bd{position:absolute;top:4px;width:10px;height:10px;border-radius:50%;background:#2A2730;box-shadow:0 0 0 2px #FCFCFB}
+.rp-bv{display:flex;flex-direction:column;text-align:right}.rp-bv b{font:700 20px var(--display);line-height:1}.rp-bv small{font-size:11px;color:#6B6152}
+.rp-ph{display:grid;grid-template-columns:150px minmax(0,1fr) 112px;gap:14px;margin-bottom:6px}
+.rp-pax{position:relative;height:16px;font-size:11px;color:#6B6152}.rp-pax i{position:absolute;transform:translateX(-50%);font-style:normal;white-space:nowrap}
+.rp-pr{display:grid;grid-template-columns:150px minmax(0,1fr) 112px;gap:14px;align-items:center;padding:5px 0;border-top:1px solid #EFEADF}
+.rp-pt{position:relative;display:flex;height:16px;background:#F3EFE6;border-radius:3px;overflow:hidden}
+.rp-sg{display:block;height:100%;margin-right:2px}.rp-sg:last-of-type{margin-right:0}
+.rp-th{position:absolute;top:0;bottom:0;width:1px;background:#2A2730;opacity:.5;z-index:2}
+.rp-pv{display:flex;align-items:center;gap:8px;justify-content:flex-end}.rp-pv b{font:700 20px var(--display)}
+.rp-lv{font-size:11px;font-weight:700;border-radius:4px;padding:2px 7px;background:#E6E0D3;color:#2A2730}
+.rp-l2{background:#8E2F25;color:#fff}.rp-l1{background:#E9A458;color:#2E1A06}
+.rp-mx .dt{width:16px;height:16px;cursor:help}
+.rp-meth{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.rp-meth h3{font:700 18px var(--display);margin:0 0 6px}.rp-meth p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.55}
+.rp-dl{font:600 13px var(--body);color:var(--accent);background:none;border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;margin-left:8px}
+.rp-dl:hover{background:var(--surface)}
+#rp-tip{position:fixed;z-index:60;max-width:300px;background:#2A2730;color:#FBF8F1;font-size:12.5px;line-height:1.4;padding:8px 10px;border-radius:8px;white-space:pre-line;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+@media (max-width:720px){
+  .rp-br{grid-template-columns:minmax(0,1fr) 78px;gap:4px 10px}.rp-bt{grid-column:1/-1;grid-row:2}.rp-bl small{white-space:normal}
+  .rp-ph{display:none}.rp-pr{grid-template-columns:minmax(0,1fr) 96px;gap:4px 10px}.rp-pt{grid-column:1/-1;grid-row:2}
+  .rp-k{border-right:0;border-bottom:1px solid var(--line);margin-right:0}
+}
+@media print{.fbar,.rp-nav,.rp-dl{display:none!important}.ov .ov-sec{break-inside:avoid}}
+</style>
 
 <div class="wrap">
   <div class="fbar" id="fbar"><a class="fbrand" href="#home" aria-label="Protest Atlas, home">Protest<i>/</i>Atlas</a><nav aria-label="Site"><span class="fstamp" id="fstamp"></span><a href="#report">Report</a><a href="#map">Briefings list</a></nav></div>
@@ -870,21 +936,21 @@ function mob(c){
   return{k:0,name:LV[0],reasons:["no protest day in 60 days and none announced"],why:["No national protest day in the last 60 days"],
     pts:[["",`No national protest day found in our sources for the last 60 days, and none announced${ck?` (checked ${dfmt(ck)})`:""}.`]]}}
 // Pressure on government: computed from signals the daily update records in PROT[c].pressure (plus events and groups)
-function pressure(c){const P=PROT[c],m=mob(c);if(!P||!P.pressure||typeof m.k!=="number"||m.k<1)return null;const q=P.pressure,why=[];let s=0;
+function pressure(c){const P=PROT[c],m=mob(c);if(!P||!P.pressure||typeof m.k!=="number"||m.k<1)return null;const q=P.pressure,why=[],fam={d:0,m:0,g:0};let s=0;
   const nat=P.events.filter(e=>{const a=ageDays(e.date);return !e.minor&&a>=-1&&a<=60}).sort((a,b)=>a.date.localeCompare(b.date));
-  s+={policy:0,programme:1,resignation:2}[q.demand]||0;
+  {const n={policy:0,programme:1,resignation:2}[q.demand]||0;s+=n;fam.d+=n}
   if(q.demand==="resignation")why.push(q.demandNote||"demands the government's resignation");else if(q.demand==="programme")why.push(q.demandNote||"opposes the government's programme");else why.push(`one issue: ${q.demandNote||"a single policy"}`);
-  const G=P.groups||[];if(G.length>=3){s++;why.push(`${G.length} groups joined`)}
-  if(q.opposition){s++;why.push("opposition parties joined")}
+  const G=P.groups||[];if(G.length>=3){s++;fam.d++;why.push(`${G.length} groups joined`)}
+  if(q.opposition){s++;fam.d++;why.push("opposition parties joined")}
   const span=nat.length?(new Date(nat.at(-1).date)-new Date(nat[0].date))/864e5:0,wk=Math.max(1,Math.round(span/7));
-  if(nat.length>=3||span>=21){s++;why.push(`${nat.length} national days over ${wk} week${wk>1?"s":""}`)}
+  if(nat.length>=3||span>=21){s++;fam.m++;why.push(`${nat.length} national days over ${wk} week${wk>1?"s":""}`)}
   const dead=nat.reduce((a,e)=>a+(e.deaths||0),0),gs=nat.some(e=>e.strike)||(P.nextStrike&&upcoming(c));
-  if(gs||dead){s++;why.push(dead?`${dead} death${dead>1?"s":""}`:"national strike held or called")}
-  if(q.crackdown){s++;why.push(q.crackdownNote||"crackdown on protesters")}
-  if(q.response==="crisis"){s+=2;why.push(q.responseNote||"resignation or confidence vote")}else if(q.response==="talks"){s++;why.push(q.responseNote||"government forced into talks or concessions")}
-  if(q.fragility==="fragile"){s+=2;why.push(q.fragilityNote||"fragile government")}else if(q.fragility==="strained"){s++;why.push(q.fragilityNote||"strained government")}
+  if(gs||dead){s++;fam.m++;why.push(dead?`${dead} death${dead>1?"s":""}`:"national strike held or called")}
+  if(q.crackdown){s++;fam.m++;why.push(q.crackdownNote||"crackdown on protesters")}
+  if(q.response==="crisis"){s+=2;fam.g+=2;why.push(q.responseNote||"resignation or confidence vote")}else if(q.response==="talks"){s++;fam.g++;why.push(q.responseNote||"government forced into talks or concessions")}
+  if(q.fragility==="fragile"){s+=2;fam.g+=2;why.push(q.fragilityNote||"fragile government")}else if(q.fragility==="strained"){s++;fam.g++;why.push(q.fragilityNote||"strained government")}
   const lvl=s>=6&&(q.demand==="resignation"||q.response==="crisis")?2:s>=3?1:0;
-  return{k:lvl,name:["Low","Rising","High"][lvl],score:s,why}}
+  return{k:lvl,name:["Low","Rising","High"][lvl],score:s,why,fam}}
 function trend(c){const P=PROT[c];if(!P||!Array.isArray(P.events))return 0;
   const w=(a,b)=>P.events.filter(e=>{const g=ageDays(e.date);return g>=a&&g<b}),r=w(-1,15),p=w(15,30),pk=a=>Math.max(0,...a.map(e=>e.off||0));
   if(r.length>p.length||(r.length&&pk(r)>1.2*pk(p)))return 1;
@@ -1048,7 +1114,7 @@ function stabilityHTML(){
       <td class="n ${d>=1?"up":d<=-1?"dn":""}">${d>=1?"↑":d<=-1?"↓":"→"} ${Math.abs(d).toFixed(1)}</td>
       <td class="n">${inf!=null?inf.toFixed(1)+"%":"—"}</td>
       <td class="st-last">${last?`last national protest ${dfmt(last.date)}`:"no national protest recorded"}</td></tr>`}).join("");
-  return `<section class="ov-sec"><div class="ov-sh"><p class="ov-eyebrow">Quiet countries</p><h2>${esc(head)}</h2>
+  return `<section class="ov-sec"><div class="ov-sh"><p class="ov-eyebrow">8 · Quiet countries</p><h2>${esc(head)}</h2>
     <p>${quiet.length} countries had no national protest day in 60 days and none announced. The World Bank's political stability score (0–100) measures the likelihood of political instability or politically motivated violence${iq!=null&&ip!=null?`; median inflation is ${iq.toFixed(1)}% in quiet countries and ${ip.toFixed(1)}% where people protest (Eurostat, Sep 2026)`:""}.</p></div>
     <div class="ov-sc"><svg viewBox="0 0 ${W} ${H+4}" role="img" aria-label="Political stability scores by protest level">${s}</svg></div>
     <div class="ov-mx-w"><table class="st-t"><thead><tr><th>Country</th><th>Stability 2025</th><th>vs 2022</th><th>Inflation</th><th>Protests</th></tr></thead><tbody>${rows}</tbody></table></div>
@@ -1062,51 +1128,7 @@ function ovRows(){return C.filter(x=>{const m=mob(x.c);return typeof m.k==="numb
   .sort((a,b)=>b.m.k-a.m.k||((b.p?b.p.score:-1)-(a.p?a.p.score:-1))||a.x.n.localeCompare(b.x.n))}
 function openCountry(c){if(location.hash!=="#map")location.hash="#map";state.sel=c;renderPanel();renderAll();setTimeout(()=>{if(mapReady){base=null;fitBase();zoomCountry(c)}},60);window.scrollTo(0,0)}
 function ovName(x,m){return `<button type="button" class="ov-cn" data-c="${x.c}"><i style="background:var(--${lvKey(m)})"></i>${esc(x.n)}</button>`}
-function renderOverview(){const O=document.getElementById("overview");if(!O)return;
-  const rows=ovRows(),all=C.filter(x=>PROT[x.c]&&Array.isArray(PROT[x.c].events)&&!RESTRICTED.has(x.c));
-  const lv=[0,1,2].map(k=>all.filter(x=>mob(x.c).k===k));
-  const ev30=all.flatMap(x=>PROT[x.c].events.filter(e=>{const a=ageDays(e.date);return a>=-1&&a<=30}).map(e=>({...e,c:x.c})));
-  const nat=ev30.filter(e=>!e.minor),off=nat.reduce((a,e)=>a+(e.off||0),0),orgc=nat.reduce((a,e)=>a+(e.orgc||0),0);
-  const arr=ev30.filter(e=>e.arrests!=null),arrests=arr.reduce((a,e)=>a+e.arrests,0),dead=ev30.reduce((a,e)=>a+(e.deaths||0),0);
-  const strikes=all.filter(x=>PROT[x.c].nextStrike&&upcoming(x.c)).map(x=>({x,d:upcoming(x.c)})).sort((a,b)=>a.d.localeCompare(b.d));
-  const big=nat.filter(e=>e.off).sort((a,b)=>b.off-a.off)[0];
-  const hi=rows.filter(r=>r.p&&r.p.k===2).map(r=>r.x.n),ri=rows.filter(r=>r.p&&r.p.k===1).map(r=>r.x.n);
-  const upd=all.map(x=>PROT[x.c].checkedAt).filter(Boolean).sort().at(-1);
-  const list=a=>a.length<=1?a.join(""):a.slice(0,-1).join(", ")+" and "+a.at(-1);
-  let take=[];
-  if(hi.length)take.push(`Pressure on government is highest in ${list(hi)}${ri.length?`, and rising in ${list(ri)}`:""}.`);
-  if(big)take.push(`The biggest crowd in the last 30 days was in ${by[big.c].n}: ${nf(big.off)} on ${dfmt(big.date)} (official count).`);
-  if(strikes.length)take.push(`${strikes.length} national strike${strikes.length>1?"s are":" is"} called in the next 3 weeks.`);
-  let h=`<div class="ov-head"><p class="ov-eyebrow">Europe right now${upd?` · checked ${dfmt(upd)}`:""}</p><p class="ov-take">${esc(take.join(" "))}</p></div>`;
-  // 1. key figures
-  const kt=(v,k,s,cls="")=>`<div class="ov-k ${cls}"><div class="ov-v">${v}</div><div class="ov-kk">${k}</div>${s?`<div class="ov-ks">${s}</div>`:""}</div>`;
-  const names=a=>a.map(x=>esc(x.n)).join(", ");
-  h+=`<section class="ov-kpis" aria-label="Key figures">
-    ${kt(lv[2].length,`<i class="sq" style="background:var(--lv2)"></i>Major`,names(lv[2]))}
-    ${kt(lv[1].length,`<i class="sq" style="background:var(--lv1)"></i>Active`,`${lv[0].length} of ${all.length} tracked countries are Quiet`)}
-    ${kt(off?nfk(off):"—","marched in 30 days",`official counts, ${nat.filter(e=>e.off).length} of ${nat.length} national days counted${orgc?` · organisers: ${nfk(orgc)}`:""}`)}
-    ${kt(strikes.length,"national strikes ahead",strikes.map(s=>`${esc(s.x.n)} ${dfmt(s.d)}`).join(" · ")||"none called in the next 3 weeks")}
-    ${kt(arr.length?nf(arrests):"—","arrests in 30 days",arr.length?`where reported (${new Set(arr.map(e=>e.c)).size} countries)`:"not reported")}
-    ${kt(dead,"deaths in 30 days",dead?"":"none reported in our sources")}
-  </section>`;
-  // 2. who
-  const wrow=rows.filter(r=>(r.P.groups||[]).length||(r.p&&r.P.pressure.opposition));
-  const has=(r,t)=>{const g=(r.P.groups||[]).filter(g=>g.type===t).map(g=>g.name);if(t==="opposition"&&r.P.pressure&&r.P.pressure.opposition&&!g.length)g.push("opposition parties");return g};
-  const tcount=TYPES.map(([t])=>wrow.filter(r=>has(r,t).length).length);
-  const tcols=TYPES.map((t,i)=>[...t,tcount[i]]).filter(t=>t[2]>0).sort((a,b)=>b[2]-a[2]);
-  h+=`<section class="ov-sec"><div class="ov-sh"><p class="ov-eyebrow">Who is protesting</p><h2>${tcols.length?`${esc(tcols[0][1])} lead${tcols[0][2]>1?"":"s"} in ${tcols[0][2]} countries${tcols[1]?`, ${esc(tcols[1][1].toLowerCase())} in ${tcols[1][2]}`:""}`:"No groups recorded yet"}</h2>
-    <p>Groups named in our sources for each Active or Major country. Hover a dot to see who.</p></div>
-    <div class="ov-mx-w"><table class="ov-mx"><thead><tr><th></th>${tcols.map(([t,l,n])=>`<th><span>${esc(l)}</span><b>${n}</b></th>`).join("")}</tr></thead><tbody>
-    ${wrow.map(r=>`<tr><th>${ovName(r.x,r.m)}</th>${tcols.map(([t])=>{const g=has(r,t);return `<td>${g.length?`<i class="dt" title="${esc(g.join(", "))}"></i>`:""}</td>`}).join("")}</tr>`).join("")}
-    </tbody></table></div></section>`;
-  // 3. why
-  const yrow=rows.filter(r=>(r.P.themes||[]).length);
-  const thc=THEMES.map(([t,l])=>[t,l,yrow.filter(r=>r.P.themes.includes(t)).length]).filter(t=>t[2]>0).sort((a,b)=>b[2]-a[2]);
-  h+=`<section class="ov-sec"><div class="ov-sh"><p class="ov-eyebrow">Why they protest</p><h2>${thc.length?`${esc(thc[0][1])} comes up in ${thc[0][2]} countries${thc[1]?`, ${esc(thc[1][1].toLowerCase())} in ${thc[1][2]}`:""}`:"No themes recorded yet"}</h2>
-    <p>Main demands grouped into common themes. Bars count the Active or Major countries where each theme is a main demand.</p></div>
-    <div class="ov-why">${thc.map(([t,l,n])=>`<div class="ov-wr"><span class="ov-wl">${esc(l)}</span><span class="ov-wb"><i style="width:${n/thc[0][2]*100}%"></i></span><b>${n}</b>
-      <span class="ov-wc">${yrow.filter(r=>r.P.themes.includes(t)).map(r=>ovName(r.x,r.m)).join("")}</span></div>`).join("")}</div></section>`;
-  // 4. size vs pressure
+function RP_SCATTER(rows){let h="";
   const pts=rows.filter(r=>r.p);
   if(pts.length){const W=720,H=380,L=96,R=16,T=18,B=44,lo=.01,hi2=20,lane=L-58;
     const X=v=>L+(Math.log10(v)-Math.log10(lo))/(Math.log10(hi2)-Math.log10(lo))*(W-L-R),Y=s=>H-B-Math.min(s,10)/10*(H-B-T);
@@ -1123,23 +1145,129 @@ function renderOverview(){const O=document.getElementById("overview");if(!O)retu
       s+=`<g class="sc-pt" data-c="${r0.x.c}" tabindex="0" role="button"><title>${esc(g.r.map(r=>`${r.x.n}: ${r.m.name}, pressure ${r.p.name} (${r.p.score} pts)${r.m.pk?`, peak ${r.m.per.toFixed(2)} per 1,000`:""}`).join("\n"))}</title>
         <circle cx="${g.cx}" cy="${g.cy}" r="${g.r.length>1?8:6.5}" style="fill:var(--${lvKey(r0.m)})"/>${g.r.length>1?`<text x="${g.cx}" y="${g.cy+3.5}" text-anchor="middle" class="sc-n">${g.r.length}</text>`:""}
         <text x="${left?g.cx-11:g.cx+11}" y="${g.cy+4}" text-anchor="${left?"end":"start"}" class="sc-lb">${esc(lab.length>44?lab.slice(0,42)+"…":lab)}</text></g>`});
-    h+=`<section class="ov-sec"><div class="ov-sh"><p class="ov-eyebrow">Size vs. danger</p><h2>Big crowds are not always the biggest threat</h2>
+    h+=`<section class="ov-sec" id="rp-size"><div class="ov-sh"><p class="ov-eyebrow">6 · Size vs. danger</p><h2>Big crowds are not always the biggest threat</h2>
       <p>Each dot is an Active or Major country, coloured by level. Right means bigger crowds for the population; up means more pressure on the government (demands, coalition, response, fragility). Countries with no official count sit in the left lane.</p></div>
-      <div class="ov-sc"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Scatter chart of protest size against pressure on government">${s}</svg></div>
+      <div class="rp-fig"><div class="ov-sc"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Scatter chart of protest size against pressure on government">${s}</svg></div></div>
       <div class="ov-q"><span><b>Top left</b>: smaller crowds, high pressure</span><span><b>Bottom right</b>: big crowds, contained</span><span><b>Top right</b>: big and threatening</span></div></section>`}
-  h+=stabilityHTML();
-  // 7. calendar
-  const cal=all.filter(x=>{const P=PROT[x.c];if(!P.nextDate)return false;const a=ageDays(P.nextDate);return a<=1&&a>=-42})
-    .map(x=>({x,P:PROT[x.c],d:PROT[x.c].nextDate})).sort((a,b)=>a.d.localeCompare(b.d));
-  h+=`<section class="ov-sec"><div class="ov-sh"><p class="ov-eyebrow">Coming up</p><h2>Dates to watch</h2><p>The next announced national date in each country, from organisers and unions, over the next 6 weeks.</p></div>
-    <div class="ov-cal">${cal.length?cal.map(c=>{const dd=Math.round((new Date(c.d+"T12:00:00")-new Date())/864e5);
+  return h}
+/* ---------- report ---------- */
+const RPC={d:"#007F9E",m:"#C98200",g:"#C2412F"};
+const RPF=[["d","Demands & coalition"],["m","Mobilisation & repression"],["g","Government position"]];
+const rpRel=s=>Math.round((new Date(s+"T12:00:00")-new Date())/864e5);
+function rpEvTip(c,e){const n=by[c].n,b=[`${n} · ${dfmt(e.date)}${e.minor?" · smaller action":""}${e.strike?" · national strike":""}`,e.title];
+  const f=[];if(e.off)f.push(`${nf(e.off)} official`);if(e.orgc)f.push(`${nf(e.orgc)} organisers`);if(e.arrests!=null)f.push(`${nf(e.arrests)} arrests`);if(e.deaths)f.push(`${e.deaths} deaths`);
+  if(f.length)b.push(f.join(" · "));else b.push("No figures reported");return b.join("\n")}
+function rpTimeline(rows){
+  const d0=-30,d1=21,W=1000,L=116,R=14,T=34,RH=27,B=30,H=T+rows.length*RH+B,X=d=>L+(d-d0)/(d1-d0)*(W-L-R),now=Date.now();
+  let s=`<rect x="${X(0)}" y="${T-10}" width="${X(d1)-X(0)}" height="${H-T-B+10}" class="rp-fut"/>`;
+  rows.forEach((r,i)=>{if(i%2===0)s+=`<rect x="0" y="${T+i*RH}" width="${W}" height="${RH}" class="rp-band"/>`});
+  for(let d=-28;d<=21;d+=7){s+=`<line x1="${X(d)}" x2="${X(d)}" y1="${T-10}" y2="${H-B}" class="sc-g"/><text x="${X(d)}" y="${H-B+16}" text-anchor="${d===21?"end":"middle"}" class="sc-ax">${dfmt(new Date(now+d*864e5))}</text>`}
+  s+=`<line x1="${X(0)}" x2="${X(0)}" y1="${T-14}" y2="${H-B}" class="rp-today"/><text x="${X(0)}" y="${T-18}" text-anchor="middle" class="rp-tl">Today</text>`;
+  s+=`<text x="${X(d0)}" y="${T-18}" class="sc-ax">Last 30 days</text><text x="${W-R}" y="${T-18}" text-anchor="end" class="sc-ax">Next 3 weeks · announced</text>`;
+  rows.forEach((r,i)=>{const y=T+i*RH+RH/2,P=r.P,col=`var(--lv${r.m.k})`;
+    s+=`<g class="sc-pt" data-c="${r.x.c}" tabindex="0" role="button"><text x="0" y="${y+4}" class="rp-rl">${esc(r.x.n)}</text></g>`;
+    (P.events||[]).forEach(e=>{const d=rpRel(e.date);if(d<d0||d>d1)return;const cx=X(d),v=e.off||e.orgc||0,tip=esc(rpEvTip(r.x.c,e));
+      if(e.minor)s+=`<rect x="${cx-4}" y="${y-4}" width="8" height="8" rx="2" class="rp-mn" style="fill:${col}" data-tip="${tip}" data-c="${r.x.c}"/>`;
+      else{const rad=v?Math.max(5.5,Math.min(15,4.5+11*Math.sqrt(v/600000))):5.5;
+        s+=`<g data-tip="${tip}" data-c="${r.x.c}" class="rp-ev">${e.strike?`<circle cx="${cx}" cy="${y}" r="${rad+3.5}" class="rp-sk"/>`:""}<circle cx="${cx}" cy="${y}" r="${rad}" class="${v?"rp-nd":"rp-nd rp-nv"}" style="${v?`fill:${col}`:`stroke:${col}`}"/></g>`}});
+    if(P.nextDate){const d=rpRel(P.nextDate);if(d>=0&&d<=d1){const cx=X(d),tip=esc(`${r.x.n} · ${dfmt(P.nextDate)} · announced${P.nextStrike?" national strike":""}\n${P.next||""}`);
+      s+=`<path d="M${cx} ${y-7}L${cx+7} ${y}L${cx} ${y+7}L${cx-7} ${y}Z" class="rp-an" style="stroke:${col};${P.nextStrike?`fill:${col}`:""}" data-tip="${tip}" data-c="${r.x.c}"/>`}}});
+  const lg=`<div class="rp-lg"><span><svg width="18" height="18"><circle cx="9" cy="9" r="7" class="rp-nd" style="fill:var(--lv2)"/></svg>National protest day (size = official count)</span><span><svg width="18" height="18"><circle cx="9" cy="9" r="5" class="rp-nd rp-nv" style="stroke:var(--lv2)"/></svg>Size not reported</span><span><svg width="18" height="18"><circle cx="9" cy="9" r="5" class="rp-nd" style="fill:var(--lv2)"/><circle cx="9" cy="9" r="8" class="rp-sk"/></svg>National strike</span><span><svg width="18" height="18"><rect x="5" y="5" width="8" height="8" rx="2" style="fill:var(--lv2)"/></svg>Sector, student or regional action</span><span><svg width="18" height="18"><path d="M9 2L16 9L9 16L2 9Z" class="rp-an" style="stroke:var(--lv2)"/></svg>Announced date</span><span><svg width="18" height="18"><path d="M9 2L16 9L9 16L2 9Z" class="rp-an" style="stroke:var(--lv2);fill:var(--lv2)"/></svg>Announced national strike</span></div>`;
+  return `<div class="rp-fig"><div class="ov-sc"><svg viewBox="0 0 ${W} ${H}" class="rp-tls" role="img" aria-label="Timeline of protest days by country over the last 30 days and the next 3 weeks">${s}</svg></div>${lg}</div>`}
+function rpBig(nat){
+  const list=nat.filter(e=>e.off||e.orgc).sort((a,b)=>Math.max(b.off||0,b.orgc||0)-Math.max(a.off||0,a.orgc||0)).slice(0,8);if(!list.length)return "";
+  const mx=Math.max(...list.map(e=>Math.max(e.off||0,e.orgc||0)));
+  return `<div class="rp-fig"><div class="rp-big">${list.map(e=>{const k=lvKey(mob(e.c)),o=e.off?e.off/mx*100:0,g=e.orgc?e.orgc/mx*100:0;
+    return `<div class="rp-br" data-tip="${esc(rpEvTip(e.c,e))}" data-c="${e.c}"><div class="rp-bl"><b>${esc(by[e.c].n)}</b><small>${dfmt(e.date)} · ${esc(e.title)}</small></div>
+      <div class="rp-bt">${e.off?`<i class="rp-bo" style="width:${o}%;background:var(--${k})"></i>`:""}${e.off&&e.orgc&&g>o?`<i class="rp-bg" style="left:${o}%;width:${g-o}%"></i>`:""}${e.orgc?`<i class="rp-bd" style="left:calc(${g}% - 5px)"></i>`:""}</div>
+      <div class="rp-bv"><b>${e.off?nfk(e.off):"–"}</b><small>${e.orgc?`${nfk(e.orgc)} organisers`:"no organisers' count"}</small></div></div>`}).join("")}</div>
+    <div class="rp-lg"><span><i class="rp-sw" style="background:var(--lv2)"></i>Official (police) count</span><span><i class="rp-sd"></i>Organisers' count</span><span>The bar between them shows how far the two sides disagree.</span></div></div>`}
+function rpPressure(rows){
+  const L=rows.filter(r=>r.p).sort((a,b)=>b.p.score-a.p.score||a.x.n.localeCompare(b.x.n));if(!L.length)return "";const MX=11;
+  return `<div class="rp-fig"><div class="rp-ph"><span></span><span class="rp-pax"><i style="left:${3/MX*100}%">Rising from 3</i><i style="left:${6/MX*100}%">High: 6+ and a resignation demand or crisis</i></span><span></span></div>
+    ${L.map(r=>{const f=r.p.fam||{};return `<div class="rp-pr" data-tip="${esc(r.x.n+": pressure "+r.p.name+" ("+r.p.score+" points)\n"+r.p.why.join("\n"))}" data-c="${r.x.c}">${ovName(r.x,r.m)}
+      <span class="rp-pt"><i class="rp-th" style="left:${3/MX*100}%"></i><i class="rp-th" style="left:${6/MX*100}%"></i>${RPF.map(([k])=>f[k]?`<i class="rp-sg" style="width:${f[k]/MX*100}%;background:${RPC[k]}"></i>`:"").join("")}</span>
+      <span class="rp-pv"><b>${r.p.score}</b><span class="rp-lv rp-l${r.p.k}">${r.p.name}</span></span></div>`}).join("")}
+    <div class="rp-lg">${RPF.map(([k,l])=>`<span><i class="rp-sw" style="background:${RPC[k]}"></i>${l}</span>`).join("")}</div></div>`}
+function rpCsv(rows){const q=v=>`"${String(v==null?"":v).replace(/"/g,'""')}"`;
+  const head=["country","iso2","level","pressure","pressure_points","peak_official_30d","peak_organisers_30d","arrests_30d","next_date","next_is_strike"];
+  const lines=[head.join(",")];rows.forEach(r=>{const ev=(r.P.events||[]).filter(e=>!e.minor&&ageDays(e.date)>=-1&&ageDays(e.date)<=30),mx=k=>{const a=ev.map(e=>e[k]).filter(v=>v!=null);return a.length?Math.max(...a):""},ar=ev.map(e=>e.arrests).filter(v=>v!=null);
+    lines.push([q(r.x.n),r.x.c,r.m.name,r.p?r.p.name:"",r.p?r.p.score:"",mx("off"),mx("orgc"),ar.length?ar.reduce((a,b)=>a+b,0):"",r.P.nextDate||"",r.P.nextStrike?"yes":""].join(","))});
+  return lines.join("\n")}
+function renderOverview(){const O=document.getElementById("overview");if(!O)return;
+  const rows=ovRows(),all=C.filter(x=>PROT[x.c]&&Array.isArray(PROT[x.c].events)&&!RESTRICTED.has(x.c));
+  const lv=[0,1,2].map(k=>all.filter(x=>mob(x.c).k===k));
+  const ev30=all.flatMap(x=>PROT[x.c].events.filter(e=>{const a=ageDays(e.date);return a>=-1&&a<=30}).map(e=>({...e,c:x.c})));
+  const nat=ev30.filter(e=>!e.minor),off=nat.reduce((a,e)=>a+(e.off||0),0),orgc=nat.reduce((a,e)=>a+(e.orgc||0),0);
+  const arr=ev30.filter(e=>e.arrests!=null),arrests=arr.reduce((a,e)=>a+e.arrests,0),dead=ev30.reduce((a,e)=>a+(e.deaths||0),0);
+  const strikes=all.filter(x=>PROT[x.c].nextStrike&&upcoming(x.c)).map(x=>({x,d:upcoming(x.c)})).sort((a,b)=>a.d.localeCompare(b.d));
+  const big=nat.filter(e=>e.off).sort((a,b)=>b.off-a.off)[0];
+  const hi=rows.filter(r=>r.p&&r.p.k===2).map(r=>r.x.n),ri=rows.filter(r=>r.p&&r.p.k===1).map(r=>r.x.n);
+  const upd=all.map(x=>PROT[x.c].checkedAt).filter(Boolean).sort().at(-1);
+  const list=a=>a.length<=1?a.join(""):a.slice(0,-1).join(", ")+" and "+a.at(-1);
+  const take=[];
+  if(hi.length)take.push(`Pressure on government is highest in ${list(hi)}${ri.length?`, and rising in ${list(ri)}`:""}.`);
+  if(big)take.push(`The biggest crowd in the last 30 days was in ${by[big.c].n}: ${nf(big.off)} on ${dfmt(big.date)} by the official count.`);
+  if(strikes.length)take.push(`${strikes.length} national strike${strikes.length>1?"s are":" is"} called in the next 3 weeks: ${strikes.map(s=>`${s.x.n} (${dfmt(s.d)})`).join(", ")}.`);
+  const sec=(id,eyebrow,title,lead,body)=>`<section class="ov-sec" id="${id}"><div class="ov-sh"><p class="ov-eyebrow">${eyebrow}</p><h2>${title}</h2>${lead?`<p>${lead}</p>`:""}</div>${body}</section>`;
+  const kt=(v,k,s)=>`<div class="rp-k"><div class="ov-v">${v}</div><div class="ov-kk">${k}</div>${s?`<div class="ov-ks">${s}</div>`:""}</div>`;
+  let h=`<div class="rp-hero"><p class="ov-eyebrow">Protest Atlas report · Europe${upd?` · checked ${dfmt(upd)}`:""}</p><h1 class="rp-h1">${esc(take[0]||"Protests across Europe")}</h1>
+    <ul class="rp-take">${take.slice(1).map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>
+    <div class="rp-kpis" aria-label="Key figures">
+    ${kt(lv[2].length,`<i class="sq" style="background:var(--lv2)"></i>Major`,esc(lv[2].map(x=>x.n).join(", ")))}
+    ${kt(lv[1].length,`<i class="sq" style="background:var(--lv1)"></i>Active`,`${lv[0].length} of ${all.length} tracked countries are Quiet`)}
+    ${kt(off?nfk(off):"–","marched in 30 days",`official counts, ${nat.filter(e=>e.off).length} of ${nat.length} national days${orgc?` · organisers: ${nfk(orgc)}`:""}`)}
+    ${kt(strikes.length,"national strikes ahead",esc(strikes.map(s=>`${s.x.n} ${dfmt(s.d)}`).join(" · "))||"none called")}
+    ${kt(arr.length?nf(arrests):"–","arrests in 30 days",arr.length?`where reported (${new Set(arr.map(e=>e.c)).size} countries)`:"not reported")}
+    ${kt(dead,"deaths in 30 days",dead?"":"none reported in our sources")}</div>
+    <nav class="rp-nav" aria-label="Report sections"><a href="#rp-timeline">Timeline</a><a href="#rp-big">Biggest days</a><a href="#rp-who">Who</a><a href="#rp-why">Why</a><a href="#rp-pressure">Pressure</a><a href="#rp-size">Size vs pressure</a><a href="#rp-dates">Dates</a><a href="#rp-calm">Quiet countries</a><a href="#rp-method">Method</a></nav>`;
+  // timeline
+  h+=sec("rp-timeline","1 · The last 30 days and the next 3 weeks","Where and when people took to the streets","One row per Active or Major country. Circles are national protest days, sized by official count; diamonds are dates already announced. Hover any mark for details, click a country name for its briefing.",rpTimeline(rows));
+  // biggest days
+  const bigHtml=rpBig(nat);
+  if(bigHtml)h+=sec("rp-big","2 · Crowd sizes","The biggest days, and how far police and organisers disagree","The eight largest national days in the last 30 days. Organisers' counts are typically 1.5 to 3 times the official ones, so both are shown.",bigHtml);
+  // who
+  const wrow=rows.filter(r=>(r.P.groups||[]).length||(r.p&&r.P.pressure.opposition));
+  const has=(r,t)=>{const g=(r.P.groups||[]).filter(g=>g.type===t).map(g=>g.name);if(t==="opposition"&&r.P.pressure&&r.P.pressure.opposition&&!g.length)g.push("opposition parties");return g};
+  const tcols=TYPES.map(([t,l])=>[t,l,wrow.filter(r=>has(r,t).length).length]).filter(t=>t[2]>0).sort((a,b)=>b[2]-a[2]);
+  h+=sec("rp-who","3 · Who is protesting",tcols.length?`${esc(tcols[0][1])} lead${tcols[0][2]>1?"":"s"} in ${tcols[0][2]} countries${tcols[1]?`, ${esc(tcols[1][1].toLowerCase())} in ${tcols[1][2]}`:""}`:"No groups recorded yet","Groups named in our sources for each Active or Major country. Hover a cell to see who.",
+    `<div class="rp-fig"><div class="ov-mx-w"><table class="ov-mx rp-mx"><thead><tr><th></th>${tcols.map(([t,l,n])=>`<th><span>${esc(l)}</span><b>${n}</b></th>`).join("")}</tr></thead><tbody>
+    ${wrow.map(r=>`<tr><th>${ovName(r.x,r.m)}</th>${tcols.map(([t])=>{const g=has(r,t);return `<td>${g.length?`<i class="dt" style="background:var(--lv${r.m.k})" data-tip="${esc(r.x.n+": "+g.join(", "))}"></i>`:""}</td>`}).join("")}</tr>`).join("")}</tbody></table></div></div>`);
+  // why
+  const yrow=rows.filter(r=>(r.P.themes||[]).length);
+  const thc=THEMES.map(([t,l])=>[t,l,yrow.filter(r=>r.P.themes.includes(t)).length]).filter(t=>t[2]>0).sort((a,b)=>b[2]-a[2]);
+  h+=sec("rp-why","4 · Why they protest",thc.length?`${esc(thc[0][1])} comes up in ${thc[0][2]} countries${thc[1]?`, ${esc(thc[1][1].toLowerCase())} in ${thc[1][2]}`:""}`:"No themes recorded yet","Main demands grouped into common themes. Bars count the Active or Major countries where each theme is a main demand.",
+    `<div class="rp-fig"><div class="ov-why">${thc.map(([t,l,n])=>`<div class="ov-wr"><span class="ov-wl">${esc(l)}</span><span class="ov-wb"><i style="width:${n/thc[0][2]*100}%"></i></span><b>${n}</b><span class="ov-wc">${yrow.filter(r=>r.P.themes.includes(t)).map(r=>ovName(r.x,r.m)).join("")}</span></div>`).join("")}</div></div>`);
+  // pressure ladder
+  const pr=rpPressure(rows);
+  if(pr)h+=sec("rp-pressure","5 · Pressure on government","How much pressure each government is under, and what drives it","Each bar adds up the points behind the score: what people demand, how sustained and heavy the mobilisation is, and how the government is placed. Lines mark the thresholds: Rising from 3 points, High from 6 points when people also demand a resignation or the government is in crisis.",pr);
+  // size vs pressure
+  h+=RP_SCATTER(rows);
+  // dates
+  const cal=all.filter(x=>{const P=PROT[x.c];if(!P.nextDate)return false;const a=ageDays(P.nextDate);return a<=1&&a>=-42}).map(x=>({x,P:PROT[x.c],d:PROT[x.c].nextDate})).sort((a,b)=>a.d.localeCompare(b.d));
+  h+=sec("rp-dates","7 · Coming up","Dates to watch","The next announced national date in each country, from organisers and unions, over the next 6 weeks.",
+    `<div class="ov-cal">${cal.length?cal.map(c=>{const dd=Math.round((new Date(c.d+"T12:00:00")-new Date())/864e5);
       return `<button type="button" class="ov-ci${c.P.nextStrike?" st":""}" data-c="${c.x.c}"><span class="ov-cd"><b>${dfmt(c.d).split(" ")[0]}</b><span>${dfmt(c.d).split(" ")[1]}</span></span>
-      <span class="ov-ct"><span class="ov-cc">${esc(c.x.n)}${c.P.nextStrike?` <em>National strike</em>`:""}<small>${dd<=0?"today":dd===1?"tomorrow":`in ${dd} days`}</small></span><span class="ov-cx">${esc(c.P.next||"")}</span></span></button>`}).join("")
-      :`<p class="note">No dates announced in our sources.</p>`}</div></section>`;
-  h+=`<p class="ov-foot">Built from the same daily briefings as the map. Group types and themes are Protest Atlas labels; levels and pressure follow <a href="#method">fixed rules</a>. Official and organisers' counts often differ by 1.5–3×.</p>`;
+      <span class="ov-ct"><span class="ov-cc">${esc(c.x.n)}${c.P.nextStrike?` <em>National strike</em>`:""}<small>${dd<=0?"today":dd===1?"tomorrow":`in ${dd} days`}</small></span><span class="ov-cx">${esc(c.P.next||"")}</span></span></button>`}).join(""):`<p class="note">No dates announced in our sources.</p>`}</div>`);
+  h+=stabilityHTML().replace('<section class="ov-sec">','<section class="ov-sec" id="rp-calm">');
+  // method
+  h+=sec("rp-method","9 · Method and sources","How to read this report","",`<div class="rp-meth">
+    <div><h3>Levels</h3><p>Quiet, Active and Major follow fixed rules applied to the last 30 to 60 days: size of the biggest national day per 1,000 inhabitants, national strikes held or called, deaths, the number of groups and days involved, and announced dates. <a href="#method" data-meth>Full rules</a>.</p></div>
+    <div><h3>Pressure on government</h3><p>A points score built from the demand (policy, programme or resignation), opposition involvement, duration, strikes, repression, the government's response and its fragility. Low under 3 points, Rising from 3, High from 6 when resignation is demanded or the government is in crisis.</p></div>
+    <div><h3>Figures</h3><p>Taken from news agencies, public broadcasters and official statements, linked in each country briefing. Official (police) counts are used for levels because they are the cautious figure; organisers' counts are shown alongside. Where a source gives no number we show none.</p></div>
+    <div><h3>Context data</h3><p>Political stability: <a href="${SRC_WGI}" target="_blank" rel="noopener">World Bank WGI</a>. Inflation: <a href="${SRC_HICP}" target="_blank" rel="noopener">Eurostat HICP</a>. Unemployment: <a href="${SRC_UR}" target="_blank" rel="noopener">Eurostat</a>. Borders: Natural Earth.</p></div></div>
+    <p class="ov-foot">Levels and pressure are Protest Atlas assessments, not official measures. <button type="button" class="rp-dl" id="rp-csv">Download country table (CSV)</button></p>`);
   O.innerHTML=h;
   O.querySelectorAll("[data-c]").forEach(b=>{b.addEventListener("click",()=>openCountry(b.dataset.c));b.addEventListener("keydown",e=>{if(e.key==="Enter"&&(b.tagName==="g"||b.tagName==="TR"))openCountry(b.dataset.c)})});
+  const dl=O.querySelector("#rp-csv");if(dl)dl.onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([rpCsv(rows)],{type:"text/csv"}));a.download="protest-atlas-countries.csv";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+  O.querySelectorAll(".rp-nav a").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const t=document.getElementById(a.getAttribute("href").slice(1));if(t)t.scrollIntoView({behavior:"smooth",block:"start"})}));
 }
+/* shared hover tooltip for report charts */
+{const tp=document.createElement("div");tp.id="rp-tip";tp.hidden=true;document.body.appendChild(tp);
+ const ov=document.getElementById("overview");
+ ov.addEventListener("pointermove",e=>{const t=e.target.closest("[data-tip]");if(!t){tp.hidden=true;return}tp.textContent=t.getAttribute("data-tip");tp.hidden=false;
+   const w=tp.offsetWidth,x=Math.min(window.innerWidth-w-8,Math.max(8,e.clientX+14));tp.style.left=x+"px";tp.style.top=Math.max(8,e.clientY-tp.offsetHeight-12)+"px"});
+ ov.addEventListener("pointerleave",()=>{tp.hidden=true})}
 
 /* ---------- home (landing view) ---------- */
 function renderHome(){const E=document.getElementById("home");if(!E)return;
@@ -1260,7 +1388,7 @@ Promise.resolve().then(()=>buildMap()).catch(e=>{MAP_ERR=String(e&&e.message||e)
 // Full-page map mode
 let prevView=state.view;
 function applyMode(){const H=document.documentElement,hs=location.hash,full=hs==="#full",was=H.classList.contains("full"),hm=hs===""||hs==="#"||hs==="#home",ov=hs==="#report"||hs==="#overview",wasOv=H.classList.contains("ov"),wasHm=H.classList.contains("hm");
-  H.classList.toggle("ov",ov);H.classList.toggle("hm",hm);const cur=hm?"hm":ov?"ov":"map";document.title=hm?"Protest Atlas · Where people are protesting in Europe, and why":ov?"Report · Protest Atlas":full?"Europe map · Protest Atlas":"Map & briefings · Protest Atlas";
+  H.classList.toggle("ov",ov);H.classList.toggle("hm",hm);{const nv=document.querySelector("#fbar nav");if(nv){const up=Object.values(PROT).map(x=>x&&x.checkedAt).filter(Boolean).sort().at(-1);nv.innerHTML=(up?`<span class="fstamp" id="fstamp">Updated ${dfmt(up)}</span>`:"")+(ov?`<a href="#full">Europe map</a><a href="#map">Briefings</a>`:`<a href="#report">Report</a><a href="#map">Briefings list</a>`)}}const cur=hm?"hm":ov?"ov":"map";document.title=hm?"Protest Atlas · Where people are protesting in Europe, and why":ov?"Report · Protest Atlas":full?"Europe map · Protest Atlas":"Map & briefings · Protest Atlas";
   document.querySelectorAll(".tabs a[data-t]").forEach(a=>{if(a.dataset.t===cur)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
   if(ov){renderOverview();if(!wasOv)window.scrollTo(0,0)}if(hm){renderHome();if(!wasHm)window.scrollTo(0,0)}
   if(full===was&&was)return;
