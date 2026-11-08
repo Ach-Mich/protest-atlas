@@ -632,7 +632,7 @@ html.full body{padding-inline:0;overflow:hidden}
 </style>
 
 <div class="wrap">
-  <div class="fbar" id="fbar"><a class="fbrand" href="#home" aria-label="Protest Atlas, home">Protest<i>/</i>Atlas</a><nav aria-label="Site"><span class="fstamp" id="fstamp"></span><a href="#report">Report</a><a href="#map">Briefings list</a></nav></div>
+  <div class="fbar" id="fbar"><a class="fbrand" href="#home" aria-label="Protest Atlas, home">Protest<i>/</i>Atlas</a><nav aria-label="Site"><span class="fstamp" id="fstamp"></span><a href="#report">Report</a></nav></div>
   <section id="home" aria-label="Protest Atlas home"></section>
   <header>
     <div>
@@ -1364,7 +1364,7 @@ Promise.resolve().then(()=>buildMap()).catch(e=>{MAP_ERR=String(e&&e.message||e)
 // Full-page map mode
 let prevView=state.view;
 function applyMode(){const H=document.documentElement,hs=location.hash,full=hs==="#full",was=H.classList.contains("full"),hm=hs===""||hs==="#"||hs==="#home",ov=hs==="#report"||hs==="#overview",wasOv=H.classList.contains("ov"),wasHm=H.classList.contains("hm");
-  H.classList.toggle("ov",ov);H.classList.toggle("hm",hm);{const nv=document.querySelector("#fbar nav");if(nv){const up=Object.values(PROT).map(x=>x&&x.checkedAt).filter(Boolean).sort().at(-1);nv.innerHTML=(up?`<span class="fstamp" id="fstamp">Updated ${dfmt(up)}</span>`:"")+(ov?`<a href="#full">Europe map</a><a href="#map">Briefings</a>`:`<a href="#report">Report</a><a href="#map">Briefings list</a>`)}}const cur=hm?"hm":ov?"ov":"map";document.title=hm?"Protest Atlas · Where people are protesting in Europe, and why":ov?"Report · Protest Atlas":full?"Europe map · Protest Atlas":"Map & briefings · Protest Atlas";
+  H.classList.toggle("ov",ov);H.classList.toggle("hm",hm);{const nv=document.querySelector("#fbar nav");if(nv){const up=Object.values(PROT).map(x=>x&&x.checkedAt).filter(Boolean).sort().at(-1);nv.innerHTML=(up?`<span class="fstamp" id="fstamp">Updated ${dfmt(up)}</span>`:"")+(ov?`<a href="#full">Europe map</a>`:`<a href="#report">Report</a>`)}}const cur=hm?"hm":ov?"ov":"map";document.title=hm?"Protest Atlas · Where people are protesting in Europe, and why":ov?"Report · Protest Atlas":full?"Europe map · Protest Atlas":"Map & briefings · Protest Atlas";
   document.querySelectorAll(".tabs a[data-t]").forEach(a=>{if(a.dataset.t===cur)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
   if(ov){renderOverview();if(!wasOv)window.scrollTo(0,0)}if(hm){renderHome();if(!wasHm)window.scrollTo(0,0)}
   if(full===was&&was)return;
