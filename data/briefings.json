@@ -630,7 +630,30 @@
   "CH": {
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Switzerland",
-    "events": [],
+    "events": [
+      {
+        "arrests": null,
+        "cause": "Solidarity with Palestinians",
+        "date": "2026-10-10",
+        "deaths": null,
+        "extra": "About 2,000 in Lausanne and about 1,000 in Zurich, per a Wikipedia list; counts not attributed",
+        "minor": true,
+        "off": null,
+        "org": "Not named in source",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "Wikipedia: pro-Palestinian protests in Switzerland",
+            "https://en.wikipedia.org/wiki/List_of_pro-Palestinian_protests_in_Switzerland"
+          ]
+        ],
+        "title": "Pro-Palestinian march in Lausanne (about 1,000 in Zurich the same day)",
+        "warn": "Single source so far (Wikipedia list); regional demonstrations in two cities"
+      }
+    ],
     "lastProtest": {
       "date": "2026-10-10",
       "src": [
@@ -643,10 +666,16 @@
       "warn": "Single source (Wikipedia list)"
     },
     "next": "No new date announced in our sources yet.",
+    "reasons": [
+      "Gaza solidarity"
+    ],
     "screenedAt": "2026-11-07T22:50:00+01:00",
-    "summary": "",
+    "summary": "Pro-Palestinian marches took place in Lausanne and Zurich on 10 October, with about 2,000 and 1,000 people reported by a single source so far.",
+    "themes": [
+      "war"
+    ],
     "tier": "screen",
-    "updatedAt": "2026-11-07T22:50:00+01:00"
+    "updatedAt": "2026-11-08T13:00:00+01:00"
   },
   "CY": {
     "checkedAt": "2026-11-07T22:50:00+01:00",
