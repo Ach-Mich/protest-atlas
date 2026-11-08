@@ -587,6 +587,7 @@ html.full body{padding-inline:0;overflow:hidden}
 .rp-fig .ov-sc{border:0;padding:0;background:none}
 .rp-fig a,.rp-fig .ov-cn{color:#2A2730}
 .rp-tls{min-width:760px}
+.st-last{min-width:260px}.st-lp{display:block;font-size:12.5px}.st-lt{display:block;font-size:12px;color:var(--muted);line-height:1.4}.st-lt em{font-style:normal}.st-none{color:var(--muted);font-size:12px}
 .ov #overview a:not(.ov-cn){color:var(--accent)}.rp-fig a{color:#2F5D62!important}
 .rp-h1{max-width:26ch}
 .rp-fut{fill:#EFE9DB;opacity:.65}.rp-band{fill:#F7F4EE}
@@ -1090,6 +1091,11 @@ const STAB={AL:[67.2,65.8],AT:[74.9,77.0],BA:[59.6,61.3],BE:[68.6,69.7],BG:[69.9
  LT:[82.0,82.3],LV:[79.8,79.3],MD:[63.6,61.5],MK:[72.2,71.3],NL:[75.0,76.9],NO:[84.5,81.6],PL:[77.8,74.9],PT:[77.9,81.1],RO:[69.2,75.2],RS:[59.9,64.5],SE:[80.5,82.1],
  SI:[81.0,79.2],SK:[77.3,74.9],TR:[50.2,49.0],UA:[59.8,47.1],RU:[49.0,52.3],BY:[62.6,54.2]};
 const SRC_WGI="https://api.worldbank.org/v2/country/all/indicator/GOV_WGI_PV.SC?source=3&format=json";
+const MON=["January","February","March","April","May","June","July","August","September","October","November","December"];
+function lpFmt(d){const a=String(d).split("-");return a.length===2?`${MON[+a[1]-1]} ${a[0]}`:`${+a[2]} ${MON[+a[1]-1]} ${a[0]}`}
+function lastKnown(P){const L=P&&P.lastProtest;if(!L||!L.date)return `<span class="st-none">no protest found in our sources</span>`;
+  const src=L.src&&L.src[0]?` <a href="${esc(L.src[0][1])}" target="_blank" rel="noopener">${esc(L.src[0][0])}</a>`:"";
+  return `<b class="st-lp">Last known protest: ${lpFmt(L.date)}</b><span class="st-lt">${esc(L.title)}${L.warn?` <em>(${esc(L.warn.replace(/\s*\(.*\)/,"").toLowerCase())})</em>`:""}${src?` ·${src}`:""}</span>`}
 function stabilityHTML(){
   const med=a=>{const s=a.filter(v=>v!=null).sort((x,y)=>x-y);if(!s.length)return null;const m=s.length>>1;return s.length%2?s[m]:(s[m-1]+s[m])/2};
   const lvOf=x=>{const m=mob(x.c);return m.k};
@@ -1113,7 +1119,7 @@ function stabilityHTML(){
       <td class="st-bar"><span><i style="width:${v}%"></i></span><b>${v.toFixed(0)}</b></td>
       <td class="n ${d>=1?"up":d<=-1?"dn":""}">${d>=1?"↑":d<=-1?"↓":"→"} ${Math.abs(d).toFixed(1)}</td>
       <td class="n">${inf!=null?inf.toFixed(1)+"%":"—"}</td>
-      <td class="st-last">${last?`last national protest ${dfmt(last.date)}`:"no national protest recorded"}</td></tr>`}).join("");
+      <td class="st-last">${last?`last national protest ${dfmt(last.date)}`:lastKnown(P)}</td></tr>`}).join("");
   return `<section class="ov-sec"><div class="ov-sh"><p class="ov-eyebrow">7 · Quiet countries</p><h2>${esc(head)}</h2>
     <p>${quiet.length} countries had no national protest day in 60 days and none announced. The World Bank's political stability score (0–100) measures the likelihood of political instability or politically motivated violence${iq!=null&&ip!=null?`; median inflation is ${iq.toFixed(1)}% in quiet countries and ${ip.toFixed(1)}% where people protest (Eurostat, Sep 2026)`:""}.</p></div>
     <div class="ov-sc"><svg viewBox="0 0 ${W} ${H+4}" role="img" aria-label="Political stability scores by protest level">${s}</svg></div>

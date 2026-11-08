@@ -316,6 +316,16 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Bosnia & Herzegovina",
     "events": [],
+    "lastProtest": {
+      "date": "2026-02",
+      "src": [
+        [
+          "The Star, 17 Feb 2026",
+          "https://www.thestar.com.my/news/world/2026/02/17/fatal-tram-accident-in-sarajevo-triggers-days-of-public-protests"
+        ]
+      ],
+      "title": "Several days of protests in Sarajevo and other cities after a fatal tram accident"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -621,6 +631,17 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Switzerland",
     "events": [],
+    "lastProtest": {
+      "date": "2026-10-10",
+      "src": [
+        [
+          "Wikipedia: pro-Palestinian protests in Switzerland",
+          "https://en.wikipedia.org/wiki/List_of_pro-Palestinian_protests_in_Switzerland"
+        ]
+      ],
+      "title": "Pro-Palestinian march of about 2,000 in Lausanne",
+      "warn": "Single source (Wikipedia list)"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -631,6 +652,16 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Cyprus",
     "events": [],
+    "lastProtest": {
+      "date": "2026-06-22",
+      "src": [
+        [
+          "Kiprinform",
+          "https://www.kiprinform.com/en/cyprus_news/protest-in-nicosia-calls-for-resignation-of-attorney-general-and-deputy-after-anti-corruption-findings/"
+        ]
+      ],
+      "title": "Protest in Nicosia calling for the resignation of the attorney general and deputy after anti-corruption findings"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -1063,6 +1094,17 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Finland",
     "events": [],
+    "lastProtest": {
+      "date": "2026-03-05",
+      "src": [
+        [
+          "Anadolu Images",
+          "https://www.anadoluimages.com/p/finns-gather-in-helsinki-to-protest-government-austerity-measures/31438858"
+        ]
+      ],
+      "title": "Gathering in Helsinki against government austerity measures",
+      "warn": "Single source (photo caption)"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -1605,6 +1647,16 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Croatia",
     "events": [],
+    "lastProtest": {
+      "date": "2026-04",
+      "src": [
+        [
+          "Dawn (AP)",
+          "https://www.dawn.com/news/1993092"
+        ]
+      ],
+      "title": "Several thousand marched in Zagreb for higher wages and pensions"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -1615,6 +1667,17 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Hungary",
     "events": [],
+    "lastProtest": {
+      "date": "2026-07-09",
+      "src": [
+        [
+          "GDELT Cloud",
+          "https://gdeltcloud.com/events/thousands-protest-in-hungary-against-magyar-and-removal-of-t--conflict_91d30ca2"
+        ]
+      ],
+      "title": "Rally in Budapest against the planned removal of President Sulyok",
+      "warn": "Single aggregator source"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -1842,6 +1905,17 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Lithuania",
     "events": [],
+    "lastProtest": {
+      "date": "2026-04-25",
+      "src": [
+        [
+          "SOPA Images",
+          "https://www.sopaimages.com/galleries/92209"
+        ]
+      ],
+      "title": "\"Hands Off Freedom of Speech\" rally in Vilnius, linked to the public broadcaster law",
+      "warn": "Single source (photo gallery)"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -1883,6 +1957,16 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "North Macedonia",
     "events": [],
+    "lastProtest": {
+      "date": "2026-02-10",
+      "src": [
+        [
+          "BTA",
+          "https://www.bta.bg/en/news/balkans/1060874-trade-unions-block-parliament-s-building-in-skopje-demanding-wage-increases"
+        ]
+      ],
+      "title": "Trade union blockade of Parliament in Skopje over wages"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -2155,6 +2239,17 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Romania",
     "events": [],
+    "lastProtest": {
+      "date": "2026-06",
+      "src": [
+        [
+          "GDELT Cloud",
+          "https://gdeltcloud.com/events/thousands-protest-in-romania-over-new-salary-law-project--conflict_926a802e"
+        ]
+      ],
+      "title": "Health and social-care workers protested in Bucharest over a draft salary law",
+      "warn": "Single aggregator source"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -2165,6 +2260,16 @@
     "checkedAt": "2026-11-08T12:00:00+01:00",
     "country": "Serbia",
     "events": [],
+    "lastProtest": {
+      "date": "2026-05-23",
+      "src": [
+        [
+          "The Star / AFP, 24 May 2026",
+          "https://www.thestar.com.my/news/world/2026/05/24/police-and-protesters-clash-in-serbia-as-crowds-demand-president039s-exit"
+        ]
+      ],
+      "title": "Student-led rally in Belgrade demanding early elections; clashes with police at the end"
+    },
     "next": "No new date announced in our sources yet.",
     "reasons": [],
     "screenedAt": "2026-11-07T22:50:00+01:00",
@@ -2183,6 +2288,16 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Sweden",
     "events": [],
+    "lastProtest": {
+      "date": "2026-08-23",
+      "src": [
+        [
+          "Euronews (DE), 24 Aug 2026",
+          "https://de.euronews.com/2026/08/24/stockholm-greta-thunberg-marschiert-mit-10000-klimademonstrierenden"
+        ]
+      ],
+      "title": "About ten thousand marched in Stockholm for stronger climate action a month before the election"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -2193,6 +2308,17 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Slovenia",
     "events": [],
+    "lastProtest": {
+      "date": "2026-09-09",
+      "src": [
+        [
+          "Wikipedia: pro-Palestinian protests in Slovenia",
+          "https://en.wikipedia.org/wiki/List_of_pro-Palestinian_protests_in_Slovenia"
+        ]
+      ],
+      "title": "Pro-Palestinian march of about 2,000 in Ljubljana against the opening of an Israeli embassy",
+      "warn": "Single source (Wikipedia list)"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -2203,6 +2329,16 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Slovakia",
     "events": [],
+    "lastProtest": {
+      "date": "2026-04-14",
+      "src": [
+        [
+          "Euronews, 15 Apr 2026",
+          "https://www.euronews.com/2026/04/15/crowds-in-bratislava-reject-fico-plan-to-scrap-overseas-voting"
+        ]
+      ],
+      "title": "Rallies in Bratislava and other cities against the plan to scrap postal voting from abroad"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
@@ -2213,6 +2349,17 @@
     "checkedAt": "2026-11-07T22:50:00+01:00",
     "country": "Türkiye",
     "events": [],
+    "lastProtest": {
+      "date": "2026-05-01",
+      "src": [
+        [
+          "Columbia Global Freedom of Expression",
+          "https://globalfreedomofexpression.columbia.edu/?p=175826"
+        ]
+      ],
+      "title": "May Day protests in Istanbul under heavy police restrictions",
+      "warn": "Single source"
+    },
     "next": "No new date announced in our sources yet.",
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "",
