@@ -1,6 +1,6 @@
 {
   "AL": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Albania",
     "events": [
       {
@@ -243,7 +243,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "AT": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Austria",
     "events": [
       {
@@ -313,7 +313,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "BA": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Bosnia & Herzegovina",
     "events": [],
     "lastProtest": {
@@ -327,13 +327,13 @@
       "title": "Several days of protests in Sarajevo and other cities after a fatal tram accident"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "BE": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Belgium",
     "events": [
       {
@@ -564,7 +564,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "BG": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Bulgaria",
     "events": [
       {
@@ -628,7 +628,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "CH": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Switzerland",
     "events": [
       {
@@ -669,7 +669,7 @@
     "reasons": [
       "Gaza solidarity"
     ],
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "Pro-Palestinian marches took place in Lausanne and Zurich on 10 October, with about 2,000 and 1,000 people reported by a single source so far.",
     "themes": [
       "war"
@@ -678,7 +678,7 @@
     "updatedAt": "2026-11-08T13:00:00+01:00"
   },
   "CY": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Cyprus",
     "events": [],
     "lastProtest": {
@@ -692,13 +692,13 @@
       "title": "Protest in Nicosia calling for the resignation of the attorney general and deputy after anti-corruption findings"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "CZ": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Czechia",
     "events": [
       {
@@ -802,7 +802,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "DE": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Germany",
     "events": [
       {
@@ -838,7 +838,7 @@
         "type": "students"
       }
     ],
-    "next": "The \"Schulstreik gegen Wehrpflicht\" alliance calls its fifth nationwide school strike against conscription on 20 November.",
+    "next": "The \"Schulstreik gegen Wehrpflicht\" alliance calls its fifth nationwide school strike against conscription on 20 November. Separately, the German Nursing Council (Deutscher Pflegerat) and 25 member organisations hold a demonstration in Berlin on 11 November (14:00-17:00) on the future of nursing care.",
     "nextDate": "2026-11-20",
     "pressure": {
       "assessedAt": "2026-11-08",
@@ -862,6 +862,12 @@
       "Health"
     ],
     "screenedAt": "2026-11-07T22:50:00+01:00",
+    "src": [
+      [
+        "Der Paritätische, Pflege-Demonstration 11 Nov 2026",
+        "https://www.der-paritaetische.de/alle-meldungen/reformpolitik-in-pflege-und-gesundheit-demonstration-zur-zukunft-der-pflege-am-11-november-2026-in-berlin/"
+      ]
+    ],
     "story": [
       {
         "big": true,
@@ -890,10 +896,10 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-08T06:41:59+01:00"
+    "updatedAt": "2026-11-09T08:00:00+01:00"
   },
   "DK": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Denmark",
     "events": [
       {
@@ -962,17 +968,45 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "EE": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "RS": {
+      "checkedAt": "2026-11-09T08:00:00+01:00",
+      "country": "Serbia",
+      "events": [],
+      "lastProtest": {
+        "date": "2026-05-23",
+        "src": [
+          [
+            "The Star / AFP, 24 May 2026",
+            "https://www.thestar.com.my/news/world/2026/05/24/police-and-protesters-clash-in-serbia-as-crowds-demand-president039s-exit"
+          ]
+        ],
+        "title": "Student-led rally in Belgrade demanding early elections; clashes with police at the end"
+      },
+      "next": "No new date announced in our sources yet.",
+      "reasons": [],
+      "screenedAt": "2026-11-09T08:00:00+01:00",
+      "src": [
+        [
+          "CNN, 25 Oct 2026",
+          "https://www.cnn.com/2026/10/25/europe/serbian-strongman-vucic-concedes-defeat-to-student-led-movement-intl-latam"
+        ]
+      ],
+      "summary": "After two years of student-led anti-corruption protests that began with the Novi Sad canopy collapse, President Aleksandar Vučić conceded defeat to the student-led list in the 25 October snap election. No protest day reported since.",
+      "themes": [],
+      "tier": "screen",
+      "updatedAt": "2026-11-09T08:00:00+01:00"
+    },
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Estonia",
     "events": [],
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "ES": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Spain",
     "events": [
       {
@@ -1120,7 +1154,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "FI": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Finland",
     "events": [],
     "lastProtest": {
@@ -1135,13 +1169,13 @@
       "warn": "Single source (photo caption)"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "FR": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "France",
     "events": [
       {
@@ -1489,7 +1523,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "GB": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "United Kingdom",
     "events": [
       {
@@ -1552,7 +1586,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "GR": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Greece",
     "events": [
       {
@@ -1673,7 +1707,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "HR": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Croatia",
     "events": [],
     "lastProtest": {
@@ -1687,13 +1721,13 @@
       "title": "Several thousand marched in Zagreb for higher wages and pensions"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "HU": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Hungary",
     "events": [],
     "lastProtest": {
@@ -1708,13 +1742,13 @@
       "warn": "Single aggregator source"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "IE": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Ireland",
     "events": [
       {
@@ -1811,17 +1845,17 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "IS": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Iceland",
     "events": [],
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "IT": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Italy",
     "events": [
       {
@@ -1931,7 +1965,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "LT": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Lithuania",
     "events": [],
     "lastProtest": {
@@ -1946,44 +1980,45 @@
       "warn": "Single source (photo gallery)"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "LV": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Latvia",
     "events": [],
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "MD": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Moldova",
     "events": [],
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "ME": {
-    "checkedAt": "2026-11-08T10:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Montenegro",
     "events": [],
     "groups": [],
     "next": "No new date announced in our sources yet.",
     "reasons": [],
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "themes": [],
     "tier": "screen"
   },
   "MK": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "North Macedonia",
     "events": [],
     "lastProtest": {
@@ -1997,13 +2032,13 @@
       "title": "Trade union blockade of Parliament in Skopje over wages"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "NL": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Netherlands",
     "events": [
       {
@@ -2037,17 +2072,17 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "NO": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Norway",
     "events": [],
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "PL": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Poland",
     "events": [
       {
@@ -2111,7 +2146,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "PT": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Portugal",
     "events": [
       {
@@ -2265,7 +2300,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "RO": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Romania",
     "events": [],
     "lastProtest": {
@@ -2280,13 +2315,13 @@
       "warn": "Single aggregator source"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "RS": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Serbia",
     "events": [],
     "lastProtest": {
@@ -2301,7 +2336,7 @@
     },
     "next": "No new date announced in our sources yet.",
     "reasons": [],
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "src": [
       [
         "CNN, 25 Oct 2026",
@@ -2310,11 +2345,11 @@
     ],
     "summary": "After two years of student-led anti-corruption protests that began with the Novi Sad canopy collapse, President Aleksandar Vučić conceded defeat to the student-led list in the 25 October snap election. No protest day reported since.",
     "themes": [],
-    "tier": "watch",
-    "updatedAt": "2026-11-07T22:50:00+01:00"
+    "tier": "screen",
+    "updatedAt": "2026-11-09T08:00:00+01:00"
   },
   "SE": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Sweden",
     "events": [],
     "lastProtest": {
@@ -2328,13 +2363,13 @@
       "title": "About ten thousand marched in Stockholm for stronger climate action a month before the election"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "SI": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Slovenia",
     "events": [],
     "lastProtest": {
@@ -2349,13 +2384,13 @@
       "warn": "Single source (Wikipedia list)"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "SK": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Slovakia",
     "events": [],
     "lastProtest": {
@@ -2369,13 +2404,13 @@
       "title": "Rallies in Bratislava and other cities against the plan to scrap postal voting from abroad"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "TR": {
-    "checkedAt": "2026-11-07T22:50:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Türkiye",
     "events": [],
     "lastProtest": {
@@ -2390,13 +2425,13 @@
       "warn": "Single source"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-07T22:50:00+01:00",
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "UA": {
-    "checkedAt": "2026-11-08T12:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Ukraine",
     "events": [
       {
@@ -2453,12 +2488,13 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "XK": {
-    "checkedAt": "2026-11-08T10:00:00+01:00",
+    "checkedAt": "2026-11-09T08:00:00+01:00",
     "country": "Kosovo",
     "events": [],
     "groups": [],
     "next": "No new date announced in our sources yet.",
     "reasons": [],
+    "screenedAt": "2026-11-09T08:00:00+01:00",
     "summary": "",
     "themes": [],
     "tier": "screen"
