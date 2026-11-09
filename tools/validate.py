@@ -150,6 +150,10 @@ def main():
         recent = [e for e in ev if (d := parse_date(e.get("date", ""))) and (TODAY - d).days <= 30 and not e.get("minor")]
         if recent and P.get("reasons") and not P.get("pressure"): add(p3, tag, "national protest in the last 30 days but no `pressure` block.")
         if recent and P.get("reasons") and not P.get("themes"): add(p3, tag, "national protest in the last 30 days with reasons but no `themes`.")
+        for e in recent:
+            if e.get("off") and not any(is_official(c, s[1]) for s in e.get("src", [])) and SOURCES.get(c, {}).get("official") and parse_date(e["date"]) < TODAY:
+                cur[0] = fp_event(c, e)
+                addp(p2, f"{tag}, {e['date']}", "recent national event with an official figure but no official release cited; open the country's official listing pages (tools/sources.json `indexes`).")
         lp = P.get("lastProtest")
         if lp:
             cur[0] = fp_last(c, lp)

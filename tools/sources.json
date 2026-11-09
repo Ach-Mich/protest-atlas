@@ -1,23 +1,280 @@
 {
- "_about": "Per-country source registry. official = government/police/statistics bodies (check first, cite the specific release). wire = news agencies and public broadcasters. organisers = unions/organisers (use for the organisers' count `orgc`, never for `off`). Extend freely; the routine prompt and tools/validate.py both read this file.",
- "FR": {"official": ["interieur.gouv.fr", "gouvernement.fr", "prefecturedepolice.interieur.gouv.fr", "education.gouv.fr"], "wire": ["afp.com", "francetvinfo.fr", "franceinfo.fr", "lemonde.fr", "bfmtv.com", "reuters.com"], "organisers": ["cgt.fr", "cfdt.fr", "solidaires.org", "fsu.fr"]},
- "ES": {"official": ["interior.gob.es", "lamoncloa.gob.es", "delegaciongobierno.gob.es", "comunidad.madrid"], "wire": ["efe.com", "europapress.es", "rtve.es", "elpais.com"], "organisers": ["ccoo.es", "ugt.es"]},
- "IT": {"official": ["interno.gov.it", "poliziadistato.it", "governo.it"], "wire": ["ansa.it", "repubblica.it", "corriere.it"], "organisers": ["cgil.it", "uil.it", "cisl.it"]},
- "DE": {"official": ["bundesregierung.de", "bmi.bund.de", "polizei.berlin.de", "polizei.bayern.de"], "wire": ["dpa.com", "tagesschau.de", "zdf.de", "dw.com"], "organisers": ["dgb.de", "verdi.de"]},
- "BE": {"official": ["police.be", "politie.be", "belgium.be"], "wire": ["belga.be", "rtbf.be", "vrt.be", "brusselstimes.com"], "organisers": ["fgtb.be", "csc-en-ligne.be", "accg.be"]},
- "GB": {"official": ["gov.uk", "police.uk", "met.police.uk"], "wire": ["bbc.co.uk", "bbc.com", "reuters.com", "theguardian.com"], "organisers": []},
- "PT": {"official": ["psp.pt", "portugal.gov.pt", "mai.gov.pt"], "wire": ["lusa.pt", "rtp.pt", "publico.pt"], "organisers": ["cgtp.pt", "ugt.pt"]},
- "GR": {"official": ["astynomia.gr", "gov.gr"], "wire": ["ertnews.gr", "ekathimerini.com", "kathimerini.gr"], "organisers": ["adedy.gr", "gsee.gr"]},
- "NL": {"official": ["politie.nl", "rijksoverheid.nl"], "wire": ["nos.nl", "nu.nl", "nltimes.nl"], "organisers": []},
- "CH": {"official": ["admin.ch", "kapo.zh.ch", "police.be.ch"], "wire": ["swissinfo.ch", "srf.ch", "rts.ch"], "organisers": []},
- "AT": {"official": ["bmi.gv.at", "polizei.gv.at"], "wire": ["orf.at", "derstandard.at", "apa.at"], "organisers": ["oegb.at"]},
- "IE": {"official": ["garda.ie", "gov.ie"], "wire": ["rte.ie", "irishtimes.com", "thejournal.ie"], "organisers": []},
- "DK": {"official": ["politi.dk"], "wire": ["dr.dk", "ritzau.dk"], "organisers": []},
- "PL": {"official": ["policja.pl", "gov.pl"], "wire": ["pap.pl", "polskieradio.pl", "tvn24.pl"], "organisers": []},
- "CZ": {"official": ["policie.cz", "mvcr.cz"], "wire": ["ceskatelevize.cz", "irozhlas.cz", "ctk.cz"], "organisers": []},
- "AL": {"official": ["asp.gov.al"], "wire": ["exit.al", "balkaninsight.com"], "organisers": []},
- "BG": {"official": ["mvr.bg"], "wire": ["bta.bg", "sofiaglobe.com"], "organisers": []},
- "XK": {"official": ["kosovopolice.com"], "wire": ["balkaninsight.com", "rferl.org"], "organisers": []},
- "UA": {"official": ["mvs.gov.ua"], "wire": ["ukrinform.net", "kyivindependent.com"], "organisers": []},
- "_default": {"official": [], "wire": ["reuters.com", "apnews.com", "afp.com"], "organisers": []}
+ "_about": "Per-country source registry. official = government/police/statistics bodies (check first, cite the specific release). wire = news agencies and public broadcasters. organisers = unions/organisers (use for the organisers' count `orgc`, never for `off`). Extend freely; the routine prompt and tools/validate.py both read this file. `indexes` = listing pages to open and read directly (not just search) after every day of action; official releases are often posted under several sections.",
+ "FR": {
+  "official": [
+   "interieur.gouv.fr",
+   "gouvernement.fr",
+   "prefecturedepolice.interieur.gouv.fr",
+   "education.gouv.fr"
+  ],
+  "wire": [
+   "afp.com",
+   "francetvinfo.fr",
+   "franceinfo.fr",
+   "lemonde.fr",
+   "bfmtv.com",
+   "reuters.com"
+  ],
+  "organisers": [
+   "cgt.fr",
+   "cfdt.fr",
+   "solidaires.org",
+   "fsu.fr"
+  ],
+  "indexes": [
+   "https://www.interieur.gouv.fr/actualites/communiques-de-presse",
+   "https://www.interieur.gouv.fr/actualites/actualites-du-ministere",
+   "https://www.gendarmerie.interieur.gouv.fr/gendinfo/actualites"
+  ]
+ },
+ "ES": {
+  "official": [
+   "interior.gob.es",
+   "lamoncloa.gob.es",
+   "delegaciongobierno.gob.es",
+   "comunidad.madrid"
+  ],
+  "wire": [
+   "efe.com",
+   "europapress.es",
+   "rtve.es",
+   "elpais.com"
+  ],
+  "organisers": [
+   "ccoo.es",
+   "ugt.es"
+  ]
+ },
+ "IT": {
+  "official": [
+   "interno.gov.it",
+   "poliziadistato.it",
+   "governo.it"
+  ],
+  "wire": [
+   "ansa.it",
+   "repubblica.it",
+   "corriere.it"
+  ],
+  "organisers": [
+   "cgil.it",
+   "uil.it",
+   "cisl.it"
+  ]
+ },
+ "DE": {
+  "official": [
+   "bundesregierung.de",
+   "bmi.bund.de",
+   "polizei.berlin.de",
+   "polizei.bayern.de"
+  ],
+  "wire": [
+   "dpa.com",
+   "tagesschau.de",
+   "zdf.de",
+   "dw.com"
+  ],
+  "organisers": [
+   "dgb.de",
+   "verdi.de"
+  ]
+ },
+ "BE": {
+  "official": [
+   "police.be",
+   "politie.be",
+   "belgium.be"
+  ],
+  "wire": [
+   "belga.be",
+   "rtbf.be",
+   "vrt.be",
+   "brusselstimes.com"
+  ],
+  "organisers": [
+   "fgtb.be",
+   "csc-en-ligne.be",
+   "accg.be"
+  ]
+ },
+ "GB": {
+  "official": [
+   "gov.uk",
+   "police.uk",
+   "met.police.uk"
+  ],
+  "wire": [
+   "bbc.co.uk",
+   "bbc.com",
+   "reuters.com",
+   "theguardian.com"
+  ],
+  "organisers": []
+ },
+ "PT": {
+  "official": [
+   "psp.pt",
+   "portugal.gov.pt",
+   "mai.gov.pt"
+  ],
+  "wire": [
+   "lusa.pt",
+   "rtp.pt",
+   "publico.pt"
+  ],
+  "organisers": [
+   "cgtp.pt",
+   "ugt.pt"
+  ]
+ },
+ "GR": {
+  "official": [
+   "astynomia.gr",
+   "gov.gr"
+  ],
+  "wire": [
+   "ertnews.gr",
+   "ekathimerini.com",
+   "kathimerini.gr"
+  ],
+  "organisers": [
+   "adedy.gr",
+   "gsee.gr"
+  ]
+ },
+ "NL": {
+  "official": [
+   "politie.nl",
+   "rijksoverheid.nl"
+  ],
+  "wire": [
+   "nos.nl",
+   "nu.nl",
+   "nltimes.nl"
+  ],
+  "organisers": []
+ },
+ "CH": {
+  "official": [
+   "admin.ch",
+   "kapo.zh.ch",
+   "police.be.ch"
+  ],
+  "wire": [
+   "swissinfo.ch",
+   "srf.ch",
+   "rts.ch"
+  ],
+  "organisers": []
+ },
+ "AT": {
+  "official": [
+   "bmi.gv.at",
+   "polizei.gv.at"
+  ],
+  "wire": [
+   "orf.at",
+   "derstandard.at",
+   "apa.at"
+  ],
+  "organisers": [
+   "oegb.at"
+  ]
+ },
+ "IE": {
+  "official": [
+   "garda.ie",
+   "gov.ie"
+  ],
+  "wire": [
+   "rte.ie",
+   "irishtimes.com",
+   "thejournal.ie"
+  ],
+  "organisers": []
+ },
+ "DK": {
+  "official": [
+   "politi.dk"
+  ],
+  "wire": [
+   "dr.dk",
+   "ritzau.dk"
+  ],
+  "organisers": []
+ },
+ "PL": {
+  "official": [
+   "policja.pl",
+   "gov.pl"
+  ],
+  "wire": [
+   "pap.pl",
+   "polskieradio.pl",
+   "tvn24.pl"
+  ],
+  "organisers": []
+ },
+ "CZ": {
+  "official": [
+   "policie.cz",
+   "mvcr.cz"
+  ],
+  "wire": [
+   "ceskatelevize.cz",
+   "irozhlas.cz",
+   "ctk.cz"
+  ],
+  "organisers": []
+ },
+ "AL": {
+  "official": [
+   "asp.gov.al"
+  ],
+  "wire": [
+   "exit.al",
+   "balkaninsight.com"
+  ],
+  "organisers": []
+ },
+ "BG": {
+  "official": [
+   "mvr.bg"
+  ],
+  "wire": [
+   "bta.bg",
+   "sofiaglobe.com"
+  ],
+  "organisers": []
+ },
+ "XK": {
+  "official": [
+   "kosovopolice.com"
+  ],
+  "wire": [
+   "balkaninsight.com",
+   "rferl.org"
+  ],
+  "organisers": []
+ },
+ "UA": {
+  "official": [
+   "mvs.gov.ua"
+  ],
+  "wire": [
+   "ukrinform.net",
+   "kyivindependent.com"
+  ],
+  "organisers": []
+ },
+ "_default": {
+  "official": [],
+  "wire": [
+   "reuters.com",
+   "apnews.com",
+   "afp.com"
+  ],
+  "organisers": []
+ }
 }
