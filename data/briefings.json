@@ -1198,7 +1198,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "FR": {
-    "checkedAt": "2026-11-09T13:00:00+01:00",
+    "checkedAt": "2026-11-09T14:00:00+01:00",
     "country": "France",
     "events": [
       {
@@ -1328,7 +1328,62 @@
             "https://www.letribunaldunet.fr/actualites/17-octobre-lendemain-manifestant-mort-boulevard-magenta-bilan.html"
           ]
         ],
-        "title": "First national day: \"convergence des colères\""
+        "title": "\"Convergence des colères\": youth, gilets jaunes and unions join"
+      },
+      {
+        "arrests": null,
+        "arrestsNote": "6,059 arrests nationwide since 28 Sep (Interior Ministry), cumulative",
+        "cause": "Teacher shortages, overcrowded classes and school buildings; reaction to the blockades",
+        "date": "2026-10-06",
+        "deaths": null,
+        "extra": "More than 80 cities; no major incident reported in Paris",
+        "gatherings": null,
+        "off": 256000,
+        "org": "High-school and student unions (USL, Union étudiante), joined by the parents' federation FCPE and education unions",
+        "orgc": 450000,
+        "paris": "56,000 official",
+        "policeInj": null,
+        "protInj": null,
+        "protInjNote": "235 injured since the start of the movement (Education Ministry): 65 staff, 160 pupils",
+        "src": [
+          [
+            "Paris Match Belgique, 6 Oct 2026",
+            "https://www.parismatch.be/actualites/monde/2026/10/06/mouvement-lyceen-en-france-plus-de-250000-manifestants-dans-les-rues-la-mobilisation-appelee-a-se-poursuivre-EOPSKOPQAVAJBHRVJAMTH5CY5M/"
+          ],
+          [
+            "Vacances-scolaires.com, 13 Oct 2026",
+            "https://vacances-scolaires.com/actualites/2026/10/13/manifestations-lyceennes-d-octobre-2026-bilan-de-la-mobilisation-revendications-et-impact-attendu-des-vacances-de-la/"
+          ]
+        ],
+        "title": "National day of high-school and student demonstrations (\"Acte III\")",
+        "warn": "Organisers' figure comes from a single school-news site"
+      },
+      {
+        "arrests": null,
+        "cause": "Teacher shortages and overcrowded classes",
+        "date": "2026-10-02",
+        "deaths": null,
+        "extra": "Nearly 2,000 arrests by 1 Oct (Interior Ministry); unions received by the education minister; class suspensions expected in 400–500 lycées on 5 Oct",
+        "gatherings": null,
+        "minor": true,
+        "off": null,
+        "org": "High-school pupils, supported by education unions",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "Euronews, 2 Oct 2026",
+            "https://fr.euronews.com/video/2026/10/02/400-lycees-fermes-plus-de-2-000-interpellations-la-mobilisation-lyceenne-ne-faiblit-pas"
+          ],
+          [
+            "DH, 2 Oct 2026",
+            "https://www.dhnet.be/dernieres-depeches/2026/10/02/le-mouvement-de-blocage-des-lycees-devrait-se-poursuivre-vendredi-BXWYF663HZGKDA3FBDJOQSRCQ4/"
+          ]
+        ],
+        "title": "High-school blockades: about 400 lycées closed",
+        "warn": "Figures from press reports; no consolidated ministry release found"
       },
       {
         "arrests": null,
@@ -1355,6 +1410,34 @@
         ],
         "title": "Public-service strike and demonstrations over pay (first joint call by all eight public-sector unions since 2018)",
         "warn": "Crowd figures taken from press summaries; confirm against the interior ministry statement"
+      },
+      {
+        "arrests": null,
+        "arrestsNote": "625 arrests and 119 injured by 30 Sep, per Euronews",
+        "cause": "Teacher shortages, cancelled classes and overcrowded classes",
+        "date": "2026-09-21",
+        "deaths": null,
+        "extra": "Sources differ on the exact start date (18 to 21 Sep); the Créteil education authority counted a dozen new blockades on 25 Sep",
+        "gatherings": null,
+        "minor": true,
+        "off": null,
+        "org": "High-school pupils",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "Euronews, 30 Sep 2026",
+            "https://fr.euronews.com/2026/09/30/blocage-des-lycees-625-interpellations-et-119-blesses-depuis-le-debut-de-la-contestation"
+          ],
+          [
+            "Euronews, 29 Sep 2026",
+            "https://fr.euronews.com/2026/09/29/blocus-des-lycees-le-mouvement-setend-des-affrontements-avec-la-police-dautres-professions"
+          ]
+        ],
+        "title": "High-school blockades start in Créteil and spread across Île-de-France",
+        "warn": "Start date and counts vary between sources"
       }
     ],
     "groups": [
@@ -1577,7 +1660,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T13:00:00+01:00"
+    "updatedAt": "2026-11-09T14:00:00+01:00"
   },
   "GB": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
