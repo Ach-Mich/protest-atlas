@@ -8,10 +8,12 @@ highest risk first. It never changes data.
   python3 tools/validate.py --since HEAD~1       # also list events added or changed since a git ref
   python3 tools/validate.py --links              # also check that every source URL still opens (needs internet)
   python3 tools/validate.py -o review.md         # write to a file
+  python3 tools/validate.py --since HEAD --only-changed   # daily mode: only events added or revised since the ref
+  python3 tools/validate.py --mark-reviewed      # after you checked the current list by hand: stop listing those items until they change
 
 Exit code 1 if any "blocking" problem is found (bad structure, missing source, impossible numbers).
 """
-import argparse, json, re, subprocess, sys, datetime as dt
+import argparse, json, os, re, subprocess, sys, datetime as dt
 from urllib.parse import urlparse
 
 TODAY = dt.date.today()
@@ -50,16 +52,39 @@ def load_ref(ref):
     out = subprocess.check_output(["git", "show", f"{ref}:data/briefings.json"])
     return json.loads(out)
 
+REVIEWED_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "reviewed.json")
+def fp_event(c, e):
+    keys = ("date", "title", "off", "orgc", "arrests", "policeInj", "protInj", "deaths")
+    return c + "|" + "|".join(str(e.get(k)) for k in keys) + "|" + ",".join(sorted(s[1] for s in e.get("src") or []))
+def fp_last(c, lp):
+    return c + "|lastProtest|" + "|".join(str(lp.get(k)) for k in ("date", "title")) + "|" + ",".join(sorted(s[1] for s in lp.get("src") or []))
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data", default="data/briefings.json")
     ap.add_argument("--since")
     ap.add_argument("--links", action="store_true")
     ap.add_argument("-o", "--out")
+    ap.add_argument("--only-changed", action="store_true")
+    ap.add_argument("--mark-reviewed", action="store_true")
     a = ap.parse_args()
     D = load(a.data)
     block, p1, p2, p3 = [], [], [], []   # blocking, serious figures, source quality, hygiene
     def add(lst, c, msg): lst.append(f"- **{c}** {msg}")
+    REVIEWED = set(json.load(open(REVIEWED_FILE)) if os.path.exists(REVIEWED_FILE) else [])
+    changed = None
+    if a.only_changed:
+        if not a.since: sys.exit("--only-changed needs --since <git ref>")
+        old = load_ref(a.since)
+        oldfp = {fp_event(c, e) for c, P in old.items() for e in P.get("events", [])} | {fp_last(c, P["lastProtest"]) for c, P in old.items() if P.get("lastProtest")}
+        changed = {fp_event(c, e) for c, P in D.items() for e in P.get("events", [])} | {fp_last(c, P["lastProtest"]) for c, P in D.items() if P.get("lastProtest")}
+        changed -= oldfp
+    flagged = set(); cur = [None]
+    def addp(lst, c, msg):
+        fp = cur[0]
+        if fp in REVIEWED: return
+        if changed is not None and fp not in changed: return
+        flagged.add(fp); add(lst, c, msg)
 
     for c, P in sorted(D.items()):
         name = P.get("country", c)
@@ -72,6 +97,7 @@ def main():
         for e in ev:
             d = parse_date(e.get("date", ""))
             ref = f"{tag}, {e.get('date')} “{e.get('title','')[:70]}”"
+            cur[0] = fp_event(c, e)
             if not d: add(block, ref, "date is not YYYY-MM-DD."); continue
             if d > TODAY + dt.timedelta(days=1): add(block, ref, "event date is in the future.")
             key = (e.get("date"), e.get("title"))
@@ -84,16 +110,16 @@ def main():
                 v = e.get(k)
                 if v is not None and (not isinstance(v, (int, float)) or v < 0): add(block, ref, f"`{k}` must be a non-negative number or null.")
             if off and orgc and orgc < off: add(block, ref, f"organisers' count ({orgc:,}) is lower than the official count ({off:,}); check which is which.")
-            if off and orgc and orgc / off > 4: add(p1, ref, f"organisers/official ratio is {orgc/off:.1f}× (usual 1.5–3×): {off:,} vs {orgc:,}.")
+            if off and orgc and orgc / off > 4: addp(p1, ref, f"organisers/official ratio is {orgc/off:.1f}× (usual 1.5–3×): {off:,} vs {orgc:,}.")
             big = max(off or 0, orgc or 0)
-            if big >= 100000: add(p1, ref, f"large crowd figure ({big:,}); confirm against two sources.")
-            if e.get("deaths"): add(p1, ref, f"**{e['deaths']} death(s)** recorded. Needs two independent sources and a check that the death is caused by or during the protest.")
-            if (e.get("policeInj") or 0) + (e.get("protInj") or 0) >= 50: add(p1, ref, "injury figure ≥ 50; confirm the source and whether it is cumulative.")
-            if (e.get("arrests") or 0) >= 500: add(p1, ref, f"{e['arrests']:,} arrests; confirm (cumulative across cities, or police figure?).")
+            if big >= 100000: addp(p1, ref, f"large crowd figure ({big:,}); confirm against two sources.")
+            if e.get("deaths"): addp(p1, ref, f"**{e['deaths']} death(s)** recorded. Needs two independent sources and a check that the death is caused by or during the protest.")
+            if (e.get("policeInj") or 0) + (e.get("protInj") or 0) >= 50: addp(p1, ref, "injury figure ≥ 50; confirm the source and whether it is cumulative.")
+            if (e.get("arrests") or 0) >= 500: addp(p1, ref, f"{e['arrests']:,} arrests; confirm (cumulative across cities, or police figure?).")
             tiers = [tier(s[1]) for s in src] if src else []
-            if tiers and all(t == "weak" for t in tiers): add(p2, ref, "all sources are weak (" + ", ".join(sorted({dom(s[1]) for s in src})) + ").")
-            elif tiers and "strong" not in tiers and not e.get("warn"): add(p2, ref, "no recognised news source (" + ", ".join(sorted({dom(s[1]) for s in src})) + ") and no `warn` flag.")
-            if len(src) == 1 and not e.get("warn") and (e.get("deaths") or big >= 50000): add(p2, ref, "single source for a high-stakes figure; add a second source or a `warn`.")
+            if tiers and all(t == "weak" for t in tiers): addp(p2, ref, "all sources are weak (" + ", ".join(sorted({dom(s[1]) for s in src})) + ").")
+            elif tiers and "strong" not in tiers and not e.get("warn"): addp(p2, ref, "no recognised news source (" + ", ".join(sorted({dom(s[1]) for s in src})) + ") and no `warn` flag.")
+            if len(src) == 1 and not e.get("warn") and (e.get("deaths") or big >= 50000): addp(p2, ref, "single source for a high-stakes figure; add a second source or a `warn`.")
         # country level
         if P.get("tier") == "watch":
             ck = P.get("checkedAt")
@@ -110,8 +136,9 @@ def main():
         if recent and not P.get("themes"): add(p3, tag, "national protest in the last 30 days but no `themes`.")
         lp = P.get("lastProtest")
         if lp:
+            cur[0] = fp_last(c, lp)
             lt = [tier(s[1]) for s in lp.get("src", [])]
-            if not lt or "strong" not in lt: add(p2, tag, f"`lastProtest` ({lp.get('date')}) rests on weak or unknown sources ({', '.join(dom(s[1]) for s in lp.get('src', []))}).")
+            if not lt or "strong" not in lt: addp(p2, tag, f"`lastProtest` ({lp.get('date')}) rests on weak or unknown sources ({', '.join(dom(s[1]) for s in lp.get('src', []))}).")
 
     changes = []
     if a.since:
@@ -143,6 +170,11 @@ def main():
                 dead.append(f"- {w}: {type(ex).__name__} {u}")
 
     n_ev = sum(len(P.get("events", [])) for P in D.values())
+    if a.mark_reviewed:
+        cur_rev = REVIEWED | flagged
+        json.dump(sorted(cur_rev), open(REVIEWED_FILE, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+        print(f"Marked {len(flagged)} items as reviewed ({len(cur_rev)} in total) in {REVIEWED_FILE}.")
+        return
     out = [f"# Protest Atlas data review · {TODAY}", "",
            f"{len(D)} countries, {n_ev} events. Work top to bottom; the first sections are the ones that would hurt most if wrong.", ""]
     def sec(title, lst, empty="Nothing to check."):

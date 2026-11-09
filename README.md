@@ -24,3 +24,5 @@ Levels and "pressure on government" are Protest Atlas assessments built with fix
 
 ## Self-hosted libraries and fonts
 The site makes no requests to third parties: fonts (Barlow Condensed and Public Sans, SIL Open Font License, from @fontsource), d3-array and d3-geo (ISC licence) and the Natural Earth borders (world-atlas 2.0.2, public domain) are in `assets/`. To update them, fetch the same packages with `npm pack` and replace the files.
+
+`python3 tools/snapshot.py` computes the daily history snapshot from data/briefings.json (the daily routine uses it, so every day is computed the same way; `--check` compares with an existing file). `python3 tools/validate.py --since HEAD --only-changed` is the quiet daily mode; `--mark-reviewed` records the items you have checked in tools/reviewed.json.

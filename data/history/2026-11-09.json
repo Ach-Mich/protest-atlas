@@ -26,8 +26,7 @@
         "demand": "resignation",
         "opposition": true,
         "crackdown": true,
-        "response": "talks",
-        "fragility": null
+        "response": "talks"
       }
     },
     "AT": {
@@ -52,8 +51,7 @@
         "demand": "policy",
         "opposition": false,
         "crackdown": false,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "BA": {
@@ -75,7 +73,7 @@
     "BE": {
       "tier": "watch",
       "nat30": 0,
-      "minor30": 0,
+      "minor30": 1,
       "lastNational": "2026-10-09",
       "peakOff": null,
       "peakOrgc": null,
@@ -97,8 +95,7 @@
         "demand": "programme",
         "opposition": false,
         "crackdown": false,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "BG": {
@@ -124,8 +121,7 @@
         "demand": "resignation",
         "opposition": false,
         "crackdown": false,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "CH": {
@@ -141,6 +137,7 @@
       "nextDate": null,
       "nextStrike": false,
       "themes": [
+        "rights",
         "war"
       ],
       "groupTypes": [],
@@ -185,14 +182,13 @@
         "demand": "policy",
         "opposition": false,
         "crackdown": false,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "DE": {
       "tier": "watch",
       "nat30": 1,
-      "minor30": 0,
+      "minor30": 1,
       "lastNational": "2026-10-31",
       "peakOff": null,
       "peakOrgc": null,
@@ -214,8 +210,7 @@
         "demand": "policy",
         "opposition": false,
         "crackdown": false,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "DK": {
@@ -241,8 +236,7 @@
         "demand": "policy",
         "opposition": false,
         "crackdown": false,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "EE": {
@@ -315,7 +309,7 @@
       "peakOff": 575000,
       "peakOrgc": 1600000,
       "arrests30": 4008,
-      "deaths30": 0,
+      "deaths30": 1,
       "strike30": true,
       "nextDate": "2026-11-10",
       "nextStrike": false,
@@ -360,14 +354,13 @@
         "demand": "policy",
         "opposition": false,
         "crackdown": false,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "GR": {
       "tier": "watch",
       "nat30": 2,
-      "minor30": 0,
+      "minor30": 1,
       "lastNational": "2026-11-05",
       "peakOff": null,
       "peakOrgc": null,
@@ -391,8 +384,7 @@
         "demand": "programme",
         "opposition": false,
         "crackdown": false,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "HR": {
@@ -449,8 +441,7 @@
         "demand": "policy",
         "opposition": false,
         "crackdown": false,
-        "response": "talks",
-        "fragility": null
+        "response": "talks"
       }
     },
     "IS": {
@@ -471,14 +462,14 @@
     },
     "IT": {
       "tier": "watch",
-      "nat30": 2,
-      "minor30": 0,
-      "lastNational": "2026-10-17",
+      "nat30": 3,
+      "minor30": 1,
+      "lastNational": "2026-10-30",
       "peakOff": null,
       "peakOrgc": 100000,
       "arrests30": null,
       "deaths30": 0,
-      "strike30": false,
+      "strike30": true,
       "nextDate": "2026-11-20",
       "nextStrike": true,
       "themes": [
@@ -494,8 +485,7 @@
         "demand": "programme",
         "opposition": false,
         "crackdown": false,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "LT": {
@@ -632,13 +622,12 @@
         "demand": "policy",
         "opposition": false,
         "crackdown": false,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "PT": {
       "tier": "watch",
-      "nat30": 2,
+      "nat30": 3,
       "minor30": 0,
       "lastNational": "2026-10-31",
       "peakOff": null,
@@ -661,8 +650,7 @@
         "demand": "policy",
         "opposition": false,
         "crackdown": true,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "RO": {
@@ -782,15 +770,14 @@
         "demand": "policy",
         "opposition": false,
         "crackdown": false,
-        "response": "none",
-        "fragility": null
+        "response": "none"
       }
     },
     "XK": {
-      "tier": "screen",
+      "tier": "watch",
       "nat30": 0,
       "minor30": 0,
-      "lastNational": null,
+      "lastNational": "2026-10-05",
       "peakOff": null,
       "peakOrgc": null,
       "arrests30": null,
@@ -798,7 +785,9 @@
       "strike30": false,
       "nextDate": null,
       "nextStrike": false,
-      "themes": [],
+      "themes": [
+        "governance"
+      ],
       "groupTypes": [],
       "pressure": null
     }

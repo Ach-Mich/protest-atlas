@@ -26,3 +26,6 @@ If a file `review/acled_latest.md` was updated in the last 8 days, read it, rese
 
 ## F. Translation (only after the phase 2 decision)
 For each briefing, also write "i18n": {"fr": {summary, reasons, next, groups[].name/short/items, events[].title/cause/org/extra}, "de": {...}} with the same structure, translated faithfully; keep source titles and numbers unchanged.
+
+## G. Update (quiet validation and scripted snapshot)
+The merged prompt in routine-prompt-full.md now (a) computes the daily snapshot with `python3 tools/snapshot.py` and rewrites today's history document if data changed after an earlier run, and (b) validates with `--only-changed`, so only new or revised items appear under "To check by hand". After you have checked the current list by hand, run `python3 tools/validate.py --mark-reviewed` and commit `tools/reviewed.json`: those items stop being listed until they change.

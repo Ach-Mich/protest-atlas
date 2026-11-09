@@ -23,21 +23,20 @@ If a screen country has a new protest that does not qualify, update its "lastPro
 ## 3. Monday screen
 On Mondays (Europe/Paris), also check every screen country one by one with at least one search in its own language for the last 7 days, and set screenedAt on each. Move a watch country back to "screen" only when it has had no event (national or minor) in the last 60 days and no announced future date.
 
-## 4. Daily snapshot (every run, after the briefings are written)
-Write one document to the collection "history" with doc id = today's date in Europe/Paris ("YYYY-MM-DD"), op "set" (if it already exists, read it first and pass its version as if_version). Content, computed from the briefings as they stand after your writes:
-{date, countries: {ISO2: {tier, nat30 (national events in the last 30 days), minor30 (minor events in the last 30 days), lastNational (date of the latest national event or null), peakOff (largest official count among national events in the last 30 days or null), peakOrgc (largest organisers' count among them or null), arrests30 (sum where reported, null if none reported), deaths30 (sum, 0 if none), strike30 (true if a national strike event in the last 30 days), nextDate (or null), nextStrike (boolean), themes, groupTypes (distinct groups[].type), pressure: {demand, opposition, crackdown, response, fragility} or null}}}.
-Never edit history documents from previous days.
+## 4. Export the data and write the daily snapshot (every run, after the briefings are written)
+If the repository Ach-Mich/protest-atlas is available in this run (cloned in your working directory):
+- Re-read the whole "briefings" collection after your writes and save it as data/briefings.json, one JSON object keyed by ISO2 code containing each document's fields (pretty-printed, UTF-8, keys sorted by country code). Change no other file except the history file below. Do not commit yet.
+- Compute today's snapshot with the script, not by hand: `python3 tools/snapshot.py -o data/history/YYYY-MM-DD.json` (YYYY-MM-DD = today's date in Europe/Paris; the script uses that date).
+- Write that same content to the collection "history" with doc id = today's date, op "set". If the document already exists, read it first and pass its version as if_version; if the script's output differs from the existing document (for example because data changed after an earlier run today), overwrite it. Never edit history documents from previous days.
+If the repository is not available, say so clearly at the top of the final summary and compute the snapshot by hand: {date, countries: {ISO2: {tier, nat30 (national, non-minor events in the last 30 days), minor30, lastNational, peakOff, peakOrgc (largest official / organisers' count among national events in the last 30 days or null), arrests30 (sum where reported, null if none), deaths30, strike30, nextDate, nextStrike, themes, groupTypes, pressure {demand, opposition, crackdown, response, fragility if known} or null}}}.
 
-## 5. Prepare the data for the public website (GitHub)
-If the repository Ach-Mich/protest-atlas is available in this run (cloned in your working directory): re-read the whole "briefings" collection after your writes and save it as data/briefings.json, one JSON object keyed by ISO2 code containing each document's fields (pretty-printed, UTF-8, keys sorted by country code). Save today's history document as data/history/YYYY-MM-DD.json. Change no other file in the repository. Do not commit yet. If the repository is not available, say so clearly at the top of the final summary.
-
-## 6. Validate (before anything is pushed)
-In the cloned repository run `python3 tools/validate.py --since HEAD -o /tmp/review.md` (HEAD is the last commit, so this lists what this run added or changed) and read /tmp/review.md.
+## 5. Validate (before anything is pushed)
+In the cloned repository run `python3 tools/validate.py --since HEAD --only-changed -o /tmp/review.md` (HEAD is the last commit, so this lists what this run added or changed; items a person has already reviewed are left out) and read /tmp/review.md.
 - If section 0 (blocking problems) is not empty, fix the data in the database and in data/briefings.json and re-run. If you cannot fix it, do not push; say so at the top of the final summary and send a notification.
-- Put the items of section 1 (high-stakes figures) and section 3 (events added or revised) in the final summary under "To check by hand", with their source links.
+- Put the items of sections 1 and 2 (high-stakes figures, source quality) and section 3 (events added or revised) in the final summary under "To check by hand", with their source links.
 - The review file is outside the repository: never commit it.
 
-## 7. Commit and push
+## 6. Commit and push
 Commit with the message "Daily data update YYYY-MM-DD" and push directly to the main branch (this is intended: GitHub Pages publishes the site from main). If the push fails, say so clearly at the top of the final summary.
 
 ## Document fields (keep this exact structure)
@@ -75,4 +74,4 @@ Write with ArtifactData action "batch" (max 50 writes per call), op "set" with t
 Send a notification (PushNotification, message inside <routine_summary> tags, first sentence = the most important thing) when: a death or serious-injury figure was added or revised; a new national strike date was announced; a country changed tier or moved to Major; the validator found a blocking problem; or any step failed (access denied, a command failed, the push failed). Stay silent when nothing changed.
 
 ## Final summary
-Start with whether the website data was pushed to GitHub (steps 5 to 7) and whether validation passed. Then list, per country you changed: what was added or changed and the sources. Then list any country that moved tier, any new national strike date, any change in a "pressure" signal (demand, opposition, crackdown, response, fragility), and explicitly any death or serious-injury figure you added or revised. Then a section "To check by hand" with the validator's high-stakes figures and added or revised events, with source links. If nothing changed anywhere, say so in one sentence.
+Start with whether the website data was pushed to GitHub (steps 4 to 6) and whether validation passed. Then list, per country you changed: what was added or changed and the sources. Then list any country that moved tier, any new national strike date, any change in a "pressure" signal (demand, opposition, crackdown, response, fragility), and explicitly any death or serious-injury figure you added or revised. Then a section "To check by hand" with the validator's high-stakes figures and added or revised events, with source links. If nothing changed anywhere, say so in one sentence.
