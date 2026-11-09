@@ -31,6 +31,16 @@ WEAK = {"gdeltcloud.com","wikipedia.org","ground.news","groundnews.lakegeneva.li
   "sopaimages.com","anadoluimages.com","imago-images.com","imago-images.de","europeanconservative.com","rtonews7.blogspot.com","blogspot.com","substack.com","medium.com",
   "wsws.org","socialistworld.net","visitworld.today","pixidia.com","newstimes.com.ng"}
 
+SRC_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sources.json")
+SOURCES = json.load(open(SRC_FILE, encoding="utf-8")) if os.path.exists(SRC_FILE) else {}
+def is_official(code, url):
+    d = dom(url)
+    doms = set(SOURCES.get(code, {}).get("official", [])) | {"europa.eu", "interieur.gouv.fr", "gov.uk"}
+    return any(d == x or d.endswith("." + x) or d.endswith(".gouv.fr") or d.endswith(".gov") or d.endswith(".gob.es") or d.endswith(".gov.uk") for x in doms)
+def is_wire(code, url):
+    d = dom(url)
+    return any(d == x or d.endswith("." + x) for x in set(SOURCES.get(code, {}).get("wire", [])) | set(SOURCES.get("_default", {}).get("wire", [])))
+
 def dom(url):
     h = (urlparse(url).hostname or "").lower()
     return h[4:] if h.startswith("www.") else h
@@ -119,6 +129,12 @@ def main():
             tiers = [tier(s[1]) for s in src] if src else []
             if tiers and all(t == "weak" for t in tiers): addp(p2, ref, "all sources are weak (" + ", ".join(sorted({dom(s[1]) for s in src})) + ").")
             elif tiers and "strong" not in tiers and not e.get("warn"): addp(p2, ref, "no recognised news source (" + ", ".join(sorted({dom(s[1]) for s in src})) + ") and no `warn` flag.")
+            # official-figure sourcing: `off` / `arrests` should rest on an official release or a wire/public-broadcaster report
+            if (off or e.get("arrests")) and not any(is_official(c, s[1]) or is_wire(c, s[1]) for s in src):
+                addp(p2, ref, "official/arrest figure without an official or wire/public-broadcaster source (see tools/sources.json).")
+            if off and e.get("arrests") and e["arrests"] / off > 0.02: addp(p1, ref, f"arrests are {e['arrests']/off:.1%} of the official crowd; check scope (protest-only?) and `arrestsNote`.")
+            if e.get("arrests") and e["arrests"] >= 300 and not e.get("arrestsNote") and not any(is_official(c, s[1]) for s in src): addp(p1, ref, "large arrest total with no official source and no `arrestsNote` on scope.")
+            if e.get("warn") and re.search(r"evening|provisional|revis", e["warn"], re.I) and d and (TODAY - d).days > 7: addp(p3, ref, "provisional/evening-tally warning is over 7 days old; replace with the final figure and drop the warning.")
             if len(src) == 1 and not e.get("warn") and (e.get("deaths") or big >= 50000): addp(p2, ref, "single source for a high-stakes figure; add a second source or a `warn`.")
         # country level
         if P.get("tier") == "watch":

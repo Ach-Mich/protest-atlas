@@ -21,6 +21,7 @@ Levels and "pressure on government" are Protest Atlas assessments built with fix
 `python3 tools/validate.py` prints a Markdown checklist of what to verify by hand, highest risk first: structure errors, large crowd, arrest, injury and death figures, weak or single sources, and housekeeping. Useful options: `--since HEAD~1` lists events added or revised since a git ref (the daily review list), `--links` checks that every source URL still opens, `-o review.md` writes the report to a file. It never changes data and exits with code 1 if it finds a blocking problem. Source quality lists (`STRONG`, `WEAK`) are at the top of the script.
 
 `python3 tools/acled_compare.py path/to/ACLED_weekly_export.csv` compares our data with an ACLED weekly aggregated export for Europe: protest-related deaths ACLED records that we do not, countries where ACLED sees steady or rising activity and we record nothing, and the reverse. It is a recall check (did we miss something?), not a check of individual figures.
+- `tools/sources.json`: per-country registry of official, wire and organiser sources, read by the routine and by `tools/validate.py`.
 
 ## Self-hosted libraries and fonts
 The site makes no requests to third parties: fonts (Barlow Condensed and Public Sans, SIL Open Font License, from @fontsource), d3-array and d3-geo (ISC licence) and the Natural Earth borders (world-atlas 2.0.2, public domain) are in `assets/`. To update them, fetch the same packages with `npm pack` and replace the files.
