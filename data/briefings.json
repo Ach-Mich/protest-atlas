@@ -1103,7 +1103,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "ES": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-09T12:49:05+01:00",
     "country": "Spain",
     "events": [
       {
@@ -1175,10 +1175,10 @@
       },
       {
         "arrests": null,
-        "cause": "Housing crisis: an 87-year-old woman was evicted a day after Congress rejected two housing decrees",
+        "cause": "Housing crisis: anger over the eviction of an 87-year-old woman in Madrid, and two government housing measures rejected in parliament the day before",
         "date": "2026-10-03",
         "deaths": null,
-        "extra": "Figures are for Madrid: government delegation 70,000, tenants' union 500,000; incidents between police and protesters in Valencia; calls for a general strike",
+        "extra": "Tens of thousands in Madrid; peaceful in about 50 cities. In Valencia, police fired rubber bullets and tear gas and about 30 people entered the City of Arts and Sciences before being removed; protests in Barcelona and L'Hospitalet were called off because of rain. Demonstrators called for a general strike. Media reported the PM might call a snap election for November",
         "gatherings": null,
         "off": 70000,
         "org": "Tenants' union (Sindicato de Inquilinas) and housing groups",
@@ -1194,10 +1194,13 @@
           [
             "El Mercurio, 3 Oct 2026",
             "https://elmercurio.com.ec/mundo-noticias/2026/10/03/espana-vivienda-crisis-manifestaciones/"
+          ],
+          [
+            "Reuters (via Cyprus Mail), 3 Oct 2026",
+            "https://cyprus-mail.com/2026/10/03/tens-of-thousands-protest-across-spain-over-housing-crisis"
           ]
         ],
-        "title": "Housing protests in Madrid and more than 50 other cities",
-        "warn": "Single-city figures; check a second source for the official count"
+        "title": "Housing protests in Madrid and about 50 other Spanish cities"
       },
       {
         "arrests": null,
@@ -1263,8 +1266,9 @@
     "nextDate": "2026-11-11",
     "nextStrike": true,
     "pressure": {
-      "assessedAt": "2026-11-08",
-      "crackdown": false,
+      "assessedAt": "2026-11-09",
+      "crackdown": true,
+      "crackdownNote": "police fired rubber bullets and tear gas at housing protesters in Valencia on 3 Oct",
       "demand": "programme",
       "demandNote": "housing and wages; far-right groups also demand the PM resign",
       "fragility": "fragile",
@@ -1280,6 +1284,10 @@
         [
           "The Local, 2 Nov 2026",
           "https://www.thelocal.es/20261102/spains-train-drivers-call-more-strike-days-following-crash"
+        ],
+        [
+          "Reuters (via Cyprus Mail), 3 Oct 2026",
+          "https://cyprus-mail.com/2026/10/03/tens-of-thousands-protest-across-spain-over-housing-crisis"
         ]
       ]
     },
@@ -1320,7 +1328,7 @@
       "wages"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T11:45:10+01:00"
+    "updatedAt": "2026-11-09T12:49:05+01:00"
   },
   "FI": {
     "checkedAt": "2026-11-09T08:00:00+01:00",

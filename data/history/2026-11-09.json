@@ -280,7 +280,7 @@
       "pressure": {
         "demand": "programme",
         "opposition": false,
-        "crackdown": false,
+        "crackdown": true,
         "response": "crisis",
         "fragility": "fragile"
       }
