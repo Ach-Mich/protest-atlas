@@ -1344,7 +1344,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "FR": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-09T12:40:11+01:00",
     "country": "France",
     "events": [
       {
@@ -1532,11 +1532,12 @@
         "warn": "Figures from press reports; no consolidated ministry release found"
       },
       {
-        "arrests": null,
-        "cause": "Freeze of the public-sector pay index (point d'indice) and wages",
+        "arrests": 440,
+        "arrestsNote": "440 arrests linked to the high-school mobilisation that day, per Interior Minister Laurent Nuñez",
+        "cause": "Freeze of the public-sector pay index (point d'indice) in the 2027 budget, and wages",
         "date": "2026-09-29",
         "deaths": null,
-        "extra": "About 170 gatherings; strike rate 9.64% in the state civil service at midday (ministry); public sector only, not a general strike",
+        "extra": "About 170 gatherings; strike rate 9.64% in the state civil service at midday (ministry); public sector only, not a general strike. In parallel, high-school pupils took action: 338 schools still affected at the end of the day, 45 fully blocked",
         "gatherings": 170,
         "off": 206000,
         "org": "Eight public-service unions: CGT, FO, CFDT, UNSA, FSU, Solidaires, CFE-CGC, FA-FP",
@@ -1546,16 +1547,19 @@
         "protInj": null,
         "src": [
           [
-            "Acteurs publics",
-            "https://acteurspublics.fr/articles/la-greve-dans-la-fonction-publique-reste-limitee-avec-une-mobilisation-plus-forte-au-sein-de-letat-que-dans-les-autres-versants/"
+            "BFMTV: CGT claims over 300,000 demonstrators, 70,000 in Paris",
+            "https://www.bfmtv.com/societe/greves/greve-de-la-fonction-publique-la-cgt-revendique-plus-de-300-000-manifestants-en-france-et-70-000-a-paris_AD-202609290674.html"
           ],
           [
-            "Journal de l'économie",
-            "https://www.journaldeleconomie.fr/greve-du-29-septembre-qui-est-mobilise-et-pourquoi/"
+            "BFMTV live blog, 29 Sep 2026 (ministry figure, schools, arrests)",
+            "https://www.bfmtv.com/societe/greves/direct-une-journee-de-greve-pour-peser-sur-le-budget-les-agents-de-la-fonction-publique-manifestent-partout-en-france-pour-reclamer-de-meilleurs-salaires_LN-202609290058.html"
+          ],
+          [
+            "Acteurs publics (strike rates)",
+            "https://acteurspublics.fr/articles/la-greve-dans-la-fonction-publique-reste-limitee-avec-une-mobilisation-plus-forte-au-sein-de-letat-que-dans-les-autres-versants/"
           ]
         ],
-        "title": "Public-service strike and demonstrations over pay (first joint call by all eight public-sector unions since 2018)",
-        "warn": "Crowd figures taken from press summaries; confirm against the interior ministry statement"
+        "title": "Public-service strike and demonstrations over pay (first joint call by all eight public-sector unions since 2018)"
       },
       {
         "arrests": null,
@@ -1806,7 +1810,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T11:45:10+01:00"
+    "updatedAt": "2026-11-09T12:40:11+01:00"
   },
   "GB": {
     "checkedAt": "2026-11-09T11:45:00+01:00",
