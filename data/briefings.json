@@ -1344,7 +1344,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "FR": {
-    "checkedAt": "2026-11-09T12:40:11+01:00",
+    "checkedAt": "2026-11-09T12:42:14+01:00",
     "country": "France",
     "events": [
       {
@@ -1477,32 +1477,27 @@
         "title": "\"Convergence des colères\": youth, gilets jaunes and unions join"
       },
       {
-        "arrests": null,
-        "arrestsNote": "6,059 arrests nationwide since 28 Sep (Interior Ministry), cumulative",
+        "arrests": 488,
+        "arrestsNote": "488 arrested on the day (Interior Ministry); 6,059 since 28 Sep, cumulative",
         "cause": "Teacher shortages, overcrowded classes and school buildings; reaction to the blockades",
         "date": "2026-10-06",
         "deaths": null,
-        "extra": "More than 80 cities; no major incident reported in Paris",
+        "extra": "More than 80 cities. Blockades at several Paris lycées (Hélène-Boucher, Voltaire, Louis-le-Grand, Henry IV) and at the Sorbonne and ENS Paris-Saclay. Education Ministry: 891 establishments (250 in Île-de-France) had classes suspended, fully or partly, all causes combined",
         "gatherings": null,
         "off": 256000,
         "org": "High-school and student unions (USL, Union étudiante), joined by the parents' federation FCPE and education unions",
         "orgc": 450000,
-        "paris": "56,000 official",
-        "policeInj": null,
+        "paris": "56,000 official · 100,000 organisers",
+        "policeInj": 43,
         "protInj": null,
         "protInjNote": "235 injured since the start of the movement (Education Ministry): 65 staff, 160 pupils",
         "src": [
           [
             "Paris Match Belgique, 6 Oct 2026",
             "https://www.parismatch.be/actualites/monde/2026/10/06/mouvement-lyceen-en-france-plus-de-250000-manifestants-dans-les-rues-la-mobilisation-appelee-a-se-poursuivre-EOPSKOPQAVAJBHRVJAMTH5CY5M/"
-          ],
-          [
-            "Vacances-scolaires.com, 13 Oct 2026",
-            "https://vacances-scolaires.com/actualites/2026/10/13/manifestations-lyceennes-d-octobre-2026-bilan-de-la-mobilisation-revendications-et-impact-attendu-des-vacances-de-la/"
           ]
         ],
-        "title": "National day of high-school and student demonstrations (\"Acte III\")",
-        "warn": "Organisers' figure comes from a single school-news site"
+        "title": "National day of high-school and student demonstrations (\"Acte III\")"
       },
       {
         "arrests": null,
@@ -1810,7 +1805,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T12:40:11+01:00"
+    "updatedAt": "2026-11-09T12:42:14+01:00"
   },
   "GB": {
     "checkedAt": "2026-11-09T11:45:00+01:00",
