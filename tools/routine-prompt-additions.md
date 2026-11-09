@@ -11,11 +11,12 @@ Paste these blocks into the scheduled prompt (see the step-by-step in the chat).
 - Pre-event notices (articles published before the day) do not confirm turnout: add "warn": "Source is a pre-event notice; turnout not found".
 - Crowd figures: official (police or ministry) figure in "off", organisers' in "orgc", never mix them. If a figure comes from a press summary and not from the ministry or organisers themselves, add a "warn".
 
-## C. New step after step 5 (validation)
-6. In the cloned repository run `python3 tools/validate.py --since HEAD~1 -o review.md`. Read review.md.
-   - If section 0 (blocking problems) is not empty, fix the data before pushing, or say so at the top of the final summary and send a notification.
+## C. New validation step, BEFORE the commit and push
+Split the old step 5 into three: 5 prepare the website data, 6 validate, 7 commit and push. The validation must run before anything is pushed, so that a problem can be fixed first.
+6. In the cloned repository, after data/briefings.json and the history file have been written but before committing, run `python3 tools/validate.py --since HEAD -o /tmp/review.md` (HEAD is the last commit, so this lists what this run added or changed). Read /tmp/review.md.
+   - If section 0 (blocking problems) is not empty, fix the data and re-run; if you cannot, do not push, say so at the top of the final summary and send a notification.
    - Put the items of section 1 (high-stakes figures) and section 3 (events added or revised) in the final summary under "To check by hand", with the source links.
-   - Do not commit review.md.
+   - The review file is written outside the repository, so it is never committed.
 
 ## D. Notification rules (add to the end)
 Send a notification (PushNotification, inside <routine_summary>) when: a death or serious-injury figure was added or revised; a new national strike date was announced; a country changed tier or moved to Major; the validator found a blocking problem; or any step failed (access denied, push failed). Stay silent when nothing changed.
