@@ -64,7 +64,7 @@ Commit with the message "Daily data update YYYY-MM-DD" and push directly to the 
     fragility: "stable" | "strained" (minority government, or a coalition in open conflict) | "fragile" (caretaker government, government has fallen, or a national election within 2 months); omit the field when no source lets you assess it, fragilityNote: short phrase,
     src: [[label, url], ...] for the claims above, assessedAt: "YYYY-MM-DD" }.
   Every value must come from sources; do not guess fragility.
-- checkedAt: now (ISO). updatedAt: now, only if you changed content. screenedAt: now when you screened the country.
+- checkedAt: now (ISO). updatedAt: now, only if you changed content. screenedAt: now when you screened the country. "Now" is the real current time: get it with `TZ=Europe/Paris date -Iseconds`, never write a time you made up, and never write a timestamp earlier than the one already stored (if a document is already stamped later than the start of this run, leave it).
 Write neutrally, attribute claims, paraphrase (never copy article sentences).
 
 ## Writing

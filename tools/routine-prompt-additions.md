@@ -29,3 +29,6 @@ For each briefing, also write "i18n": {"fr": {summary, reasons, next, groups[].n
 
 ## G. Update (quiet validation and scripted snapshot)
 The merged prompt in routine-prompt-full.md now (a) computes the daily snapshot with `python3 tools/snapshot.py` and rewrites today's history document if data changed after an earlier run, and (b) validates with `--only-changed`, so only new or revised items appear under "To check by hand". After you have checked the current list by hand, run `python3 tools/validate.py --mark-reviewed` and commit `tools/reviewed.json`: those items stop being listed until they change.
+
+## H. Timestamps
+Use the real current time from `TZ=Europe/Paris date -Iseconds` for checkedAt, updatedAt and screenedAt, never a time you made up, and never move a stored timestamp backwards.

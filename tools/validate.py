@@ -132,8 +132,8 @@ def main():
         if nd and nd < TODAY - dt.timedelta(days=1): add(p3, tag, f"`nextDate` {nd} has passed; remove it or add the event.")
         if P.get("nextStrike") and not P.get("nextDate"): add(p3, tag, "`nextStrike` is set but there is no `nextDate`.")
         recent = [e for e in ev if (d := parse_date(e.get("date", ""))) and (TODAY - d).days <= 30 and not e.get("minor")]
-        if recent and not P.get("pressure"): add(p3, tag, "national protest in the last 30 days but no `pressure` block.")
-        if recent and not P.get("themes"): add(p3, tag, "national protest in the last 30 days but no `themes`.")
+        if recent and P.get("reasons") and not P.get("pressure"): add(p3, tag, "national protest in the last 30 days but no `pressure` block.")
+        if recent and P.get("reasons") and not P.get("themes"): add(p3, tag, "national protest in the last 30 days with reasons but no `themes`.")
         lp = P.get("lastProtest")
         if lp:
             cur[0] = fp_last(c, lp)

@@ -583,7 +583,7 @@
       "cost"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T12:00:00+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "BG": {
     "checkedAt": "2026-11-09T11:45:00+01:00",
@@ -650,7 +650,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "CH": {
-    "checkedAt": "2026-11-09T15:00:00+01:00",
+    "checkedAt": "2026-11-09T11:45:10+01:00",
     "country": "Switzerland",
     "events": [
       {
@@ -748,10 +748,10 @@
       "war"
     ],
     "tier": "screen",
-    "updatedAt": "2026-11-09T15:00:00+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "CY": {
-    "checkedAt": "2026-11-09T12:00:00+01:00",
+    "checkedAt": "2026-11-09T11:45:10+01:00",
     "country": "Cyprus",
     "events": [],
     "lastProtest": {
@@ -766,10 +766,10 @@
       "warn": "Single source (news digest); exact date unconfirmed"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-09T12:00:00+01:00",
+    "screenedAt": "2026-11-09T11:45:10+01:00",
     "summary": "",
     "tier": "screen",
-    "updatedAt": "2026-11-09T12:00:00+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "CZ": {
     "checkedAt": "2026-11-09T11:45:00+01:00",
@@ -993,7 +993,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T15:00:00+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "DK": {
     "checkedAt": "2026-11-09T11:45:00+01:00",
@@ -1320,7 +1320,7 @@
       "wages"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T16:00:00+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "FI": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -1806,7 +1806,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T14:00:00+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "GB": {
     "checkedAt": "2026-11-09T11:45:00+01:00",
@@ -2012,7 +2012,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T15:00:00+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "HR": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -2342,7 +2342,7 @@
       "war"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T16:00:00+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "LT": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -2418,16 +2418,16 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "NL": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-09T11:45:10+01:00",
     "country": "Netherlands",
     "events": [
       {
-        "arrests": 10,
-        "arrestsNote": "at least 10; other reports say 34",
+        "arrests": 34,
+        "arrestsNote": "34 per police (NL Times, Rodi); an earlier report said at least 10",
         "cause": "Not stated",
         "date": "2026-10-31",
         "deaths": null,
-        "extra": "Riot police intervened on the Malieveld; no headcount.",
+        "extra": "Riot police intervened on the Malieveld; no headcount. Most of those arrested were 15 to 18 years old, per police.",
         "off": null,
         "org": "Calls on social media, no named organiser",
         "orgc": null,
@@ -2438,6 +2438,10 @@
           [
             "NL Times, 31 Oct 2026",
             "https://nltimes.nl/2026/10/31/riot-police-respond-hague-amid-chaotic-gen-z-protest-least-10-arrested"
+          ],
+          [
+            "Rodi (The Hague), 31 Oct 2026",
+            "https://www.rodi.nl/denhaag/112-nieuws/122859/34-aanhoudingen-na-onrust-door-gen-z-oproep-in-den-haag"
           ]
         ],
         "title": "\"Gen Z\" youth protest in The Hague"
@@ -2449,7 +2453,7 @@
     "summary": "A \"Gen Z\" youth protest called on social media in The Hague on 31 October turned chaotic; riot police intervened. No clear demands were stated.",
     "themes": [],
     "tier": "watch",
-    "updatedAt": "2026-11-07T22:50:00+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "NO": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -2703,7 +2707,7 @@
       "cost"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T15:00:00+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "RO": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -2924,12 +2928,12 @@
     "reasons": [
       "War-crimes verdicts (reported)"
     ],
-    "screenedAt": "2026-11-09T12:00:00+01:00",
+    "screenedAt": "2026-11-09T11:45:10+01:00",
     "summary": "Protesters clashed with police in Pristina on 5 October, with police using tear gas and water cannon; reports link the protest to war-crimes verdicts, and a separate demonstration took place near parliament on 6 October before the presidential vote.",
     "themes": [
       "governance"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T12:00:00+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00"
   }
 }
