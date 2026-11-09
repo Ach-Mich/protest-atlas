@@ -1352,7 +1352,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "FR": {
-    "checkedAt": "2026-11-09T13:31:08+01:00",
+    "checkedAt": "2026-11-09T13:46:40+01:00",
     "country": "France",
     "events": [
       {
@@ -1408,8 +1408,8 @@
         "warn": "Evening tallies; figures may be revised."
       },
       {
-        "arrests": 779,
-        "arrestsNote": "779 in total including Halloween evening (Interior Ministry release); 565 at 21:00",
+        "arrests": 565,
+        "arrestsNote": "565 arrests at 21:00 on the demonstration day (Interior Ministry); the ministry's full total of 779 also includes the Halloween evening, so it is not counted here",
         "cause": "Cost of living and inequality",
         "date": "2026-10-31",
         "deaths": null,
@@ -1832,7 +1832,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T13:31:08+01:00"
+    "updatedAt": "2026-11-09T13:46:40+01:00"
   },
   "GB": {
     "checkedAt": "2026-11-09T11:45:00+01:00",
