@@ -3,6 +3,7 @@
 Where people are taking to the streets, and why: a protest watch for Europe, going worldwide.
 
 - `index.html` – the whole site (Home, Report, world map with country briefings).
+- `i18n.js` – interface translations (English, French, German) and the language switcher. Briefing texts written by the daily update are still English only.
 - `data/briefings.json` – one entry per tracked country, updated daily.
 - `data/history/YYYY-MM-DD.json` – one snapshot per day, used for trends.
 
