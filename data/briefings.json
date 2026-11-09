@@ -333,9 +333,31 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "BE": {
-    "checkedAt": "2026-11-09T08:00:00+01:00",
+    "checkedAt": "2026-11-09T12:00:00+01:00",
     "country": "Belgium",
     "events": [
+      {
+        "arrests": null,
+        "cause": "Federal budget measures",
+        "date": "2026-10-12",
+        "deaths": null,
+        "extra": "Rail (SNCB) disruption planned from 11 Oct 22:00 to the last train on 12 Oct",
+        "minor": true,
+        "off": null,
+        "org": "Public-service unions",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "Paris Match Belgique, 8 Oct 2026",
+            "https://www.parismatch.be/actualites/societe/2026/10/08/manifestation-nationale-de-ce-vendredi-9-et-greve-du-lundi-12-octobre-voici-les-perturbations-prevues-UYOXOP5T35FNHJWH26HMKJXTMQ/"
+          ]
+        ],
+        "title": "Public-services strike day",
+        "warn": "Source is a notice published before the strike; turnout not reported"
+      },
       {
         "arrests": 110,
         "arrestsNote": "about 80 administrative, 30 judicial",
@@ -561,7 +583,7 @@
       "cost"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-08T06:41:59+01:00"
+    "updatedAt": "2026-11-09T12:00:00+01:00"
   },
   "BG": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -678,24 +700,25 @@
     "updatedAt": "2026-11-08T13:00:00+01:00"
   },
   "CY": {
-    "checkedAt": "2026-11-09T08:00:00+01:00",
+    "checkedAt": "2026-11-09T12:00:00+01:00",
     "country": "Cyprus",
     "events": [],
     "lastProtest": {
-      "date": "2026-06-22",
+      "date": "2026-10",
       "src": [
         [
-          "Kiprinform",
-          "https://www.kiprinform.com/en/cyprus_news/protest-in-nicosia-calls-for-resignation-of-attorney-general-and-deputy-after-anti-corruption-findings/"
+          "FrontPages.eu digest, 18 Oct 2026",
+          "https://buttondown.com/frontpageseu/archive/cyprus-dozens-of-cars-incinerated-in-field/"
         ]
       ],
-      "title": "Protest in Nicosia calling for the resignation of the attorney general and deputy after anti-corruption findings"
+      "title": "Protest at the presidential palace in Nicosia over high electricity costs, led by Fidias Panayiotou",
+      "warn": "Single source (news digest); exact date unconfirmed"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-09T08:00:00+01:00",
+    "screenedAt": "2026-11-09T12:00:00+01:00",
     "summary": "",
     "tier": "screen",
-    "updatedAt": "2026-11-07T22:50:00+01:00"
+    "updatedAt": "2026-11-09T12:00:00+01:00"
   },
   "CZ": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -1175,7 +1198,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "FR": {
-    "checkedAt": "2026-11-09T08:00:00+01:00",
+    "checkedAt": "2026-11-09T12:00:00+01:00",
     "country": "France",
     "events": [
       {
@@ -1278,8 +1301,8 @@
         "arrests": 1200,
         "cause": "Fuel prices and purchasing power",
         "date": "2026-10-17",
-        "deaths": null,
-        "extra": "Looting and fires in Paris, Lyon, Limoges and Marseille",
+        "deaths": 1,
+        "extra": "Looting and fires in Paris, Lyon, Limoges and Marseille; 1 death: a man died of cardio-respiratory arrest on Boulevard Magenta (Paris) as the march passed, per the Paris police prefecture; cause not specified",
         "gatherings": 1750,
         "off": 550000,
         "org": "Young people, gilets jaunes, students, climate groups",
@@ -1295,6 +1318,14 @@
           [
             "RTBF, 17 Oct 2026",
             "https://www.rtbf.be/article/11801730"
+          ],
+          [
+            "i24NEWS: man dies of cardio-respiratory arrest during the Paris march",
+            "https://www.i24news.tv/fr/actu/france/artc-un-homme-meurt-d-un-arret-cardio-respiratoire-pendant-la-manifestation-a-paris"
+          ],
+          [
+            "Le Tribunal du Net: demonstrator dies on Boulevard Magenta",
+            "https://www.letribunaldunet.fr/actualites/17-octobre-lendemain-manifestant-mort-boulevard-magenta-bilan.html"
           ]
         ],
         "title": "First national day: \"convergence des colères\""
@@ -1520,7 +1551,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-08T06:41:59+01:00"
+    "updatedAt": "2026-11-09T12:00:00+01:00"
   },
   "GB": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -2488,15 +2519,42 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "XK": {
-    "checkedAt": "2026-11-09T08:00:00+01:00",
+    "checkedAt": "2026-11-09T12:00:00+01:00",
     "country": "Kosovo",
-    "events": [],
+    "events": [
+      {
+        "arrests": null,
+        "cause": "Reportedly against war-crimes verdicts (not confirmed by a second source)",
+        "date": "2026-10-05",
+        "deaths": null,
+        "extra": "No turnout figure in our sources; a separate demonstration was held near parliament on 6 Oct before the vote to elect a president",
+        "off": null,
+        "org": "Not named in source",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "Euronews, 6 Oct 2026",
+            "https://www.euronews.com/2026/10/06/tear-gas-and-water-cannon-in-pristina-as-protesters-clash-with-police"
+          ]
+        ],
+        "title": "Protest in Pristina; police used tear gas and water cannon",
+        "warn": "Single source so far (Euronews video report)"
+      }
+    ],
     "groups": [],
     "next": "No new date announced in our sources yet.",
-    "reasons": [],
-    "screenedAt": "2026-11-09T08:00:00+01:00",
-    "summary": "",
-    "themes": [],
-    "tier": "screen"
+    "reasons": [
+      "War-crimes verdicts (reported)"
+    ],
+    "screenedAt": "2026-11-09T12:00:00+01:00",
+    "summary": "Protesters clashed with police in Pristina on 5 October, with police using tear gas and water cannon; reports link the protest to war-crimes verdicts, and a separate demonstration took place near parliament on 6 October before the presidential vote.",
+    "themes": [
+      "governance"
+    ],
+    "tier": "watch",
+    "updatedAt": "2026-11-09T12:00:00+01:00"
   }
 }
