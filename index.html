@@ -1,7 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><script src="i18n.js"></script><title>Protest Atlas · Where people are protesting in Europe, and why</title><meta name="description" content="A daily protest watch for Europe: where people are taking to the streets, how many, why, and how much pressure it puts on governments. Sourced briefings for 38 countries."><meta property="og:type" content="website"><meta property="og:site_name" content="Protest Atlas"><meta property="og:title" content="Protest Atlas"><meta property="og:description" content="Where people are taking to the streets in Europe, how big it is, and why. Sourced briefings, updated daily."><meta property="og:url" content="https://protestatlas.org/"><link rel="canonical" href="https://protestatlas.org/"><meta name="theme-color" content="#F5F6F7"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%231F5F73%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%273%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%272%27 fill=%27%23fff%27/%3E%3C/svg%3E"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/fonts.css">
 <style>
 /* Layout: tile-grid cartogram of Europe beside a country briefing panel; stacks on phones */
 :root{
@@ -1427,9 +1426,9 @@ function tjFeatures(topo,obj){const tf=topo.transform;
   return topo.objects[obj].geometries.map(g=>({type:"Feature",id:g.id,properties:g.properties||{},geometry:
     g.type==="Polygon"?{type:"Polygon",coordinates:g.arcs.map(ring)}:g.type==="MultiPolygon"?{type:"MultiPolygon",coordinates:g.arcs.map(p=>p.map(ring))}:null})).filter(f=>f.geometry)}
 async function loadWorld(){
-  await loadScript("https://cdn.jsdelivr.net/npm/d3-array@3.2.4/dist/d3-array.min.js");
-  await loadScript("https://cdn.jsdelivr.net/npm/d3-geo@3.1.1/dist/d3-geo.min.js");
-  const mod=await import("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json/+esm");
+  await loadScript("assets/d3-array.min.js");
+  await loadScript("assets/d3-geo.min.js");
+  const mod=await fetch("assets/countries-50m.json").then(r=>{if(!r.ok)throw new Error("Could not load assets/countries-50m.json");return r.json()});
   const topo=mod.default||mod;if(!topo||!topo.objects||!topo.objects.countries)throw new Error("World borders are empty");
   buildWorld(tjFeatures(topo,"countries"))}
 function buildWorld(feats){const d3=window.d3,NS="http://www.w3.org/2000/svg";
