@@ -1383,6 +1383,7 @@
       },
       {
         "arrests": 448,
+        "arrestsNote": "Ministry tally as of 18:00 on the day; provisional and may rise.",
         "cause": "Minimum wage, pay, tax fairness, public services, study conditions",
         "date": "2026-11-05",
         "deaths": null,
@@ -1395,6 +1396,10 @@
         "protInj": null,
         "src": [
           [
+            "Interior Ministry release, 5 Nov 2026",
+            "https://www.interieur.gouv.fr/actualites/communiques-de-presse/bilan-de-mobilisation-lyceenne-et-de-journee-nationale-daction-du-5-novembre-2026"
+          ],
+          [
             "L'essentiel, 5 Nov 2026",
             "https://www.lessentiel.lu/fr/story/crises-en-france-si-vous-voulez-manifester-quittez-immediatement-les-lieux-103644650"
           ],
@@ -1405,7 +1410,7 @@
         ],
         "strike": true,
         "title": "Interprofessional strike and demonstrations",
-        "warn": "Evening tallies; figures may be revised."
+        "warn": "Ministry figures are provisional (evening tally) and may be revised; organisers' count is the unions' own."
       },
       {
         "arrests": 565,
