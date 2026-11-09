@@ -1344,7 +1344,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "FR": {
-    "checkedAt": "2026-11-09T12:42:14+01:00",
+    "checkedAt": "2026-11-09T12:45:27+01:00",
     "country": "France",
     "events": [
       {
@@ -1492,6 +1492,10 @@
         "protInj": null,
         "protInjNote": "235 injured since the start of the movement (Education Ministry): 65 staff, 160 pupils",
         "src": [
+          [
+            "Euronews (FR), 6 Oct 2026: 891 lycées perturbés (ministère)",
+            "https://fr.euronews.com/2026/10/06/mobilisation-lyceenne-acte-iii-891-lycees-perturbes-annonce-le-ministere-de-linterieur"
+          ],
           [
             "Paris Match Belgique, 6 Oct 2026",
             "https://www.parismatch.be/actualites/monde/2026/10/06/mouvement-lyceen-en-france-plus-de-250000-manifestants-dans-les-rues-la-mobilisation-appelee-a-se-poursuivre-EOPSKOPQAVAJBHRVJAMTH5CY5M/"
@@ -1805,7 +1809,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T12:42:14+01:00"
+    "updatedAt": "2026-11-09T12:45:27+01:00"
   },
   "GB": {
     "checkedAt": "2026-11-09T11:45:00+01:00",
