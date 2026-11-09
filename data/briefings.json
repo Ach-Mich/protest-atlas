@@ -650,7 +650,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "CH": {
-    "checkedAt": "2026-11-09T08:00:00+01:00",
+    "checkedAt": "2026-11-09T15:00:00+01:00",
     "country": "Switzerland",
     "events": [
       {
@@ -674,6 +674,55 @@
         ],
         "title": "Pro-Palestinian march in Lausanne (about 1,000 in Zurich the same day)",
         "warn": "Single source so far (Wikipedia list); regional demonstrations in two cities"
+      },
+      {
+        "arrests": null,
+        "cause": "Climate action after a record-hot summer",
+        "date": "2026-09-25",
+        "deaths": null,
+        "extra": "Several thousand on the Bundesplatz in Bern; some sources dated the Bern and Zurich rallies 19 Sep before correcting to 25 Sep",
+        "gatherings": null,
+        "minor": true,
+        "off": null,
+        "org": "Climate groups",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "SRF",
+            "https://www.srf.ch/news/schweiz/lausanne-und-genf-tausende-demonstrierende-fordern-klima-massnahmen"
+          ],
+          [
+            "Bluewin",
+            "https://www.bluewin.ch/en/news/several-thousand-people-are-demonstrating-in-bern-for-climate-action-li.3613554"
+          ]
+        ],
+        "title": "Climate protests in Bern (several thousand), Basel (about 4,000) and other cities",
+        "warn": "Dates differ between sources; no official count"
+      },
+      {
+        "arrests": null,
+        "cause": "Climate action after a record-hot summer",
+        "date": "2026-09-19",
+        "deaths": null,
+        "gatherings": null,
+        "minor": true,
+        "off": null,
+        "org": "Climate groups",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "SRF",
+            "https://www.srf.ch/news/schweiz/lausanne-und-genf-tausende-demonstrierende-fordern-klima-massnahmen"
+          ]
+        ],
+        "title": "Climate protests in Lausanne and Geneva (thousands)",
+        "warn": "No official count; the organisers describe it as a start"
       }
     ],
     "lastProtest": {
@@ -689,15 +738,17 @@
     },
     "next": "No new date announced in our sources yet.",
     "reasons": [
+      "Climate action",
       "Gaza solidarity"
     ],
     "screenedAt": "2026-11-09T08:00:00+01:00",
-    "summary": "Pro-Palestinian marches took place in Lausanne and Zurich on 10 October, with about 2,000 and 1,000 people reported by a single source so far.",
+    "summary": "Climate protests drew thousands in Lausanne, Geneva, Bern and Basel in September, and pro-Palestinian marches took place in Lausanne and Zurich on 10 October.",
     "themes": [
+      "rights",
       "war"
     ],
     "tier": "screen",
-    "updatedAt": "2026-11-08T13:00:00+01:00"
+    "updatedAt": "2026-11-09T15:00:00+01:00"
   },
   "CY": {
     "checkedAt": "2026-11-09T12:00:00+01:00",
@@ -825,7 +876,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "DE": {
-    "checkedAt": "2026-11-09T08:00:00+01:00",
+    "checkedAt": "2026-11-09T15:00:00+01:00",
     "country": "Germany",
     "events": [
       {
@@ -847,6 +898,29 @@
           ]
         ],
         "title": "\"Gen Z regelt\" youth rallies"
+      },
+      {
+        "arrests": null,
+        "cause": "Gaza solidarity",
+        "date": "2026-10-10",
+        "deaths": null,
+        "extra": "About 3,500 people per a regional news site",
+        "gatherings": null,
+        "minor": true,
+        "off": null,
+        "org": "Not named in source",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "MS Aktuell",
+            "https://ms-aktuell.de/?p=167304"
+          ]
+        ],
+        "title": "Pro-Palestine march in Berlin near the Chancellery",
+        "warn": "Single source so far"
       }
     ],
     "groups": [
@@ -919,7 +993,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T08:00:00+01:00"
+    "updatedAt": "2026-11-09T15:00:00+01:00"
   },
   "DK": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -1029,7 +1103,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "ES": {
-    "checkedAt": "2026-11-09T08:00:00+01:00",
+    "checkedAt": "2026-11-09T15:00:00+01:00",
     "country": "Spain",
     "events": [
       {
@@ -1075,6 +1149,55 @@
           ]
         ],
         "title": "Protest at the Transport Ministry after the Urda crash"
+      },
+      {
+        "arrests": null,
+        "cause": "Housing crisis",
+        "date": "2026-10-05",
+        "deaths": null,
+        "extra": "Fires and arrests reported; no figures in our sources",
+        "gatherings": null,
+        "minor": true,
+        "off": null,
+        "org": "Housing groups",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "Euronews (ES), 6 Oct 2026",
+            "https://es.euronews.com/video/2026/10/06/la-protesta-por-la-vivienda-se-torna-violenta-en-barcelona-con-incendios-y-detenciones"
+          ]
+        ],
+        "title": "Housing protest in Barcelona turns violent",
+        "warn": "Single source so far (video report)"
+      },
+      {
+        "arrests": null,
+        "cause": "Housing crisis: an 87-year-old woman was evicted a day after Congress rejected two housing decrees",
+        "date": "2026-10-03",
+        "deaths": null,
+        "extra": "Figures are for Madrid: government delegation 70,000, tenants' union 500,000; incidents between police and protesters in Valencia; calls for a general strike",
+        "gatherings": null,
+        "off": 70000,
+        "org": "Tenants' union (Sindicato de Inquilinas) and housing groups",
+        "orgc": 500000,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "Euronews (ES), 3 Oct 2026",
+            "https://es.euronews.com/2026/10/03/casi-500000-personas-protestan-en-madrid-por-la-crisis-de-la-vivienda-en-espana"
+          ],
+          [
+            "El Mercurio, 3 Oct 2026",
+            "https://elmercurio.com.ec/mundo-noticias/2026/10/03/espana-vivienda-crisis-manifestaciones/"
+          ]
+        ],
+        "title": "Housing protests in Madrid and more than 50 other cities",
+        "warn": "Single-city figures; check a second source for the official count"
       }
     ],
     "groups": [
@@ -1174,7 +1297,7 @@
       "wages"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-08T06:41:59+01:00"
+    "updatedAt": "2026-11-09T15:00:00+01:00"
   },
   "FI": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -1726,7 +1849,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "GR": {
-    "checkedAt": "2026-11-09T08:00:00+01:00",
+    "checkedAt": "2026-11-09T15:00:00+01:00",
     "country": "Greece",
     "events": [
       {
@@ -1778,6 +1901,28 @@
         ],
         "title": "Strikes and protests in 50+ towns",
         "warn": "Turnout from a single partisan source."
+      },
+      {
+        "arrests": null,
+        "cause": "Rising rents and lack of affordable student housing",
+        "date": "2026-10-20",
+        "deaths": null,
+        "gatherings": null,
+        "minor": true,
+        "off": null,
+        "org": "University students",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "Outlook India (AP photos)",
+            "https://www.outlookindia.com/international/greece-protest-in-photos-teachers-students-rally-in-athens-against-rising-cost-of-living"
+          ]
+        ],
+        "title": "Students camp in Syntagma Square overnight over rents and student housing",
+        "warn": "Single source (photo caption); no turnout reported"
       }
     ],
     "groups": [
@@ -1844,7 +1989,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-08T06:41:59+01:00"
+    "updatedAt": "2026-11-09T15:00:00+01:00"
   },
   "HR": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -2286,7 +2431,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "PT": {
-    "checkedAt": "2026-11-09T08:00:00+01:00",
+    "checkedAt": "2026-11-09T15:00:00+01:00",
     "country": "Portugal",
     "events": [
       {
@@ -2328,6 +2473,32 @@
           ]
         ],
         "title": "Housing march in Lisbon"
+      },
+      {
+        "arrests": null,
+        "cause": "Wages, pensions and public services, as the 2027 budget is debated",
+        "date": "2026-10-17",
+        "deaths": null,
+        "extra": "Start of a year-long CGTP campaign launched on 1 Oct; Lisbon march from Cais do Sodré to Rossio",
+        "gatherings": null,
+        "off": null,
+        "org": "CGTP-IN (union confederation)",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "Sabias Que: Manifestação Nacional de 17 de Outubro",
+            "https://sabiasque.pt/familia/noticias/3247-manifestacao-nacional-de-17-de-outubro-tudo-o-que-precisas-de-saber.html"
+          ],
+          [
+            "A Bola (citing Jornal de Notícias), 1 Oct 2026",
+            "https://www.abola.pt/noticias/mes-de-contestacao-outubro-vai-ter-oito-greves-2026100111183970925"
+          ]
+        ],
+        "title": "CGTP national demonstrations in Lisbon, Porto and Coimbra",
+        "warn": "Source is a pre-event notice; turnout not found"
       }
     ],
     "groups": [
@@ -2437,7 +2608,7 @@
       "cost"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-08T06:41:59+01:00"
+    "updatedAt": "2026-11-09T15:00:00+01:00"
   },
   "RO": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
