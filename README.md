@@ -16,3 +16,6 @@ The page loads `data/briefings.json` when it opens; if that file is missing it s
 - Political stability: World Bank Worldwide Governance Indicators (CC BY 4.0).
 
 Levels and "pressure on government" are Protest Atlas assessments built with fixed rules, not official measures.
+
+## Checking the data
+`python3 tools/validate.py` prints a Markdown checklist of what to verify by hand, highest risk first: structure errors, large crowd, arrest, injury and death figures, weak or single sources, and housekeeping. Useful options: `--since HEAD~1` lists events added or revised since a git ref (the daily review list), `--links` checks that every source URL still opens, `-o review.md` writes the report to a file. It never changes data and exits with code 1 if it finds a blocking problem. Source quality lists (`STRONG`, `WEAK`) are at the top of the script.
