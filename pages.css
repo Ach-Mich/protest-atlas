@@ -1,0 +1,25 @@
+:root{--bg:#F5F6F7;--surface:#fff;--fg:#1B2127;--muted:#5C6873;--line:#DCE1E5;--accent:#1F5F73;--warn-bg:#FFF4D9;--warn-fg:#6B4A00;--display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#111519;--surface:#192026;--fg:#E6EBEE;--muted:#93A0AA;--line:#2A333B;--accent:#72B6CA;--warn-bg:#3A2E10;--warn-fg:#F5D98A}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);padding:20px max(16px,env(safe-area-inset-right)) 40px max(16px,env(safe-area-inset-left))}
+.ph,.doc,.pf{max-width:760px;margin:0 auto}
+.ph{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.brand{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;color:var(--fg)}
+.brand i{font-style:normal;color:#B93F2E}
+.doc{padding:28px 0 20px}
+h1{font-family:var(--display);font-size:clamp(34px,6vw,52px);line-height:1;margin:0 0 14px;font-weight:700}
+h2{font-family:var(--display);font-size:24px;margin:30px 0 8px;font-weight:700}
+.lede{font-size:18px;color:var(--muted);margin:0 0 6px}
+p,li{max-width:68ch}ul{padding-left:20px}li{margin:6px 0}
+a{color:var(--accent)}a:hover{text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+code{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:.9em}
+.todo{background:var(--warn-bg);color:var(--warn-fg);border-radius:8px;padding:10px 14px;margin:0 0 14px;font-size:14px}
+.tbc{background:var(--warn-bg);color:var(--warn-fg);border-radius:4px;padding:0 4px}
+.pf{border-top:1px solid var(--line);padding-top:16px;font-size:14px}
+.pf nav{display:flex;flex-wrap:wrap;gap:6px 18px}.pf a{color:var(--muted)}
+.lang-sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+.lang-sw button{font:600 11px var(--body);letter-spacing:.04em;color:var(--muted);background:none;border:0;padding:5px 9px;cursor:pointer}
+.lang-sw button+button{border-left:1px solid var(--line)}
+.lang-sw button[aria-pressed="true"]{background:var(--fg);color:var(--surface)}
+@media print{.ph .lang-sw,.pf{display:none}}

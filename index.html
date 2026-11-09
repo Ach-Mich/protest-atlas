@@ -641,6 +641,12 @@ html.full body{padding-inline:0;overflow:hidden}
 .hm .lang-sw{--line:var(--hline);--surface:transparent;--muted:var(--hmuted);--fg:var(--hfg)}
 .hm .lang-sw button[aria-pressed="true"]{background:var(--hfg);color:var(--hbg)}
 @media print{.lang-sw{display:none}}
+
+.sitefoot{max-width:1120px;margin:34px auto 0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;font-size:13px;color:var(--muted)}
+.sitefoot nav{display:flex;flex-wrap:wrap;gap:6px 18px}.sitefoot a{color:var(--muted)}.sitefoot a:hover{color:var(--fg)}
+.full .sitefoot{display:none}
+.hm .sitefoot{--line:var(--hline,#E4DFD4)}
+@media print{.sitefoot{display:none}}
 </style>
 
 <div class="wrap">
@@ -712,6 +718,7 @@ html.full body{padding-inline:0;overflow:hidden}
     <p><b>Pressure on government</b> (Low / Rising / High) is a separate indicator for Active and Major countries. Points: demand (one policy 0, the government’s programme 1, resignation or early elections 2); 3+ groups joined 1; opposition parties joined 1; 3+ national days or 3+ weeks running 1; national strike or deaths 1; crackdown 1; government response (talks or concessions 1, resignation or confidence vote 2); fragile government (strained 1, fragile 2). Rising from 3 points; High from 6 points when resignation is demanded or a resignation or confidence vote has happened.</p>
     <p>Thresholds are a first proposal and will be adjusted against past movements. The trend compares the last 15 days with the 15 days before.</p></div>
 </div>
+<footer class="sitefoot" id="sitefoot"><nav aria-label="Site information"><a href="about.html">About</a><a href="methodology.html">Methodology</a><a href="legal.html">Legal notice</a><a href="privacy.html">Privacy</a></nav><span>Protest Atlas</span></footer>
 
 <script>
 const D=[
