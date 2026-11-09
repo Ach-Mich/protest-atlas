@@ -1103,7 +1103,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "ES": {
-    "checkedAt": "2026-11-09T15:00:00+01:00",
+    "checkedAt": "2026-11-09T16:00:00+01:00",
     "country": "Spain",
     "events": [
       {
@@ -1198,6 +1198,29 @@
         ],
         "title": "Housing protests in Madrid and more than 50 other cities",
         "warn": "Single-city figures; check a second source for the official count"
+      },
+      {
+        "arrests": null,
+        "cause": "Housing crisis and rents",
+        "date": "2026-09-28",
+        "deaths": null,
+        "extra": "Thousands blocked the Diagonal in Barcelona; a camp-out continued in Puerta del Sol, Madrid",
+        "gatherings": null,
+        "minor": true,
+        "off": null,
+        "org": "Housing groups and tenants' unions",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "Euronews (ES), 28 Sep 2026",
+            "https://es.euronews.com/2026/09/28/protestas-vivienda-espana-manifestaciones-23-ciudades"
+          ]
+        ],
+        "title": "Housing protests, road blockades and camp-outs in 23 cities",
+        "warn": "No official count; single source so far"
       }
     ],
     "groups": [
@@ -1297,7 +1320,7 @@
       "wages"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T15:00:00+01:00"
+    "updatedAt": "2026-11-09T16:00:00+01:00"
   },
   "FI": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -2140,9 +2163,36 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "IT": {
-    "checkedAt": "2026-11-09T08:00:00+01:00",
+    "checkedAt": "2026-11-09T16:00:00+01:00",
     "country": "Italy",
     "events": [
+      {
+        "arrests": null,
+        "cause": "Cost of living, rearmament and the right to study",
+        "date": "2026-10-30",
+        "deaths": null,
+        "extra": "About 5,000 students in Milan and about 500 in Rome (Sapienza); marches also in Turin, Florence, Pisa and Chieti",
+        "gatherings": null,
+        "off": null,
+        "org": "USB (grassroots union) and student groups",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "Tecnica della Scuola",
+            "https://www.tecnicadellascuola.it/sciopero-scuola-30-ottobre-2026"
+          ],
+          [
+            "Newsistruzione, 30 Oct 2026",
+            "https://www.newsistruzione.it/2026/10/30/milano-corteo-studenti-riprendiamoci-il-futuro/amp"
+          ]
+        ],
+        "strike": true,
+        "title": "USB general strike with student marches in Milan, Rome and other cities",
+        "warn": "Student figures from a school-news site; no official count"
+      },
       {
         "arrests": null,
         "cause": "Wages, pensions, public services, military spending",
@@ -2182,6 +2232,51 @@
           ]
         ],
         "title": "Cost-of-living marches"
+      },
+      {
+        "arrests": null,
+        "cause": "Gaza solidarity",
+        "date": "2026-10-10",
+        "deaths": null,
+        "extra": "Thousands in the streets; tension in Turin",
+        "gatherings": null,
+        "minor": true,
+        "off": null,
+        "org": "Palestinian communities, student and activist groups",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "La Sicilia",
+            "https://www.lasicilia.it/news/italia-mondo/3080605/ondata-di-proteste-in-oltre-cinquanta-citta-italiane-per-la-palestina-migliaia-in-piazza-tensioni-a-torino-e-striscioni-pro-7-ottobre.html"
+          ]
+        ],
+        "title": "Pro-Palestine demonstrations in more than 50 Italian cities, march from the Colosseum to Sapienza in Rome",
+        "warn": "No turnout figures in our sources"
+      },
+      {
+        "arrests": null,
+        "cause": "Response to the assault on a student",
+        "date": "2026-10-07",
+        "deaths": null,
+        "gatherings": null,
+        "minor": true,
+        "off": null,
+        "org": "Students, ANPI, CGIL, PD and AVS",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "L'Espresso, 7 Oct 2026",
+            "https://lespresso.it/c/attualita/2026/10/07/milano-corteo-liceo-einstein-ragazzo-aggredito-blocco-studentesco-casapound-video/65183"
+          ]
+        ],
+        "title": "Students, ANPI, CGIL and parties march from Liceo Einstein to the Statale in Milan",
+        "warn": "No turnout figure in our sources"
       }
     ],
     "groups": [
@@ -2247,7 +2342,7 @@
       "war"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-08T06:41:59+01:00"
+    "updatedAt": "2026-11-09T16:00:00+01:00"
   },
   "LT": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
