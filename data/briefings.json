@@ -1352,12 +1352,12 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "FR": {
-    "checkedAt": "2026-11-09T12:45:27+01:00",
+    "checkedAt": "2026-11-09T13:31:08+01:00",
     "country": "France",
     "events": [
       {
         "arrests": 360,
-        "arrestsNote": "as of 19:00 (Interior Ministry); includes gilets jaunes figures Benjamin Ball and Azelma Sigaux, held near the Assemblée nationale",
+        "arrestsNote": "as of 19:00 (Interior Ministry); includes gilets jaunes figures Benjamin Ball and Azelma Sigaux, held near the Assemblée nationale; 232 at 18:00, 360 at 19:00",
         "cause": "Cost of living, youth and education",
         "date": "2026-11-07",
         "deaths": null,
@@ -1408,7 +1408,8 @@
         "warn": "Evening tallies; figures may be revised."
       },
       {
-        "arrests": 565,
+        "arrests": 779,
+        "arrestsNote": "779 in total including Halloween evening (Interior Ministry release); 565 at 21:00",
         "cause": "Cost of living and inequality",
         "date": "2026-10-31",
         "deaths": null,
@@ -1423,12 +1424,17 @@
           [
             "Paris Match Belgique, 1 Nov 2026",
             "https://www.parismatch.be/actualites/monde/2026/11/01/manifestations-en-france-565-interpellations-au-niveau-national-SKZ7WZC245DYJE2CNC4TAFBOVQ/"
+          ],
+          [
+            "Interior Ministry: report on 31 Oct and Halloween evening",
+            "https://www.interieur.gouv.fr/actualites/communiques-de-presse/bilan-de-journee-de-mobilisation-du-31-octobre-2026-et-de-soiree-dhalloween"
           ]
         ],
         "title": "Act III against the high cost of living"
       },
       {
         "arrests": 1435,
+        "arrestsNote": "1,435 final figure announced on 26 Oct (Interior Ministry); 1,314 provisional on 25 Oct",
         "cause": "Cost of living",
         "date": "2026-10-24",
         "deaths": null,
@@ -1447,12 +1453,17 @@
           [
             "La Libre / Belga, 26 Oct 2026",
             "https://www.lalibre.be/dernieres-depeches/2026/10/26/manifestations-en-france-france-1435-personnes-interpellees-samedi-267-policiers-et-gendarmes-blesses-2-J46VVCXHLNFMRCDJHNIMTECJHQ/"
+          ],
+          [
+            "Interior Ministry: report on 24 Oct",
+            "https://www.interieur.gouv.fr/actualites/communiques-de-presse/bilan-de-journee-de-mobilisation-nationale-du-24-octobre-2026"
           ]
         ],
         "title": "Second national day of mobilisation"
       },
       {
-        "arrests": 1200,
+        "arrests": 2628,
+        "arrestsNote": "Final Interior Ministry figure, cited in its 31 Oct release; 1,200 were reported provisionally on 18 Oct and about 1,800 announced by the minister that evening",
         "cause": "Fuel prices and purchasing power",
         "date": "2026-10-17",
         "deaths": 1,
@@ -1480,6 +1491,10 @@
           [
             "Le Tribunal du Net: demonstrator dies on Boulevard Magenta",
             "https://www.letribunaldunet.fr/actualites/17-octobre-lendemain-manifestant-mort-boulevard-magenta-bilan.html"
+          ],
+          [
+            "Interior Ministry, 31 Oct 2026 release (arrests on 17 Oct)",
+            "https://www.interieur.gouv.fr/actualites/communiques-de-presse/bilan-de-journee-de-mobilisation-du-31-octobre-2026-et-de-soiree-dhalloween"
           ]
         ],
         "title": "\"Convergence des colères\": youth, gilets jaunes and unions join"
@@ -1540,7 +1555,7 @@
       },
       {
         "arrests": 440,
-        "arrestsNote": "440 arrests linked to the high-school mobilisation that day, per Interior Minister Laurent Nuñez",
+        "arrestsNote": "440 arrests linked to the high-school mobilisation that day, per Interior Minister Laurent Nuñez; 164 arrests had been reported the day before (28 Sep, Interior Ministry)",
         "cause": "Freeze of the public-sector pay index (point d'indice) in the 2027 budget, and wages",
         "date": "2026-09-29",
         "deaths": null,
@@ -1817,7 +1832,7 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T12:45:27+01:00"
+    "updatedAt": "2026-11-09T13:31:08+01:00"
   },
   "GB": {
     "checkedAt": "2026-11-09T11:45:00+01:00",
