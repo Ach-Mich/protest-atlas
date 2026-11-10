@@ -732,6 +732,7 @@ html.hm body{background:#FFFFFF}
 .rp-lv{background:#E1E3E6;color:#1E2226}
 #rp-tip{background:#1E2226;color:#FFFFFF}
 .pv-kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pv-kpis.one{grid-template-columns:1fr}.kpi{display:flex;flex-direction:column;gap:2px;border-radius:10px;padding:10px 12px;min-width:0}.kpi .k-l{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;opacity:.8}.kpi .k-v{font-family:var(--display);font-size:26px;font-weight:800;font-stretch:112%;letter-spacing:-.02em;line-height:1.05}.kpi .k-s{display:flex;flex-direction:column;font-size:12.5px;line-height:1.35}.kpi .k-s::first-letter,.kpi .k-s span::first-letter{text-transform:uppercase}.kpi-pr{background:var(--surface);border:1px solid var(--line);color:var(--fg)}.kpi-pr .k-v i{font-style:normal;font-size:.6em;vertical-align:.25em}.kpi-pr.pr2 .k-v{color:#8F2D2D}.kpi-pr.pr1 .k-v{color:#B8322A}.kpi-pr.pr0 .k-v{color:var(--muted)}.kpi-pr .k-s{color:var(--muted)}@media (max-width:420px){.pv-kpis{grid-template-columns:1fr}}
+.nx-for{margin-top:8px;display:flex;flex-direction:column;gap:4px}.nx-for p{margin:0;font-size:13px}.nx-k{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-right:6px}.nx-for .why-t{margin-top:2px}.ov-for{margin-top:2px}
 </style>
 
 
@@ -1018,6 +1019,8 @@ function quick(x){const ev=evs(x.c);
 const LV=["Quiet","Active","Major"];
 // Reach: an event is national (nationwide strike, a common call in 3+ cities, or a large national demonstration in the capital) or local
 const isNat=e=>e.reach?e.reach==="national":!e.minor;
+// Who calls the next announced date and what for (nextFor: {by, demands[], src})
+const nextForHTML=P=>{const f=P&&P.nextFor;if(!f||!(f.by||(f.demands||[]).length))return "";return `<div class="nx-for">${f.by?`<p><span class="nx-k">Called by</span> ${esc(f.by)}</p>`:""}${(f.demands||[]).length?`<p><span class="nx-k">Demands</span></p><div class="why-t">${f.demands.map(t=>`<span>${esc(t)}</span>`).join("")}</div>`:""}</div>`};
 const dimmed=x=>state.mode==="level"&&state.flt!=="all"&&mob(x.c).name!==state.flt;
 function recent(c){const P=PROT[c];return P&&Array.isArray(P.events)?P.events.filter(e=>{const a=ageDays(e.date);return a>=-1&&a<=30}):[]}
 function mob(c){
@@ -1167,7 +1170,7 @@ function renderPanel(){
     h+=last;
     // ---- 6. Next
     if(PR.next){const dd=nxt?Math.round((new Date(nxt+"T12:00:00")-new Date())/864e5):null;
-      h+=`<section class="nx${nxt?"":" quiet"}">${nxt?`<div class="nx-d"><b>${dfmt(nxt).split(" ")[0]}</b><span>${dfmt(nxt).split(" ")[1]}</span></div>`:`<div class="nx-d none">—</div>`}<div><p class="lbl" style="margin:0 0 2px">Next${nxt?` · ${dd<=0?"today":dd===1?"tomorrow":`in ${dd} days`}`:""}</p><p>${esc(PR.next)}</p></div></section>`}}
+      h+=`<section class="nx${nxt?"":" quiet"}">${nxt?`<div class="nx-d"><b>${dfmt(nxt).split(" ")[0]}</b><span>${dfmt(nxt).split(" ")[1]}</span></div>`:`<div class="nx-d none">—</div>`}<div><p class="lbl" style="margin:0 0 2px">Next${nxt?` · ${dd<=0?"today":dd===1?"tomorrow":`in ${dd} days`}`:""}</p><p>${esc(PR.next)}</p>${nxt?nextForHTML(PR):""}</div></section>`}}
   if(!PR)h+=last;
   // ---- 7. Economy
   if(x.real){const hh=x.hicp,u=x.ur,w=120,hgt=34,mn=Math.min(...hh,0),mxv=Math.max(...hh,4),px=i=>2+i*(w-4)/(hh.length-1),py=v=>hgt-3-(v-mn)/(mxv-mn)*(hgt-8);
@@ -1343,7 +1346,7 @@ function renderOverview(){const O=document.getElementById("overview");if(!O)retu
   h+=sec("rp-dates","6 · Coming up","Dates to watch","The next announced national date in each country, from organisers and unions, over the next 6 weeks.",
     `<div class="ov-cal">${cal.length?cal.map(c=>{const dd=Math.round((new Date(c.d+"T12:00:00")-new Date())/864e5);
       return `<button type="button" class="ov-ci${c.P.nextStrike?" st":""}" data-c="${c.x.c}"><span class="ov-cd"><b>${dfmt(c.d).split(" ")[0]}</b><span>${dfmt(c.d).split(" ")[1]}</span></span>
-      <span class="ov-ct"><span class="ov-cc">${esc(c.x.n)}${c.P.nextStrike?` <em>National strike</em>`:""}<small>${dd<=0?"today":dd===1?"tomorrow":`in ${dd} days`}</small></span><span class="ov-cx">${esc(c.P.next||"")}</span></span></button>`}).join(""):`<p class="note">No dates announced in our sources.</p>`}</div>`);
+      <span class="ov-ct"><span class="ov-cc">${esc(c.x.n)}${c.P.nextStrike?` <em>National strike</em>`:""}<small>${dd<=0?"today":dd===1?"tomorrow":`in ${dd} days`}</small></span><span class="ov-cx">${esc(c.P.next||"")}</span>${c.P.nextFor&&(c.P.nextFor.demands||[]).length?`<span class="ov-cx ov-for"><b>Demands:</b> ${esc(c.P.nextFor.demands.join(" · "))}</span>`:""}</span></button>`}).join(""):`<p class="note">No dates announced in our sources.</p>`}</div>`);
   h+=stabilityHTML().replace('<section class="ov-sec">','<section class="ov-sec" id="rp-calm">');
   // method
   h+=sec("rp-method","8 · Method and sources","How to read this report","",`<div class="rp-meth">
