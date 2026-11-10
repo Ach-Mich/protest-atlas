@@ -649,7 +649,8 @@
     ],
     "crowdCount": "sometimes",
     "notes": [
-      "ekathimerini.com cannot be fetched from the sandbox (10 Nov 2026); search results for Greek strikes often return older years (2020, 2024): check the year."
+      "ekathimerini.com cannot be fetched from the sandbox (10 Nov 2026); search results for Greek strikes often return older years (2020, 2024): check the year.",
+      "adedy.gr home page can be opened (10 Nov 2026) but older strike calls drop off it quickly; protothema.gr reported the 25 Nov 2026 ADEDY call."
     ]
   },
   "HR": {
@@ -738,7 +739,9 @@
       "ilsole24ore.com"
     ],
     "crowdCount": "sometimes",
-    "notes": [],
+    "notes": [
+      "scioperi.mit.gov.it and commissionegaranziasciopero.it both returned HTTP 503 to automated readers (10 Nov 2026); fall back to press calendars quoting them (e.g. quifinanza.it) and keep retrying."
+    ],
     "calendars": [
       "scioperi.mit.gov.it (Ministry of Infrastructure and Transport strike register)",
       "commissionegaranziasciopero.it (Commissione di Garanzia strike calendar, all essential services)"
