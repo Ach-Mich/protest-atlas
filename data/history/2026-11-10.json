@@ -108,13 +108,16 @@
       "arrests30": null,
       "deaths30": 0,
       "strike30": false,
-      "nextDate": null,
+      "nextDate": "2026-11-11",
       "nextStrike": false,
       "themes": [
         "war",
-        "governance"
+        "governance",
+        "cost",
+        "wages"
       ],
       "groupTypes": [
+        "citizens",
         "opposition"
       ],
       "pressure": {
@@ -304,14 +307,14 @@
     "FR": {
       "tier": "watch",
       "nat30": 5,
-      "minor30": 0,
+      "minor30": 1,
       "lastNational": "2026-11-07",
       "peakOff": 575000,
       "peakOrgc": 1600000,
       "arrests30": 5436,
       "deaths30": 1,
       "strike30": true,
-      "nextDate": "2026-11-10",
+      "nextDate": "2026-11-17",
       "nextStrike": false,
       "themes": [
         "education",
@@ -342,13 +345,16 @@
       "arrests30": null,
       "deaths30": 0,
       "strike30": false,
-      "nextDate": null,
+      "nextDate": "2026-11-25",
       "nextStrike": false,
       "themes": [
-        "war"
+        "war",
+        "wages",
+        "services"
       ],
       "groupTypes": [
-        "citizens"
+        "citizens",
+        "professions"
       ],
       "pressure": {
         "demand": "policy",

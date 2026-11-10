@@ -314,7 +314,9 @@
       "kurier.at"
     ],
     "crowdCount": "sometimes",
-    "notes": []
+    "notes": [
+      "derstandard.at shows a privacy wall to automated readers (10 Nov 2026); orf.at can be opened."
+    ]
   },
   "BA": {
     "official": [],
@@ -439,7 +441,9 @@
       "seznamzpravy.cz"
     ],
     "crowdCount": "unknown",
-    "notes": []
+    "notes": [
+      "irozhlas.cz answers HTTP 403 to automated readers (10 Nov 2026); ct24.ceskatelevize.cz can be opened."
+    ]
   },
   "DE": {
     "official": [
@@ -469,7 +473,9 @@
       "zeit.de"
     ],
     "crowdCount": "sometimes",
-    "notes": []
+    "notes": [
+      "tagesschau.de and dw.com cannot be fetched from the sandbox (10 Nov 2026); zdfheute.de can."
+    ]
   },
   "DK": {
     "official": [
@@ -535,7 +541,9 @@
       "publico.es"
     ],
     "crowdCount": "sometimes",
-    "notes": []
+    "notes": [
+      "articulo14.es, elpais.com and rtve.es could not be read from the sandbox (HTTP 403 / fetch not permitted, 10 Nov 2026)."
+    ]
   },
   "FI": {
     "official": [],
@@ -640,7 +648,9 @@
       "efsyn.gr"
     ],
     "crowdCount": "sometimes",
-    "notes": []
+    "notes": [
+      "ekathimerini.com cannot be fetched from the sandbox (10 Nov 2026); search results for Greek strikes often return older years (2020, 2024): check the year."
+    ]
   },
   "HR": {
     "official": [],

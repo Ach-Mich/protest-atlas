@@ -1,6 +1,6 @@
 {
   "AL": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Albania",
     "events": [
       {
@@ -243,7 +243,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "AT": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Austria",
     "events": [
       {
@@ -333,7 +333,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "BE": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Belgium",
     "events": [
       {
@@ -586,7 +586,7 @@
     "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "BG": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Bulgaria",
     "events": [
       {
@@ -619,11 +619,22 @@
         "short": "opposition figures",
         "since": "20 October",
         "type": "opposition"
+      },
+      {
+        "items": [
+          "Wages and pensions rising at least as fast as prices",
+          "Minimum wage above the proposed 660 euros"
+        ],
+        "name": "Regressive Bulgaria",
+        "short": "budget protesters",
+        "since": "November 2026",
+        "type": "citizens"
       }
     ],
-    "next": "No new date announced in our sources yet.",
+    "next": "The group 'Regressive Bulgaria' calls protests against the 2027 budget in seven cities (Sofia, Plovdiv, Burgas, Varna, Veliko Tarnovo, Stara Zagora, Vidin) on 11 November from 19:00 (Novinite; single source).",
+    "nextDate": "2026-11-11",
     "pressure": {
-      "assessedAt": "2026-11-08",
+      "assessedAt": "2026-11-10",
       "crackdown": false,
       "demand": "resignation",
       "demandNote": "demand PM Radev and President Yotova resign",
@@ -633,21 +644,28 @@
         [
           "Sofia Globe, 20 Oct 2026",
           "https://sofiaglobe.com/2026/10/20/large-turnout-in-bulgaria-for-protest-against-foreign-policy-of-radev-and-yotova/"
+        ],
+        [
+          "Novinite, Nov 2026",
+          "https://www.novinite.com/articles/241501"
         ]
       ]
     },
     "reasons": [
       "Foreign policy toward Russia",
-      "Resignation of PM Radev and President Yotova"
+      "Resignation of PM Radev and President Yotova",
+      "2027 budget: wages & pensions"
     ],
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "A large crowd rallied outside the Presidency in Sofia on 20 October, accusing Prime Minister Roumen Radev and President Iliana Yotova of a soft response to Black Sea ship attacks blamed on Russia.",
     "themes": [
       "war",
-      "governance"
+      "governance",
+      "cost",
+      "wages"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-07T22:50:00+01:00"
+    "updatedAt": "2026-11-10T17:06:00+01:00"
   },
   "CH": {
     "checkedAt": "2026-11-09T11:45:10+01:00",
@@ -772,7 +790,7 @@
     "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "CZ": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Czechia",
     "events": [
       {
@@ -876,7 +894,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "DE": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Germany",
     "events": [
       {
@@ -996,7 +1014,7 @@
     "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "DK": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Denmark",
     "events": [
       {
@@ -1103,7 +1121,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "ES": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Spain",
     "events": [
       {
@@ -1352,9 +1370,31 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "FR": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "France",
     "events": [
+      {
+        "arrests": null,
+        "cause": "Education funding and the minimum wage, after the 9 November conference",
+        "date": "2026-11-10",
+        "deaths": null,
+        "extra": "About fifty lycées still blocked nationwide per franceinfo; no official count found yet",
+        "minor": true,
+        "off": null,
+        "org": "Education unions, high-school students",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "src": [
+          [
+            "franceinfo, 10 Nov 2026",
+            "https://www.franceinfo.fr/economie/greve/"
+          ]
+        ],
+        "title": "Education strike day: teachers and high-school students march (Paris route restricted by the prefecture)",
+        "warn": "Provisional: day still in progress when checked; no official turnout or arrest figure found (checked: franceinfo, interieur.gouv.fr listing returned HTTP 403)"
+      },
       {
         "arrests": 360,
         "arrestsNote": "as of 19:00 (Interior Ministry); includes two gilets jaunes figures held near the Assemblée nationale; 232 at 18:00, 360 at 19:00",
@@ -1656,8 +1696,8 @@
         "type": "unions"
       }
     ],
-    "next": "PM Sébastien Lecornu meets unions and employers at Matignon on Monday 9 November, after which the intersyndicale will decide its next steps; education unions call a strike and demonstration day on Tuesday 10 November. After the 9 November conference Lecornu announced a minimum-wage rise from 1 December (France 24); one union leader called for a new day of action on 17 November, not yet confirmed by the intersyndicale.",
-    "nextDate": "2026-11-10",
+    "next": "PM Lecornu's 9 November conference ended with a minimum-wage rise from 1 December, which the CGT and CFDT called insufficient. franceinfo reports that a public-sector intersyndicale has called a strike for 17 November (FO and CFDT not among signatories; single source so far, not confirmed by a second outlet).",
+    "nextDate": "2026-11-17",
     "pressure": {
       "assessedAt": "2026-11-10",
       "crackdown": false,
@@ -1841,10 +1881,10 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-10T06:44:05+01:00"
+    "updatedAt": "2026-11-10T17:06:00+01:00"
   },
   "GB": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "United Kingdom",
     "events": [
       {
@@ -1878,36 +1918,60 @@
         "short": "Palestine Coalition",
         "since": "Recurring marches",
         "type": "citizens"
+      },
+      {
+        "items": [
+          "Funded formal negotiations on pay and working conditions",
+          "Reduced standard hours",
+          "More protected time for teaching and service improvement"
+        ],
+        "name": "British Medical Association (consultants)",
+        "short": "consultants",
+        "since": "Mandate July 2026",
+        "type": "professions"
       }
     ],
-    "next": "No new date announced in our sources yet.",
+    "next": "The BMA has announced a 48-hour strike by consultants in England from 06:59 on 25 November to 06:59 on 27 November (formal notices to follow; the BMA says it can be avoided if the Health Secretary commits to funded formal negotiations). No other national date announced.",
+    "nextDate": "2026-11-25",
     "pressure": {
-      "assessedAt": "2026-11-08",
+      "assessedAt": "2026-11-10",
       "crackdown": false,
       "demand": "policy",
-      "demandNote": "Palestine solidarity",
+      "demandNote": "consultants want funded formal pay and conditions negotiations",
       "opposition": false,
       "response": "none",
+      "responseNote": "BMA says no formal negotiations; Health Secretary called the strike announcement disappointing and cites constructive discussions",
       "src": [
         [
           "ITV, 10 Oct 2026",
           "https://www.itv.com/news/2026-10-10/thousands-of-pro-palestine-protesters-march-through-central-london"
+        ],
+        [
+          "BMA, 26 Oct 2026",
+          "https://www.bma.org.uk/bma-media-centre/consultants-in-england-to-take-strike-action-in-november"
+        ],
+        [
+          "Yorkshire Evening Post",
+          "https://www.yorkshireeveningpost.co.uk/health/senior-doctors-strike-november-2026-9310094"
         ]
       ]
     },
     "reasons": [
-      "Palestine solidarity"
+      "Palestine solidarity",
+      "NHS consultants' pay and hours"
     ],
     "screenedAt": "2026-11-07T22:50:00+01:00",
     "summary": "Thousands marched through central London on 10 October in support of Palestinians, days after the third anniversary of 7 October. Our initial screen found no national strike or larger mobilisation in the last 30 days.",
     "themes": [
-      "war"
+      "war",
+      "wages",
+      "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-07T22:50:00+01:00"
+    "updatedAt": "2026-11-10T17:06:00+01:00"
   },
   "GR": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Greece",
     "events": [
       {
@@ -2091,7 +2155,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "IE": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Ireland",
     "events": [
       {
@@ -2198,7 +2262,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "IT": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Italy",
     "events": [
       {
@@ -2453,7 +2517,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "NL": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Netherlands",
     "events": [
       {
@@ -2501,7 +2565,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "PL": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Poland",
     "events": [
       {
@@ -2565,7 +2629,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "PT": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Portugal",
     "events": [
       {
@@ -2876,7 +2940,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "UA": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Ukraine",
     "events": [
       {
@@ -2933,7 +2997,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "XK": {
-    "checkedAt": "2026-11-10T16:53:13+01:00",
+    "checkedAt": "2026-11-10T17:06:00+01:00",
     "country": "Kosovo",
     "events": [
       {

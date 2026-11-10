@@ -1,0 +1,686 @@
+{
+  "date": "2026-11-10",
+  "countries": {
+    "FR": {
+      "searches": [
+        {
+          "q": "grève éducation 10 novembre mobilisation bilan manifestants",
+          "lang": "fr"
+        },
+        {
+          "q": "France strike teachers unions 10 November Lecornu minimum wage protest",
+          "lang": "en"
+        },
+        {
+          "q": "intersyndicale journée d'action 17 novembre grève interpellations",
+          "lang": "fr"
+        },
+        {
+          "q": "fonction publique grève 17 novembre intersyndicale appel CGT FSU Solidaires",
+          "lang": "fr"
+        },
+        {
+          "q": "lycées bloqués 10 novembre manifestation Paris Panthéon Place d'Italie",
+          "lang": "fr"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.franceinfo.fr/economie/greve/",
+          "ok": true
+        },
+        {
+          "url": "https://www.interieur.gouv.fr/actualites/communiques-de-presse",
+          "ok": false,
+          "error": "HTTP 403"
+        }
+      ],
+      "found": "10 Nov education strike/lycée blockades under way (about fifty lycées blocked, Paris route restricted); 9 Nov conference gave SMIC +1.6% on 1 Dec; public-sector intersyndicale strike call for 17 Nov reported by franceinfo (single source).",
+      "answers": {
+        "what": "ok",
+        "size": "gap",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": [
+        "no official turnout/arrest count for 10 Nov yet (day in progress; interieur.gouv.fr listing HTTP 403)",
+        "17 Nov call seen in one source only"
+      ]
+    },
+    "ES": {
+      "searches": [
+        {
+          "q": "huelga general 11 noviembre sindicatos convocatoria seguimiento",
+          "lang": "es"
+        },
+        {
+          "q": "vaga general 11 de novembre Catalunya sindicats servis mínims",
+          "lang": "ca"
+        },
+        {
+          "q": "Spain general strike 11 November unions wages housing government response",
+          "lang": "en"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.articulo14.es/politica/huelga-general-del-11-de-noviembre-quien-la-convoca-cuanto-dura-y-cuales-son-los-motivos-20261106.html",
+          "ok": false,
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://elpais.com/espana/",
+          "ok": false,
+          "error": "fetch not permitted"
+        },
+        {
+          "url": "https://www.rtve.es/noticias/",
+          "ok": false,
+          "error": "fetch not permitted"
+        }
+      ],
+      "found": "General strike is tomorrow (11 Nov); nothing new beyond the existing briefing (calls, minimum services, 29 Nov election context). No outcome to record yet.",
+      "answers": {
+        "what": "ok",
+        "size": "n/a",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": [
+        "strike not held yet; every profile page tried for the outlook was refused from the sandbox"
+      ]
+    },
+    "IE": {
+      "searches": [
+        {
+          "q": "Ireland strike 12 November unions national strike",
+          "lang": "en"
+        },
+        {
+          "q": "rte.ie public sector pay talks strike Thursday latest",
+          "lang": "en"
+        },
+        {
+          "q": "ICTU public service unions suspend November 12 strike mediation Fórsa Siptu",
+          "lang": "en"
+        },
+        {
+          "q": "stailc náisiúnta Éire ceardchumainn 12 Samhain fostaithe poiblí",
+          "lang": "ga"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.irishtimes.com/ireland/2026/11/02/public-sector-unions-threaten-second-24-hour-national-strike-on-november-12th/",
+          "ok": true
+        },
+        {
+          "url": "https://www.devdiscourse.com/article/international/3993845-irish-public-sector-trade-unions-suspend-second-day-of-strikes",
+          "ok": true
+        }
+      ],
+      "found": "12 Nov second 24-hour public sector strike still planned per latest coverage (2 Nov); no suspension found (the suspension report is from 16 Oct, the earlier round). Garda work-to-rule 10-14 Nov noted.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": []
+    },
+    "AL": {
+      "searches": [
+        {
+          "q": "protesta studentët Tiranë opozita 10 nëntor",
+          "lang": "sq"
+        },
+        {
+          "q": "Albania protest Tirana Rama opposition November 2026",
+          "lang": "en"
+        },
+        {
+          "q": "Shqipëri protesta opozita studentët Berisha protesta e radhës nëntor",
+          "lang": "sq"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://exit.al/en/",
+          "ok": true
+        },
+        {
+          "url": "https://balkaninsight.com/",
+          "ok": true
+        }
+      ],
+      "found": "No new protest day after 7 Nov; Exit (8 Nov) and BIRN (5 and 10 Nov) report fines on 83 protesters under new laws, a Constitutional Court challenge and a journalist detained; no next date announced.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "gap",
+        "response": "ok"
+      },
+      "gaps": [
+        "no announced next protest date found"
+      ]
+    },
+    "BE": {
+      "searches": [
+        {
+          "q": "grève nationale 24 novembre Belgique syndicats manifestation front commun",
+          "lang": "fr"
+        },
+        {
+          "q": "nationale staking 24 november vakbonden betoging Brussel",
+          "lang": "nl"
+        },
+        {
+          "q": "Belgium strike unions November 2026 pensions Arizona government demonstration",
+          "lang": "en"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.vrt.be/vrtnws/nl/2026/10/21/vakbonden-nieuwe-betoging-november/",
+          "ok": true
+        }
+      ],
+      "found": "Nothing new: national demonstration in Brussels on 23 Nov confirmed (ABVV, ACV, Synova); previous demo 9 Oct counted 30,000 by police.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": []
+    },
+    "CZ": {
+      "searches": [
+        {
+          "q": "demonstrace 15. listopadu Praha Babiš protest",
+          "lang": "cs"
+        },
+        {
+          "q": "Czech protest Prague November 2026 government Babiš demonstration",
+          "lang": "en"
+        },
+        {
+          "q": "Milion chvilek pro demokracii demonstrace listopad 2026 Letná 17. listopadu",
+          "lang": "cs"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.irozhlas.cz/zpravy-domov",
+          "ok": false,
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://ct24.ceskatelevize.cz/",
+          "ok": true
+        }
+      ],
+      "found": "No confirmation of the 15 Nov Letná rally beyond the existing briefing; ČT24 live feed shows a student gathering in Brno against public-media funding changes (date and size not shown, not recorded).",
+      "answers": {
+        "what": "ok",
+        "size": "gap",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "gap",
+        "response": "ok"
+      },
+      "gaps": [
+        "15 Nov rally not confirmed by a second source in this run",
+        "Brno student protest undated"
+      ]
+    },
+    "DE": {
+      "searches": [
+        {
+          "q": "Germany protest strike November 2026 demonstration Berlin thousands",
+          "lang": "en"
+        },
+        {
+          "q": "Demonstration Streik 20. November Gewerkschaft Aufruf Teilnehmer Polizei",
+          "lang": "de"
+        },
+        {
+          "q": "Schulstreik Wehrpflicht 20. November Gen Z regelt Polizei Teilnehmer Demo",
+          "lang": "de"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.zdfheute.de/politik",
+          "ok": true
+        },
+        {
+          "url": "https://www.tagesschau.de/inland",
+          "ok": false,
+          "error": "fetch not permitted"
+        },
+        {
+          "url": "https://www.dw.com/en/germany/s-1433",
+          "ok": false,
+          "error": "fetch not permitted"
+        }
+      ],
+      "found": "20 Nov school strike confirmed (Bundesschülerkonferenz with Fridays for Future in Berlin; Gen Z regelt also announced actions); no new event since 31 Oct.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": []
+    },
+    "GR": {
+      "searches": [
+        {
+          "q": "απεργία συλλαλητήριο Νοέμβριος 2026 ΓΣΕΕ ΑΔΕΔΥ",
+          "lang": "el"
+        },
+        {
+          "q": "Greece strike rally Athens November 2026 unions farmers protest",
+          "lang": "en"
+        },
+        {
+          "q": "γενική απεργία διαδήλωση Αθήνα εκπαιδευτικοί νοσοκομειακοί Νοέμβριος 2026 ΠΑΜΕ",
+          "lang": "el"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.alfavita.gr/koinonia/337445_24ori-geniki-panelladiki-apergia-stis-26-noembrioy-prokiryxe-i-adedy",
+          "ok": true
+        },
+        {
+          "url": "https://www.ekathimerini.com/",
+          "ok": false,
+          "error": "fetch not permitted"
+        }
+      ],
+      "found": "Nothing new for 2026: the ADEDY 26 Nov strike result is from 2020, the 20 Nov strike from 2024; no announced date.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "gap",
+        "response": "ok"
+      },
+      "gaps": [
+        "no 2026 strike or rally date found"
+      ]
+    },
+    "IT": {
+      "searches": [
+        {
+          "q": "sciopero generale 20 novembre 2026 sindacati manifestazione",
+          "lang": "it"
+        },
+        {
+          "q": "Italy general strike November 2026 CGIL USB budget students",
+          "lang": "en"
+        },
+        {
+          "q": "sciopero studenti 14 novembre corteo manifestazione Roma Palestina manovra",
+          "lang": "it"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.ansa.it/sito/notizie/cronaca/index.shtml",
+          "ok": true
+        }
+      ],
+      "found": "CGIL 24-hour general strike on 20 Nov (announced 17 Oct, coinciding with a European student strike) and base-union strike on 4 Dec reported by quifinanza/newsistruzione; ANSA listing shows nothing new (student sit-in in Turin 9 Nov).",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": []
+    },
+    "PT": {
+      "searches": [
+        {
+          "q": "greve manifestação 14 novembro 2026 CGTP sindicatos",
+          "lang": "pt"
+        },
+        {
+          "q": "Portugal strike protest November 2026 labour law unions",
+          "lang": "en"
+        },
+        {
+          "q": "manifestação nacional habitação 14 novembro Lisboa greve função pública 20 novembro Frente Comum",
+          "lang": "pt"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.rtp.pt/noticias/pais/cgtp-convoca-manifestacao-nacional-para-21-de-novembro_n1775415",
+          "ok": true
+        }
+      ],
+      "found": "CGTP national demonstration in Lisbon on 21 Nov confirmed by RTP (no general strike announced); 14 Nov housing day also confirmed by regional reports; Frente Comum 20 Nov strike not re-confirmed.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": []
+    },
+    "NL": {
+      "searches": [
+        {
+          "q": "demonstratie staking vakbonden Nederland november 2026",
+          "lang": "nl"
+        },
+        {
+          "q": "Netherlands protest demonstration strike November 2026 NL Times",
+          "lang": "en"
+        },
+        {
+          "q": "Dutch farmers teachers rail strike kabinet betoging Den Haag politie deelnemers",
+          "lang": "nl"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://nltimes.nl/",
+          "ok": true
+        }
+      ],
+      "found": "Nothing new since checkedAt; unions' September actions against social-security cuts, no November date found.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "gap",
+        "response": "n/a"
+      },
+      "gaps": [
+        "no announced November action found"
+      ]
+    },
+    "AT": {
+      "searches": [
+        {
+          "q": "Demonstration Streik Wien Österreich November 2026 Gewerkschaft",
+          "lang": "de"
+        },
+        {
+          "q": "Austria protest strike November 2026 metalworkers budget Vienna",
+          "lang": "en"
+        },
+        {
+          "q": "Kundgebung Demo Festnahmen Polizei Wien Teilnehmer Studenten Streik Universität",
+          "lang": "de"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://orf.at/",
+          "ok": true
+        },
+        {
+          "url": "https://www.derstandard.at/inland",
+          "ok": false,
+          "error": "privacy wall"
+        }
+      ],
+      "found": "Nothing new; no protest or strike found for November.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "n/a",
+        "response": "n/a"
+      },
+      "gaps": []
+    },
+    "BG": {
+      "searches": [
+        {
+          "q": "протест София стачка ноември 2026 синдикати",
+          "lang": "bg"
+        },
+        {
+          "q": "Bulgaria protest Sofia November 2026 government budget euro",
+          "lang": "en"
+        },
+        {
+          "q": "Bulgaria seven-city protest against 2027 budget novinite",
+          "lang": "en"
+        },
+        {
+          "q": "протест бюджет 2027 седем града организатори дата",
+          "lang": "bg"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.novinite.com/",
+          "ok": true
+        },
+        {
+          "url": "https://www.novinite.com/articles/241501",
+          "ok": true
+        }
+      ],
+      "found": "New: 'Regressive Bulgaria' calls protests in seven cities against the 2027 budget on 11 Nov at 19:00 (Novinite, single source).",
+      "answers": {
+        "what": "ok",
+        "size": "gap",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "n/a"
+      },
+      "gaps": [
+        "11 Nov protest only in one source; turnout unknown"
+      ]
+    },
+    "DK": {
+      "searches": [
+        {
+          "q": "demonstration strejke København fagbevægelse november 2026",
+          "lang": "da"
+        },
+        {
+          "q": "Denmark protest demonstration Copenhagen November 2026 thousands",
+          "lang": "en"
+        },
+        {
+          "q": "Denmark strike unions rally Christiansborg 2026 demonstration 3F FH",
+          "lang": "en"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.dr.dk/nyheder/indland",
+          "ok": true
+        }
+      ],
+      "found": "Nothing new since checkedAt; no demonstration or strike found.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "n/a",
+        "response": "n/a"
+      },
+      "gaps": []
+    },
+    "GB": {
+      "searches": [
+        {
+          "q": "UK protest march strike November 2026 police arrests thousands London",
+          "lang": "en"
+        },
+        {
+          "q": "Britain strike resident doctors teachers union ballot November 2026",
+          "lang": "en"
+        },
+        {
+          "q": "BMA consultants England strike 25 November 2026 pay dispute press release",
+          "lang": "en"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.bma.org.uk/bma-media-centre/consultants-in-england-to-take-strike-action-in-november",
+          "ok": true
+        }
+      ],
+      "found": "New: BMA announced (26 Oct) a 48-hour consultants' strike in England from 06:59 on 25 Nov to 06:59 on 27 Nov; formal notices to follow.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": []
+    },
+    "PL": {
+      "searches": [
+        {
+          "q": "protest strajk Warszawa listopad 2026 związki zawodowe manifestacja",
+          "lang": "pl"
+        },
+        {
+          "q": "Poland protest strike November 2026 Notes from Poland Nawrocki Tusk demonstration",
+          "lang": "en"
+        },
+        {
+          "q": "Poland farmers miners nurses protest listopad 2026 pikieta rolnicy blokada",
+          "lang": "pl"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://notesfrompoland.com/",
+          "ok": true
+        }
+      ],
+      "found": "Nothing new since checkedAt; no protest or strike found.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "n/a",
+        "response": "n/a"
+      },
+      "gaps": []
+    },
+    "UA": {
+      "searches": [
+        {
+          "q": "протест Київ листопад 2026 мітинг НАБУ мобілізація",
+          "lang": "uk"
+        },
+        {
+          "q": "Ukraine protest Kyiv November 2026 rally demonstrators",
+          "lang": "en"
+        },
+        {
+          "q": "Ukrainian protests mobilisation law anti-corruption rally Independence Square 2026",
+          "lang": "en"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://kyivindependent.com/",
+          "ok": true
+        }
+      ],
+      "found": "Nothing new since checkedAt; no protest found.",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "n/a",
+        "response": "n/a"
+      },
+      "gaps": []
+    },
+    "XK": {
+      "searches": [
+        {
+          "q": "Kosovë protesta nëntor 2026 Prishtinë qeveria opozita",
+          "lang": "sq"
+        },
+        {
+          "q": "Kosovo protest Pristina November 2026 Balkan Insight",
+          "lang": "en"
+        },
+        {
+          "q": "Косово протест Приштина новембар 2026 Срби",
+          "lang": "sr"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://balkaninsight.com/",
+          "ok": true
+        }
+      ],
+      "found": "No new Pristina protest; BIRN lists demonstrations on 28 Oct after a femicide (outside the briefing's scope so far, no size given).",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "n/a",
+        "response": "n/a"
+      },
+      "gaps": [
+        "28 Oct femicide demonstrations: no size or sourced detail, not recorded"
+      ]
+    }
+  }
+}
