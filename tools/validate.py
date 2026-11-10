@@ -150,6 +150,12 @@ def main():
         if nd and nd < TODAY - dt.timedelta(days=1): add(p3, tag, f"`nextDate` {nd} has passed; remove it or add the event.")
         if P.get("nextStrike") and not P.get("nextDate"): add(p3, tag, "`nextStrike` is set but there is no `nextDate`.")
         if P.get("nextDate") and P.get("nextReach") not in ("national", "local"): add(block, tag, "`nextDate` needs `nextReach`: `national` or `local`.")
+        if P.get("nextDate"):
+            nf = P.get("nextFor") or {}
+            if not isinstance(nf, dict) or not str(nf.get("by", "")).strip(): add(block, tag, "`nextDate` needs `nextFor.by`: who calls the action.")
+            elif not isinstance(nf.get("demands"), list): add(block, tag, "`nextFor.demands` must be a list (empty only when no source states them).")
+            elif not nf.get("src") or not all(len(x) == 2 and str(x[1]).startswith("http") for x in nf["src"]): add(block, tag, "`nextFor.src` needs at least one [label, url] source.")
+            elif not nf["demands"]: add(p3, tag, "announced action has no stated demands in `nextFor`.")
         recent = [e for e in ev if (d := parse_date(e.get("date", ""))) and (TODAY - d).days <= 30 and e.get("reach") == "national"]
         if recent and P.get("reasons") and not P.get("pressure"): add(p3, tag, "national protest in the last 30 days but no `pressure` block.")
         if recent and P.get("reasons") and not P.get("themes"): add(p3, tag, "national protest in the last 30 days with reasons but no `themes`.")
