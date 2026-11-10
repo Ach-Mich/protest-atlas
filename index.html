@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><script src="i18n.js"></script><title>Protest Atlas · Where people are protesting in Europe, and why</title><meta name="description" content="A daily protest watch for Europe: where people are taking to the streets, how many, why, and how much pressure it puts on governments. Sourced briefings for 38 countries."><meta property="og:type" content="website"><meta property="og:site_name" content="Protest Atlas"><meta property="og:title" content="Protest Atlas"><meta property="og:description" content="Where people are taking to the streets in Europe, how big it is, and why. Sourced briefings, updated daily."><meta property="og:url" content="https://protestatlas.org/"><link rel="canonical" href="https://protestatlas.org/"><meta name="theme-color" content="#F5F6F7"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%231F5F73%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%273%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%272%27 fill=%27%23fff%27/%3E%3C/svg%3E"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><script src="i18n.js"></script><title>Protest Atlas · Where people are protesting in Europe, and why</title><meta name="description" content="A daily protest watch for Europe: where people are taking to the streets, how many, why, and how much pressure it puts on governments. Sourced briefings for 38 countries."><meta property="og:type" content="website"><meta property="og:site_name" content="Protest Atlas"><meta property="og:title" content="Protest Atlas"><meta property="og:description" content="Where people are taking to the streets in Europe, how big it is, and why. Sourced briefings, updated daily."><meta property="og:url" content="https://protestatlas.org/"><link rel="canonical" href="https://protestatlas.org/"><meta name="theme-color" content="#F5F6F7"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%231E2226%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%273%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%272%27 fill=%27%23fff%27/%3E%3C/svg%3E"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="assets/fonts.css">
 <style>
@@ -647,7 +647,94 @@ html.full body{padding-inline:0;overflow:hidden}
 .hm .sitefoot{--line:var(--hline,#E4DFD4)}
 @media print{.sitefoot{display:none}}
 </style>
+<style id="theme-warning-scale">
+/* ===== Warning scale theme (Nov 2026) =====
+   Graphite on white; Archivo for all text, wide for headlines.
+   Protest levels use the European weather-warning colours: pale green (quiet), yellow (active), red (major).
+   Orange marks pressure on government. This block comes last and overrides the earlier palettes. */
+:root{
+  --bg:#F4F5F6;--surface:#FFFFFF;--fg:#1E2226;--muted:#5A6066;--line:#E1E3E6;--accent:#1E2226;
+  --warn-bg:#FFF4CC;--warn-fg:#6B4A00;--sea:#EDF1F3;--land:#E6E7E8;
+  --wx-quiet:#F7E4D8;--wx-yellow:#F0915E;--wx-orange:#F08A24;--wx-orange-ink:#B4470F;--wx-red:#B8292B;--wx-none:#E6E9ED;--wx-restr:repeating-linear-gradient(135deg,#E6E8EB 0 3px,#AEB4BA 3px 4.5px);
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;--body:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141619;--surface:#1B1E22;--fg:#ECEEF0;--muted:#A3A9AF;--line:#2E3237;--accent:#ECEEF0;
+  --warn-bg:#3A2E10;--warn-fg:#F5D98A;--sea:#1B1E22;--land:#24282D;--wx-orange-ink:#F5A55A;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141619;--surface:#1B1E22;--fg:#ECEEF0;--muted:#A3A9AF;--line:#2E3237;--accent:#ECEEF0;
+  --warn-bg:#3A2E10;--warn-fg:#F5D98A;--sea:#1B1E22;--land:#24282D;--wx-orange-ink:#F5A55A;color-scheme:dark}
 
+/* level colours, everywhere they are read */
+body,.mapbox,.panel,.hot,.tablewrap,#overview{
+  --lv0:var(--wx-quiet);--lvn:var(--wx-none);--lvr:var(--wx-restr);--lv1:var(--wx-yellow);--lv2:var(--wx-red);--lv3:var(--wx-red);
+  --lv0f:#1E2226;--lvnf:#5A6066;--lvrf:#1E2226;--lv1f:#1E2226;--lv2f:#FFFFFF;--lv3f:#FFFFFF;--up2:var(--wx-red)}
+
+/* type */
+h1,.ph h2,.rp-h1,.hm-hero h1,#home h2,.ov-take,.ov-sh h2{font-stretch:112%;font-weight:800;letter-spacing:-.03em}
+.hm-hero h1{line-height:.98;font-size:clamp(40px,6.4vw,74px)}
+.brand,.fbrand,.hm-brand{font-stretch:118%;font-weight:800;letter-spacing:.01em}
+.brand i,.fbrand i,.hm-brand i{color:var(--wx-orange)}
+.hm-fig .v,.ov-v,.rp-bv b,.rp-pv b,.score .num,.fig .v,.cnt .v,.st-v,.eco-v{font-stretch:110%;font-weight:800;letter-spacing:-.02em}
+.hm-card h3,.ph h2,.pv-h h2,.rc-h h2,.hcard b{font-stretch:110%;font-weight:800;letter-spacing:-.02em}
+
+/* home */
+#home{--hbg:#FFFFFF;--hpanel:#F5F6F7;--hfg:#1E2226;--hmuted:#5A6066;--hline:#E1E3E6;--hacc:#1E2226;--haccf:#FFFFFF;--hhot:var(--wx-red)}
+html.hm body{background:#FFFFFF}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #home{--hbg:#141619;--hpanel:#1B1E22;--hfg:#ECEEF0;--hmuted:#A3A9AF;--hline:#2E3237;--hacc:#ECEEF0;--haccf:#141619;--hhot:#FF5A4E}
+  :root:not([data-theme="light"]).hm body{background:#141619}}
+:root[data-theme="dark"] #home{--hbg:#141619;--hpanel:#1B1E22;--hfg:#ECEEF0;--hmuted:#A3A9AF;--hline:#2E3237;--hacc:#ECEEF0;--haccf:#141619;--hhot:#FF5A4E}
+:root[data-theme="dark"].hm body{background:#141619}
+.hm-hero h1 em{color:var(--hfg);box-shadow:inset 0 -.2em 0 var(--wx-yellow)}
+.hm-btn{border-radius:4px}
+.hm-figs{border-top:2px solid var(--hfg)}
+.hm-card{border-radius:4px;border-top:5px solid var(--hline)}
+.hm-card:has(.hm-pill[style*="--lv2"]),.hm-card:has(.hm-pill[style*="--lv3"]){border-top-color:var(--wx-red)}
+.hm-card:has(.hm-pill[style*="--lv1"]){border-top-color:var(--wx-yellow)}
+.hm-pill{border-radius:3px}
+.hm-pr.pr2,.prb.pr2{color:var(--wx-red)}
+.hm-pr.pr1,.prb.pr1{color:var(--wx-orange-ink)}
+.hm-dr .fl{background:var(--hfg)}
+.hm-mapcall{border-radius:6px}
+.hm-arrows button{border-radius:4px}
+
+/* shared controls */
+.seg,.regions button,.lang-sw,.rbtn,.rp-dl,.rp-nav a,.fflt button,.search input,.fsearch input{border-radius:4px}
+.lvchip,.lvpill,.chip,.stat,.tag{border-radius:3px}
+.panel,.mapbox,.rank,.check,.hcard,.ov-k,.ov-sec,.rp-fig,.ov .ov-sc{border-radius:6px}
+.rp-take li::before{background:var(--wx-orange)}
+.rp-kpis{border-top-color:var(--fg)}
+.rp-l2{background:var(--wx-red);color:#fff}.rp-l1{background:var(--wx-yellow);color:#1E2226}
+.sc-b2,.sc-b1{fill:var(--wx-red)}
+
+/* map card and report charts: light in both themes */
+.mapbox{--bg:#F5F6F7;--surface:#FFFFFF;--fg:#1E2226;--muted:#5A6066;--line:#E1E3E6;--accent:#1E2226;--ink:#2A2E33;--sea:#EDF1F3;--land:#E6E7E8;
+  background:#FFFFFF!important;color:#1E2226;border-color:#E1E3E6!important}
+/* map palette: soft fills, white borders, no dark outlines; the selected country gets the only dark line */
+/* intensity: one warm hue from light (quiet) to deep (major); restricted is grey hatching, a different kind of state */
+.mapbox{--sea:#F3F6F9;--land:#E6E9ED;
+  --lvn:#E6E9ED;--lv0:#F7E4D8;--lvr:url(#pa-restricted);--lv1:#F0915E;--lv2:#B8292B;--lv3:#B8292B;
+  --lv0f:#1E2226;--lvnf:#5A6066;--lvrf:#1E2226;--lv1f:#1E2226;--lv2f:#FFFFFF;--lv3f:#FFFFFF}
+.mapbox .sw i[style*="--lvr"],.flegbody .sw i[style*="--lvr"]{background:repeating-linear-gradient(135deg,#ECEEF0 0 2px,#A9AFB6 2px 3.5px)!important}
+.mapwrap{background:var(--sea)}
+.mapwrap path.trk,.mapwrap path.sel,.mapwrap path.wld{stroke:#FFFFFF;stroke-width:1}
+.mapwrap path.mesh,.mapwrap path.mesh.light{stroke:#FFFFFF;stroke-width:1}
+.mapwrap path.selo{stroke:#1E2226;stroke-width:2}
+.mapwrap path.trk:hover,.mapwrap path.trk:focus-visible{filter:brightness(.94) saturate(1.1)}
+.full .mapwrap path.wld{fill:#E6E9ED;stroke:#FFFFFF}
+.mapbox .sw i{border-radius:50%;box-shadow:none}
+.rp-fig,.ov .ov-sc{--bg:#F5F6F7;--surface:#FFFFFF;--fg:#1E2226;--muted:#5A6066;--line:#E1E3E6;--accent:#1E2226;background:#FFFFFF;color:#1E2226;border-color:#E1E3E6}
+.rp-fig a,.rp-fig .ov-cn{color:#1E2226}.rp-fig a{color:#1E2226!important}
+.rp-fut{fill:#EEF0F2}.rp-band{fill:#F5F6F7}
+.rp-today,.rp-sk{stroke:#1E2226}.rp-tl,.rp-rl{fill:#1E2226}.rp-sd,.rp-bg,.rp-bd,.rp-th{background:#1E2226}
+.rp-lg,.rp-bl small,.rp-bv small,.rp-pax{color:#5A6066}
+.rp-pr{border-top-color:#EEF0F2}.rp-pt{background:#F1F2F4}
+.rp-lv{background:#E1E3E6;color:#1E2226}
+#rp-tip{background:#1E2226;color:#FFFFFF}
+</style>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><pattern id="pa-restricted" patternUnits="userSpaceOnUse" width="9" height="9" patternTransform="rotate(45)"><rect width="9" height="9" fill="#ECEEF0"/><rect width="3" height="9" fill="#A9AFB6"/></pattern></defs></svg>
 <div class="wrap">
   <div class="fbar" id="fbar"><a class="fbrand" href="#home" aria-label="Protest Atlas, home">Protest<i>/</i>Atlas</a><nav aria-label="Site"><span class="fstamp" id="fstamp"></span><a href="#report">Report</a></nav></div>
   <section id="home" aria-label="Protest Atlas home"></section>
