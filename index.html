@@ -1140,7 +1140,7 @@ function renderPanel(){
     ${(()=>{const pr=pressure(c);return pr?`<div class="prline"><span class="prb pr${pr.k}">${"▲".repeat(pr.k)||"–"} Pressure on government: ${pr.name}</span>${pr.why.length?`<span class="prw">${esc(pr.why.join(" · "))}</span>`:""}</div>`:""})()}
   </div>`;
   const hSave=h+(I18N.lang!=="en"?`<p class="pv-note">Briefing texts are currently in English.</p>`:"");h="";
-  // ---- 3. Last 30 days: tiles + timeline + list
+  // ---- 3. Last 30 days: tiles only (the dated list was removed to keep the panel high-level)
   if(r.length){
     const po=r.reduce((a,e)=>Math.max(a,e.orgc||0),0);
     const inj=[];if(has("policeInj"))inj.push(`${nf(sum("policeInj"))} police`);if(has("protInj"))inj.push(`${nf(sum("protInj"))}+ protesters`);
@@ -1150,11 +1150,7 @@ function renderPanel(){
       ${tile(pk?nfk(pk):"—","peak turnout",pk?`official${po?` · ${nfk(po)} organisers`:""}`:"no official count")}
       ${tile(has("arrests")?nf(sum("arrests")):"—","arrests",has("arrests")?"all days":"not reported")}
       ${tile(dead,"deaths",inj.length?`injured: ${inj.join(", ")}`:"no injury figures")}</div>`;
-    h+=`<ul class="evl">${r.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(e=>{const f=[];
-        f.push(e.off||e.orgc?`${e.off?nfk(e.off)+" official":"no official count"}${e.orgc?" / "+nfk(e.orgc)+" organisers":""}`:"no count");
-        if(e.arrests!=null)f.push(`${nf(e.arrests)} arrests`);
-        return `<li><span class="d">${dfmt(e.date)}</span><span><b>${esc(e.title)}</b><br><span class="m">${f.join(" · ")} · <a href="${e.src[0][1]}" target="_blank" rel="noopener">source</a>${e.warn?` · <span class="w">${esc(e.warn)}</span>`:""}</span></span></li>`}).join("")}</ul>
-      <p class="pv-note">Police and organisers' counts often differ by 1.5–3×.</p></section>`;
+    h+=`<p class="pv-note">Police and organisers' counts often differ by 1.5–3×.</p></section>`;
   }
   const last=h;h=hSave;
   // ---- 4. Why people are protesting
