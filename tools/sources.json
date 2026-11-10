@@ -1,280 +1,997 @@
 {
- "_about": "Per-country source registry. official = government/police/statistics bodies (check first, cite the specific release). wire = news agencies and public broadcasters. organisers = unions/organisers (use for the organisers' count `orgc`, never for `off`). Extend freely; the routine prompt and tools/validate.py both read this file. `indexes` = listing pages to open and read directly (not just search) after every day of action; official releases are often posted under several sections.",
- "FR": {
-  "official": [
-   "interieur.gouv.fr",
-   "gouvernement.fr",
-   "prefecturedepolice.interieur.gouv.fr",
-   "education.gouv.fr"
-  ],
-  "wire": [
-   "afp.com",
-   "francetvinfo.fr",
-   "franceinfo.fr",
-   "lemonde.fr",
-   "bfmtv.com",
-   "reuters.com"
-  ],
-  "organisers": [
-   "cgt.fr",
-   "cfdt.fr",
-   "solidaires.org",
-   "fsu.fr"
-  ],
-  "indexes": [
-   "https://www.interieur.gouv.fr/actualites/communiques-de-presse",
-   "https://www.interieur.gouv.fr/actualites/actualites-du-ministere",
-   "https://www.gendarmerie.interieur.gouv.fr/gendinfo/actualites"
-  ]
- },
- "ES": {
-  "official": [
-   "interior.gob.es",
-   "lamoncloa.gob.es",
-   "delegaciongobierno.gob.es",
-   "comunidad.madrid"
-  ],
-  "wire": [
-   "efe.com",
-   "europapress.es",
-   "rtve.es",
-   "elpais.com"
-  ],
-  "organisers": [
-   "ccoo.es",
-   "ugt.es"
-  ]
- },
- "IT": {
-  "official": [
-   "interno.gov.it",
-   "poliziadistato.it",
-   "governo.it"
-  ],
-  "wire": [
-   "ansa.it",
-   "repubblica.it",
-   "corriere.it"
-  ],
-  "organisers": [
-   "cgil.it",
-   "uil.it",
-   "cisl.it"
-  ]
- },
- "DE": {
-  "official": [
-   "bundesregierung.de",
-   "bmi.bund.de",
-   "polizei.berlin.de",
-   "polizei.bayern.de"
-  ],
-  "wire": [
-   "dpa.com",
-   "tagesschau.de",
-   "zdf.de",
-   "dw.com"
-  ],
-  "organisers": [
-   "dgb.de",
-   "verdi.de"
-  ]
- },
- "BE": {
-  "official": [
-   "police.be",
-   "politie.be",
-   "belgium.be"
-  ],
-  "wire": [
-   "belga.be",
-   "rtbf.be",
-   "vrt.be",
-   "brusselstimes.com"
-  ],
-  "organisers": [
-   "fgtb.be",
-   "csc-en-ligne.be",
-   "accg.be"
-  ]
- },
- "GB": {
-  "official": [
-   "gov.uk",
-   "police.uk",
-   "met.police.uk"
-  ],
-  "wire": [
-   "bbc.co.uk",
-   "bbc.com",
-   "reuters.com",
-   "theguardian.com"
-  ],
-  "organisers": []
- },
- "PT": {
-  "official": [
-   "psp.pt",
-   "portugal.gov.pt",
-   "mai.gov.pt"
-  ],
-  "wire": [
-   "lusa.pt",
-   "rtp.pt",
-   "publico.pt"
-  ],
-  "organisers": [
-   "cgtp.pt",
-   "ugt.pt"
-  ]
- },
- "GR": {
-  "official": [
-   "astynomia.gr",
-   "gov.gr"
-  ],
-  "wire": [
-   "ertnews.gr",
-   "ekathimerini.com",
-   "kathimerini.gr"
-  ],
-  "organisers": [
-   "adedy.gr",
-   "gsee.gr"
-  ]
- },
- "NL": {
-  "official": [
-   "politie.nl",
-   "rijksoverheid.nl"
-  ],
-  "wire": [
-   "nos.nl",
-   "nu.nl",
-   "nltimes.nl"
-  ],
-  "organisers": []
- },
- "CH": {
-  "official": [
-   "admin.ch",
-   "kapo.zh.ch",
-   "police.be.ch"
-  ],
-  "wire": [
-   "swissinfo.ch",
-   "srf.ch",
-   "rts.ch"
-  ],
-  "organisers": []
- },
- "AT": {
-  "official": [
-   "bmi.gv.at",
-   "polizei.gv.at"
-  ],
-  "wire": [
-   "orf.at",
-   "derstandard.at",
-   "apa.at"
-  ],
-  "organisers": [
-   "oegb.at"
-  ]
- },
- "IE": {
-  "official": [
-   "garda.ie",
-   "gov.ie"
-  ],
-  "wire": [
-   "rte.ie",
-   "irishtimes.com",
-   "thejournal.ie"
-  ],
-  "organisers": []
- },
- "DK": {
-  "official": [
-   "politi.dk"
-  ],
-  "wire": [
-   "dr.dk",
-   "ritzau.dk"
-  ],
-  "organisers": []
- },
- "PL": {
-  "official": [
-   "policja.pl",
-   "gov.pl"
-  ],
-  "wire": [
-   "pap.pl",
-   "polskieradio.pl",
-   "tvn24.pl"
-  ],
-  "organisers": []
- },
- "CZ": {
-  "official": [
-   "policie.cz",
-   "mvcr.cz"
-  ],
-  "wire": [
-   "ceskatelevize.cz",
-   "irozhlas.cz",
-   "ctk.cz"
-  ],
-  "organisers": []
- },
- "AL": {
-  "official": [
-   "asp.gov.al"
-  ],
-  "wire": [
-   "exit.al",
-   "balkaninsight.com"
-  ],
-  "organisers": []
- },
- "BG": {
-  "official": [
-   "mvr.bg"
-  ],
-  "wire": [
-   "bta.bg",
-   "sofiaglobe.com"
-  ],
-  "organisers": []
- },
- "XK": {
-  "official": [
-   "kosovopolice.com"
-  ],
-  "wire": [
-   "balkaninsight.com",
-   "rferl.org"
-  ],
-  "organisers": []
- },
- "UA": {
-  "official": [
-   "mvs.gov.ua"
-  ],
-  "wire": [
-   "ukrinform.net",
-   "kyivindependent.com"
-  ],
-  "organisers": []
- },
- "_default": {
-  "official": [],
-  "wire": [
-   "reuters.com",
-   "apnews.com",
-   "afp.com"
-  ],
-  "organisers": []
- }
+  "_about": "Per-country source registry. official = government/police/statistics bodies (check first, cite the specific release). wire = news agencies and public broadcasters. organisers = unions/organisers (use for the organisers' count `orgc`, never for `off`). Extend freely; the routine prompt and tools/validate.py both read this file. `indexes` = listing pages to open and read directly (not just search) after every day of action; official releases are often posted under several sections. languages = search languages in order (the first two are required every run). press = national papers for a second, independent source. crowdCount = whether police or the ministry publish crowd counts: official | sometimes | none | unknown (if unknown and you learn the answer, record it with a line in notes). Search words per language are in _terms. notes = facts learned while researching; add to them.",
+  "_terms": {
+    "en": [
+      "protest",
+      "demonstration",
+      "march",
+      "strike",
+      "general strike",
+      "national strike",
+      "student strike",
+      "walkout",
+      "turnout",
+      "police estimate",
+      "arrests",
+      "unions announce"
+    ],
+    "fr": [
+      "manifestation",
+      "grève",
+      "grève générale",
+      "mobilisation",
+      "intersyndicale",
+      "cortège",
+      "bilan",
+      "manifestants selon la police",
+      "interpellations",
+      "journée d'action",
+      "blocage lycées"
+    ],
+    "de": [
+      "Demonstration",
+      "Kundgebung",
+      "Streik",
+      "Generalstreik",
+      "Warnstreik",
+      "Protest",
+      "Teilnehmer laut Polizei",
+      "Festnahmen",
+      "Schülerstreik",
+      "Gewerkschaft ruft auf"
+    ],
+    "es": [
+      "manifestación",
+      "huelga",
+      "huelga general",
+      "movilización",
+      "concentración",
+      "asistentes según la Delegación del Gobierno",
+      "detenidos",
+      "convocatoria sindicatos",
+      "huelga estudiantil"
+    ],
+    "ca": [
+      "manifestació",
+      "vaga",
+      "vaga general",
+      "mobilització",
+      "detinguts"
+    ],
+    "eu": [
+      "manifestazioa",
+      "greba",
+      "greba orokorra"
+    ],
+    "it": [
+      "manifestazione",
+      "sciopero",
+      "sciopero generale",
+      "corteo",
+      "mobilitazione",
+      "partecipanti secondo la questura",
+      "fermati",
+      "arresti",
+      "sciopero studentesco"
+    ],
+    "nl": [
+      "demonstratie",
+      "betoging",
+      "staking",
+      "algemene staking",
+      "nationale actiedag",
+      "deelnemers volgens politie",
+      "arrestaties",
+      "vakbonden"
+    ],
+    "pt": [
+      "manifestação",
+      "greve",
+      "greve geral",
+      "protesto",
+      "concentração",
+      "detidos",
+      "sindicatos convocam"
+    ],
+    "el": [
+      "διαδήλωση",
+      "απεργία",
+      "γενική απεργία",
+      "συλλαλητήριο",
+      "πορεία",
+      "συλλήψεις",
+      "ΓΣΕΕ ΑΔΕΔΥ"
+    ],
+    "pl": [
+      "protest",
+      "demonstracja",
+      "strajk",
+      "strajk generalny",
+      "manifestacja",
+      "zatrzymani",
+      "związki zawodowe"
+    ],
+    "cs": [
+      "demonstrace",
+      "protest",
+      "stávka",
+      "generální stávka",
+      "shromáždění",
+      "zadržení",
+      "odbory"
+    ],
+    "sk": [
+      "protest",
+      "demonštrácia",
+      "štrajk",
+      "generálny štrajk",
+      "zhromaždenie"
+    ],
+    "da": [
+      "demonstration",
+      "strejke",
+      "generalstrejke",
+      "protest",
+      "anholdt",
+      "fagforeninger"
+    ],
+    "sv": [
+      "demonstration",
+      "strejk",
+      "generalstrejk",
+      "protest",
+      "gripna",
+      "fackförbund"
+    ],
+    "no": [
+      "demonstrasjon",
+      "streik",
+      "generalstreik",
+      "protest",
+      "pågrepet"
+    ],
+    "fi": [
+      "mielenosoitus",
+      "lakko",
+      "yleislakko",
+      "mielenilmaus",
+      "pidätetty"
+    ],
+    "is": [
+      "mótmæli",
+      "verkfall",
+      "allsherjarverkfall"
+    ],
+    "et": [
+      "meeleavaldus",
+      "streik",
+      "protest"
+    ],
+    "lv": [
+      "protests",
+      "streiks",
+      "demonstrācija"
+    ],
+    "lt": [
+      "protestas",
+      "streikas",
+      "mitingas"
+    ],
+    "ru": [
+      "протест",
+      "митинг",
+      "забастовка"
+    ],
+    "sq": [
+      "protestë",
+      "grevë",
+      "protesta kombëtare",
+      "studentët",
+      "të arrestuar",
+      "opozita"
+    ],
+    "sr": [
+      "protest",
+      "štrajk",
+      "generalni štrajk",
+      "studenti u blokadi",
+      "uhapšeni",
+      "протест"
+    ],
+    "bs": [
+      "protest",
+      "štrajk",
+      "demonstracije"
+    ],
+    "hr": [
+      "prosvjed",
+      "štrajk",
+      "generalni štrajk",
+      "sindikati"
+    ],
+    "sl": [
+      "protest",
+      "stavka",
+      "splošna stavka"
+    ],
+    "mk": [
+      "протест",
+      "штрајк",
+      "демонстрации"
+    ],
+    "bg": [
+      "протест",
+      "стачка",
+      "обща стачка",
+      "демонстрация",
+      "задържани",
+      "синдикати"
+    ],
+    "ro": [
+      "protest",
+      "grevă",
+      "grevă generală",
+      "manifestație",
+      "sindicate"
+    ],
+    "hu": [
+      "tüntetés",
+      "sztrájk",
+      "általános sztrájk",
+      "demonstráció",
+      "tiltakozás"
+    ],
+    "tr": [
+      "protesto",
+      "eylem",
+      "grev",
+      "genel grev",
+      "yürüyüş",
+      "gözaltı"
+    ],
+    "uk": [
+      "протест",
+      "мітинг",
+      "страйк",
+      "акція протесту"
+    ],
+    "ga": [
+      "agóid",
+      "stailc"
+    ]
+  },
+  "_default": {
+    "official": [],
+    "wire": [
+      "reuters.com",
+      "apnews.com",
+      "afp.com"
+    ],
+    "organisers": []
+  },
+  "AL": {
+    "official": [
+      "asp.gov.al"
+    ],
+    "wire": [
+      "exit.al",
+      "balkaninsight.com"
+    ],
+    "organisers": [],
+    "languages": [
+      "sq",
+      "en"
+    ],
+    "press": [
+      "exit.al",
+      "top-channel.tv",
+      "balkaninsight.com",
+      "euronews.al"
+    ],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "AT": {
+    "official": [
+      "bmi.gv.at",
+      "polizei.gv.at"
+    ],
+    "wire": [
+      "orf.at",
+      "derstandard.at",
+      "apa.at"
+    ],
+    "organisers": [
+      "oegb.at"
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "press": [
+      "derstandard.at",
+      "diepresse.com",
+      "kurier.at"
+    ],
+    "crowdCount": "sometimes",
+    "notes": []
+  },
+  "BA": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "bs",
+      "en",
+      "sr"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "BE": {
+    "official": [
+      "police.be",
+      "politie.be",
+      "belgium.be"
+    ],
+    "wire": [
+      "belga.be",
+      "rtbf.be",
+      "vrt.be",
+      "brusselstimes.com"
+    ],
+    "organisers": [
+      "fgtb.be",
+      "csc-en-ligne.be",
+      "accg.be"
+    ],
+    "languages": [
+      "fr",
+      "nl",
+      "en"
+    ],
+    "press": [
+      "lesoir.be",
+      "lalibre.be",
+      "standaard.be",
+      "hln.be"
+    ],
+    "crowdCount": "sometimes",
+    "notes": []
+  },
+  "BG": {
+    "official": [
+      "mvr.bg"
+    ],
+    "wire": [
+      "bta.bg",
+      "sofiaglobe.com"
+    ],
+    "organisers": [],
+    "languages": [
+      "bg",
+      "en"
+    ],
+    "press": [
+      "bta.bg",
+      "dnevnik.bg",
+      "mediapool.bg",
+      "novinite.com"
+    ],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "CH": {
+    "official": [
+      "admin.ch",
+      "kapo.zh.ch",
+      "police.be.ch"
+    ],
+    "wire": [
+      "swissinfo.ch",
+      "srf.ch",
+      "rts.ch"
+    ],
+    "organisers": [],
+    "languages": [
+      "de",
+      "fr",
+      "it",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "sometimes",
+    "notes": []
+  },
+  "CY": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "el",
+      "en",
+      "tr"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "CZ": {
+    "official": [
+      "policie.cz",
+      "mvcr.cz"
+    ],
+    "wire": [
+      "ceskatelevize.cz",
+      "irozhlas.cz",
+      "ctk.cz"
+    ],
+    "organisers": [],
+    "languages": [
+      "cs",
+      "en"
+    ],
+    "press": [
+      "irozhlas.cz",
+      "novinky.cz",
+      "idnes.cz",
+      "seznamzpravy.cz"
+    ],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "DE": {
+    "official": [
+      "bundesregierung.de",
+      "bmi.bund.de",
+      "polizei.berlin.de",
+      "polizei.bayern.de"
+    ],
+    "wire": [
+      "dpa.com",
+      "tagesschau.de",
+      "zdf.de",
+      "dw.com"
+    ],
+    "organisers": [
+      "dgb.de",
+      "verdi.de"
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "press": [
+      "spiegel.de",
+      "sueddeutsche.de",
+      "faz.net",
+      "zeit.de"
+    ],
+    "crowdCount": "sometimes",
+    "notes": []
+  },
+  "DK": {
+    "official": [
+      "politi.dk"
+    ],
+    "wire": [
+      "dr.dk",
+      "ritzau.dk"
+    ],
+    "organisers": [],
+    "languages": [
+      "da",
+      "en"
+    ],
+    "press": [
+      "dr.dk",
+      "politiken.dk",
+      "berlingske.dk"
+    ],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "EE": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "et",
+      "en",
+      "ru"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "ES": {
+    "official": [
+      "interior.gob.es",
+      "lamoncloa.gob.es",
+      "delegaciongobierno.gob.es",
+      "comunidad.madrid"
+    ],
+    "wire": [
+      "efe.com",
+      "europapress.es",
+      "rtve.es",
+      "elpais.com"
+    ],
+    "organisers": [
+      "ccoo.es",
+      "ugt.es"
+    ],
+    "languages": [
+      "es",
+      "en",
+      "ca",
+      "eu"
+    ],
+    "press": [
+      "elpais.com",
+      "elmundo.es",
+      "eldiario.es",
+      "publico.es"
+    ],
+    "crowdCount": "sometimes",
+    "notes": []
+  },
+  "FI": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "fi",
+      "en",
+      "sv"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "FR": {
+    "official": [
+      "interieur.gouv.fr",
+      "gouvernement.fr",
+      "prefecturedepolice.interieur.gouv.fr",
+      "education.gouv.fr"
+    ],
+    "wire": [
+      "afp.com",
+      "francetvinfo.fr",
+      "franceinfo.fr",
+      "lemonde.fr",
+      "bfmtv.com",
+      "reuters.com"
+    ],
+    "organisers": [
+      "cgt.fr",
+      "cfdt.fr",
+      "solidaires.org",
+      "fsu.fr"
+    ],
+    "indexes": [
+      "https://www.interieur.gouv.fr/actualites/communiques-de-presse",
+      "https://www.interieur.gouv.fr/actualites/actualites-du-ministere",
+      "https://www.gendarmerie.interieur.gouv.fr/gendinfo/actualites"
+    ],
+    "languages": [
+      "fr",
+      "en"
+    ],
+    "press": [
+      "lemonde.fr",
+      "lefigaro.fr",
+      "liberation.fr",
+      "ouest-france.fr",
+      "france24.com"
+    ],
+    "crowdCount": "official",
+    "notes": [
+      "interieur.gouv.fr answers HTTP 403 to automated readers (checked 10 Nov 2026): use the ministry figures as quoted by AFP, franceinfo or Le Monde, citing that article, and keep trying the listing pages."
+    ]
+  },
+  "GB": {
+    "official": [
+      "gov.uk",
+      "police.uk",
+      "met.police.uk"
+    ],
+    "wire": [
+      "bbc.co.uk",
+      "bbc.com",
+      "reuters.com",
+      "theguardian.com"
+    ],
+    "organisers": [],
+    "languages": [
+      "en"
+    ],
+    "press": [
+      "theguardian.com",
+      "bbc.co.uk",
+      "thetimes.co.uk"
+    ],
+    "crowdCount": "sometimes",
+    "notes": []
+  },
+  "GR": {
+    "official": [
+      "astynomia.gr",
+      "gov.gr"
+    ],
+    "wire": [
+      "ertnews.gr",
+      "ekathimerini.com",
+      "kathimerini.gr"
+    ],
+    "organisers": [
+      "adedy.gr",
+      "gsee.gr"
+    ],
+    "languages": [
+      "el",
+      "en"
+    ],
+    "press": [
+      "kathimerini.gr",
+      "protothema.gr",
+      "efsyn.gr"
+    ],
+    "crowdCount": "sometimes",
+    "notes": []
+  },
+  "HR": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "hr",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "HU": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "hu",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "IE": {
+    "official": [
+      "garda.ie",
+      "gov.ie"
+    ],
+    "wire": [
+      "rte.ie",
+      "irishtimes.com",
+      "thejournal.ie"
+    ],
+    "organisers": [],
+    "languages": [
+      "en",
+      "ga"
+    ],
+    "press": [
+      "irishtimes.com",
+      "independent.ie",
+      "irishexaminer.com"
+    ],
+    "crowdCount": "sometimes",
+    "notes": []
+  },
+  "IS": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "is",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "IT": {
+    "official": [
+      "interno.gov.it",
+      "poliziadistato.it",
+      "governo.it"
+    ],
+    "wire": [
+      "ansa.it",
+      "repubblica.it",
+      "corriere.it"
+    ],
+    "organisers": [
+      "cgil.it",
+      "uil.it",
+      "cisl.it"
+    ],
+    "languages": [
+      "it",
+      "en"
+    ],
+    "press": [
+      "corriere.it",
+      "repubblica.it",
+      "ilpost.it",
+      "ilsole24ore.com"
+    ],
+    "crowdCount": "sometimes",
+    "notes": []
+  },
+  "LT": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "lt",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "LV": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "lv",
+      "en",
+      "ru"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "MD": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "ro",
+      "en",
+      "ru"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "ME": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "sr",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "MK": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "mk",
+      "sq",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "NL": {
+    "official": [
+      "politie.nl",
+      "rijksoverheid.nl"
+    ],
+    "wire": [
+      "nos.nl",
+      "nu.nl",
+      "nltimes.nl"
+    ],
+    "organisers": [],
+    "languages": [
+      "nl",
+      "en"
+    ],
+    "press": [
+      "nos.nl",
+      "volkskrant.nl",
+      "nrc.nl"
+    ],
+    "crowdCount": "sometimes",
+    "notes": []
+  },
+  "NO": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "no",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "PL": {
+    "official": [
+      "policja.pl",
+      "gov.pl"
+    ],
+    "wire": [
+      "pap.pl",
+      "polskieradio.pl",
+      "tvn24.pl"
+    ],
+    "organisers": [],
+    "languages": [
+      "pl",
+      "en"
+    ],
+    "press": [
+      "tvn24.pl",
+      "wyborcza.pl",
+      "rp.pl",
+      "notesfrompoland.com"
+    ],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "PT": {
+    "official": [
+      "psp.pt",
+      "portugal.gov.pt",
+      "mai.gov.pt"
+    ],
+    "wire": [
+      "lusa.pt",
+      "rtp.pt",
+      "publico.pt"
+    ],
+    "organisers": [
+      "cgtp.pt",
+      "ugt.pt"
+    ],
+    "languages": [
+      "pt",
+      "en"
+    ],
+    "press": [
+      "publico.pt",
+      "expresso.pt",
+      "dn.pt"
+    ],
+    "crowdCount": "sometimes",
+    "notes": []
+  },
+  "RO": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "ro",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "RS": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "sr",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "SE": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "sv",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "SI": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "sl",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "SK": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "sk",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "TR": {
+    "official": [],
+    "wire": [],
+    "organisers": [],
+    "languages": [
+      "tr",
+      "en"
+    ],
+    "press": [],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "UA": {
+    "official": [
+      "mvs.gov.ua"
+    ],
+    "wire": [
+      "ukrinform.net",
+      "kyivindependent.com"
+    ],
+    "organisers": [],
+    "languages": [
+      "uk",
+      "en"
+    ],
+    "press": [
+      "kyivindependent.com",
+      "pravda.com.ua",
+      "ukrinform.net"
+    ],
+    "crowdCount": "unknown",
+    "notes": []
+  },
+  "XK": {
+    "official": [
+      "kosovopolice.com"
+    ],
+    "wire": [
+      "balkaninsight.com",
+      "rferl.org"
+    ],
+    "organisers": [],
+    "languages": [
+      "sq",
+      "sr",
+      "en"
+    ],
+    "press": [
+      "koha.net",
+      "kallxo.com",
+      "balkaninsight.com"
+    ],
+    "crowdCount": "unknown",
+    "notes": []
+  }
 }
