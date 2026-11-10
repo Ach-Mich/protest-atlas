@@ -26,7 +26,8 @@
           ]
         ],
         "title": "National student protest in Tirana",
-        "warn": "Single outlet so far; injury and arrest figures not yet reported."
+        "warn": "Single outlet so far; injury and arrest figures not yet reported.",
+        "reach": "national"
       },
       {
         "arrests": 6,
@@ -52,7 +53,8 @@
           ]
         ],
         "title": "Student protest at the education ministry",
-        "warn": "Single outlet."
+        "warn": "Single outlet.",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -72,7 +74,8 @@
             "https://it.euronews.com/2026/10/24/albania-proteste-e-tensioni-a-tirana-opposizione-e-studenti-uniti-contro-edi-rama"
           ]
         ],
-        "title": "Opposition and student rallies in Tirana"
+        "title": "Opposition and student rallies in Tirana",
+        "reach": "national"
       },
       {
         "arrests": 167,
@@ -102,7 +105,8 @@
             "https://www.dazeddigital.com/life-culture/article/71193/1/gen-z-protests-paris-france-albania-belgium-italy-chile-riots"
           ]
         ],
-        "title": "Fifth day of protests in Tirana"
+        "title": "Fifth day of protests in Tirana",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -122,7 +126,8 @@
             "https://www.businessday.co.za/world/europe/2026-10-14-buildings-ablaze-in-albanian-capital-as-violent-student-protests-erupt/"
           ]
         ],
-        "title": "Student protests turn violent in Tirana"
+        "title": "Student protests turn violent in Tirana",
+        "reach": "national"
       }
     ],
     "groups": [
@@ -272,7 +277,8 @@
             "https://www.aa.com.tr/en/europe/thousands-protest-in-vienna-over-education-budget-cuts/4097907"
           ]
         ],
-        "title": "Demonstration for university funding"
+        "title": "Demonstration for university funding",
+        "reach": "national"
       }
     ],
     "groups": [
@@ -342,7 +348,6 @@
         "date": "2026-10-12",
         "deaths": null,
         "extra": "Rail (SNCB) disruption planned from 11 Oct 22:00 to the last train on 12 Oct",
-        "minor": true,
         "off": null,
         "org": "Public-service unions",
         "orgc": null,
@@ -356,7 +361,8 @@
           ]
         ],
         "title": "Public-services strike day",
-        "warn": "Source is a notice published before the strike; turnout not reported"
+        "warn": "Source is a notice published before the strike; turnout not reported",
+        "reach": "national"
       },
       {
         "arrests": 110,
@@ -382,7 +388,8 @@
           ]
         ],
         "strike": true,
-        "title": "National demonstration in Brussels"
+        "title": "National demonstration in Brussels",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -402,7 +409,8 @@
             "https://www.lalibre.be/belgique/2026/05/12/direct-greve-nationale-les-syndicats-belges-defient-a-nouveau-le-gouvernement-dans-la-rue-ce-mardi-GAV2HHGNRBBBDJHRIBJTDLUNGA/"
           ]
         ],
-        "title": "National strike"
+        "title": "National strike",
+        "reach": "national"
       },
       {
         "arrests": 50,
@@ -424,7 +432,8 @@
             "https://www.lavenir.net/actu/belgique/politique/2026/03/12/80-000-manifestants-50-arrestations-et-linflexibilite-de-bart-de-wever-ce-quil-faut-retenir-de-la-manifestation-nationale-AYGH2RHAU5B5BOPQCEYNMXVTYM/"
           ]
         ],
-        "title": "National demonstration"
+        "title": "National demonstration",
+        "reach": "national"
       }
     ],
     "groups": [
@@ -583,7 +592,8 @@
       "cost"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T11:45:10+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00",
+    "nextReach": "national"
   },
   "BG": {
     "checkedAt": "2026-11-10T17:06:00+01:00",
@@ -607,7 +617,9 @@
             "https://sofiaglobe.com/2026/10/20/large-turnout-in-bulgaria-for-protest-against-foreign-policy-of-radev-and-yotova/"
           ]
         ],
-        "title": "Rally outside the Presidency in Sofia"
+        "title": "Rally outside the Presidency in Sofia",
+        "reach": "local",
+        "minor": true
       }
     ],
     "groups": [
@@ -665,7 +677,8 @@
       "wages"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-10T17:06:00+01:00"
+    "updatedAt": "2026-11-10T17:06:00+01:00",
+    "nextReach": "local"
   },
   "CH": {
     "checkedAt": "2026-11-09T11:45:10+01:00",
@@ -677,7 +690,6 @@
         "date": "2026-10-10",
         "deaths": null,
         "extra": "About 2,000 in Lausanne and about 1,000 in Zurich, per a Wikipedia list; counts not attributed",
-        "minor": true,
         "off": null,
         "org": "Not named in source",
         "orgc": null,
@@ -691,7 +703,9 @@
           ]
         ],
         "title": "Pro-Palestinian march in Lausanne (about 1,000 in Zurich the same day)",
-        "warn": "Single source so far (Wikipedia list); regional demonstrations in two cities"
+        "warn": "Single source so far (Wikipedia list); regional demonstrations in two cities",
+        "reach": "local",
+        "minor": true
       },
       {
         "arrests": null,
@@ -700,7 +714,6 @@
         "deaths": null,
         "extra": "Several thousand on the Bundesplatz in Bern; some sources dated the Bern and Zurich rallies 19 Sep before correcting to 25 Sep",
         "gatherings": null,
-        "minor": true,
         "off": null,
         "org": "Climate groups",
         "orgc": null,
@@ -718,7 +731,8 @@
           ]
         ],
         "title": "Climate protests in Bern (several thousand), Basel (about 4,000) and other cities",
-        "warn": "Dates differ between sources; no official count"
+        "warn": "Dates differ between sources; no official count",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -726,7 +740,6 @@
         "date": "2026-09-19",
         "deaths": null,
         "gatherings": null,
-        "minor": true,
         "off": null,
         "org": "Climate groups",
         "orgc": null,
@@ -740,7 +753,9 @@
           ]
         ],
         "title": "Climate protests in Lausanne and Geneva (thousands)",
-        "warn": "No official count; the organisers describe it as a start"
+        "warn": "No official count; the organisers describe it as a start",
+        "reach": "local",
+        "minor": true
       }
     ],
     "lastProtest": {
@@ -815,7 +830,8 @@
             "https://seznamzpravy.cz/clanek/domaci-demonstrace-praha-milion-chvilek-poplatky-ct-rozhlas-online-318702"
           ]
         ],
-        "title": "Rally in Prague's Old Town Square"
+        "title": "Rally in Prague's Old Town Square",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -840,7 +856,8 @@
           ]
         ],
         "title": "Public media strike",
-        "warn": "Announced strike; outcome not yet checked."
+        "warn": "Announced strike; outcome not yet checked.",
+        "reach": "national"
       }
     ],
     "groups": [
@@ -891,7 +908,8 @@
       "media"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-08T06:41:59+01:00"
+    "updatedAt": "2026-11-08T06:41:59+01:00",
+    "nextReach": "national"
   },
   "DE": {
     "checkedAt": "2026-11-10T17:06:00+01:00",
@@ -915,7 +933,8 @@
             "https://abcnews.com/International/wireStory/france-heads-weekend-protests-youth-led-rallies-sweep-137729925"
           ]
         ],
-        "title": "\"Gen Z regelt\" youth rallies"
+        "title": "\"Gen Z regelt\" youth rallies",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -924,7 +943,6 @@
         "deaths": null,
         "extra": "About 3,500 people per a regional news site",
         "gatherings": null,
-        "minor": true,
         "off": null,
         "org": "Not named in source",
         "orgc": null,
@@ -938,7 +956,9 @@
           ]
         ],
         "title": "Pro-Palestine march in Berlin near the Chancellery",
-        "warn": "Single source so far"
+        "warn": "Single source so far",
+        "reach": "local",
+        "minor": true
       }
     ],
     "groups": [
@@ -1011,7 +1031,8 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T11:45:10+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00",
+    "nextReach": "national"
   },
   "DK": {
     "checkedAt": "2026-11-10T17:06:00+01:00",
@@ -1039,7 +1060,8 @@
             "https://www.euronews.com/2026/11/04/danish-youth-join-european-wide-protests-against-education-cuts"
           ]
         ],
-        "title": "Nationwide student strike and march in Copenhagen"
+        "title": "Nationwide student strike and march in Copenhagen",
+        "reach": "national"
       }
     ],
     "groups": [
@@ -1142,7 +1164,8 @@
             "https://www.thelocal.es/20261102/spains-train-drivers-call-more-strike-days-following-crash"
           ]
         ],
-        "title": "Train drivers' 24-hour strike"
+        "title": "Train drivers' 24-hour strike",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -1166,7 +1189,9 @@
             "https://ground.news/article/clashes-in-madrid-after-train-crash"
           ]
         ],
-        "title": "Protest at the Transport Ministry after the Urda crash"
+        "title": "Protest at the Transport Ministry after the Urda crash",
+        "reach": "local",
+        "minor": true
       },
       {
         "arrests": null,
@@ -1175,7 +1200,6 @@
         "deaths": null,
         "extra": "Fires and arrests reported; no figures in our sources",
         "gatherings": null,
-        "minor": true,
         "off": null,
         "org": "Housing groups",
         "orgc": null,
@@ -1189,7 +1213,9 @@
           ]
         ],
         "title": "Housing protest in Barcelona turns violent",
-        "warn": "Single source so far (video report)"
+        "warn": "Single source so far (video report)",
+        "reach": "local",
+        "minor": true
       },
       {
         "arrests": null,
@@ -1218,7 +1244,8 @@
             "https://cyprus-mail.com/2026/10/03/tens-of-thousands-protest-across-spain-over-housing-crisis"
           ]
         ],
-        "title": "Housing protests in Madrid and about 50 other Spanish cities"
+        "title": "Housing protests in Madrid and about 50 other Spanish cities",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -1227,7 +1254,6 @@
         "deaths": null,
         "extra": "Thousands blocked the Diagonal in Barcelona; a camp-out continued in Puerta del Sol, Madrid",
         "gatherings": null,
-        "minor": true,
         "off": null,
         "org": "Housing groups and tenants' unions",
         "orgc": null,
@@ -1241,7 +1267,8 @@
           ]
         ],
         "title": "Housing protests, road blockades and camp-outs in 23 cities",
-        "warn": "No official count; single source so far"
+        "warn": "No official count; single source so far",
+        "reach": "national"
       }
     ],
     "groups": [
@@ -1346,7 +1373,8 @@
       "wages"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T12:49:05+01:00"
+    "updatedAt": "2026-11-09T12:49:05+01:00",
+    "nextReach": "national"
   },
   "FI": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -1379,7 +1407,6 @@
         "date": "2026-11-10",
         "deaths": null,
         "extra": "About fifty lycées still blocked nationwide per franceinfo; no official count found yet",
-        "minor": true,
         "off": null,
         "org": "Education unions, high-school students",
         "orgc": null,
@@ -1393,7 +1420,8 @@
           ]
         ],
         "title": "Education strike day: teachers and high-school students march (Paris route restricted by the prefecture)",
-        "warn": "Provisional: day still in progress when checked; no official turnout or arrest figure found (checked: franceinfo, interieur.gouv.fr listing returned HTTP 403)"
+        "warn": "Provisional: day still in progress when checked; no official turnout or arrest figure found (checked: franceinfo, interieur.gouv.fr listing returned HTTP 403)",
+        "reach": "national"
       },
       {
         "arrests": 360,
@@ -1419,7 +1447,8 @@
           ]
         ],
         "title": "Gilets jaunes \"Acte IV\" and youth march",
-        "warn": "Evening tallies; injury figures not yet reported."
+        "warn": "Evening tallies; injury figures not yet reported.",
+        "reach": "national"
       },
       {
         "arrests": 448,
@@ -1450,7 +1479,8 @@
         ],
         "strike": true,
         "title": "Interprofessional strike and demonstrations",
-        "warn": "Ministry figures are provisional (evening tally) and may be revised; organisers' count is the unions' own."
+        "warn": "Ministry figures are provisional (evening tally) and may be revised; organisers' count is the unions' own.",
+        "reach": "national"
       },
       {
         "arrests": 565,
@@ -1475,7 +1505,8 @@
             "https://www.interieur.gouv.fr/actualites/communiques-de-presse/bilan-de-journee-de-mobilisation-du-31-octobre-2026-et-de-soiree-dhalloween"
           ]
         ],
-        "title": "Act III against the high cost of living"
+        "title": "Act III against the high cost of living",
+        "reach": "national"
       },
       {
         "arrests": 1435,
@@ -1504,7 +1535,8 @@
             "https://www.interieur.gouv.fr/actualites/communiques-de-presse/bilan-de-journee-de-mobilisation-nationale-du-24-octobre-2026"
           ]
         ],
-        "title": "Second national day of mobilisation"
+        "title": "Second national day of mobilisation",
+        "reach": "national"
       },
       {
         "arrests": 2628,
@@ -1542,7 +1574,8 @@
             "https://www.interieur.gouv.fr/actualites/communiques-de-presse/bilan-de-journee-de-mobilisation-du-31-octobre-2026-et-de-soiree-dhalloween"
           ]
         ],
-        "title": "\"Convergence des colères\": youth, gilets jaunes and unions join"
+        "title": "\"Convergence des colères\": youth, gilets jaunes and unions join",
+        "reach": "national"
       },
       {
         "arrests": 488,
@@ -1569,7 +1602,8 @@
             "https://www.parismatch.be/actualites/monde/2026/10/06/mouvement-lyceen-en-france-plus-de-250000-manifestants-dans-les-rues-la-mobilisation-appelee-a-se-poursuivre-EOPSKOPQAVAJBHRVJAMTH5CY5M/"
           ]
         ],
-        "title": "National day of high-school and student demonstrations (\"Acte III\")"
+        "title": "National day of high-school and student demonstrations (\"Acte III\")",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -1578,7 +1612,6 @@
         "deaths": null,
         "extra": "Nearly 2,000 arrests by 1 Oct (Interior Ministry); unions received by the education minister; class suspensions expected in 400–500 lycées on 5 Oct",
         "gatherings": null,
-        "minor": true,
         "off": null,
         "org": "High-school pupils, supported by education unions",
         "orgc": null,
@@ -1596,7 +1629,8 @@
           ]
         ],
         "title": "High-school blockades: about 400 lycées closed",
-        "warn": "Figures from press reports; no consolidated ministry release found"
+        "warn": "Figures from press reports; no consolidated ministry release found",
+        "reach": "national"
       },
       {
         "arrests": 440,
@@ -1626,7 +1660,8 @@
             "https://acteurspublics.fr/articles/la-greve-dans-la-fonction-publique-reste-limitee-avec-une-mobilisation-plus-forte-au-sein-de-letat-que-dans-les-autres-versants/"
           ]
         ],
-        "title": "Public-service strike and demonstrations over pay (first joint call by all eight public-sector unions since 2018)"
+        "title": "Public-service strike and demonstrations over pay (first joint call by all eight public-sector unions since 2018)",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -1636,7 +1671,6 @@
         "deaths": null,
         "extra": "Sources differ on the exact start date (18 to 21 Sep); the Créteil education authority counted a dozen new blockades on 25 Sep",
         "gatherings": null,
-        "minor": true,
         "off": null,
         "org": "High-school pupils",
         "orgc": null,
@@ -1654,7 +1688,9 @@
           ]
         ],
         "title": "High-school blockades start in Créteil and spread across Île-de-France",
-        "warn": "Start date and counts vary between sources"
+        "warn": "Start date and counts vary between sources",
+        "reach": "local",
+        "minor": true
       }
     ],
     "groups": [
@@ -1881,7 +1917,8 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-10T17:06:00+01:00"
+    "updatedAt": "2026-11-10T17:06:00+01:00",
+    "nextReach": "national"
   },
   "GB": {
     "checkedAt": "2026-11-10T17:06:00+01:00",
@@ -1906,7 +1943,9 @@
             "https://www.itv.com/news/2026-10-10/thousands-of-pro-palestine-protesters-march-through-central-london"
           ]
         ],
-        "title": "Pro-Palestine march in central London"
+        "title": "Pro-Palestine march in central London",
+        "reach": "local",
+        "minor": true
       }
     ],
     "groups": [
@@ -1968,7 +2007,8 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-10T17:06:00+01:00"
+    "updatedAt": "2026-11-10T17:06:00+01:00",
+    "nextReach": "national"
   },
   "GR": {
     "checkedAt": "2026-11-10T17:06:00+01:00",
@@ -1997,7 +2037,8 @@
           ]
         ],
         "title": "Students and teachers rally for public education",
-        "warn": "Headline only; details not checked."
+        "warn": "Headline only; details not checked.",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -2022,7 +2063,8 @@
           ]
         ],
         "title": "Strikes and protests in 50+ towns",
-        "warn": "Turnout from a single partisan source."
+        "warn": "Turnout from a single partisan source.",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -2030,7 +2072,6 @@
         "date": "2026-10-20",
         "deaths": null,
         "gatherings": null,
-        "minor": true,
         "off": null,
         "org": "University students",
         "orgc": null,
@@ -2044,7 +2085,9 @@
           ]
         ],
         "title": "Students camp in Syntagma Square overnight over rents and student housing",
-        "warn": "Single source (photo caption); no turnout reported"
+        "warn": "Single source (photo caption); no turnout reported",
+        "reach": "local",
+        "minor": true
       }
     ],
     "groups": [
@@ -2181,7 +2224,8 @@
           ]
         ],
         "strike": true,
-        "title": "National 24-hour public sector strike"
+        "title": "National 24-hour public sector strike",
+        "reach": "national"
       }
     ],
     "groups": [
@@ -2249,7 +2293,8 @@
       "wages"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-08T06:41:59+01:00"
+    "updatedAt": "2026-11-08T06:41:59+01:00",
+    "nextReach": "national"
   },
   "IS": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -2290,7 +2335,8 @@
         ],
         "strike": true,
         "title": "USB general strike with student marches in Milan, Rome and other cities",
-        "warn": "Student figures from a school-news site; no official count"
+        "warn": "Student figures from a school-news site; no official count",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -2310,7 +2356,8 @@
             "https://www.ansa.it/sito/notizie/politica/2026/10/17/cgil-in-piazza-siamo-100mila-il-20-novembre-sciopero-generale_c4547ea9-f018-4e78-adda-67ad7af8e7d0.html"
           ]
         ],
-        "title": "CGIL national demonstration in Rome"
+        "title": "CGIL national demonstration in Rome",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -2330,7 +2377,9 @@
             "https://www.dazeddigital.com/life-culture/article/71193/1/gen-z-protests-paris-france-albania-belgium-italy-chile-riots"
           ]
         ],
-        "title": "Cost-of-living marches"
+        "title": "Cost-of-living marches",
+        "reach": "local",
+        "minor": true
       },
       {
         "arrests": null,
@@ -2339,7 +2388,6 @@
         "deaths": null,
         "extra": "Thousands in the streets; tension in Turin",
         "gatherings": null,
-        "minor": true,
         "off": null,
         "org": "Palestinian communities, student and activist groups",
         "orgc": null,
@@ -2353,7 +2401,8 @@
           ]
         ],
         "title": "Pro-Palestine demonstrations in more than 50 Italian cities, march from the Colosseum to Sapienza in Rome",
-        "warn": "No turnout figures in our sources"
+        "warn": "No turnout figures in our sources",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -2361,7 +2410,6 @@
         "date": "2026-10-07",
         "deaths": null,
         "gatherings": null,
-        "minor": true,
         "off": null,
         "org": "Students, ANPI, CGIL, PD and AVS",
         "orgc": null,
@@ -2375,7 +2423,9 @@
           ]
         ],
         "title": "Students, ANPI, CGIL and parties march from Liceo Einstein to the Statale in Milan",
-        "warn": "No turnout figure in our sources"
+        "warn": "No turnout figure in our sources",
+        "reach": "local",
+        "minor": true
       }
     ],
     "groups": [
@@ -2441,7 +2491,8 @@
       "war"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T11:45:10+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00",
+    "nextReach": "national"
   },
   "LT": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -2543,7 +2594,9 @@
             "https://www.rodi.nl/denhaag/112-nieuws/122859/34-aanhoudingen-na-onrust-door-gen-z-oproep-in-den-haag"
           ]
         ],
-        "title": "\"Gen Z\" youth protest in The Hague"
+        "title": "\"Gen Z\" youth protest in The Hague",
+        "reach": "local",
+        "minor": true
       }
     ],
     "next": "No new date announced in our sources yet.",
@@ -2586,7 +2639,8 @@
             "https://www.euronews.com/2026/10/22/women-protest-across-poland-over-stalled-abortion-law-reforms"
           ]
         ],
-        "title": "Abortion-rights protests in 26 cities"
+        "title": "Abortion-rights protests in 26 cities",
+        "reach": "national"
       }
     ],
     "groups": [
@@ -2650,7 +2704,8 @@
             "https://abcnews.com/International/wireStory/france-heads-weekend-protests-youth-led-rallies-sweep-137729925"
           ]
         ],
-        "title": "Second housing march"
+        "title": "Second housing march",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -2670,7 +2725,8 @@
             "https://www.dazeddigital.com/life-culture/article/71193/1/gen-z-protests-paris-france-albania-belgium-italy-chile-riots"
           ]
         ],
-        "title": "Housing march in Lisbon"
+        "title": "Housing march in Lisbon",
+        "reach": "national"
       },
       {
         "arrests": null,
@@ -2696,7 +2752,8 @@
           ]
         ],
         "title": "CGTP national demonstrations in Lisbon, Porto and Coimbra",
-        "warn": "Source is a pre-event notice; turnout not found"
+        "warn": "Source is a pre-event notice; turnout not found",
+        "reach": "national"
       }
     ],
     "groups": [
@@ -2806,7 +2863,8 @@
       "cost"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T11:45:10+01:00"
+    "updatedAt": "2026-11-09T11:45:10+01:00",
+    "nextReach": "national"
   },
   "RO": {
     "checkedAt": "2026-11-09T08:00:00+01:00",
@@ -2965,7 +3023,9 @@
             "https://kyivindependent.com/anger-over-kyivs-winter-preparations-fuels-calls-for-mayor-klitschko-to-resign/"
           ]
         ],
-        "title": "Rally against Kyiv's mayor"
+        "title": "Rally against Kyiv's mayor",
+        "reach": "local",
+        "minor": true
       }
     ],
     "next": "No new date announced in our sources yet.",
@@ -3019,7 +3079,9 @@
           ]
         ],
         "title": "Protest in Pristina; police used tear gas and water cannon",
-        "warn": "Single source so far (Euronews video report)"
+        "warn": "Single source so far (Euronews video report)",
+        "reach": "local",
+        "minor": true
       }
     ],
     "groups": [],
