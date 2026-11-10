@@ -31,7 +31,7 @@ from zoneinfo import ZoneInfo
 
 QUESTIONS = ["what", "size", "who", "demands", "why", "next", "response"]
 MIN_SEARCHES = 3
-FOLLOW_UP_DAYS = 3   # a day of action this recent needs at least one full article or official page opened
+FOLLOW_UP_DAYS = 5   # runs are Tuesday and Friday: a day of action since the previous run needs at least one full article or official page opened
 
 
 def dom(url):
