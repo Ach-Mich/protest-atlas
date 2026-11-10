@@ -1283,17 +1283,6 @@
     "groups": [
       {
         "items": [
-          "Resignation of Prime Minister Pedro Sánchez",
-          "Resignation of Transport Minister Óscar Puente (resigned 3 Nov)",
-          "Accountability for the crash"
-        ],
-        "name": "Far-right groups",
-        "short": "far-right groups",
-        "since": "Since 28 October",
-        "type": "far-right"
-      },
-      {
-        "items": [
           "New rail safety protocols",
           "More resources and staff",
           "Respect agreements on rest and retirement"
@@ -1325,7 +1314,7 @@
       "crackdown": true,
       "crackdownNote": "police fired rubber bullets and tear gas at housing protesters in Valencia on 3 Oct",
       "demand": "programme",
-      "demandNote": "housing and wages; far-right groups also demand the PM resign",
+      "demandNote": "housing and wages",
       "fragility": "fragile",
       "fragilityNote": "general election on 29 November",
       "opposition": false,
@@ -1347,10 +1336,9 @@
       ]
     },
     "reasons": [
-      "Rail safety after the Urda crash",
-      "Accountability for the crash",
       "Housing",
       "Wages",
+      "Rail safety after the Urda crash",
       "Labour rights"
     ],
     "screenedAt": "2026-11-10T20:47:21+01:00",
@@ -1378,9 +1366,9 @@
     ],
     "summary": "The 28 October collision of two high-speed trains near Urda (Toledo), which killed 69 people, set off an angry protest in Madrid, rail strikes over safety, and the resignation of Transport Minister Óscar Puente on 3 November. Separately, unions and tenants' groups call a 24-hour general strike on 11 November over rents and wages, 18 days before the 29 November general election.",
     "themes": [
-      "governance",
       "housing",
-      "wages"
+      "wages",
+      "services"
     ],
     "tier": "watch",
     "updatedAt": "2026-11-09T12:49:05+01:00"
@@ -1977,15 +1965,6 @@
     "groups": [
       {
         "items": [
-          "Support for Palestinians in Gaza"
-        ],
-        "name": "Palestine Coalition",
-        "short": "Palestine Coalition",
-        "since": "Recurring marches",
-        "type": "citizens"
-      },
-      {
-        "items": [
           "Funded formal negotiations on pay and working conditions",
           "Reduced standard hours",
           "More protected time for teaching and service improvement"
@@ -2023,13 +2002,11 @@
       ]
     },
     "reasons": [
-      "Palestine solidarity",
-      "NHS consultants' pay and hours"
+      "NHS consultants' pay and conditions"
     ],
     "screenedAt": "2026-11-10T20:47:21+01:00",
-    "summary": "Thousands marched through central London on 10 October in support of Palestinians, days after the third anniversary of 7 October. Our initial screen found no national strike or larger mobilisation in the last 30 days.",
+    "summary": "Consultants in England plan a 48-hour strike from 25 November, saying talks with the government on pay and conditions have stalled. The last large demonstration was a pro-Palestine march in London on 10 October.",
     "themes": [
-      "war",
       "wages",
       "services"
     ],
