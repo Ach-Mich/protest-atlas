@@ -1,6 +1,6 @@
 {
   "AL": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Albania",
     "events": [
       {
@@ -243,7 +243,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "AT": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Austria",
     "events": [
       {
@@ -333,7 +333,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "BE": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Belgium",
     "events": [
       {
@@ -586,7 +586,7 @@
     "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "BG": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Bulgaria",
     "events": [
       {
@@ -772,7 +772,7 @@
     "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "CZ": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Czechia",
     "events": [
       {
@@ -876,7 +876,7 @@
     "updatedAt": "2026-11-08T06:41:59+01:00"
   },
   "DE": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Germany",
     "events": [
       {
@@ -996,7 +996,7 @@
     "updatedAt": "2026-11-09T11:45:10+01:00"
   },
   "DK": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Denmark",
     "events": [
       {
@@ -1103,7 +1103,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "ES": {
-    "checkedAt": "2026-11-09T12:49:05+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Spain",
     "events": [
       {
@@ -1352,7 +1352,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "FR": {
-    "checkedAt": "2026-11-09T13:46:40+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "France",
     "events": [
       {
@@ -1656,10 +1656,10 @@
         "type": "unions"
       }
     ],
-    "next": "PM Sébastien Lecornu meets unions and employers at Matignon on Monday 9 November, after which the intersyndicale will decide its next steps; education unions call a strike and demonstration day on Tuesday 10 November.",
+    "next": "PM Sébastien Lecornu meets unions and employers at Matignon on Monday 9 November, after which the intersyndicale will decide its next steps; education unions call a strike and demonstration day on Tuesday 10 November. After the 9 November conference Lecornu announced a minimum-wage rise from 1 December (France 24); one union leader called for a new day of action on 17 November, not yet confirmed by the intersyndicale.",
     "nextDate": "2026-11-10",
     "pressure": {
-      "assessedAt": "2026-11-08",
+      "assessedAt": "2026-11-10",
       "crackdown": false,
       "demand": "programme",
       "demandNote": "wages, minimum wage and public services against the budget",
@@ -1667,7 +1667,7 @@
       "fragilityNote": "minority government that has had to survive censure motions",
       "opposition": false,
       "response": "talks",
-      "responseNote": "PM convened a social conference and offered a minimum-wage rise",
+      "responseNote": "PM held a social conference on 9 November and announced a minimum-wage rise from 1 December",
       "src": [
         [
           "Echos Plus, 6 Nov 2026",
@@ -1680,6 +1680,10 @@
         [
           "Wikipedia: Second Lecornu government",
           "https://en.wikipedia.org/wiki/Second_Lecornu_government"
+        ],
+        [
+          "France 24, 9 Nov 2026",
+          "https://france24.com/fr/france/20261109-en-direct-lecornu-re%C3%A7oit-syndicats-et-patronat-pour-tenter-de-r%C3%A9pondre-aux-revendications-sociales"
         ]
       ]
     },
@@ -1837,10 +1841,10 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-09T13:46:40+01:00"
+    "updatedAt": "2026-11-10T06:44:05+01:00"
   },
   "GB": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "United Kingdom",
     "events": [
       {
@@ -1903,7 +1907,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "GR": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Greece",
     "events": [
       {
@@ -2087,7 +2091,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "IE": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Ireland",
     "events": [
       {
@@ -2194,7 +2198,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "IT": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Italy",
     "events": [
       {
@@ -2449,7 +2453,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "NL": {
-    "checkedAt": "2026-11-09T11:45:10+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Netherlands",
     "events": [
       {
@@ -2497,7 +2501,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "PL": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Poland",
     "events": [
       {
@@ -2561,7 +2565,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "PT": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Portugal",
     "events": [
       {
@@ -2872,7 +2876,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "UA": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Ukraine",
     "events": [
       {
@@ -2929,7 +2933,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "XK": {
-    "checkedAt": "2026-11-09T11:45:00+01:00",
+    "checkedAt": "2026-11-10T06:44:05+01:00",
     "country": "Kosovo",
     "events": [
       {
