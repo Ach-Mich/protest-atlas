@@ -731,6 +731,7 @@ html.hm body{background:#FFFFFF}
 .rp-pr{border-top-color:#EEF0F2}.rp-pt{background:#F1F2F4}
 .rp-lv{background:#E1E3E6;color:#1E2226}
 #rp-tip{background:#1E2226;color:#FFFFFF}
+.pv-kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pv-kpis.one{grid-template-columns:1fr}.kpi{display:flex;flex-direction:column;gap:2px;border-radius:10px;padding:10px 12px;min-width:0}.kpi .k-l{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;opacity:.8}.kpi .k-v{font-family:var(--display);font-size:26px;font-weight:800;font-stretch:112%;letter-spacing:-.02em;line-height:1.05}.kpi .k-s{display:flex;flex-direction:column;font-size:12.5px;line-height:1.35}.kpi .k-s::first-letter,.kpi .k-s span::first-letter{text-transform:uppercase}.kpi-pr{background:var(--surface);border:1px solid var(--line);color:var(--fg)}.kpi-pr .k-v i{font-style:normal;font-size:.6em;vertical-align:.25em}.kpi-pr.pr2 .k-v{color:#8F2D2D}.kpi-pr.pr1 .k-v{color:#B8322A}.kpi-pr.pr0 .k-v{color:var(--muted)}.kpi-pr .k-s{color:var(--muted)}@media (max-width:420px){.pv-kpis{grid-template-columns:1fr}}
 </style>
 
 
@@ -1136,8 +1137,12 @@ function renderPanel(){
   const why=m.reasons||m.why||[];
   const K=lvKey(m);
   h+=`<div class="pv-h"><div class="pv-ht"><h2>${esc(x.n)}</h2>${tr?`<span class="pv-tr t${trend(c)}" title="Compares the last 15 days with the 15 before">${tr[0]} ${tr[1]}</span>`:""}</div>
-    <div class="lvpill" style="background:var(--${K});color:var(--${K}f)"><b>${esc(m.name)}</b>${why.length?`<span>${esc(why.join(" · "))}</span>`:""}</div>
-    ${(()=>{const pr=pressure(c);return pr?`<div class="prline"><span class="prb pr${pr.k}">${"▲".repeat(pr.k)||"–"} Pressure on government: ${pr.name}</span>${pr.why.length?`<span class="prw">${esc(pr.why.join(" · "))}</span>`:""}</div>`:""})()}
+    ${(()=>{const pr=pressure(c),q=PR&&PR.pressure||{};
+      const lv=`<div class="kpi kpi-lv" style="background:var(--${K});color:var(--${K}f)"><span class="k-l">Protest level</span><span class="k-v">${esc(m.name)}</span>${why.length?`<span class="k-s">${esc(m.k===2&&/^peak /.test(why[0])&&top?`${nfk(pk)} protesters on ${dfmt(top.date)}, police count`:why[0])}</span>`:""}</div>`;
+      if(!pr)return `<div class="pv-kpis one">${lv}</div>`;
+      const dem={policy:"Demand: one policy",programme:"Demand: change the government's programme",resignation:"Demand: the government's resignation"}[q.demand],
+        rsp={none:"Government: no response yet",talks:"Government: talks or concessions",crisis:"Government: in crisis"}[q.response];
+      return `<div class="pv-kpis">${lv}<div class="kpi kpi-pr pr${pr.k}"><span class="k-l">Pressure on government</span><span class="k-v"><i>${"▲".repeat(pr.k)||"–"}</i> ${esc(pr.name)}</span><span class="k-s">${dem?`<span>${dem}</span>`:""}${rsp?`<span>${rsp}</span>`:""}</span></div></div>`})()}
   </div>`;
   const hSave=h+(I18N.lang!=="en"?`<p class="pv-note">Briefing texts are currently in English.</p>`:"");h="";
   // ---- 3. Last 30 days: tiles only (the dated list was removed to keep the panel high-level)
