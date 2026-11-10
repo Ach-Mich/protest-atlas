@@ -19,9 +19,9 @@ def snap(D, today):
     for c, P in sorted(D.items()):
         ev = P.get("events") or []
         recent = [e for e in ev if 0 <= (today - dt.date.fromisoformat(e["date"])).days <= 30]
-        nat = [e for e in recent if not e.get("minor")]
-        mino = [e for e in recent if e.get("minor")]
-        last_nat = max((e["date"] for e in ev if not e.get("minor") and dt.date.fromisoformat(e["date"]) <= today), default=None)
+        nat = [e for e in recent if e.get("reach", "local" if e.get("minor") else "national") == "national"]
+        mino = [e for e in recent if e.get("reach", "local" if e.get("minor") else "national") == "local"]
+        last_nat = max((e["date"] for e in ev if e.get("reach", "local" if e.get("minor") else "national") == "national" and dt.date.fromisoformat(e["date"]) <= today), default=None)
         nums = lambda k, L: [e[k] for e in L if e.get(k) is not None]
         arr = nums("arrests", recent)
         pr = P.get("pressure")

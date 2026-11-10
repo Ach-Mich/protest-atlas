@@ -1,5 +1,5 @@
 {
-  "_about": "Per-country source registry. official = government/police/statistics bodies (check first, cite the specific release). wire = news agencies and public broadcasters. organisers = unions/organisers (use for the organisers' count `orgc`, never for `off`). Extend freely; the routine prompt and tools/validate.py both read this file. `indexes` = listing pages to open and read directly (not just search) after every day of action; official releases are often posted under several sections. languages = search languages in order (the first two are required every run). press = national papers for a second, independent source. crowdCount = whether police or the ministry publish crowd counts: official | sometimes | none | unknown (if unknown and you learn the answer, record it with a line in notes). Search words per language are in _terms. notes = facts learned while researching; add to them.",
+  "_about": "Per-country source registry. official = government/police/statistics bodies (check first, cite the specific release). wire = news agencies and public broadcasters. organisers = unions/organisers (use for the organisers' count `orgc`, never for `off`). Extend freely; the routine prompt and tools/validate.py both read this file. `indexes` = listing pages to open and read directly (not just search) after every day of action; official releases are often posted under several sections. languages = search languages in order (the first two are required every run). press = national papers for a second, independent source. crowdCount = whether police or the ministry publish crowd counts: official | sometimes | none | unknown (if unknown and you learn the answer, record it with a line in notes). Search words per language are in _terms. notes = facts learned while researching; add to them. calendars = official registers of announced strikes; open them every run (search the domain if a direct link fails) and record whether they opened.",
   "_terms": {
     "en": [
       "protest",
@@ -738,7 +738,11 @@
       "ilsole24ore.com"
     ],
     "crowdCount": "sometimes",
-    "notes": []
+    "notes": [],
+    "calendars": [
+      "scioperi.mit.gov.it (Ministry of Infrastructure and Transport strike register)",
+      "commissionegaranziasciopero.it (Commissione di Garanzia strike calendar, all essential services)"
+    ]
   },
   "LT": {
     "official": [],

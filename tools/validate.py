@@ -11,7 +11,7 @@ highest risk first. It never changes data.
   python3 tools/validate.py --since HEAD --only-changed   # daily mode: only events added or revised since the ref
   python3 tools/validate.py --mark-reviewed      # after you checked the current list by hand: stop listing those items until they change
 
-Exit code 1 if any "blocking" problem is found (bad structure, missing source, impossible numbers).
+Exit code 1 if any "blocking" problem is found (bad structure, missing source or reach, impossible numbers).
 """
 import argparse, json, os, re, subprocess, sys, datetime as dt
 from urllib.parse import urlparse
@@ -113,6 +113,8 @@ def main():
             key = (e.get("date"), e.get("title"))
             if key in seen: add(p3, ref, "duplicate event.")
             seen.add(key)
+            if e.get("reach") not in ("national", "local"): add(block, ref, "`reach` must be `national` or `local` (see the rule in tools/routine-prompt-full.md).")
+            elif bool(e.get("minor")) != (e["reach"] == "local"): add(block, ref, "`minor` must be true exactly when `reach` is `local`.")
             src = e.get("src") or []
             if not src or not all(len(s) == 2 and str(s[1]).startswith("http") for s in src): add(block, ref, "missing or malformed source link.")
             off, orgc = e.get("off"), e.get("orgc")
@@ -147,7 +149,8 @@ def main():
         if P.get("nextDate") and not nd: add(block, tag, "`nextDate` is not YYYY-MM-DD.")
         if nd and nd < TODAY - dt.timedelta(days=1): add(p3, tag, f"`nextDate` {nd} has passed; remove it or add the event.")
         if P.get("nextStrike") and not P.get("nextDate"): add(p3, tag, "`nextStrike` is set but there is no `nextDate`.")
-        recent = [e for e in ev if (d := parse_date(e.get("date", ""))) and (TODAY - d).days <= 30 and not e.get("minor")]
+        if P.get("nextDate") and P.get("nextReach") not in ("national", "local"): add(block, tag, "`nextDate` needs `nextReach`: `national` or `local`.")
+        recent = [e for e in ev if (d := parse_date(e.get("date", ""))) and (TODAY - d).days <= 30 and e.get("reach") == "national"]
         if recent and P.get("reasons") and not P.get("pressure"): add(p3, tag, "national protest in the last 30 days but no `pressure` block.")
         if recent and P.get("reasons") and not P.get("themes"): add(p3, tag, "national protest in the last 30 days with reasons but no `themes`.")
         for e in recent:
