@@ -733,6 +733,7 @@ html.hm body{background:#FFFFFF}
 #rp-tip{background:#1E2226;color:#FFFFFF}
 .pv-kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pv-kpis.one{grid-template-columns:1fr}.kpi{display:flex;flex-direction:column;gap:2px;border-radius:10px;padding:10px 12px;min-width:0}.kpi .k-l{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;opacity:.8}.kpi .k-v{font-family:var(--display);font-size:26px;font-weight:800;font-stretch:112%;letter-spacing:-.02em;line-height:1.05}.kpi .k-s{display:flex;flex-direction:column;font-size:12.5px;line-height:1.35}.kpi .k-s::first-letter,.kpi .k-s span::first-letter{text-transform:uppercase}.kpi-pr{background:var(--surface);border:1px solid var(--line);color:var(--fg)}.kpi-pr .k-v i{font-style:normal;font-size:.6em;vertical-align:.25em}.kpi-pr.pr2 .k-v{color:#8F2D2D}.kpi-pr.pr1 .k-v{color:#B8322A}.kpi-pr.pr0 .k-v{color:var(--muted)}.kpi-pr .k-s{color:var(--muted)}@media (max-width:420px){.pv-kpis{grid-template-columns:1fr}}
 .nx-for{margin-top:8px;display:flex;flex-direction:column;gap:4px}.nx-for p{margin:0;font-size:13px}.nx-k{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-right:6px}.nx-for .why-t{margin-top:2px}.ov-for{margin-top:2px}
+a.hm-fig{color:inherit;text-decoration:none;cursor:pointer;transition:background .15s}a.hm-fig:hover{background:var(--hpanel,rgba(0,0,0,.04))}a.hm-fig:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.hm-card .ctop{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.hm-card .topic{font-size:14px;color:var(--hfg,inherit);margin:0}.hm-nx{font-size:12.5px;color:var(--hmuted)}.hm-card:hover{border-color:var(--hacc)}.hm-card .hm-more{margin-top:auto}
 </style>
 
 
@@ -1386,12 +1387,12 @@ function renderHome(){const E=document.getElementById("home");if(!E)return;
     <p class="hm-lede">${esc(lede)}</p>
     <div class="hm-cta"><a class="hm-btn" href="#full">Explore the Europe map <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a class="hm-btn ghost" href="#report">Read the report</a><a class="hm-btn ghost" href="#hm-mv">See the main movements</a></div></section>`;
   // key figures
-  const fig=(v,k,s)=>`<div class="hm-fig"><div class="v">${v}</div><div class="k">${k}</div><div class="s">${s}</div></div>`;
+  const fig=(v,k,s,go)=>`<a class="hm-fig" href="${go}"><div class="v">${v}</div><div class="k">${k}</div><div class="s">${s}</div></a>`;
   h+=`<section class="hm-figs" aria-label="Key figures">
-    ${big?fig(`${nfk(big.off)}${big.orgc?` <small>/ ${nfk(big.orgc)}</small>`:""}`,"Largest protest day in 30 days",`${esc(by[big.c].n)}, ${dfmt(big.date)}: official count${big.orgc?" / organisers' count":""}`):""}
-    ${fig(rows.length,"European countries with protests",maj.length?`Major: ${esc(maj.map(r=>r.x.n).join(", "))}`:"Active or Major in the last 30–60 days")}
-    ${fig(strikes.length,"National strikes in the next 3 weeks",strikes.length?esc(strikes.map(s=>`${s.x.n} ${dfmt(s.d)}`).join(" · ")):"None called so far")}
-    ${fig(arr.length?nf(arrests):"—","Arrests in 30 days",arr.length?`Where reported, ${new Set(arr.map(e=>e.c)).size} countries; official figures`:"Not reported")}
+    ${big?fig(`${nfk(big.off)}${big.orgc?` <small>/ ${nfk(big.orgc)}</small>`:""}`,"Largest protest day in 30 days",`${esc(by[big.c].n)}, ${dfmt(big.date)}: official count${big.orgc?" / organisers' count":""}`,`#c-${big.c}`):""}
+    ${fig(rows.length,"European countries with protests",maj.length?`Major: ${esc(maj.map(r=>r.x.n).join(", "))}`:"Active or Major in the last 30–60 days","#full")}
+    ${fig(strikes.length,"National strikes in the next 3 weeks",strikes.length?esc(strikes.map(s=>`${s.x.n} ${dfmt(s.d)}`).join(" · ")):"None called so far","#rp-dates")}
+    ${fig(arr.length?nf(arrests):"—","Arrests in 30 days",arr.length?`Where reported, ${new Set(arr.map(e=>e.c)).size} countries; official figures`:"Not reported","#report")}
   </section>`;
   // drivers
   const mx=thc.length?thc[0][2].length:1;
@@ -1399,26 +1400,16 @@ function renderHome(){const E=document.getElementById("home");if(!E)return;
     <p class="hm-sub">Most movements started over one local issue, then grew into a broader complaint about living standards. The bars count how many countries with protests cite each theme.</p></div>
     <div class="hm-dl">${thc.slice(0,7).map(([t,l,r])=>`<div class="hm-dr"><span>${esc(l)}</span><div class="tr"><div class="fl" style="width:${r.length/mx*100}%"></div></div><b>${r.length}</b><small>${esc(r.map(x=>x.x.n).join(", "))}</small></div>`).join("")}</div></section>`;
   // movements carousel
-  const cards=rows.map(r=>{const P=r.P,evs12=P.events.filter(e=>ageDays(e.date)<=90&&ageDays(e.date)>=-1).sort((a,b)=>b.date.localeCompare(a.date));
-    const first=evs12.at(-1),nx=upcoming(r.x.c),pr=r.p;
-    const facts=evs12.filter(isNat).slice(0,2).map(e=>{const f=[];
-      if(e.off||e.orgc)f.push(`${e.off?nf(e.off)+" (official)":"no official count"}${e.orgc?", "+nf(e.orgc)+" (organisers)":""}`);else if(e.extra)f.push(e.extra.split(";")[0]);
-      if(e.arrests!=null)f.push(`${nf(e.arrests)} arrests`);if(e.deaths)f.push(`${e.deaths} deaths`);
-      return `${dfmt(e.date)}: ${esc(e.title)}${f.length?" · "+esc(f.join(" · ")):""}`});
-    if(nx)facts.push(`<b>Next: ${dfmt(nx)}</b>${P.nextStrike?" · national strike":""}`);
-    const who=(P.groups||[]).map(g=>g.short||g.name);
-    const src=[];evs12.slice(0,2).forEach(e=>e.src.slice(0,1).forEach(s=>src.push(s)));
-    return `<article class="hm-card${r.m.k===2?" lead":""}" data-c="${r.x.c}" tabindex="0">
-      <div class="ctop"><div><h3>${esc(r.x.n)}</h3><div class="topic">${esc((P.reasons||[]).slice(0,3).join(", ")||"—")}${first?` · since ${dfmt(first.date)}`:""}</div></div>
-        <span class="hm-pill" style="background:var(--${lvKey(r.m)});color:var(--${lvKey(r.m)}f)">${r.m.name}</span></div>
+  // top 10 by level and pressure (rows are already ordered); short cards: level, reasons, since, pressure
+  const cards=rows.slice(0,10).map(r=>{const P=r.P,first=P.events.filter(e=>ageDays(e.date)<=90&&ageDays(e.date)>=-1).sort((a,b)=>a.date.localeCompare(b.date))[0],pr=r.p,nx=upcoming(r.x.c);
+    return `<article class="hm-card${r.m.k===2?" lead":""}" data-c="${r.x.c}" tabindex="0" role="link" aria-label="${esc(r.x.n)}: open briefing">
+      <div class="ctop"><h3>${esc(r.x.n)}</h3><span class="hm-pill" style="background:var(--${lvKey(r.m)});color:var(--${lvKey(r.m)}f)">${r.m.name}</span></div>
+      <div class="topic">${esc((P.reasons||[]).slice(0,3).join(", ")||"—")}${first?` · since ${dfmt(first.date)}`:""}</div>
       ${pr&&pr.k>0?`<div class="hm-pr pr${pr.k}">${"▲".repeat(pr.k)} Pressure on government: ${pr.name}</div>`:""}
-      ${P.summary?`<p>${esc(P.summary)}</p>`:""}
-      ${facts.length?`<ul class="facts">${facts.map(f=>`<li>${f}</li>`).join("")}</ul>`:""}
-      ${who.length?`<div class="hm-who"><span>Who</span>${who.map(w=>`<i>${esc(w)}</i>`).join("")}</div>`:""}
-      ${src.length?`<div class="src">Sources: ${src.map(([t,u])=>`<a href="${u}" target="_blank" rel="noopener">${esc(t)}</a>`).join(" · ")}</div>`:""}
+      ${nx?`<div class="hm-nx">Next: ${dfmt(nx)}${P.nextStrike?" · national strike":""}</div>`:""}
       <span class="hm-more">Open briefing →</span></article>`});
   h+=`<section id="hm-mv" class="hm-mv"><div class="hm-mvh"><div><p class="hm-eye">Main movements</p><h2>Who is protesting, and what they want</h2>
-    <p class="hm-sub">Ordered by level and pressure on government. Figures are the latest our sources report; where only one side counted, we say so.</p></div>
+    <p class="hm-sub">The ${cards.length} biggest movements, ordered by level and pressure on government. Open a card for the full briefing.</p></div>
     <div class="hm-arrows"><button type="button" id="hm-prev" aria-label="Previous movements">‹</button><button type="button" id="hm-next" aria-label="Next movements">›</button></div></div>
     <div class="hm-track" id="hm-track">${cards.join("")}</div></section>`;
   // map call-out
@@ -1427,6 +1418,7 @@ function renderHome(){const E=document.getElementById("home");if(!E)return;
     <div class="hm-mc-b"><a class="hm-btn inv" href="#full">Open the map <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a class="hm-btn inv ghost" href="#report">Read the report</a></div></section>
   <p class="hm-method"><b>How this page works.</b> Figures come from news agencies, public broadcasters and official statements, linked on each card and briefing. Official (police or ministry) and organisers' counts often differ by 1.5 to 3 times, so both are shown when available. "No deaths reported" means none in our sources, not a confirmed absence. Levels and pressure on government follow <a href="#method">fixed rules</a>.</p>`;
   E.innerHTML=h;
+  E.querySelectorAll("a.hm-fig").forEach(a=>{const h=a.getAttribute("href");if(h.startsWith("#c-"))a.onclick=e=>{e.preventDefault();openCountry(h.slice(3))};else if(h==="#rp-dates")a.onclick=e=>{e.preventDefault();location.hash="#report";const go=(n)=>{const t=document.getElementById("rp-dates");if(t&&t.getBoundingClientRect().height)t.scrollIntoView({block:"start"});else if(n<20)setTimeout(()=>go(n+1),100)};setTimeout(()=>go(0),350)}});
   E.querySelectorAll(".hm-card").forEach(c=>{const go=e=>{if(e.target.closest("a"))return;openCountry(c.dataset.c)};c.addEventListener("click",go);c.addEventListener("keydown",e=>{if(e.key==="Enter")go(e)})});
   const tr=document.getElementById("hm-track"),step=()=>{const c=tr.querySelector(".hm-card");return c?c.getBoundingClientRect().width+16:320};
   document.getElementById("hm-prev").onclick=()=>tr.scrollBy({left:-step(),behavior:"smooth"});

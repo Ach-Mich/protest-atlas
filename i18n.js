@@ -146,7 +146,7 @@ var R=[
 [/^checked (.+)$/,"vérifié le $1","geprüft am $1"],
 [/^since (.+)$/,"depuis le $1","seit $1"],
 [/^in (\d+) days?$/,function(m){var n=+m[1];return ["dans "+n+" jour"+(n>1?"s":""),"in "+n+(n===1?" Tag":" Tagen")]}],
-[/^Next: (.+)$/,"Prochaine date : $1","Nächster Termin: $1"],
+[/^Next: (.+) · national strike$/,"Prochaine date : $1 · grève nationale","Nächster Termin: $1 · landesweiter Streik"],[/^The (\d+) biggest movements, ordered by level and pressure on government\. Open a card for the full briefing\.$/,"Les $1 principaux mouvements, classés par niveau et pression sur le gouvernement. Ouvrez une carte pour la fiche complète.","Die $1 größten Bewegungen, geordnet nach Stufe und Druck auf die Regierung. Öffnen Sie eine Karte für den vollständigen Bericht."],[/^Next: (.+)$/,"Prochaine date : $1","Nächster Termin: $1"],
 [/^Next$/,"Prochaine date","Nächster Termin"],
 [/^latest (.+) \(official\)$/,"dernier : $1 (officiel)","zuletzt: $1 (amtlich)"],
 [/^latest (.+)$/,"dernier : $1","zuletzt: $1"],
