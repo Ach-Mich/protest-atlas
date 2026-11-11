@@ -340,7 +340,7 @@ details summary{cursor:pointer;font-size:13px;color:var(--accent);font-weight:50
 .tabs a:hover{color:var(--fg)}
 #overview{display:none}
 .ov #overview{display:flex;flex-direction:column;gap:36px}
-.ov #hotsec,.ov .controls,.ov .main,.ov #method,.ov header .sample{display:none}
+.ov #hotsec,.ov .controls,.ov .main,.ov header .sample{display:none}
 .full .tabs{display:none}
 .ov-head{display:flex;flex-direction:column;gap:6px}
 .ov-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin:0}
@@ -743,13 +743,13 @@ a.hm-fig{color:inherit;text-decoration:none;cursor:pointer;transition:background
   <section id="home" aria-label="Protest Atlas home"></section>
   <header>
     <div>
-      <div class="fullonly" style="gap:14px;flex-wrap:wrap"><a href="#home" style="font-size:13px;font-weight:600;text-decoration:none">Home</a><a href="#report" style="font-size:13px;font-weight:600;text-decoration:none">Report</a><a href="#map" style="font-size:13px;font-weight:600;text-decoration:none">Map &amp; briefings</a></div>
+      <div class="fullonly" style="gap:14px;flex-wrap:wrap"><a href="#home" style="font-size:13px;font-weight:600;text-decoration:none">Home</a><a href="#report" style="font-size:13px;font-weight:600;text-decoration:none">Report</a><a href="#full" style="font-size:13px;font-weight:600;text-decoration:none">Europe map</a></div>
       <h1><a href="#home" class="brand">Protest Atlas</a></h1>
       <p class="sub">Where people are taking to the streets, how big it is, and why. Click a country to read its briefing.</p>
     </div>
     <div class="sample" role="note">Mobilisation levels are a Protest Atlas assessment built from press-reported protest figures, using <a href="#method">fixed rules</a>. They are not an official measure. Economic figures: Eurostat.</div>
   </header>
-  <nav class="tabs" aria-label="Views"><a href="#home" data-t="hm">Home</a><a href="#report" data-t="ov">Report</a><a href="#map" data-t="map">Map &amp; briefings</a><a href="#full">Full-screen map ↗</a><span class="lang-slot" id="lang-tabs"></span></nav>
+  <nav class="tabs" aria-label="Views"><a href="#home" data-t="hm">Home</a><a href="#report" data-t="ov">Report</a><a href="#full" data-t="map">Europe map</a><span class="lang-slot" id="lang-tabs"></span></nav>
   <section id="overview" aria-label="Overview"></section>
 
   <section id="hotsec" aria-label="Hotspots now"><p class="hlabel">Hotspots now</p><div class="hot" id="hot"></div></section>
@@ -1249,7 +1249,7 @@ const THEMES=[["cost","Cost of living"],["wages","Wages & jobs"],["housing","Hou
 function ovRows(){return C.filter(x=>{const m=mob(x.c);return typeof m.k==="number"&&m.k>0})
   .map(x=>({x,m:mob(x.c),p:pressure(x.c),P:PROT[x.c]}))
   .sort((a,b)=>b.m.k-a.m.k||((b.p?b.p.score:-1)-(a.p?a.p.score:-1))||a.x.n.localeCompare(b.x.n))}
-function openCountry(c){if(location.hash!=="#map")location.hash="#map";state.sel=c;renderPanel();renderAll();setTimeout(()=>{if(mapReady){base=null;fitBase();zoomCountry(c)}},60);window.scrollTo(0,0)}
+function openCountry(c){const go=()=>{pick(c);if(mapReady){base=null;fitBase();zoomCountry(c)}};if(location.hash!=="#full"){location.hash="#full";setTimeout(go,80)}else go()}
 function ovName(x,m){return `<button type="button" class="ov-cn" data-c="${x.c}"><i style="background:var(--${lvKey(m)})"></i>${esc(x.n)}</button>`}
 /* ---------- report ---------- */
 const RPC={d:"#007F9E",m:"#C98200",g:"#C2412F"};
@@ -1478,10 +1478,12 @@ Promise.resolve().then(()=>buildMap()).catch(e=>{MAP_ERR=String(e&&e.message||e)
   base=null;if(state.view==="map")fitBase();renderMap();renderMarks()});
 // Full-page map mode
 let prevView=state.view;
-function applyMode(){const H=document.documentElement,hs=location.hash,full=hs==="#full",was=H.classList.contains("full"),hm=hs===""||hs==="#"||hs==="#home",ov=hs==="#report"||hs==="#overview",wasOv=H.classList.contains("ov"),wasHm=H.classList.contains("hm");
+function applyMode(){{const h0=location.hash;if(h0&&h0!=="#"&&!["#home","#report","#overview","#full","#method"].includes(h0)&&!h0.startsWith("#rp-")){history.replaceState(null,"",location.pathname+location.search+"#full")}}
+  const meth=location.hash==="#method";if(meth)history.replaceState(null,"",location.pathname+location.search+"#report");
+  const H=document.documentElement,hs=location.hash,full=hs==="#full",was=H.classList.contains("full"),hm=hs===""||hs==="#"||hs==="#home",ov=hs==="#report"||hs==="#overview",wasOv=H.classList.contains("ov"),wasHm=H.classList.contains("hm");
   H.classList.toggle("ov",ov);H.classList.toggle("hm",hm);{const nv=document.querySelector("#fbar nav");if(nv){const up=Object.values(PROT).map(x=>x&&x.checkedAt).filter(Boolean).sort().at(-1);nv.innerHTML=(up?`<span class="fstamp" id="fstamp">Updated ${dfmt(up)}</span>`:"")+(ov?`<a href="#full">Europe map</a>`:`<a href="#report">Report</a>`)+I18N.switchHTML()}}const cur=hm?"hm":ov?"ov":"map";document.title=hm?"Protest Atlas · Where people are protesting in Europe, and why":ov?"Report · Protest Atlas":full?"Europe map · Protest Atlas":"Map & briefings · Protest Atlas";
   document.querySelectorAll(".tabs a[data-t]").forEach(a=>{if(a.dataset.t===cur)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
-  if(ov){renderOverview();if(!wasOv)window.scrollTo(0,0)}if(hm){renderHome();if(!wasHm)window.scrollTo(0,0)}
+  if(ov){renderOverview();if(meth){const go=n=>{const m=document.getElementById("method");if(m&&m.getBoundingClientRect().height)m.scrollIntoView({block:"start"});if(n<6)setTimeout(()=>go(n+1),150)};setTimeout(()=>go(0),100)}else if(!wasOv)window.scrollTo(0,0)}if(hm){renderHome();if(!wasHm)window.scrollTo(0,0)}
   if(full===was&&was)return;
   H.classList.toggle("full",full);
   if(full){prevView=state.view;state.view=(mapReady||!mapFailed)?"map":"tiles"}else{H.classList.remove("drawer");state.view=prevView}
