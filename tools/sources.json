@@ -542,7 +542,8 @@
     ],
     "crowdCount": "sometimes",
     "notes": [
-      "articulo14.es, elpais.com and rtve.es could not be read from the sandbox (HTTP 403 / fetch not permitted, 10 Nov 2026)."
+      "articulo14.es, elpais.com and rtve.es could not be read from the sandbox (HTTP 403 / fetch not permitted, 10 Nov 2026).",
+      "europapress.es cannot be fetched from the sandbox (13 Nov 2026); ANSA (ansa.it) relays Interior/Europa Press figures for Spanish strikes and can be read."
     ]
   },
   "FI": {
@@ -698,7 +699,9 @@
       "irishexaminer.com"
     ],
     "crowdCount": "sometimes",
-    "notes": []
+    "notes": [
+      "forsa.ie returns HTTP 403 to automated readers (13 Nov 2026); rte.ie can be read."
+    ]
   },
   "IS": {
     "official": [],

@@ -1,0 +1,799 @@
+{
+  "date": "2026-11-13",
+  "countries": {
+    "AL": {
+      "tier": "watch",
+      "nat30": 5,
+      "minor30": 0,
+      "lastNational": "2026-11-07",
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": 177,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [
+        "governance",
+        "education",
+        "wages"
+      ],
+      "groupTypes": [
+        "opposition",
+        "students"
+      ],
+      "pressure": {
+        "demand": "resignation",
+        "opposition": true,
+        "crackdown": true,
+        "response": "talks"
+      }
+    },
+    "AT": {
+      "tier": "watch",
+      "nat30": 1,
+      "minor30": 0,
+      "lastNational": "2026-10-22",
+      "peakOff": null,
+      "peakOrgc": 30000,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [
+        "education"
+      ],
+      "groupTypes": [
+        "students"
+      ],
+      "pressure": {
+        "demand": "policy",
+        "opposition": false,
+        "crackdown": false,
+        "response": "none"
+      }
+    },
+    "BA": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "BE": {
+      "tier": "watch",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": "2026-10-12",
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": "2026-11-23",
+      "nextStrike": false,
+      "themes": [
+        "wages",
+        "austerity",
+        "cost"
+      ],
+      "groupTypes": [
+        "students",
+        "unions"
+      ],
+      "pressure": {
+        "demand": "programme",
+        "opposition": false,
+        "crackdown": false,
+        "response": "none"
+      }
+    },
+    "BG": {
+      "tier": "watch",
+      "nat30": 0,
+      "minor30": 1,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [
+        "war",
+        "governance",
+        "cost",
+        "wages"
+      ],
+      "groupTypes": [
+        "citizens",
+        "opposition"
+      ],
+      "pressure": {
+        "demand": "resignation",
+        "opposition": false,
+        "crackdown": false,
+        "response": "none"
+      }
+    },
+    "CH": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": "2026-09-25",
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [
+        "rights",
+        "war"
+      ],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "CY": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "CZ": {
+      "tier": "watch",
+      "nat30": 2,
+      "minor30": 0,
+      "lastNational": "2026-11-03",
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": "2026-11-15",
+      "nextStrike": false,
+      "themes": [
+        "media"
+      ],
+      "groupTypes": [
+        "citizens",
+        "sector"
+      ],
+      "pressure": {
+        "demand": "policy",
+        "opposition": false,
+        "crackdown": false,
+        "response": "none"
+      }
+    },
+    "DE": {
+      "tier": "watch",
+      "nat30": 1,
+      "minor30": 0,
+      "lastNational": "2026-10-31",
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": "2026-11-20",
+      "nextStrike": false,
+      "themes": [
+        "war",
+        "education",
+        "cost",
+        "services"
+      ],
+      "groupTypes": [
+        "students"
+      ],
+      "pressure": {
+        "demand": "policy",
+        "opposition": false,
+        "crackdown": false,
+        "response": "none"
+      }
+    },
+    "DK": {
+      "tier": "watch",
+      "nat30": 1,
+      "minor30": 0,
+      "lastNational": "2026-11-04",
+      "peakOff": null,
+      "peakOrgc": 13000,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [
+        "education",
+        "austerity"
+      ],
+      "groupTypes": [
+        "students"
+      ],
+      "pressure": {
+        "demand": "policy",
+        "opposition": false,
+        "crackdown": false,
+        "response": "none"
+      }
+    },
+    "EE": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "ES": {
+      "tier": "watch",
+      "nat30": 2,
+      "minor30": 1,
+      "lastNational": "2026-11-11",
+      "peakOff": 120000,
+      "peakOrgc": null,
+      "arrests30": 72,
+      "deaths30": 0,
+      "strike30": true,
+      "nextDate": "2026-11-17",
+      "nextStrike": false,
+      "themes": [
+        "housing",
+        "wages",
+        "services"
+      ],
+      "groupTypes": [
+        "sector",
+        "unions"
+      ],
+      "pressure": {
+        "demand": "programme",
+        "opposition": false,
+        "crackdown": true,
+        "response": "crisis",
+        "fragility": "fragile"
+      }
+    },
+    "FI": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "FR": {
+      "tier": "watch",
+      "nat30": 6,
+      "minor30": 0,
+      "lastNational": "2026-11-10",
+      "peakOff": 575000,
+      "peakOrgc": 1600000,
+      "arrests30": 5436,
+      "deaths30": 1,
+      "strike30": true,
+      "nextDate": "2026-11-17",
+      "nextStrike": true,
+      "themes": [
+        "education",
+        "cost",
+        "wages",
+        "services"
+      ],
+      "groupTypes": [
+        "citizens",
+        "students",
+        "unions"
+      ],
+      "pressure": {
+        "demand": "programme",
+        "opposition": false,
+        "crackdown": false,
+        "response": "talks",
+        "fragility": "strained"
+      }
+    },
+    "GB": {
+      "tier": "watch",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": "2026-11-25",
+      "nextStrike": false,
+      "themes": [
+        "wages",
+        "services"
+      ],
+      "groupTypes": [
+        "professions"
+      ],
+      "pressure": {
+        "demand": "policy",
+        "opposition": false,
+        "crackdown": false,
+        "response": "none"
+      }
+    },
+    "GR": {
+      "tier": "watch",
+      "nat30": 2,
+      "minor30": 1,
+      "lastNational": "2026-11-05",
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": "2026-11-25",
+      "nextStrike": true,
+      "themes": [
+        "education",
+        "housing",
+        "wages",
+        "services"
+      ],
+      "groupTypes": [
+        "professions",
+        "sector",
+        "students",
+        "unions"
+      ],
+      "pressure": {
+        "demand": "programme",
+        "opposition": false,
+        "crackdown": false,
+        "response": "none"
+      }
+    },
+    "HR": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "HU": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "IE": {
+      "tier": "watch",
+      "nat30": 1,
+      "minor30": 0,
+      "lastNational": "2026-10-14",
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": true,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [
+        "wages"
+      ],
+      "groupTypes": [
+        "unions"
+      ],
+      "pressure": {
+        "demand": "policy",
+        "opposition": false,
+        "crackdown": false,
+        "response": "talks"
+      }
+    },
+    "IS": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "IT": {
+      "tier": "watch",
+      "nat30": 2,
+      "minor30": 1,
+      "lastNational": "2026-10-30",
+      "peakOff": null,
+      "peakOrgc": 100000,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": true,
+      "nextDate": "2026-11-20",
+      "nextStrike": true,
+      "themes": [
+        "wages",
+        "austerity",
+        "cost",
+        "war"
+      ],
+      "groupTypes": [
+        "unions"
+      ],
+      "pressure": {
+        "demand": "programme",
+        "opposition": false,
+        "crackdown": false,
+        "response": "none"
+      }
+    },
+    "LT": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "LV": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "MD": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "ME": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "MK": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "NL": {
+      "tier": "watch",
+      "nat30": 0,
+      "minor30": 2,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": 34,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "NO": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "PL": {
+      "tier": "watch",
+      "nat30": 1,
+      "minor30": 0,
+      "lastNational": "2026-10-22",
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [
+        "rights"
+      ],
+      "groupTypes": [
+        "citizens"
+      ],
+      "pressure": {
+        "demand": "policy",
+        "opposition": false,
+        "crackdown": false,
+        "response": "none"
+      }
+    },
+    "PT": {
+      "tier": "watch",
+      "nat30": 3,
+      "minor30": 0,
+      "lastNational": "2026-10-31",
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": "2026-11-14",
+      "nextStrike": false,
+      "themes": [
+        "housing",
+        "wages",
+        "cost"
+      ],
+      "groupTypes": [
+        "citizens",
+        "unions"
+      ],
+      "pressure": {
+        "demand": "policy",
+        "opposition": false,
+        "crackdown": true,
+        "response": "none"
+      }
+    },
+    "RO": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "RS": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "SE": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "SI": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "SK": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "TR": {
+      "tier": "screen",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [],
+      "groupTypes": [],
+      "pressure": null
+    },
+    "UA": {
+      "tier": "watch",
+      "nat30": 0,
+      "minor30": 1,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [
+        "services",
+        "governance"
+      ],
+      "groupTypes": [],
+      "pressure": {
+        "demand": "policy",
+        "opposition": false,
+        "crackdown": false,
+        "response": "none"
+      }
+    },
+    "XK": {
+      "tier": "watch",
+      "nat30": 0,
+      "minor30": 0,
+      "lastNational": null,
+      "peakOff": null,
+      "peakOrgc": null,
+      "arrests30": null,
+      "deaths30": 0,
+      "strike30": false,
+      "nextDate": null,
+      "nextStrike": false,
+      "themes": [
+        "governance"
+      ],
+      "groupTypes": [],
+      "pressure": null
+    }
+  }
+}

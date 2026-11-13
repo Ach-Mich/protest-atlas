@@ -1,0 +1,606 @@
+{
+  "date": "2026-11-13",
+  "sweep": [
+    {
+      "q": "general strike Spain 11 November 2026 huelga general seguimiento manifestaciones",
+      "lang": "es"
+    },
+    {
+      "q": "grève générale journée de mobilisation novembre 2026",
+      "lang": "fr"
+    },
+    {
+      "q": "sciopero generale novembre 2026 manifestazione",
+      "lang": "it"
+    },
+    {
+      "q": "Generalstreik Demonstration November 2026 Gewerkschaft",
+      "lang": "de"
+    },
+    {
+      "q": "greve geral manifestação novembro 2026",
+      "lang": "pt"
+    },
+    {
+      "q": "thousands march protesters demand resignation Balkans November 2026",
+      "lang": "en"
+    },
+    {
+      "q": "national strike called Europe unions November 2026",
+      "lang": "en"
+    },
+    {
+      "q": "protest Central Europe Baltic Nordic November 12 2026 demonstration thousands",
+      "lang": "en"
+    }
+  ],
+  "calendars": [
+    {
+      "country": "IT",
+      "url": "https://scioperi.mit.gov.it/mit2/public/scioperi",
+      "ok": false,
+      "error": "HTTP 503"
+    },
+    {
+      "country": "IT",
+      "url": "https://www.commissionegaranziasciopero.it/",
+      "ok": false,
+      "error": "HTTP 503; CGIL 20 Nov general strike re-confirmed via QuiFinanza (3 Nov 2026); USB/CUB 28 Nov strike in search results is from 2025 (Wanted in Rome, 23 Oct 2025)"
+    }
+  ],
+  "quick": {
+    "AL": {
+      "q": "protesta studentët Tiranë nëntor 2026 opozita",
+      "lang": "sq",
+      "found": "Nothing after the 7 Nov national student protest (already recorded)."
+    },
+    "AT": {
+      "q": "Demonstration Streik Österreich November 2026 Wien Kundgebung",
+      "lang": "de",
+      "found": "Nothing new; a GÖD 26 Nov demo item has no year (likely older)."
+    },
+    "BA": {
+      "q": "protest štrajk Sarajevo Banja Luka novembar 2026",
+      "lang": "bs",
+      "found": "Nothing for November."
+    },
+    "BE": {
+      "q": "manifestation nationale 23 novembre 2026 Bruxelles FGTB CSC grève étudiants 17 novembre",
+      "lang": "fr",
+      "found": "23 Nov national demonstration confirmed (CSC); the 24-26 Nov three-day strike in results is from 2025."
+    },
+    "BG": {
+      "q": "протест бюджет 11 ноември 2026 София Пловдив",
+      "lang": "bg",
+      "found": "No report of the 11 Nov budget protests; results are 2025 budget protests."
+    },
+    "CH": {
+      "q": "Demonstration Kundgebung Schweiz November 2026 Bern Zürich Protest",
+      "lang": "de",
+      "found": "Nothing confirmed for November (one thin, unconfirmed foreign report of 2 Nov unrest in Zurich/Basel)."
+    },
+    "CY": {
+      "q": "διαδήλωση απεργία Κύπρος Λευκωσία Νοέμβριος 2026",
+      "lang": "el",
+      "found": "Only an indefinite strike by education-ministry support staff (2 Nov, sector-specific, small)."
+    },
+    "CZ": {
+      "q": "demonstrace Letná 15. listopadu 2026 Milion chvilek veřejnoprávní média",
+      "lang": "cs",
+      "found": "15 Nov Letná rally by Milion chvilek confirmed."
+    },
+    "DE": {
+      "q": "Schulstreik gegen Wehrpflicht 20. November 2026 bundesweit Demonstration",
+      "lang": "de",
+      "found": "20 Nov fifth school strike confirmed (junge Welt 2 and 13 Nov)."
+    },
+    "DK": {
+      "q": "demonstration strejke Danmark november 2026",
+      "lang": "da",
+      "found": "Only the 4 Nov student protest (already recorded)."
+    },
+    "EE": {
+      "q": "meeleavaldus streik Eesti november 2026 Tallinn",
+      "lang": "et",
+      "found": "Undated teachers' strike items (older years); nothing for November 2026."
+    },
+    "ES": {
+      "q": "huelga general 11N balance seguimiento manifestantes Delegación del Gobierno Madrid detenidos",
+      "lang": "es",
+      "found": "11 Nov general strike held: 120,000 in Madrid per the Government Delegation, 70+ arrests; 17 Nov rail strike announced."
+    },
+    "FI": {
+      "q": "mielenosoitus lakko marraskuu 2026 Helsinki",
+      "lang": "fi",
+      "found": "Nothing for November."
+    },
+    "FR": {
+      "q": "grève 17 novembre CGT fonction publique privé appel Matignon 13 novembre syndicats",
+      "lang": "fr",
+      "found": "17 Nov public-service strike called by the intersyndicale, widened by the CGT; no Interior count found for 10 Nov."
+    },
+    "GB": {
+      "q": "BMA consultants strike 25 November 2026 England latest",
+      "lang": "en",
+      "found": "BMA consultants' 48-hour strike from 25 Nov unchanged."
+    },
+    "GR": {
+      "q": "ΑΔΕΔΥ απεργία 25 Νοεμβρίου 2026 συλλαλητήριο",
+      "lang": "el",
+      "found": "ADEDY 25 Nov 24-hour strike confirmed."
+    },
+    "HR": {
+      "q": "prosvjed štrajk Zagreb studeni 2026",
+      "lang": "hr",
+      "found": "Nothing for November (Zagreb transport strike was in September)."
+    },
+    "HU": {
+      "q": "tüntetés sztrájk Budapest november 2026",
+      "lang": "hu",
+      "found": "Nothing for November 2026."
+    },
+    "IE": {
+      "q": "Ireland public sector strike 12 November went ahead or suspended Fórsa",
+      "lang": "en",
+      "found": "12 Nov strike suspended after a draft pay deal (RTÉ)."
+    },
+    "IS": {
+      "q": "mótmæli Reykjavík nóvember 2026",
+      "lang": "is",
+      "found": "Nothing."
+    },
+    "IT": {
+      "q": "sciopero generale novembre 2026 manifestazione",
+      "lang": "it",
+      "found": "CGIL 20 Nov general strike confirmed; Rome march from Piazza Vittorio."
+    },
+    "LT": {
+      "q": "protestas mitingas Vilnius lapkritis 2026 streikas",
+      "lang": "lt",
+      "found": "Nothing dated November 2026."
+    },
+    "LV": {
+      "q": "protests streiks Rīga novembris 2026",
+      "lang": "lv",
+      "found": "Nothing for November 2026."
+    },
+    "MD": {
+      "q": "protest grevă Chișinău noiembrie 2026",
+      "lang": "ro",
+      "found": "Nothing for November."
+    },
+    "ME": {
+      "q": "protest štrajk Podgorica novembar 2026 Crna Gora",
+      "lang": "sr",
+      "found": "Nothing for November."
+    },
+    "MK": {
+      "q": "протест штрајк Скопје ноември 2026",
+      "lang": "mk",
+      "found": "Nothing for November."
+    },
+    "NL": {
+      "q": "demonstratie staking Nederland november 2026 Den Haag",
+      "lang": "nl",
+      "found": "ANWB staff strike and rally in The Hague on 9 Nov (local)."
+    },
+    "NO": {
+      "q": "demonstrasjon streik Norge november 2026 Oslo",
+      "lang": "no",
+      "found": "Nothing dated November 2026."
+    },
+    "PL": {
+      "q": "protest manifestacja strajk listopad 2026 Warszawa",
+      "lang": "pl",
+      "found": "Nothing for November."
+    },
+    "PT": {
+      "q": "manifestação habitação 14 novembro 2026 Casa para Viver dia nacional de luta",
+      "lang": "pt",
+      "found": "14 Nov housing day, 20 Nov Frente Comum strike and 21 Nov CGTP march confirmed (RTP)."
+    },
+    "RO": {
+      "q": "protest grevă București noiembrie 2026 sindicate",
+      "lang": "ro",
+      "found": "Nothing for November 2026."
+    },
+    "RS": {
+      "q": "protest studenti Beograd novembar 2026 blokada",
+      "lang": "sr",
+      "found": "Nothing for November 2026."
+    },
+    "SE": {
+      "q": "demonstration strejk Sverige november 2026 Stockholm",
+      "lang": "sv",
+      "found": "Nothing for November."
+    },
+    "SI": {
+      "q": "protest stavka Ljubljana november 2026",
+      "lang": "sl",
+      "found": "Nothing for November."
+    },
+    "SK": {
+      "q": "protest Bratislava november 2026 Fico zhromaždenie štrajk",
+      "lang": "sk",
+      "found": "No 17 Nov 2026 rally announced in results."
+    },
+    "TR": {
+      "q": "protesto grev eylem İstanbul Kasım 2026",
+      "lang": "tr",
+      "found": "Nothing for November (dockers' action 30 Oct)."
+    },
+    "UA": {
+      "q": "протест мітинг Київ листопад 2026",
+      "lang": "uk",
+      "found": "Nothing for November."
+    },
+    "XK": {
+      "q": "protestë Prishtinë nëntor 2026",
+      "lang": "sq",
+      "found": "Nothing for November."
+    }
+  },
+  "candidates": [
+    {
+      "country": "ES",
+      "date": "2026-11-11",
+      "title": "24-hour general strike over housing and wages",
+      "kind": "held",
+      "reach": "national",
+      "rule": "strike nationwide",
+      "searches": [
+        {
+          "q": "general strike Spain 11 November 2026 huelga general seguimiento manifestaciones",
+          "lang": "es"
+        },
+        {
+          "q": "huelga general 11N balance seguimiento manifestantes Delegación del Gobierno Madrid detenidos",
+          "lang": "es"
+        },
+        {
+          "q": "EFE huelga general 11 noviembre Interior detenidos agentes heridos balance Marlaska",
+          "lang": "es"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.eldiario.es/economia/huelga-general-11-noviembre-ultima-hora-directo-arranca-gran-paro-vivienda_133_13653845.html",
+          "ok": true
+        },
+        {
+          "url": "https://www.que.es/2026/11/11/huelga-general-11n-balance/",
+          "ok": true
+        },
+        {
+          "url": "https://diariosabemos.com/nacional/huelga-general-11n-llena-madrid-120000-manifestantes_519875_102.html",
+          "ok": true
+        },
+        {
+          "url": "https://ansa.it/sito/notizie/mondo/2026/11/11/sciopero-generale-in-spagna-21-feriti-e-un-arresto-in-scontri-a-madrid_0058ec02-9631-492f-bd37-eead35d40f95.html",
+          "ok": true
+        }
+      ],
+      "outcome": "added event",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": [
+        "no Interior Ministry release found; official figures as quoted by press",
+        "final national arrest total compiled by elDiario.es"
+      ]
+    },
+    {
+      "country": "ES",
+      "date": "2026-11-17",
+      "title": "24-hour rail strike over safety (Adif, Renfe and other operators)",
+      "kind": "announced",
+      "reach": "national",
+      "rule": "strike nationwide",
+      "searches": [
+        {
+          "q": "huelga ferroviaria 17 noviembre todas las operadoras Semaf convocatoria seguridad",
+          "lang": "es"
+        },
+        {
+          "q": "huelga trenes 17 noviembre se mantiene desconvocada Adif Renfe sindicatos",
+          "lang": "es"
+        },
+        {
+          "q": "Europa Press huelga Adif Renfe 17 noviembre seguridad ferroviaria convocatoria registrada servicios mínimos",
+          "lang": "es"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.que.es/2026/11/03/huelga-adif-17-noviembre/",
+          "ok": true
+        },
+        {
+          "url": "https://www.europapress.es/buscador.aspx?buscar=huelga+Adif+17+noviembre",
+          "ok": false,
+          "error": "fetch not permitted"
+        }
+      ],
+      "outcome": "set nextDate",
+      "answers": {
+        "what": "ok",
+        "size": "n/a",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "gap"
+      },
+      "gaps": [
+        "formal strike notice and minimum services not yet confirmed",
+        "government response: negotiations reported as open, no detail"
+      ]
+    },
+    {
+      "country": "IE",
+      "date": "2026-11-12",
+      "title": "Second 24-hour public sector strike",
+      "kind": "announced",
+      "reach": "national",
+      "rule": "strike nationwide",
+      "searches": [
+        {
+          "q": "Ireland public sector strike 12 November went ahead or suspended Fórsa",
+          "lang": "en"
+        },
+        {
+          "q": "\"public sector\" draft pay agreement strike suspended Ireland November 2026 RTÉ",
+          "lang": "en"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://forsa.ie/",
+          "ok": false,
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://www.rte.ie/news/ireland/2026/1111/1598773-public-sector-pay-deal/",
+          "ok": true
+        }
+      ],
+      "outcome": "dropped: strike suspended after a draft pay deal; nextDate removed and pressure response updated",
+      "answers": {
+        "what": "ok",
+        "size": "n/a",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      }
+    },
+    {
+      "country": "FR",
+      "date": "2026-11-10",
+      "title": "Education strike day (follow-up for official figures)",
+      "kind": "held",
+      "reach": "national",
+      "rule": "3+ cities, common call",
+      "searches": [
+        {
+          "q": "10 novembre grève éducation manifestants selon le ministère de l'Intérieur bilan interpellations",
+          "lang": "fr"
+        },
+        {
+          "q": "grève générale journée de mobilisation novembre 2026",
+          "lang": "fr"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.interieur.gouv.fr/actualites/actualites-du-ministere",
+          "ok": false,
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://www.interieur.gouv.fr/actualites/communiques-de-presse",
+          "ok": false,
+          "error": "HTTP 403"
+        }
+      ],
+      "outcome": "updated event",
+      "answers": {
+        "what": "ok",
+        "size": "gap",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": [
+        "no nationwide Interior Ministry count or arrest figure found; ministry listings HTTP 403"
+      ]
+    },
+    {
+      "country": "FR",
+      "date": "2026-11-17",
+      "title": "Public-service strike, widened to the private sector by the CGT",
+      "kind": "announced",
+      "reach": "national",
+      "rule": "strike nationwide",
+      "searches": [
+        {
+          "q": "grève 17 novembre fonction publique intersyndicale appel revendications CGT FSU",
+          "lang": "fr"
+        },
+        {
+          "q": "grève 17 novembre CGT fonction publique privé appel Matignon 13 novembre syndicats",
+          "lang": "fr"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.ici.fr/infos/economie-social/mobilisation-sociale-une-intersyndicale-appelle-a-la-greve-dans-la-fonction-publique-le-17-novembre-3108517",
+          "ok": true
+        },
+        {
+          "url": "https://www.cgtetat.fr/societe-959/mobilisations/article/le-17-novembre-dans-le-public-et-le-prive-generalisons-la-greve",
+          "ok": true
+        },
+        {
+          "url": "https://www.interieur.gouv.fr/actualites/communiques-de-presse",
+          "ok": false,
+          "error": "HTTP 403"
+        }
+      ],
+      "outcome": "updated event: nextFor filled for existing nextDate",
+      "answers": {
+        "what": "ok",
+        "size": "n/a",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      }
+    },
+    {
+      "country": "IT",
+      "date": "2026-11-28",
+      "title": "USB/CUB general strike over the budget",
+      "kind": "announced",
+      "reach": "national",
+      "rule": "strike nationwide",
+      "searches": [
+        {
+          "q": "sciopero generale novembre 2026 manifestazione",
+          "lang": "it"
+        },
+        {
+          "q": "national strike called Europe unions November 2026",
+          "lang": "en"
+        },
+        {
+          "q": "USB sciopero generale novembre 2026 data",
+          "lang": "it"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.wantedinrome.com/news/italy-faces-general-strike-over-budget-on-28-november.html",
+          "ok": true
+        },
+        {
+          "url": "https://scioperi.mit.gov.it/mit2/public/scioperi",
+          "ok": false,
+          "error": "HTTP 503"
+        },
+        {
+          "url": "https://www.ansa.it/sito/notizie/economia/2026/10/17/landini-sciopero-generale-il-20-novembre_eda40ae6-9260-4a05-ab78-a363f308ab03.html",
+          "ok": true
+        }
+      ],
+      "outcome": "dropped: old article (23 Oct 2025, strike of 28 Nov 2025); ANSA shows only the CGIL 20 Nov 2026 general strike"
+    },
+    {
+      "country": "BE",
+      "date": "2026-11-26",
+      "title": "Three-day strike 24-26 November",
+      "kind": "announced",
+      "reach": "national",
+      "rule": "strike nationwide",
+      "searches": [
+        {
+          "q": "national strike called Europe unions November 2026",
+          "lang": "en"
+        },
+        {
+          "q": "manifestation nationale 23 novembre 2026 Bruxelles FGTB CSC grève étudiants 17 novembre",
+          "lang": "fr"
+        }
+      ],
+      "opened": [
+        {
+          "url": "http://www.brusselstimes.com/belgium/1805614/three-day-strike-to-paralyse-belgium-in-november-unions-announce-tbtb/",
+          "ok": true
+        },
+        {
+          "url": "https://www.lacsc.be/actualite/actualites-et-communiques-de-presse/newsdetail/2026/10/21/nous-ne-subirons-pas-l-avenir--nous-le-construisons-ensemble--rendez-vous-le-23-novembre-a-bruxelles",
+          "ok": true
+        }
+      ],
+      "outcome": "dropped: old article (21 Oct 2025, strikes of 24-26 Nov 2025)"
+    },
+    {
+      "country": "BG",
+      "date": "2026-11-11",
+      "title": "Budget protests in seven cities called by 'Regressive Bulgaria'",
+      "kind": "announced",
+      "reach": "local",
+      "rule": "local",
+      "searches": [
+        {
+          "q": "протест бюджет 11 ноември 2026 София Пловдив",
+          "lang": "bg"
+        },
+        {
+          "q": "Регресивна България протест 11 ноември бюджет 2027",
+          "lang": "bg"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.novinite.com/articles/241501",
+          "ok": true
+        }
+      ],
+      "outcome": "dropped: no report that the protests took place; nextDate removed"
+    },
+    {
+      "country": "NL",
+      "date": "2026-11-09",
+      "title": "ANWB staff strike and union rally in The Hague",
+      "kind": "held",
+      "reach": "local",
+      "rule": "local",
+      "searches": [
+        {
+          "q": "demonstratie staking Nederland november 2026 Den Haag",
+          "lang": "nl"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.rodi.nl/denhaag/nieuws/123269/anwb-medewerkers-staken-twaalf-uur-en-voeren-actie-in-den-haag",
+          "ok": true
+        }
+      ],
+      "outcome": "added event"
+    },
+    {
+      "country": "ES",
+      "date": "2026-11-26",
+      "title": "Catalan teachers' strike (and 21 Nov education march)",
+      "kind": "announced",
+      "reach": "local",
+      "rule": "local",
+      "searches": [
+        {
+          "q": "Generalstreik Demonstration November 2026 Gewerkschaft",
+          "lang": "de"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.catalannews.com/society-science/item/catalonia-faces-a-week-of-strikes-on-the-eve-of-the-election-campaign",
+          "ok": false,
+          "error": "not fetched; seen in search results only"
+        }
+      ],
+      "outcome": "dropped: regional date; Spain already has a national announced date (17 Nov)"
+    }
+  ]
+}
