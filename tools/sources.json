@@ -543,7 +543,8 @@
     "crowdCount": "sometimes",
     "notes": [
       "articulo14.es, elpais.com and rtve.es could not be read from the sandbox (HTTP 403 / fetch not permitted, 10 Nov 2026).",
-      "europapress.es cannot be fetched from the sandbox (13 Nov 2026); ANSA (ansa.it) relays Interior/Europa Press figures for Spanish strikes and can be read."
+      "europapress.es cannot be fetched from the sandbox (13 Nov 2026); ANSA (ansa.it) relays Interior/Europa Press figures for Spanish strikes and can be read.",
+      "eldiario.es and publico.es can be read (17 Nov 2026); the Transport Ministry publishes minimum-services resolutions as PDFs on cdn.transportes.gob.es."
     ]
   },
   "FI": {
@@ -623,7 +624,9 @@
       "thetimes.co.uk"
     ],
     "crowdCount": "sometimes",
-    "notes": []
+    "notes": [
+      "BMA releases (bma.org.uk/bma-media-centre) state strike dates and pauses; check them before keeping a doctors' strike date (17 Nov 2026)."
+    ]
   },
   "GR": {
     "official": [
@@ -760,7 +763,9 @@
     ],
     "press": [],
     "crowdCount": "unknown",
-    "notes": []
+    "notes": [
+      "The default wires (reuters.com, apnews.com, afp.com) cannot be read from the sandbox (17 Nov 2026); LRT (lrt.lt, public broadcaster, carries BNS) covers strikes and can be opened, and alkas.lt reported the 16 Nov teachers' strike."
+    ]
   },
   "LV": {
     "official": [],
