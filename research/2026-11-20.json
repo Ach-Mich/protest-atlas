@@ -1,0 +1,902 @@
+{
+  "date": "2026-11-20",
+  "sweep": [
+    {
+      "q": "general strike Europe November 2026",
+      "lang": "en"
+    },
+    {
+      "q": "grève 18 novembre 2026 mobilisation manifestants",
+      "lang": "fr"
+    },
+    {
+      "q": "huelga general convocada diciembre 2026",
+      "lang": "es"
+    },
+    {
+      "q": "sciopero generale 20 novembre 2026 CGIL adesione",
+      "lang": "it"
+    },
+    {
+      "q": "Generalstreik Demonstration Tausende November 2026",
+      "lang": "de"
+    },
+    {
+      "q": "greve geral 20 novembro 2026 CGTP UGT",
+      "lang": "pt"
+    },
+    {
+      "q": "thousands march protesters demand resignation Balkans November 2026",
+      "lang": "en"
+    },
+    {
+      "q": "national strike unions Nordic Baltic Central Europe protest November 2026",
+      "lang": "en"
+    },
+    {
+      "q": "European youth strike 20 November 2026 countries austerity militarisation",
+      "lang": "en"
+    }
+  ],
+  "calendars": [
+    {
+      "country": "IT",
+      "url": "https://scioperi.mit.gov.it/mit2/public/scioperi",
+      "ok": false,
+      "error": "HTTP 503; CGIL general strike of 20 Nov confirmed via Open (17 Nov) and QuiFinanza"
+    }
+  ],
+  "quick": {
+    "AL": {
+      "q": "protestë studentët Tiranë nëntor 2026",
+      "lang": "sq",
+      "found": "Nothing new since the 7 Nov national student protest (latest coverage October)."
+    },
+    "AT": {
+      "q": "Demonstration Streik Österreich November 2026",
+      "lang": "de",
+      "found": "Nothing dated Nov 2026; hits were 2024-2025 social-sector strikes."
+    },
+    "BA": {
+      "q": "protest štrajk Sarajevo novembar 2026",
+      "lang": "bs",
+      "found": "Nothing new for November."
+    },
+    "BE": {
+      "q": "manifestation étudiants Bruxelles 17 novembre 2026",
+      "lang": "fr",
+      "found": "FEF student march in Brussels on 17 Nov (thousands, ring road blocked); 23 Nov common-front demonstration still announced."
+    },
+    "BG": {
+      "q": "протест стачка София ноември 2026",
+      "lang": "bg",
+      "found": "Nothing new; hits from 2025 and summer 2026."
+    },
+    "CH": {
+      "q": "Jugendstreik 20. November Schweiz JUSO Demonstration",
+      "lang": "de",
+      "found": "JUSO youth strike on 20 Nov confirmed, cities not named."
+    },
+    "CY": {
+      "q": "απεργία διαμαρτυρία Κύπρος Νοέμβριος 2026",
+      "lang": "el",
+      "found": "Nothing dated Nov 2026."
+    },
+    "CZ": {
+      "q": "demonstrace protest Milion chvilek listopad 2026 vláda",
+      "lang": "cs",
+      "found": "Babiš rejected the Letná demands; 2 Dec warning action and debate confirmed (ČTK)."
+    },
+    "DE": {
+      "q": "Gen Z regelt 20. November Demonstration Berlin",
+      "lang": "de",
+      "found": "Gen Z regelt march in Berlin 14 Nov (1,200 per police, 20 detained); youth strike in 39 cities on 20 Nov."
+    },
+    "DK": {
+      "q": "demonstration strejke Danmark november 2026",
+      "lang": "da",
+      "found": "Nothing new since the 4 Nov student strike."
+    },
+    "EE": {
+      "q": "meeleavaldus streik Eesti november 2026",
+      "lang": "et",
+      "found": "Nothing dated Nov 2026."
+    },
+    "ES": {
+      "q": "huelga manifestación España 18 19 noviembre 2026",
+      "lang": "es",
+      "found": "Nothing new after the 17 Nov rail strike; election on 29 Nov."
+    },
+    "FI": {
+      "q": "mielenosoitus lakko Suomi marraskuu 2026",
+      "lang": "fi",
+      "found": "\"Nuoriso kaduille\" youth demonstration in Helsinki on 14 Nov (local); political-strike hits undated."
+    },
+    "FR": {
+      "q": "17 novembre grève fonction publique manifestants selon le ministère de l'Intérieur",
+      "lang": "fr",
+      "found": "17 Nov public-sector strike: 146,000 per Interior Ministry, 500,000 per CGT; Interfac calls 26 Nov."
+    },
+    "GB": {
+      "q": "UK strike protest march November 2026 thousands",
+      "lang": "en",
+      "found": "Nothing new dated Nov 2026 beyond previously recorded announcements."
+    },
+    "GR": {
+      "q": "απεργία ΑΔΕΔΥ 25 Νοεμβρίου 2026 συλλαλητήριο",
+      "lang": "el",
+      "found": "ADEDY 24-hour strike on 25 Nov confirmed; 23 labour centres joining."
+    },
+    "HR": {
+      "q": "prosvjed 21. studenoga 2026 korupcija gradovi učenici bojkot 20. studenoga",
+      "lang": "hr",
+      "found": "Youth Strike class boycott in five cities on 20 Nov; 21 Nov anti-corruption call unchanged."
+    },
+    "HU": {
+      "q": "tüntetés sztrájk 2026 november Budapest",
+      "lang": "hu",
+      "found": "Nothing dated Nov 2026."
+    },
+    "IE": {
+      "q": "Ireland protest strike march November 2026",
+      "lang": "en",
+      "found": "Nothing new since 12 Nov; data-centre march 7 Nov from a single weak source."
+    },
+    "IS": {
+      "q": "mótmæli verkfall Ísland nóvember 2026",
+      "lang": "is",
+      "found": "Nothing dated Nov 2026."
+    },
+    "IT": {
+      "q": "sciopero generale 20 novembre 2026 CGIL adesione",
+      "lang": "it",
+      "found": "CGIL general strike today, 20 Nov, with Cobas; rail strike 20-21 Nov."
+    },
+    "LT": {
+      "q": "mokytojų streikas protestas lapkričio 2026",
+      "lang": "lt",
+      "found": "Teachers' strike continues (~4,000 in ~220 schools per BNS); Seimas rally tentatively moved to 1 Dec."
+    },
+    "LV": {
+      "q": "protests streiks Latvija novembris 2026",
+      "lang": "lv",
+      "found": "Culture-sector protest around 10 Nov (local, not verified)."
+    },
+    "MD": {
+      "q": "protest Chișinău noiembrie 2026",
+      "lang": "ro",
+      "found": "Nothing dated Nov 2026."
+    },
+    "ME": {
+      "q": "protest Podgorica novembar 2026",
+      "lang": "sr",
+      "found": "Nothing dated Nov 2026."
+    },
+    "MK": {
+      "q": "протест Скопје ноември 2026",
+      "lang": "mk",
+      "found": "Femicide protest in Skopje on 8 Nov (BTA photo gallery; small, local)."
+    },
+    "NL": {
+      "q": "demonstratie staking Nederland november 2026",
+      "lang": "nl",
+      "found": "Nothing new since the 9 Nov ANWB strike."
+    },
+    "NO": {
+      "q": "demonstrasjon streik Norge november 2026",
+      "lang": "no",
+      "found": "Fagforbundet nationwide political strike for Posten with rallies at 40 locations on 16 Nov."
+    },
+    "PL": {
+      "q": "protest strajk demonstracja Polska listopad 2026",
+      "lang": "pl",
+      "found": "Nothing dated Nov 2026."
+    },
+    "PT": {
+      "q": "greve função pública 20 novembro adesão Frente Comum",
+      "lang": "pt",
+      "found": "Frente Comum public-administration strike today, 20 Nov; CGTP national demonstration 21 Nov."
+    },
+    "RO": {
+      "q": "protest grevă România noiembrie 2026",
+      "lang": "ro",
+      "found": "Local disputes only (Oil Terminal, CJP Alba); nothing national."
+    },
+    "RS": {
+      "q": "protest studenti Beograd novembar 2026",
+      "lang": "sr",
+      "found": "Nothing dated Nov 2026."
+    },
+    "SE": {
+      "q": "demonstration strejk Sverige november 2026",
+      "lang": "sv",
+      "found": "Nothing dated Nov 2026."
+    },
+    "SI": {
+      "q": "protest stavka Slovenija november 2026",
+      "lang": "sl",
+      "found": "Nothing dated Nov 2026."
+    },
+    "SK": {
+      "q": "protest štrajk Slovensko november 2026 Bratislava",
+      "lang": "sk",
+      "found": "Opposition '17 November for Change' rally (25,000 per organisers) and protests in dozens of towns; railway workers' rally 13 Nov."
+    },
+    "TR": {
+      "q": "protesto eylem grev Kasım 2026 İstanbul",
+      "lang": "tr",
+      "found": "Nothing new; 29 Nov Kartal rally still announced."
+    },
+    "UA": {
+      "q": "протест мітинг Київ листопад 2026",
+      "lang": "uk",
+      "found": "Nothing dated Nov 2026."
+    },
+    "XK": {
+      "q": "protestë Prishtinë nëntor 2026",
+      "lang": "sq",
+      "found": "Nothing dated Nov 2026."
+    }
+  },
+  "candidates": [
+    {
+      "country": "FR",
+      "date": "2026-11-17",
+      "title": "Public-sector strike day with marches",
+      "kind": "held",
+      "reach": "national",
+      "rule": "strike nationwide",
+      "searches": [
+        {
+          "q": "17 novembre grève fonction publique manifestants selon le ministère de l'Intérieur",
+          "lang": "fr"
+        },
+        {
+          "q": "French unions strike November 17 2026 turnout interior ministry",
+          "lang": "en"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://fr.euronews.com/2026/11/17/greve-du-17-novembre-les-syndicats-maintiennent-la-pression-sur-le-gouvernement",
+          "ok": true
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/11/17/more-than-100000-take-part-in-france-pay-protests",
+          "ok": true
+        },
+        {
+          "url": "https://www.sudradio.fr/societe/fonctionnaires-jeunesse-salaries-du-prive-une-colere-qui-converge-malgre-des-corteges-moins-fournis",
+          "ok": true
+        },
+        {
+          "url": "https://www.interieur.gouv.fr/actualites/communiques-de-presse",
+          "ok": false,
+          "error": "HTTP 403"
+        }
+      ],
+      "outcome": "added event",
+      "answers": {
+        "what": "ok",
+        "size": "ok",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": [
+        "no arrest figure reported",
+        "ministry release not readable (403)"
+      ]
+    },
+    {
+      "country": "FR",
+      "date": "2026-11-26",
+      "title": "Interfac Île-de-France student mobilisation",
+      "kind": "announced",
+      "reach": "local",
+      "rule": "local",
+      "searches": [
+        {
+          "q": "Interfac 26 novembre 2026 mobilisation étudiants grève",
+          "lang": "fr"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.sudradio.fr/societe/fonctionnaires-jeunesse-salaries-du-prive-une-colere-qui-converge-malgre-des-corteges-moins-fournis",
+          "ok": true
+        }
+      ],
+      "outcome": "set nextDate"
+    },
+    {
+      "country": "FR",
+      "date": "2026-11-19",
+      "title": "National retirees' march in Paris (UCR-CGT)",
+      "kind": "held",
+      "reach": "local",
+      "rule": "local",
+      "searches": [
+        {
+          "q": "manifestation retraités 19 novembre 2026",
+          "lang": "fr"
+        },
+        {
+          "q": "retraités manifestent Paris mercredi 19 novembre pensions CGT",
+          "lang": "fr"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.sudradio.fr/societe/fonctionnaires-jeunesse-salaries-du-prive-une-colere-qui-converge-malgre-des-corteges-moins-fournis",
+          "ok": true
+        }
+      ],
+      "outcome": "dropped: no report of the march found, only the union call"
+    },
+    {
+      "country": "ES",
+      "date": "2026-11-17",
+      "title": "24-hour rail strike over safety",
+      "kind": "held",
+      "reach": "national",
+      "rule": "strike nationwide",
+      "searches": [
+        {
+          "q": "huelga ferroviaria 17 noviembre 2026 seguimiento Renfe Adif",
+          "lang": "es"
+        },
+        {
+          "q": "huelga trenes 17 noviembre balance cancelaciones seguimiento sindicatos seguridad ferroviaria",
+          "lang": "es"
+        },
+        {
+          "q": "huelga ferroviaria 17 noviembre Renfe seguimiento 16,75% Adif sindicatos Urda Adamuz",
+          "lang": "es"
+        },
+        {
+          "q": "huelga ferroviaria 17 noviembre 2026 (eldiario.es, publico.es, ccoo.es, ugt.es)",
+          "lang": "es"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.eldiario.es/madrid/somos/huelga-maquinistas-deja-cercanias-madrid-servicio-numerosas-cancelaciones-ave_1_13667901.html",
+          "ok": true
+        },
+        {
+          "url": "https://www.democrata.es/economia/renfe-eleva-al-16-75-el-seguimiento-de-la-huelga-y-roza-el-44-de-cancelaciones-en-cercanias-madrid-y-el-14-5-en-ave/",
+          "ok": false,
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://www.articulo14.es/economia/huelga-de-renfe-hoy-martes-17-de-noviembre-trenes-afectados-horarios-y-servicios-minimos-20261117.html",
+          "ok": false,
+          "error": "HTTP 403"
+        },
+        {
+          "url": "https://www.telesurtv.net/huelga-ferroviaria-espana-paraliza-madrid/",
+          "ok": false,
+          "error": "HTTP 413"
+        },
+        {
+          "url": "https://www.que.es/2026/11/03/huelga-adif-17-noviembre/",
+          "ok": true
+        }
+      ],
+      "outcome": "added event",
+      "answers": {
+        "what": "ok",
+        "size": "gap",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "gap"
+      },
+      "gaps": [
+        "no official participation figure found",
+        "no government response beyond minimum services found"
+      ]
+    },
+    {
+      "country": "BE",
+      "date": "2026-11-17",
+      "title": "FEF student march in Brussels",
+      "kind": "held",
+      "reach": "local",
+      "rule": "local",
+      "searches": [
+        {
+          "q": "manifestation étudiants Bruxelles 17 novembre 2026",
+          "lang": "fr"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.parismatch.be/actualites/2026/11/17/la-petite-ceinture-a-bruxelles-bloquee-par-des-etudiants-EJLHI7GHHZBDJHZEXKQCNWME7Y/",
+          "ok": true
+        }
+      ],
+      "outcome": "added event"
+    },
+    {
+      "country": "SK",
+      "date": "2026-11-17",
+      "title": "'17 November for Change' opposition rallies",
+      "kind": "held",
+      "reach": "national",
+      "rule": "3+ cities, common call",
+      "searches": [
+        {
+          "q": "protest štrajk Slovensko november 2026 Bratislava",
+          "lang": "sk"
+        },
+        {
+          "q": "17. november 2026 protest Bratislava námestie SNP Progresívne Slovensko účasť mestá",
+          "lang": "sk"
+        },
+        {
+          "q": "wire search (apnews.com/reuters.com/afp.com) for this event",
+          "lang": "en"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.noviny.sk/slovensko/1288362-na-protest-v-bratislave-prislo-priblizne-25-tisic-ludi-ziadaju-zjednotenie-opozicie",
+          "ok": true
+        },
+        {
+          "url": "https://www.wsbtv.com/news/world/angry-crowds-rally/ZDEK5DPAZYZULAMO5RPQEUWGUU/",
+          "ok": true
+        },
+        {
+          "url": "https://apnews.com/",
+          "ok": false,
+          "error": "default wire domains (apnews.com, reuters.com, afp.com) refuse automated search and fetch; country profile has no other domains"
+        }
+      ],
+      "outcome": "added event",
+      "answers": {
+        "what": "ok",
+        "size": "gap",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "gap",
+        "response": "ok"
+      },
+      "gaps": [
+        "organisers' estimate only; no police count",
+        "no next date announced"
+      ]
+    },
+    {
+      "country": "NO",
+      "date": "2026-11-16",
+      "title": "Fagforbundet nationwide political strike for Posten",
+      "kind": "held",
+      "reach": "national",
+      "rule": "3+ cities, common call",
+      "searches": [
+        {
+          "q": "demonstrasjon streik Norge november 2026",
+          "lang": "no"
+        },
+        {
+          "q": "Leve Posten politisk streik 16. november markering Eidsvolls plass deltakere",
+          "lang": "no"
+        },
+        {
+          "q": "NRK politisk streik Posten Eidsvolls plass mandag postansatte demonstrerte",
+          "lang": "no"
+        },
+        {
+          "q": "wire search (apnews.com/reuters.com/afp.com) for this event",
+          "lang": "en"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://kommunikasjon.ntb.no/pressemelding/19142412/oppdatert-med-partiledere-streikemarkeringer-foran-stortinget-og-40-steder-i-norge?lang=no",
+          "ok": true
+        },
+        {
+          "url": "https://kommunikasjon.ntb.no/pressemelding/19141581/nasjonal-oppslutning-om-politisk-streik-for-posten?publisherId=8191471",
+          "ok": true
+        },
+        {
+          "url": "https://apnews.com/",
+          "ok": false,
+          "error": "default wire domains (apnews.com, reuters.com, afp.com) refuse automated search and fetch; country profile has no other domains"
+        }
+      ],
+      "outcome": "added event",
+      "answers": {
+        "what": "ok",
+        "size": "gap",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "gap",
+        "response": "gap"
+      },
+      "gaps": [
+        "only pre-event releases found; turnout not reported",
+        "no government response found",
+        "no next date"
+      ]
+    },
+    {
+      "country": "DE",
+      "date": "2026-11-20",
+      "title": "Gen Z regelt youth strike in 39 cities and school strike against conscription",
+      "kind": "announced",
+      "reach": "national",
+      "rule": "3+ cities, common call",
+      "searches": [
+        {
+          "q": "Schulstreik gegen Wehrpflicht 20. November 2026",
+          "lang": "de"
+        },
+        {
+          "q": "Gen Z regelt 20. November Demonstration Berlin",
+          "lang": "de"
+        },
+        {
+          "q": "Gen Z regelt Jugendstreik 20. November Städte Polizei erwartet Teilnehmer Bundesschülerkonferenz",
+          "lang": "de"
+        },
+        {
+          "q": "Gen Z regelt Jugendstreik 20. November zdfheute",
+          "lang": "de"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.stuttgarter-zeitung.de/panorama/neue-proteste-von-gen-z-regelt-angekuendigt-diese-staedte-sind-mit-dabei-79708128.html",
+          "ok": true
+        },
+        {
+          "url": "https://www.volksstimme.de/panorama/1-200-menschen-bei-gen-z-demo-in-berlin-28-strafanzeigen-4356707",
+          "ok": true
+        },
+        {
+          "url": "https://www.zdfheute.de/politik/deutschland/proteste-jugendliche-schuelerkonferenz-gen-z-100.html",
+          "ok": true
+        },
+        {
+          "url": "https://www.zdf.de/video/magazine/zdfheute-live-102/gen-z-proteste-deutschland-video-100",
+          "ok": true,
+          "note": "ZDF background on Gen Z regelt demands (31 Oct coverage)"
+        }
+      ],
+      "outcome": "set nextDate",
+      "answers": {
+        "what": "ok",
+        "size": "n/a",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "gap"
+      },
+      "gaps": [
+        "happening today; outcome next run",
+        "no government response to the call found"
+      ]
+    },
+    {
+      "country": "DE",
+      "date": "2026-11-14",
+      "title": "Gen Z regelt march in Berlin",
+      "kind": "held",
+      "reach": "local",
+      "rule": "local",
+      "searches": [
+        {
+          "q": "Gen Z regelt 20. November Demonstration Berlin",
+          "lang": "de"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.volksstimme.de/panorama/1-200-menschen-bei-gen-z-demo-in-berlin-28-strafanzeigen-4356707",
+          "ok": true
+        }
+      ],
+      "outcome": "added event"
+    },
+    {
+      "country": "IT",
+      "date": "2026-11-20",
+      "title": "CGIL 24-hour general strike",
+      "kind": "announced",
+      "reach": "national",
+      "rule": "strike nationwide",
+      "searches": [
+        {
+          "q": "sciopero generale 20 novembre 2026 CGIL adesione",
+          "lang": "it"
+        },
+        {
+          "q": "sciopero generale CGIL 20 novembre Landini piazza Roma manovra ANSA",
+          "lang": "it"
+        },
+        {
+          "q": "sciopero generale 20 novembre CGIL manifestazione Roma (ansa.it, ilpost.it, cgil.it)",
+          "lang": "it"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.open.online/2026/11/17/sciopero-generale-venerdi-20-novembre-chi-si-ferma-orari-fasce-garanzia/",
+          "ok": true
+        },
+        {
+          "url": "https://scioperi.mit.gov.it/mit2/public/scioperi",
+          "ok": false,
+          "error": "HTTP 503"
+        },
+        {
+          "url": "https://www.ilpost.it/2026/11/17/italia-sciopero-generale-20-novembre/",
+          "ok": true
+        },
+        {
+          "url": "https://www.cgil.it/speciali/2026/sciopero-generale-cgil-20-novembre-2026/il-20-novembre-litalia-si-ferma-100-piazze-per-lo-sciopero-generale-cgil-landini-a-roma-szprfl4b",
+          "ok": false,
+          "error": "HTTP 403"
+        }
+      ],
+      "outcome": "set nextDate",
+      "answers": {
+        "what": "ok",
+        "size": "n/a",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "gap"
+      },
+      "gaps": [
+        "strike under way today; outcome next run",
+        "no government response found this run"
+      ]
+    },
+    {
+      "country": "PT",
+      "date": "2026-11-20",
+      "title": "Frente Comum national public-administration strike",
+      "kind": "announced",
+      "reach": "national",
+      "rule": "strike nationwide",
+      "searches": [
+        {
+          "q": "greve função pública 20 novembro adesão Frente Comum",
+          "lang": "pt"
+        },
+        {
+          "q": "greve geral 20 novembro 2026 CGTP UGT",
+          "lang": "pt"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.rtp.pt/noticias/pais/cgtp-convoca-manifestacao-nacional-para-21-de-novembro_n1775415",
+          "ok": true
+        }
+      ],
+      "outcome": "set nextDate",
+      "answers": {
+        "what": "ok",
+        "size": "n/a",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "gap"
+      },
+      "gaps": [
+        "strike under way today; outcome next run",
+        "no government response found this run"
+      ]
+    },
+    {
+      "country": "PT",
+      "date": "2026-11-21",
+      "title": "CGTP national demonstration in Lisbon",
+      "kind": "announced",
+      "reach": "national",
+      "rule": "capital, national organisers, 1 per 10,000",
+      "searches": [
+        {
+          "q": "CGTP manifestação nacional 21 novembro Lisboa 2026",
+          "lang": "pt"
+        },
+        {
+          "q": "greve geral 20 novembro 2026 CGTP UGT",
+          "lang": "pt"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.rtp.pt/noticias/pais/cgtp-convoca-manifestacao-nacional-para-21-de-novembro_n1775415",
+          "ok": true
+        }
+      ],
+      "outcome": "set nextDate",
+      "answers": {
+        "what": "ok",
+        "size": "n/a",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "gap"
+      },
+      "gaps": [
+        "announced; outcome next run",
+        "no government response found"
+      ]
+    },
+    {
+      "country": "CH",
+      "date": "2026-11-20",
+      "title": "JUSO youth strike",
+      "kind": "announced",
+      "reach": "local",
+      "rule": "local",
+      "searches": [
+        {
+          "q": "Jugendstreik 20. November Schweiz JUSO Demonstration",
+          "lang": "de"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.srf.ch/news/schweiz/aufruf-der-juso-schweiz-jugendstreik-zwischen-gewalt-und-zukunftsangst",
+          "ok": true
+        }
+      ],
+      "outcome": "set nextDate"
+    },
+    {
+      "country": "HR",
+      "date": "2026-11-20",
+      "title": "Youth Strike class boycott in five cities",
+      "kind": "announced",
+      "reach": "local",
+      "rule": "local",
+      "searches": [
+        {
+          "q": "učenici studenti bojkot nastave 20. studenoga Hrvatska međunarodni štrajk mladih",
+          "lang": "hr"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.novosti.rs/planeta/region/1671576/hrvatski-ucenici-studenti-stupaju-strajk-petak-najavljen-celodnevni-bojkot",
+          "ok": true
+        }
+      ],
+      "outcome": "set nextDate"
+    },
+    {
+      "country": "CZ",
+      "date": "2026-11-15",
+      "title": "Milion chvilek rally on Letná (follow-up)",
+      "kind": "held",
+      "reach": "national",
+      "rule": "capital, national organisers, 1 per 10,000",
+      "searches": [
+        {
+          "q": "demonstrace protest Milion chvilek listopad 2026 vláda",
+          "lang": "cs"
+        },
+        {
+          "q": "Milion chvilek Letná požadavky Babiš odmítl",
+          "lang": "cs"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.ceskenoviny.cz/zpravy/-stovky-tisic-lidi-na-letne-podporily-ct-a-cro/2901226",
+          "ok": true
+        },
+        {
+          "url": "https://www.seznamzpravy.cz/clanek/320654",
+          "ok": true
+        },
+        {
+          "url": "https://ct24.ceskatelevize.cz/clanek/domaci/je-skvele-ze-lide-mohou-vyjadrit-nazor-reaguje-babis-na-protest-opozice-souhlasi-s-vyzvami-milionu-c-55961",
+          "ok": false,
+          "error": "page is a 2019 article, not relevant"
+        }
+      ],
+      "outcome": "updated event: checked, figures and next date unchanged",
+      "answers": {
+        "what": "ok",
+        "size": "gap",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "ok",
+        "response": "ok"
+      },
+      "gaps": [
+        "police do not publish attendance; organisers' estimate only"
+      ]
+    },
+    {
+      "country": "LT",
+      "date": "2026-11-16",
+      "title": "Indefinite national teachers' strike (follow-up)",
+      "kind": "held",
+      "reach": "national",
+      "rule": "strike nationwide",
+      "searches": [
+        {
+          "q": "mokytojų streikas protestas lapkričio 2026",
+          "lang": "lt"
+        },
+        {
+          "q": "mokytojų streikas mitingas prie Seimo lapkričio 19 LŠDPS",
+          "lang": "lt"
+        },
+        {
+          "q": "wire search (apnews.com/reuters.com/afp.com) for this event",
+          "lang": "en"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.lrt.lt/naujienos/svietimas/45/3117182/pedagogai-nesitraukia-bet-kirba-ir-nusivylimas-valdzios-abejingumu-kodel-nereaguoja",
+          "ok": true
+        },
+        {
+          "url": "https://apnews.com/",
+          "ok": false,
+          "error": "default wire domains (apnews.com, reuters.com, afp.com) refuse automated search and fetch; country profile has no other domains"
+        }
+      ],
+      "outcome": "updated event: checked, no change (about 4,000 strikers in about 220 schools per BNS; no talks yet)",
+      "answers": {
+        "what": "ok",
+        "size": "gap",
+        "who": "ok",
+        "demands": "ok",
+        "why": "ok",
+        "next": "gap",
+        "response": "ok"
+      },
+      "gaps": [
+        "union and BNS figures only",
+        "1 Dec rally only tentative"
+      ]
+    },
+    {
+      "country": "FI",
+      "date": "2026-11-14",
+      "title": "'Nuoriso kaduille' youth demonstration in Helsinki",
+      "kind": "held",
+      "reach": "local",
+      "rule": "local",
+      "searches": [
+        {
+          "q": "mielenosoitus lakko Suomi marraskuu 2026",
+          "lang": "fi"
+        }
+      ],
+      "opened": [
+        {
+          "url": "https://www.verkkouutiset.fi/a/poliisi-turvasi-useita-mielenosoituksia-helsingissa/",
+          "ok": false,
+          "error": "HTTP 403"
+        }
+      ],
+      "outcome": "dropped: report could not be opened; no other source"
+    }
+  ]
+}

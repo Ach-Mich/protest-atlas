@@ -544,7 +544,8 @@
     "notes": [
       "articulo14.es, elpais.com and rtve.es could not be read from the sandbox (HTTP 403 / fetch not permitted, 10 Nov 2026).",
       "europapress.es cannot be fetched from the sandbox (13 Nov 2026); ANSA (ansa.it) relays Interior/Europa Press figures for Spanish strikes and can be read.",
-      "eldiario.es and publico.es can be read (17 Nov 2026); the Transport Ministry publishes minimum-services resolutions as PDFs on cdn.transportes.gob.es."
+      "eldiario.es and publico.es can be read (17 Nov 2026); the Transport Ministry publishes minimum-services resolutions as PDFs on cdn.transportes.gob.es.",
+      "democrata.es and articulo14.es return HTTP 403 to automated readers (20 Nov 2026); eldiario.es is readable."
     ]
   },
   "FI": {
@@ -764,7 +765,8 @@
     "press": [],
     "crowdCount": "unknown",
     "notes": [
-      "The default wires (reuters.com, apnews.com, afp.com) cannot be read from the sandbox (17 Nov 2026); LRT (lrt.lt, public broadcaster, carries BNS) covers strikes and can be opened, and alkas.lt reported the 16 Nov teachers' strike."
+      "The default wires (reuters.com, apnews.com, afp.com) cannot be read from the sandbox (17 Nov 2026); LRT (lrt.lt, public broadcaster, carries BNS) covers strikes and can be opened, and alkas.lt reported the 16 Nov teachers' strike.",
+      "Profile has no wire/press domains; default wires refuse automated readers (20 Nov 2026). LRT (lrt.lt) articles are readable and cite BNS figures."
     ]
   },
   "LV": {
@@ -851,7 +853,9 @@
     ],
     "press": [],
     "crowdCount": "unknown",
-    "notes": []
+    "notes": [
+      "Profile has no wire/press domains; default wires refuse automated readers (20 Nov 2026). Fagforbundet press releases are readable on kommunikasjon.ntb.no."
+    ]
   },
   "PL": {
     "official": [
@@ -962,7 +966,9 @@
     ],
     "press": [],
     "crowdCount": "unknown",
-    "notes": []
+    "notes": [
+      "Profile has no wire/press domains, and the default wire sites (apnews.com, reuters.com, afp.com) refuse automated search and fetch (20 Nov 2026); AP copy is readable via syndicating US station sites, Slovak reports via noviny.sk (TV JOJ)."
+    ]
   },
   "TR": {
     "official": [],
