@@ -474,7 +474,8 @@
     ],
     "crowdCount": "sometimes",
     "notes": [
-      "tagesschau.de and dw.com cannot be fetched from the sandbox (10 Nov 2026); zdfheute.de can."
+      "tagesschau.de and dw.com cannot be fetched from the sandbox (10 Nov 2026); zdfheute.de can.",
+      "dpa reports are often reachable via WEB.DE (web.de/magazine) when tagesschau/ZDF pages are not indexed (24 Nov 2026)."
     ]
   },
   "DK": {
@@ -668,7 +669,9 @@
     ],
     "press": [],
     "crowdCount": "unknown",
-    "notes": []
+    "notes": [
+      "Profile has no official, wire or press domains, so coverage.py cannot credit Croatian pages (Index.hr, N1 Hrvatska); add domains in a profile review (noted 24 Nov 2026)."
+    ]
   },
   "HU": {
     "official": [],
@@ -747,7 +750,8 @@
     ],
     "crowdCount": "sometimes",
     "notes": [
-      "scioperi.mit.gov.it and commissionegaranziasciopero.it both returned HTTP 503 to automated readers (10 Nov 2026); fall back to press calendars quoting them (e.g. quifinanza.it) and keep retrying."
+      "scioperi.mit.gov.it and commissionegaranziasciopero.it both returned HTTP 503 to automated readers (10 Nov 2026); fall back to press calendars quoting them (e.g. quifinanza.it) and keep retrying.",
+      "scioperi.mit.gov.it and commissionegaranziasciopero.it returned HTTP 503 on 24 Nov 2026; transport-news sites citing the MIT register were used instead."
     ],
     "calendars": [
       "scioperi.mit.gov.it (Ministry of Infrastructure and Transport strike register)",
@@ -906,7 +910,9 @@
       "dn.pt"
     ],
     "crowdCount": "sometimes",
-    "notes": []
+    "notes": [
+      "Renascença (rr.pt) answers HTTP 403 to automated readers (24 Nov 2026); Lusa copy is available via regional papers such as Diário de Coimbra."
+    ]
   },
   "RO": {
     "official": [],
