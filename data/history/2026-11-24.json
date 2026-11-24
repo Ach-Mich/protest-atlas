@@ -81,7 +81,7 @@
       "arrests30": 8,
       "deaths30": 0,
       "strike30": false,
-      "nextDate": null,
+      "nextDate": "2026-12-10",
       "nextStrike": false,
       "themes": [
         "wages",
@@ -689,7 +689,7 @@
       "arrests30": null,
       "deaths30": 0,
       "strike30": true,
-      "nextDate": "2026-11-24",
+      "nextDate": "2026-11-25",
       "nextStrike": true,
       "themes": [
         "wages",
