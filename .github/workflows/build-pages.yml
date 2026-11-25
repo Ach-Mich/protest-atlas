@@ -1,0 +1,33 @@
+# After the update routine pushes new data, rebuild the saved copy (data/briefings-fallback.js),
+# the country share pages and pictures (c/), card.png, feed.xml and sitemap.xml, and commit them.
+name: Rebuild pages after data update
+on:
+  push:
+    branches: [main]
+    paths: [data/briefings.json, tools/build_pages.py, tools/make_fallback.py]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: build-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check the data (reported, does not block)
+        run: python3 tools/check_briefings.py || echo "::warning::Data check found errors; see the log above"
+      - name: Rebuild
+        run: |
+          python3 tools/make_fallback.py
+          python3 tools/build_pages.py --site https://protestatlas.org
+      - name: Commit if anything changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data/briefings-fallback.js c card.png feed.xml sitemap.xml robots.txt
+          if git diff --cached --quiet; then echo "Nothing to rebuild"; exit 0; fi
+          git commit -m "Rebuild pages after data update"
+          git pull --rebase origin main
+          git push origin HEAD:main
