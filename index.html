@@ -77,6 +77,43 @@ nav a:hover{color:var(--ink)}
 h2{font:800 34px/1 var(--display);text-transform:uppercase}
 .bh small{color:var(--mute);font-size:13px}
 .filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+/* compact tiles */
+.cty .nums{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cty .nums>div{padding:10px 0}
+.cty .nums>div+div{border-left:1px solid var(--line);padding-left:14px}
+.cty .nums b{display:block;font:800 30px/1 var(--display);letter-spacing:-.01em;white-space:nowrap}
+.cty .nums small{display:block;font-size:12.5px;line-height:1.3;color:var(--mute);margin-top:4px}
+.cty.hot .nums .d b{color:var(--s3)}
+.cty .nums .na{font-size:22px;color:var(--mute)}
+.cty .lastline{font-size:14px;color:var(--soft);line-height:1.45}
+.cty .lastline b,.cty .whyline b{color:var(--ink);font-weight:600}
+.cty .whyline{font-size:13.5px;color:var(--mute);line-height:1.45;margin-top:auto}
+/* tiles / list switch */
+.views{display:inline-flex;border:1px solid var(--line);margin-left:auto}
+.views button{font-size:13px;padding:6px 12px;color:var(--soft);background:var(--card)}
+.views button+button{border-left:1px solid var(--line)}
+.views button[aria-pressed="true"]{background:var(--ink);color:var(--card)}
+#tiles[hidden],#rank[hidden]{display:none}
+/* ranked list */
+.rank{border-top:2px solid var(--ink)}
+.rank .row{display:grid;grid-template-columns:40px minmax(130px,1.1fr) minmax(150px,1fr) minmax(110px,.7fr) minmax(180px,1.6fr) 120px;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.rank .row:not(.head):hover{background:var(--card)}
+.rank .head{font-size:12.5px;color:var(--mute);padding:10px 0;cursor:default}
+.rank .no{font:800 18px/1 var(--display);color:var(--mute)}
+.rank .ctry{font:800 21px/1 var(--display);text-transform:uppercase;text-decoration:none}
+.rank .bar{display:flex;align-items:center;gap:10px}
+.rank .bar i{display:block;height:10px;background:var(--line);flex:1;position:relative}
+.rank .bar i span{position:absolute;inset:0 auto 0 0;background:var(--ink)}
+.rank .hot .bar i span{background:var(--s3)}
+.rank .bar b{font:700 17px/1 var(--display);min-width:22px;text-align:right}
+.rank .crowd b{font:800 21px/1 var(--display);white-space:nowrap}
+.rank small{display:block;font-size:12px;color:var(--mute);margin-top:3px}
+.rank .last{font-size:14px;line-height:1.35}
+@media (max-width:960px){
+  .rank .head{display:none}
+  .rank .row{grid-template-columns:30px minmax(0,1fr) auto;gap:6px 12px}
+  .rank .bar,.rank .last{grid-column:2/4}.rank .crowd{grid-column:2/4}.rank .nx{grid-row:1;grid-column:3}
+}
 .chip{font-size:13px;padding:6px 11px;background:var(--card);border:1px solid var(--line);color:var(--soft)}
 .chip sup{font-size:10px;color:var(--mute);margin-left:3px}
 .chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--card)}
@@ -245,9 +282,10 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
   <p class="weekline" id="weekline"></p>
 
   <section id="countries">
-    <div class="bh"><h2 data-i18n="navCountries">Countries</h2><small id="idxCount"></small></div>
+    <div class="bh"><h2 data-i18n="navCountries">Countries</h2><small id="idxCount"></small><div class="views" role="group" aria-label="View"><button data-view="tiles" data-i18n="viewTiles">Tiles</button><button data-view="list" data-i18n="viewList">List</button></div></div>
     <div class="filters" id="filters" role="toolbar" aria-label="Filter by reason"></div>
     <div class="grid" id="tiles"></div>
+    <div class="rank" id="rank" hidden></div>
     <div class="quiet" id="quiet"></div>
   </section>
 
@@ -290,7 +328,7 @@ en:{skip:"Skip to countries",navCountries:"Countries",navWeeks:"Week by week",na
   arrests:n=>`Arrests reported over ${n} protest days`,dates:"Dates already announced",resign:"Movements calling for a resignation",
   week:(f,t)=>`This week (${f} to ${t}):`,weekIn:"protest days in",weekNone:"no national protest day reported.",
   all:"All",noCause:"No stated cause",resignCall:"Resignation call",next:d=>`Next ${d}`,
-  veryActive:n=>`Very active: ${n} protest days in 30 days`,veryTag:"Very active",daysShort:n=>n===1?"1 protest day in 30 days":`${n} protest days in 30 days`,crowdLbl:(w,d)=>`people (${w}), ${d}`,peakLbl:(w,d)=>`largest crowd in 30 days, ${d} (${w})`,noPeak:"No crowd count in the last 30 days",noCrowd:"Turnout not reported",noCrowdShort:"Not reported",turnoutWord:"turnout",newWeek:"New this week",moreActive:"More active than the week before",quieter:"Quieter than the week before",
+  veryActive:n=>`Very active: ${n} protest days in 30 days`,veryTag:"Very active",daysShort:n=>n===1?"1 protest day in 30 days":`${n} protest days in 30 days`,daysTile:n=>n===1?"protest day in 30 days":"protest days in 30 days",veryLow:"very active",naShort:"n/a",whyLbl:"Why:",viewTiles:"Tiles",viewList:"List",colCountry:"Country",colDays:"Protest days, 30 days",colCrowd:"Largest crowd",colLast:"Latest protest",colNext:"Next date",crowdLbl:(w,d)=>`people (${w}), ${d}`,peakLbl:(w,d)=>`largest crowd in 30 days, ${d} (${w})`,peakShort:(w,d)=>`largest crowd, ${d} (${w})`,noPeak:"No crowd count in the last 30 days",noCrowd:"Turnout not reported",noCrowdShort:"Not reported",turnoutWord:"turnout",newWeek:"New this week",moreActive:"More active than the week before",quieter:"Quieter than the week before",
   latest:d=>`Latest protest, ${d}`,people:(n,w)=>`${n} people (${w})`,noTurnout:"Turnout not reported",why:"Why",
   noneForReason:"No country on watch for this reason.",
   idx:(n,label)=>`${n} ${label?(n===1?"country":"countries")+" for "+label.toLowerCase():"countries on watch, most active first"}.`,
@@ -324,7 +362,7 @@ fr:{skip:"Aller aux pays",navCountries:"Pays",navWeeks:"Semaine par semaine",nav
   arrests:n=>`Interpellations signalées sur ${n} jours de mobilisation`,dates:"Dates déjà annoncées",resign:"Mouvements qui réclament une démission",
   week:(f,t)=>`Cette semaine (du ${f} au ${t}) :`,weekIn:"mobilisations dans ces pays :",weekNone:"aucune mobilisation nationale signalée.",
   all:"Tous",noCause:"Sans cause déclarée",resignCall:"Appel à la démission",next:d=>`Prochaine : ${d}`,
-  veryActive:n=>`Très actif : ${n} jours de mobilisation en 30 jours`,veryTag:"Très actif",daysShort:n=>n===1?"1 jour de mobilisation sur 30 jours":`${n} jours de mobilisation sur 30 jours`,crowdLbl:(w,d)=>`personnes (${w}), ${d}`,peakLbl:(w,d)=>`plus grande foule sur 30 jours, ${d} (${w})`,noPeak:"Aucun chiffre de participation sur 30 jours",noCrowd:"Participation non communiquée",noCrowdShort:"Non communiquée",turnoutWord:"participation",newWeek:"Nouveau cette semaine",moreActive:"Plus actif que la semaine précédente",quieter:"Plus calme que la semaine précédente",
+  veryActive:n=>`Très actif : ${n} jours de mobilisation en 30 jours`,veryTag:"Très actif",daysShort:n=>n===1?"1 jour de mobilisation sur 30 jours":`${n} jours de mobilisation sur 30 jours`,daysTile:n=>n===1?"jour de mobilisation sur 30 jours":"jours de mobilisation sur 30 jours",veryLow:"très actif",naShort:"n.c.",whyLbl:"Pourquoi :",viewTiles:"Fiches",viewList:"Liste",colCountry:"Pays",colDays:"Jours de mobilisation, 30 jours",colCrowd:"Plus grande foule",colLast:"Dernière mobilisation",colNext:"Prochaine date",crowdLbl:(w,d)=>`personnes (${w}), ${d}`,peakLbl:(w,d)=>`plus grande foule sur 30 jours, ${d} (${w})`,peakShort:(w,d)=>`plus grande foule, ${d} (${w})`,noPeak:"Aucun chiffre de participation sur 30 jours",noCrowd:"Participation non communiquée",noCrowdShort:"Non communiquée",turnoutWord:"participation",newWeek:"Nouveau cette semaine",moreActive:"Plus actif que la semaine précédente",quieter:"Plus calme que la semaine précédente",
   latest:d=>`Dernière mobilisation, ${d}`,people:(n,w)=>`${n} personnes (${w})`,noTurnout:"Participation non communiquée",why:"Pourquoi",
   noneForReason:"Aucun pays sous surveillance pour cette raison.",
   idx:(n,label)=>`${n} pays ${label?"pour « "+label.toLowerCase()+" »":"sous surveillance, les plus actifs d'abord"}.`,
@@ -426,25 +464,38 @@ function renderFilters(){
     (cnt(NONE)?`<button class="chip" aria-pressed="${filter===NONE}" data-f="${NONE}">${T("noCause")}<sup>${cnt(NONE)}</sup></button>`:"");
 }
 
+const bigN=n=>n>=1e6?new Intl.NumberFormat(LANG==="fr"?"fr-FR":"en-GB",{notation:"compact",maximumFractionDigits:1}).format(n):fmtN(n);
+// largest crowd in the last 30 days (official or organisers' count, whichever is higher)
+const peakOf=c=>(D[c].events||[]).filter(e=>{const i=col(e.date);return i>=0&&i<PAST&&size(e)}).sort((a,b)=>size(b)-size(a))[0];
+function badgeOf(c){const x=D[c];return x.pressure?.demand==="resignation"?`<span class="badge hot">${T("resignCall")}</span>`:hasNext(c)?`<span class="badge">${L[LANG].next(fmtD(x.nextDate))}</span>`:""}
 function tile(c){
-  const x=D[c],last=evs(c)[0],why=reasons(c),sz=last&&size(last);
-  const badge=x.pressure?.demand==="resignation"?`<span class="badge hot">${T("resignCall")}</span>`:hasNext(c)?`<span class="badge">${L[LANG].next(fmtD(x.nextDate))}</span>`:"";
-  const n=recentN(c),hot=n>=HOT,tr=trend(c);
-  const big=n=>n>=1e6?new Intl.NumberFormat(LANG==="fr"?"fr-FR":"en-GB",{notation:"compact",maximumFractionDigits:1}).format(n):fmtN(n);
-  // largest crowd in the last 30 days (official or organisers' count, whichever is higher)
-  const pk=(x.events||[]).filter(e=>{const i=col(e.date);return i>=0&&i<PAST&&size(e)}).sort((a,b)=>size(b)-size(a))[0];
-  const peak=pk?`<span class="peak"><b title="${fmtN(size(pk))}">${big(size(pk))}</b><small>${L[LANG].peakLbl(whose(pk),fmtD(pk.date))}</small></span>`
-               :`<span class="peak nopeak"><small>${T("noPeak")}</small></span>`;
-  return `<article class="cty${hot?" hot":""}" data-c="${c}"><span class="r"><h3><a href="c/${c.toLowerCase()}/" data-c="${c}">${esc(cname(c))}</a></h3>${badge}</span>
-    <span class="active">${[hot?`<span class="tag-hot">${T("veryTag")}</span>`:"",`<b>${L[LANG].daysShort(n)}</b>`,tr].filter(Boolean).join(" · ")}</span>
-    ${last?`<span class="latest"><small class="k">${L[LANG].latest(fmtD(last.date))}</small><b>${esc(last.title)}</b>${peak}</span>`:""}
-    <p>${esc(x.summary)}</p>
-    ${why.length?`<span class="why"><small class="k">${T("why")}</small><ul>${why.map(r=>`<li>${esc(r)}</li>`).join("")}</ul></span>`:""}</article>`;
+  const x=D[c],last=evs(c)[0],why=reasons(c),n=recentN(c),hot=n>=HOT,pk=peakOf(c);
+  return `<article class="cty${hot?" hot":""}" data-c="${c}"><span class="r"><h3><a href="c/${c.toLowerCase()}/" data-c="${c}">${esc(cname(c))}</a></h3>${badgeOf(c)}</span>
+    <div class="nums">
+      <div class="d"><b>${n}</b><small>${L[LANG].daysTile(n)}${hot?" · "+T("veryLow"):""}</small></div>
+      <div>${pk?`<b title="${fmtN(size(pk))}">${bigN(size(pk))}</b><small>${L[LANG].peakShort(whose(pk),fmtD(pk.date))}</small>`:`<b class="na">${T("naShort")}</b><small>${T("noPeak")}</small>`}</div>
+    </div>
+    ${last?`<p class="lastline"><b>${fmtD(last.date)}${LANG==="fr"?" :":":"}</b> ${esc(last.title)}</p>`:""}
+    ${why.length?`<p class="whyline"><b>${T("whyLbl")}</b> ${esc(why.join(", "))}</p>`:""}</article>`;
+}
+function rankRows(w){
+  const max=Math.max(1,...w.map(recentN));
+  return `<div class="row head" aria-hidden="true"><span>#</span><span>${T("colCountry")}</span><span>${T("colDays")}</span><span>${T("colCrowd")}</span><span>${T("colLast")}</span><span>${T("colNext")}</span></div>`+
+    w.map((c,k)=>{const n=recentN(c),pk=peakOf(c),last=evs(c)[0];
+      return `<div class="row${n>=HOT?" hot":""}" data-c="${c}"><span class="no">${k+1}</span><a class="ctry" href="c/${c.toLowerCase()}/" data-c="${c}">${esc(cname(c))}</a>
+        <span class="bar" title="${esc(L[LANG].daysShort(n))}"><i><span style="width:${n/max*100}%"></span></i><b>${n}</b></span>
+        <span class="crowd"><b>${pk?bigN(size(pk)):T("naShort")}</b><small>${pk?fmtD(pk.date):""}</small></span>
+        <span class="last">${last?esc(last.title):""}<small>${last?fmtD(last.date):""}</small></span>
+        <span class="nx">${badgeOf(c)}</span></div>`}).join("");
 }
 
+let VIEW=(()=>{try{return localStorage.getItem("pa-view")==="list"?"list":"tiles"}catch(e){return "tiles"}})();
 function renderTiles(){
   const w=watch().filter(c=>inFilter(c,filter));
   $("#tiles").innerHTML=w.length?w.map(tile).join(""):`<p class="none">${T("noneForReason")}</p>`;
+  $("#rank").innerHTML=w.length?rankRows(w):`<p class="none">${T("noneForReason")}</p>`;
+  $("#tiles").hidden=VIEW==="list";$("#rank").hidden=VIEW!=="list";
+  document.querySelectorAll("[data-view]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.view===VIEW));
   $("#idxCount").innerHTML=`${L[LANG].idx(w.length,filter?esc(filter===NONE?T("noCause"):TH[filter]):"")} <span class="active">${L[LANG].idxActive(HOT)}</span>`;
   const q=Object.keys(D).filter(c=>D[c].tier!=="watch").sort(byName);
   $("#quiet").innerHTML=`<small class="k">${T("quiet")}</small><div>${q.map(c=>`<button data-c="${c}">${esc(cname(c))}</button>`).join("")}</div>`;
@@ -561,6 +612,7 @@ document.addEventListener("click",e=>{
   if(e.target.closest("[data-close]")||e.target.id==="scrim")return close();
   if(e.target.id==="more"){showAll=!showAll;renderCal();return}
   const f=e.target.closest("[data-f]");if(f){filter=f.dataset.f||null;renderFilters();renderTiles();return}
+  const v=e.target.closest("[data-view]");if(v){VIEW=v.dataset.view;try{localStorage.setItem("pa-view",VIEW)}catch(_){}renderTiles();return}
   const t=e.target.closest("[data-c]");if(t&&!t.closest(".dossier")){if(e.target.closest("a[data-c]"))e.preventDefault();open(t.dataset.c)}
 });
 document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
