@@ -226,7 +226,10 @@ def feed(data, site):
                           f"{long_date(e['date'])}. {turnout(e)}. Why: {', '.join(reasons(x)) or 'no clear demands reported'}.",
                           link))
         if x.get("nextDate"):
-            items.append((x["nextDate"], f"{code}-{x['nextDate']}-next",
+            # Dated when we learned of it (last update), never in the future: email services
+            # hold back or skip future-dated items.
+            known = (x.get("updatedAt") or x.get("checkedAt") or x["nextDate"])[:10]
+            items.append((min(known, x["nextDate"]), f"{code}-{x['nextDate']}-next",
                           f"{x['country']}: next protest {long_date(x['nextDate'])}",
                           x.get("next") or "", link))
     items.sort(key=lambda i: i[0], reverse=True)
