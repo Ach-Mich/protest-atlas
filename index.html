@@ -466,8 +466,8 @@ function renderCal(){
 
 // Panel, kept short: summary + next date, who + demands, pressure, then protest days.
 // Small locator map. Outlines come from data/europe-map.json (same drawing as map.html), loaded once.
-// Parked for now: set SHOW_LOCATOR to true to bring it back in the country panel.
-const SHOW_LOCATOR=false;
+// Small Europe map in the country panel (set to false to hide it).
+const SHOW_LOCATOR=true;
 let EU=null;
 const EU_DOT={ME:[1238,1612],XK:[1312,1618]};   // not drawn as shapes in the outline file: shown as a dot
 function drawLocator(c){
