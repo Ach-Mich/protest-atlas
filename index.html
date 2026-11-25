@@ -79,7 +79,7 @@ h2{font:800 34px/1 var(--display);text-transform:uppercase}
 .chip:hover:not([aria-pressed="true"]){border-color:var(--soft)}
 
 /* tiles */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .cty{cursor:pointer;background:var(--card);padding:20px 22px 18px;display:flex;flex-direction:column;gap:12px;width:100%;border:1px solid var(--edge);border-top:5px solid var(--edge);transition:box-shadow .15s}
 .cty:hover{box-shadow:0 0 0 2px var(--ink)}
 .r{display:flex;justify-content:space-between;align-items:center;gap:8px}
@@ -178,7 +178,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
 .srcs a:hover{color:var(--ink)}
 
 @media (max-width:960px){
-  .grid{grid-template-columns:1fr 1fr}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stats{grid-template-columns:1fr 1fr;gap:20px 24px}
   .method{grid-template-columns:1fr}
   .hero{grid-template-columns:1fr;gap:16px;padding-top:32px}
@@ -189,8 +189,9 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
   nav.open{display:flex}
   nav a{padding:10px 0;font-size:17px;border-bottom:1px solid var(--line)}
   .menu{display:block}
-  #find{width:130px}
-  .grid{grid-template-columns:1fr}
+  #find{width:120px;min-width:0}
+  .bar{gap:12px}
+  .grid{grid-template-columns:minmax(0,1fr)}
   .stat b{font-size:30px}
   .d-head,.d-hero,.d-sec{padding-left:16px;padding-right:16px}
     .pr{grid-template-columns:80px 1fr}
@@ -203,7 +204,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
 <a class="skip" href="#countries" data-i18n="skip">Skip to countries</a>
 <header id="hdr"><div class="wrap bar">
   <a class="logo" href="#top">Protest Atlas</a>
-  <nav id="nav" aria-label="Sections"><a href="#countries" data-i18n="navCountries">Countries</a><a href="#weeks" data-i18n="navWeeks">Week by week</a><a href="#method" data-i18n="navMethod">Method</a><a href="about.html" data-i18n="navAbout">About</a><a href="feed.xml">RSS</a></nav>
+  <nav id="nav" aria-label="Sections"><a href="#countries" data-i18n="navCountries">Countries</a><a href="#weeks" data-i18n="navWeeks">Week by week</a><a href="#method" data-i18n="navMethod">Method</a><a href="about.html" data-i18n="navAbout">About</a><a href="https://follow.it/protest-atlas" data-i18n="alerts">Email alerts</a><a href="feed.xml">RSS</a></nav>
   <div class="tools">
     <input id="find" type="search" list="countryList" placeholder="Find a country" aria-label="Find a country" autocomplete="off" data-i18n-ph="find">
     <datalist id="countryList"></datalist>
@@ -243,7 +244,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
 
   <footer>
     <p><span data-i18n-html="footIntro"><b>Protest Atlas</b> is an independent project.</span> <span data-i18n="footChecked">Data last checked</span> <span id="footCheck">–</span>. <span data-i18n="footSources">Sources are linked in each country briefing.</span></p>
-    <p class="flinks"><a href="about.html" data-i18n="navAbout">About</a><a href="#method" data-i18n="howTitle">How this works</a><a href="about.html#corrections" id="corrLink" data-i18n="corr">Send a correction</a><a href="map.html" data-i18n="mapView">Map view</a></p>
+    <p class="flinks"><a href="about.html" data-i18n="navAbout">About</a><a href="#method" data-i18n="howTitle">How this works</a><a href="about.html#corrections" id="corrLink" data-i18n="corr">Send a correction</a><a href="https://follow.it/protest-atlas" data-i18n="alerts">Email alerts</a><a href="map.html" data-i18n="mapView">Map view</a></p>
   </footer>
 </main>
 <div class="tip" id="tip" role="tooltip"></div>
@@ -254,7 +255,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
 <script>
 // ---------- Interface language (English / French). Briefing texts from the data stay in English. ----------
 const L={
-en:{skip:"Skip to countries",navCountries:"Countries",navWeeks:"Week by week",navMethod:"Method",navAbout:"About",find:"Find a country",
+en:{skip:"Skip to countries",navCountries:"Countries",navWeeks:"Week by week",navMethod:"Method",navAbout:"About",alerts:"Email alerts",find:"Find a country",
   h1:"Who's on<br>the <span>street</span>",
   lede:"Every morning we screen 38 European countries for national protest, and brief who is marching, why, how many, and what comes next.",
   dataNote:"",
@@ -288,7 +289,7 @@ en:{skip:"Skip to countries",navCountries:"Countries",navWeeks:"Week by week",na
   group:{unions:"Unions",students:"Students",citizens:"Citizens",sector:"Sector workers",opposition:"Opposition","far-right":"Far right",professions:"Professions"},
   demandV:{policy:"Policy change",programme:"Change of programme",resignation:"Resignation"},
   respV:{none:"No response yet",talks:"Talks offered",crisis:"Government crisis"}},
-fr:{skip:"Aller aux pays",navCountries:"Pays",navWeeks:"Semaine par semaine",navMethod:"Méthode",navAbout:"À propos",find:"Chercher un pays",
+fr:{skip:"Aller aux pays",navCountries:"Pays",navWeeks:"Semaine par semaine",navMethod:"Méthode",navAbout:"À propos",alerts:"Alertes par e-mail",find:"Chercher un pays",
   h1:"Qui est dans<br>la <span>rue</span>",
   lede:"Chaque matin, nous passons en revue 38 pays européens pour repérer les mobilisations nationales : qui manifeste, pourquoi, combien, et ce qui vient ensuite.",
   dataNote:"Les résumés, motifs et titres viennent de nos sources et restent en anglais pour l'instant.",
