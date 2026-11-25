@@ -96,23 +96,27 @@ h2{font:800 34px/1 var(--display);text-transform:uppercase}
 #tiles[hidden],#rank[hidden]{display:none}
 /* ranked list */
 .rank{border-top:2px solid var(--ink)}
-.rank .row{display:grid;grid-template-columns:40px minmax(130px,1.1fr) minmax(150px,1fr) minmax(110px,.7fr) minmax(180px,1.6fr) 120px;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.rank .row{display:grid;grid-template-columns:36px minmax(120px,1fr) minmax(70px,.45fr) minmax(100px,.65fr) minmax(130px,1fr) minmax(170px,1.5fr) 116px;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);cursor:pointer}
 .rank .row:not(.head):hover{background:var(--card)}
 .rank .head{font-size:12.5px;color:var(--mute);padding:10px 0;cursor:default}
 .rank .no{font:800 18px/1 var(--display);color:var(--mute)}
 .rank .ctry{font:800 21px/1 var(--display);text-transform:uppercase;text-decoration:none}
-.rank .bar{display:flex;align-items:center;gap:10px}
-.rank .bar i{display:block;height:10px;background:var(--line);flex:1;position:relative}
-.rank .bar i span{position:absolute;inset:0 auto 0 0;background:var(--ink)}
-.rank .hot .bar i span{background:var(--s3)}
-.rank .bar b{font:700 17px/1 var(--display);min-width:22px;text-align:right}
+.rank .dd{display:flex;align-items:center;gap:10px}
+.rank .dd b{font:800 21px/1 var(--display);min-width:20px}
+.rank .hot .dd b{color:var(--s3)}
 .rank .crowd b{font:800 21px/1 var(--display);white-space:nowrap}
 .rank small{display:block;font-size:12px;color:var(--mute);margin-top:3px}
 .rank .last{font-size:14px;line-height:1.35}
+.rank .m{display:none}
+.rank .dd small.m{margin:0}
+.rank .rwhy{font-size:13.5px;line-height:1.35;color:var(--soft)}
 @media (max-width:960px){
   .rank .head{display:none}
   .rank .row{grid-template-columns:30px minmax(0,1fr) auto;gap:6px 12px}
-  .rank .bar,.rank .last{grid-column:2/4}.rank .crowd{grid-column:2/4}.rank .nx{grid-row:1;grid-column:3}
+  .rank .dd,.rank .last,.rank .rwhy{grid-column:2/4}
+  .rank .m{display:inline}
+  .rank .crowd{display:flex;align-items:baseline;gap:8px}
+  .rank .crowd small{margin:0}.rank .crowd{grid-column:2/4}.rank .nx{grid-row:1;grid-column:3}
 }
 .chip{font-size:13px;padding:6px 11px;background:var(--card);border:1px solid var(--line);color:var(--soft)}
 .chip sup{font-size:10px;color:var(--mute);margin-left:3px}
@@ -328,7 +332,7 @@ en:{skip:"Skip to countries",navCountries:"Countries",navWeeks:"Week by week",na
   arrests:n=>`Arrests reported over ${n} protest days`,dates:"Dates already announced",resign:"Movements calling for a resignation",
   week:(f,t)=>`This week (${f} to ${t}):`,weekIn:"protest days in",weekNone:"no national protest day reported.",
   all:"All",noCause:"No stated cause",resignCall:"Resignation call",next:d=>`Next ${d}`,
-  veryActive:n=>`Very active: ${n} protest days in 30 days`,veryTag:"Very active",daysShort:n=>n===1?"1 protest day in 30 days":`${n} protest days in 30 days`,daysTile:n=>n===1?"protest day in 30 days":"protest days in 30 days",veryLow:"very active",naShort:"n/a",whyLbl:"Why:",viewTiles:"Tiles",viewList:"List",colCountry:"Country",colDays:"Protest days, 30 days",colCrowd:"Largest crowd",colLast:"Latest protest",colNext:"Next date",crowdLbl:(w,d)=>`people (${w}), ${d}`,peakLbl:(w,d)=>`largest crowd in 30 days, ${d} (${w})`,peakShort:(w,d)=>`largest crowd, ${d} (${w})`,noPeak:"No crowd count in the last 30 days",noCrowd:"Turnout not reported",noCrowdShort:"Not reported",turnoutWord:"turnout",newWeek:"New this week",moreActive:"More active than the week before",quieter:"Quieter than the week before",
+  veryActive:n=>`Very active: ${n} protest days in 30 days`,veryTag:"Very active",daysShort:n=>n===1?"1 protest day in 30 days":`${n} protest days in 30 days`,daysTile:n=>n===1?"protest day in 30 days":"protest days in 30 days",veryLow:"very active",naShort:"n/a",whyLbl:"Why:",viewTiles:"Tiles",viewList:"List",colCountry:"Country",colDays:"Protest days",colCrowd:"Largest crowd",colWhy:"Why",colLast:"Latest protest",colNext:"Next date",crowdLbl:(w,d)=>`people (${w}), ${d}`,peakLbl:(w,d)=>`largest crowd in 30 days, ${d} (${w})`,peakShort:(w,d)=>`largest crowd, ${d} (${w})`,noPeak:"No crowd count in the last 30 days",noCrowd:"Turnout not reported",noCrowdShort:"Not reported",turnoutWord:"turnout",newWeek:"New this week",moreActive:"More active than the week before",quieter:"Quieter than the week before",
   latest:d=>`Latest protest, ${d}`,people:(n,w)=>`${n} people (${w})`,noTurnout:"Turnout not reported",why:"Why",
   noneForReason:"No country on watch for this reason.",
   idx:(n,label)=>`${n} ${label?(n===1?"country":"countries")+" for "+label.toLowerCase():"countries on watch, most active first"}.`,
@@ -362,7 +366,7 @@ fr:{skip:"Aller aux pays",navCountries:"Pays",navWeeks:"Semaine par semaine",nav
   arrests:n=>`Interpellations signalées sur ${n} jours de mobilisation`,dates:"Dates déjà annoncées",resign:"Mouvements qui réclament une démission",
   week:(f,t)=>`Cette semaine (du ${f} au ${t}) :`,weekIn:"mobilisations dans ces pays :",weekNone:"aucune mobilisation nationale signalée.",
   all:"Tous",noCause:"Sans cause déclarée",resignCall:"Appel à la démission",next:d=>`Prochaine : ${d}`,
-  veryActive:n=>`Très actif : ${n} jours de mobilisation en 30 jours`,veryTag:"Très actif",daysShort:n=>n===1?"1 jour de mobilisation sur 30 jours":`${n} jours de mobilisation sur 30 jours`,daysTile:n=>n===1?"jour de mobilisation sur 30 jours":"jours de mobilisation sur 30 jours",veryLow:"très actif",naShort:"n.c.",whyLbl:"Pourquoi :",viewTiles:"Fiches",viewList:"Liste",colCountry:"Pays",colDays:"Jours de mobilisation, 30 jours",colCrowd:"Plus grande foule",colLast:"Dernière mobilisation",colNext:"Prochaine date",crowdLbl:(w,d)=>`personnes (${w}), ${d}`,peakLbl:(w,d)=>`plus grande foule sur 30 jours, ${d} (${w})`,peakShort:(w,d)=>`plus grande foule, ${d} (${w})`,noPeak:"Aucun chiffre de participation sur 30 jours",noCrowd:"Participation non communiquée",noCrowdShort:"Non communiquée",turnoutWord:"participation",newWeek:"Nouveau cette semaine",moreActive:"Plus actif que la semaine précédente",quieter:"Plus calme que la semaine précédente",
+  veryActive:n=>`Très actif : ${n} jours de mobilisation en 30 jours`,veryTag:"Très actif",daysShort:n=>n===1?"1 jour de mobilisation sur 30 jours":`${n} jours de mobilisation sur 30 jours`,daysTile:n=>n===1?"jour de mobilisation sur 30 jours":"jours de mobilisation sur 30 jours",veryLow:"très actif",naShort:"n.c.",whyLbl:"Pourquoi :",viewTiles:"Fiches",viewList:"Liste",colCountry:"Pays",colDays:"Jours de mobilisation",colCrowd:"Plus grande foule",colWhy:"Pourquoi",colLast:"Dernière mobilisation",colNext:"Prochaine date",crowdLbl:(w,d)=>`personnes (${w}), ${d}`,peakLbl:(w,d)=>`plus grande foule sur 30 jours, ${d} (${w})`,peakShort:(w,d)=>`plus grande foule, ${d} (${w})`,noPeak:"Aucun chiffre de participation sur 30 jours",noCrowd:"Participation non communiquée",noCrowdShort:"Non communiquée",turnoutWord:"participation",newWeek:"Nouveau cette semaine",moreActive:"Plus actif que la semaine précédente",quieter:"Plus calme que la semaine précédente",
   latest:d=>`Dernière mobilisation, ${d}`,people:(n,w)=>`${n} personnes (${w})`,noTurnout:"Participation non communiquée",why:"Pourquoi",
   noneForReason:"Aucun pays sous surveillance pour cette raison.",
   idx:(n,label)=>`${n} pays ${label?"pour « "+label.toLowerCase()+" »":"sous surveillance, les plus actifs d'abord"}.`,
@@ -479,12 +483,12 @@ function tile(c){
     ${why.length?`<p class="whyline"><b>${T("whyLbl")}</b> ${esc(why.join(", "))}</p>`:""}</article>`;
 }
 function rankRows(w){
-  const max=Math.max(1,...w.map(recentN));
-  return `<div class="row head" aria-hidden="true"><span>#</span><span>${T("colCountry")}</span><span>${T("colDays")}</span><span>${T("colCrowd")}</span><span>${T("colLast")}</span><span>${T("colNext")}</span></div>`+
+  return `<div class="row head" aria-hidden="true"><span>#</span><span>${T("colCountry")}</span><span>${T("colDays")}</span><span>${T("colCrowd")}</span><span>${T("colWhy")}</span><span>${T("colLast")}</span><span>${T("colNext")}</span></div>`+
     w.map((c,k)=>{const n=recentN(c),pk=peakOf(c),last=evs(c)[0];
       return `<div class="row${n>=HOT?" hot":""}" data-c="${c}"><span class="no">${k+1}</span><a class="ctry" href="c/${c.toLowerCase()}/" data-c="${c}">${esc(cname(c))}</a>
-        <span class="bar" title="${esc(L[LANG].daysShort(n))}"><i><span style="width:${n/max*100}%"></span></i><b>${n}</b></span>
-        <span class="crowd"><b>${pk?bigN(size(pk)):T("naShort")}</b><small>${pk?fmtD(pk.date):""}</small></span>
+        <span class="dd" title="${esc(L[LANG].daysShort(n))}"><b>${n}</b><small class="m">${L[LANG].daysTile(n)}</small></span>
+        <span class="crowd"><b>${pk?bigN(size(pk)):T("naShort")}</b><small><span class="m">${T("colCrowd")}${pk?", ":""}</span>${pk?fmtD(pk.date):""}</small></span>
+        <span class="rwhy">${esc(reasons(c).slice(0,2).join(", "))}</span>
         <span class="last">${last?esc(last.title):""}<small>${last?fmtD(last.date):""}</small></span>
         <span class="nx">${badgeOf(c)}</span></div>`}).join("");
 }
