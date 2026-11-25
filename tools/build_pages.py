@@ -88,7 +88,7 @@ def card_html(title, kicker, lines, next_line):
     return f"""<!doctype html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=block" rel="stylesheet"><style>
 *{{margin:0;padding:0;box-sizing:border-box}}
-body{{width:1200px;height:630px;background:#F8F5EE;color:#1F2A33;font-family:Futura,"Jost","Avenir Next",sans-serif;padding:64px 72px;position:relative;overflow:hidden}}
+body{{width:1200px;height:630px;background:#FCFAF6;color:#1F2A33;font-family:Futura,"Jost","Avenir Next",sans-serif;padding:64px 72px;position:relative;overflow:hidden}}
 .brand{{font-size:26px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}}
 .kick{{margin-top:54px;font-size:28px;color:#5B6770}}
 h1{{font-size:{110 if len(title) < 12 else 84}px;line-height:.95;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;margin-top:10px}}
@@ -118,7 +118,7 @@ def shoot(html_text, out_png):
 DEMAND = {"policy": "Policy change", "programme": "Change of programme", "resignation": "Resignation"}
 RESP = {"none": "No response yet", "talks": "Talks offered", "crisis": "Government crisis"}
 PAGE_CSS = """*{box-sizing:border-box;margin:0;padding:0}
-body{background:#F8F5EE;color:#1F2A33;font:400 17px/1.6 Jost,Futura,"Avenir Next",sans-serif}
+body{background:#FCFAF6;color:#1F2A33;font:400 17px/1.6 Jost,Futura,"Avenir Next",sans-serif}
 a{color:inherit;text-underline-offset:3px}
 .wrap{max-width:780px;margin:0 auto;padding:0 20px}
 header{border-bottom:1px solid #DDD7CB}header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;max-width:1240px}
