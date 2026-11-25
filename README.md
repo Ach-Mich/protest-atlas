@@ -3,7 +3,6 @@
 Where people are taking to the streets, and why: a protest watch for Europe, going worldwide.
 
 - `index.html` – the whole site (Home, Report, world map with country briefings).
-- `i18n.js` – interface translations (English, French, German) and the language switcher. Briefing texts written by the daily update are still English only.
 - `data/briefings.json` – one entry per tracked country, updated daily.
 - `data/history/YYYY-MM-DD.json` – one snapshot per day, used for trends.
 
@@ -24,7 +23,7 @@ Levels and "pressure on government" are Protest Atlas assessments built with fix
 - `tools/sources.json`: per-country registry of official, wire and organiser sources, read by the routine and by `tools/validate.py`.
 
 ## Self-hosted libraries and fonts
-The site makes no requests to third parties: fonts (Barlow Condensed and Public Sans, SIL Open Font License, from @fontsource), d3-array and d3-geo (ISC licence) and the Natural Earth borders (world-atlas 2.0.2, public domain) are in `assets/`. To update them, fetch the same packages with `npm pack` and replace the files.
+The pages load the Jost font from Google Fonts; there is no other third-party request (no analytics, no cookies).
 
 `python3 tools/snapshot.py` computes the daily history snapshot from data/briefings.json (the daily routine uses it, so every day is computed the same way; `--check` compares with an existing file). `python3 tools/validate.py --since HEAD --only-changed` is the quiet daily mode; `--mark-reviewed` records the items you have checked in tools/reviewed.json.
 
