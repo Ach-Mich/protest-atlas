@@ -198,8 +198,7 @@ def share_page(code, x, site):
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="{E(url)}">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../fonts/fonts.css">
 <script data-goatcounter="https://protestatlas.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <style>{PAGE_CSS}</style>
 </head><body>

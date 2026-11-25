@@ -1,8 +1,7 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Protest Atlas</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 /* Layout: tile-grid cartogram of Europe beside a country briefing panel; stacks on phones */
 :root{
@@ -1198,10 +1197,9 @@ function tjFeatures(topo,obj){const tf=topo.transform;
   return topo.objects[obj].geometries.map(g=>({type:"Feature",id:g.id,properties:g.properties||{},geometry:
     g.type==="Polygon"?{type:"Polygon",coordinates:g.arcs.map(ring)}:g.type==="MultiPolygon"?{type:"MultiPolygon",coordinates:g.arcs.map(p=>p.map(ring))}:null})).filter(f=>f.geometry)}
 async function loadWorld(){
-  await loadScript("https://cdn.jsdelivr.net/npm/d3-array@3.2.4/dist/d3-array.min.js");
-  await loadScript("https://cdn.jsdelivr.net/npm/d3-geo@3.1.1/dist/d3-geo.min.js");
-  const mod=await import("https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json/+esm");
-  const topo=mod.default||mod;if(!topo||!topo.objects||!topo.objects.countries)throw new Error("World borders are empty");
+  await loadScript("vendor/d3-array.min.js");
+  await loadScript("vendor/d3-geo.min.js");
+  const topo=await (await fetch("vendor/countries-50m.json")).json();if(!topo||!topo.objects||!topo.objects.countries)throw new Error("World borders are empty");
   buildWorld(tjFeatures(topo,"countries"))}
 function buildWorld(feats){const d3=window.d3,NS="http://www.w3.org/2000/svg";
   const mk=(tag,attrs)=>{const e=document.createElementNS(NS,tag);for(const a in attrs)e.setAttribute(a,attrs[a]);return e};

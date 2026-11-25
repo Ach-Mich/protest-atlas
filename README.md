@@ -23,7 +23,7 @@ Levels and "pressure on government" are Protest Atlas assessments built with fix
 - `tools/sources.json`: per-country registry of official, wire and organiser sources, read by the routine and by `tools/validate.py`.
 
 ## Self-hosted libraries and fonts
-The pages load the Jost font from Google Fonts; there is no other third-party request (no analytics, no cookies).
+Fonts (Jost, Barlow Condensed, Public Sans; SIL Open Font License) are served from `fonts/`, and the map view's d3 libraries and Natural Earth outlines from `vendor/`. The only third-party request is the anonymous GoatCounter visit count (no cookies).
 
 `python3 tools/snapshot.py` computes the daily history snapshot from data/briefings.json (the daily routine uses it, so every day is computed the same way; `--check` compares with an existing file). `python3 tools/validate.py --since HEAD --only-changed` is the quiet daily mode; `--mark-reviewed` records the items you have checked in tools/reviewed.json.
 
