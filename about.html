@@ -141,10 +141,10 @@ const CORRECTIONS_URL="https://docs.google.com/forms/d/e/1FAIpQLSfSF5ZE8HHTLQw7I
 const ANALYTICS_URL="https://protestatlas.goatcounter.com/count";
 if(ANALYTICS_URL){document.querySelectorAll(".privacy").forEach(li=>li.textContent=li.dataset.on);const g=document.createElement("script");g.async=true;g.src="https://gc.zgo.at/count.js";g.dataset.goatcounter=ANALYTICS_URL;document.head.appendChild(g)}
 if(CORRECTIONS_URL){document.querySelectorAll(".corrForm").forEach(a=>{a.href=CORRECTIONS_URL;a.target="_blank";a.rel="noopener"});document.querySelectorAll(".corrNote").forEach(n=>n.remove())}
-// Same language choice as the home page (?lang=, then saved choice, then browser language).
+// Same language choice as the home page (?lang=, then saved choice, then English).
 function pickLang(){const q=new URLSearchParams(location.search).get("lang");if(q==="fr"||q==="en")return q;
   try{const s=localStorage.getItem("pa-lang");if(s==="fr"||s==="en")return s}catch(e){}
-  return (navigator.language||"").toLowerCase().startsWith("fr")?"fr":"en"}
+  return "en"}
 function setLang(l,save){
   document.documentElement.lang=l;document.title=l==="fr"?"À propos de Protest Atlas":"About Protest Atlas";
   document.querySelectorAll("[data-lang]").forEach(d=>d.hidden=d.dataset.lang!==l);

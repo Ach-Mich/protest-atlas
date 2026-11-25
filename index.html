@@ -325,7 +325,7 @@ fr:{skip:"Aller aux pays",navCountries:"Pays",navWeeks:"Semaine par semaine",nav
 };
 const pickLang=()=>{const q=new URLSearchParams(location.search).get("lang");if(q==="fr"||q==="en")return q;
   try{const s=localStorage.getItem("pa-lang");if(s==="fr"||s==="en")return s}catch(e){}
-  return (navigator.language||"").toLowerCase().startsWith("fr")?"fr":"en"};
+  return "en"};
 let LANG=pickLang();
 const T=k=>L[LANG][k]??L.en[k];
 const LOC=()=>LANG==="fr"?"fr-FR":"en-GB";
