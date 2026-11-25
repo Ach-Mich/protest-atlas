@@ -203,7 +203,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
 <a class="skip" href="#countries" data-i18n="skip">Skip to countries</a>
 <header id="hdr"><div class="wrap bar">
   <a class="logo" href="#top">Protest Atlas</a>
-  <nav id="nav" aria-label="Sections"><a href="#countries" data-i18n="navCountries">Countries</a><a href="#weeks" data-i18n="navWeeks">Week by week</a><a href="#method" data-i18n="navMethod">Method</a><a href="about.html" data-i18n="navAbout">About</a></nav>
+  <nav id="nav" aria-label="Sections"><a href="#countries" data-i18n="navCountries">Countries</a><a href="#weeks" data-i18n="navWeeks">Week by week</a><a href="#method" data-i18n="navMethod">Method</a><a href="about.html" data-i18n="navAbout">About</a><a href="rss.html">RSS</a></nav>
   <div class="tools">
     <input id="find" type="search" list="countryList" placeholder="Find a country" aria-label="Find a country" autocomplete="off" data-i18n-ph="find">
     <datalist id="countryList"></datalist>
@@ -243,7 +243,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
 
   <footer>
     <p><span data-i18n-html="footIntro"><b>Protest Atlas</b> is an independent project.</span> <span data-i18n="footChecked">Data last checked</span> <span id="footCheck">–</span>. <span data-i18n="footSources">Sources are linked in each country briefing.</span></p>
-    <p class="flinks"><a href="about.html" data-i18n="navAbout">About</a><a href="#method" data-i18n="howTitle">How this works</a><a href="about.html#corrections" id="corrLink" data-i18n="corr">Send a correction</a><a href="map.html" data-i18n="mapView">Map view</a></p>
+    <p class="flinks"><a href="about.html" data-i18n="navAbout">About</a><a href="#method" data-i18n="howTitle">How this works</a><a href="about.html#corrections" id="corrLink" data-i18n="corr">Send a correction</a><a href="rss.html" data-i18n="rssFollow">Follow by RSS</a><a href="map.html" data-i18n="mapView">Map view</a></p>
   </footer>
 </main>
 <div class="tip" id="tip" role="tooltip"></div>
@@ -254,7 +254,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
 <script>
 // ---------- Interface language (English / French). Briefing texts from the data stay in English. ----------
 const L={
-en:{skip:"Skip to countries",navCountries:"Countries",navWeeks:"Week by week",navMethod:"Method",navAbout:"About",alerts:"Email alerts",find:"Find a country",
+en:{skip:"Skip to countries",navCountries:"Countries",navWeeks:"Week by week",navMethod:"Method",navAbout:"About",rssFollow:"Follow by RSS",find:"Find a country",
   h1:"Who's on<br>the <span>street</span>",
   lede:"Every morning we screen 38 European countries for national protest, and brief who is marching, why, how many, and what comes next.",
   dataNote:"",
@@ -288,7 +288,7 @@ en:{skip:"Skip to countries",navCountries:"Countries",navWeeks:"Week by week",na
   group:{unions:"Unions",students:"Students",citizens:"Citizens",sector:"Sector workers",opposition:"Opposition","far-right":"Far right",professions:"Professions"},
   demandV:{policy:"Policy change",programme:"Change of programme",resignation:"Resignation"},
   respV:{none:"No response yet",talks:"Talks offered",crisis:"Government crisis"}},
-fr:{skip:"Aller aux pays",navCountries:"Pays",navWeeks:"Semaine par semaine",navMethod:"Méthode",navAbout:"À propos",alerts:"Alertes par e-mail",find:"Chercher un pays",
+fr:{skip:"Aller aux pays",navCountries:"Pays",navWeeks:"Semaine par semaine",navMethod:"Méthode",navAbout:"À propos",rssFollow:"Suivre par RSS",find:"Chercher un pays",
   h1:"Qui est dans<br>la <span>rue</span>",
   lede:"Chaque matin, nous passons en revue 38 pays européens pour repérer les mobilisations nationales : qui manifeste, pourquoi, combien, et ce qui vient ensuite.",
   dataNote:"Les résumés, motifs et titres viennent de nos sources et restent en anglais pour l'instant.",

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Follow Protest Atlas by RSS</title>
+<meta name="description" content="Follow new protest days and announced dates across Europe in your news reader.">
+<link rel="alternate" type="application/rss+xml" title="Protest Atlas" href="feed.xml">
+<link rel="preload" href="fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{--sand:#F1ECE1;--card:#FBF8F1;--ink:#161616;--soft:#3A3833;--mute:#625E56;--line:#D8D1C2;--blue:#1F4E9C;--font:Jost,"Futura",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--sand);color:var(--ink);font:400 17px/1.65 var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-underline-offset:3px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line)}
+.bar{max-width:1240px;margin:0 auto;padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:900 20px/1 var(--font);text-transform:uppercase;text-decoration:none}
+.bar a.back{font-size:15px;color:var(--soft)}
+.htools{display:flex;gap:14px;align-items:center}
+.lang{font:inherit;font-size:14px;font-weight:700;padding:6px 10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.lang:hover{border-color:var(--ink)}
+h1{font:700 clamp(44px,7vw,76px)/1 var(--font);letter-spacing:-.03em;text-transform:lowercase;margin:48px 0 18px}
+h1 span{color:var(--blue)}
+.intro{font-size:21px;line-height:1.5;color:var(--soft);margin-bottom:28px}
+h2{font:700 24px/1.2 var(--font);text-transform:uppercase;border-top:3px solid var(--ink);padding-top:12px;margin:44px 0 12px}
+p{margin-bottom:14px;color:var(--soft)}
+.copy{display:flex;gap:0;margin:6px 0 10px;max-width:620px}
+.copy input{flex:1;min-width:0;font:inherit;font-size:16px;padding:12px 14px;border:2px solid var(--ink);border-right:0;background:var(--card);color:var(--ink)}
+.copy button{font:inherit;font-size:16px;font-weight:700;padding:12px 20px;border:2px solid var(--ink);background:var(--ink);color:var(--sand);cursor:pointer;white-space:nowrap}
+.copy button:hover{background:var(--blue);border-color:var(--blue)}
+.done{font-size:15px;color:var(--blue);font-weight:600;min-height:1.6em}
+ol.steps{margin:0 0 14px 22px;color:var(--soft)}ol.steps li{margin-bottom:6px}
+.items{list-style:none;margin:0}
+.items li{border-bottom:1px solid var(--line);padding:12px 0}
+.items li:last-child{border:0}
+.items a{font-weight:600;text-decoration:none}.items a:hover{text-decoration:underline}
+.items .d{display:block;font-size:14px;color:var(--mute)}
+.items .s{display:block;font-size:15px;color:var(--soft);margin-top:2px}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:20px 0 40px;font-size:14px;color:var(--mute)}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="logo" href="index.html">Protest Atlas</a><span class="htools"><a class="back" href="index.html" data-en="Back to the watch" data-fr="Retour au suivi">Back to the watch</a><button class="lang" id="langBtn" lang="fr">FR</button></span></div></header>
+<main class="wrap">
+<div data-lang="en">
+  <h1>follow by <span>rss</span></h1>
+  <p class="intro">Get new protest days and newly announced dates in your news reader, as soon as the briefings are updated. No account, no email address, nothing to sign up for.</p>
+  <h2>Your feed address</h2>
+  <div class="copy"><input class="feedUrl" readonly aria-label="Feed address"><button class="copyBtn" type="button">Copy</button></div>
+  <p class="done" aria-live="polite"></p>
+  <h2>How to use it</h2>
+  <ol class="steps">
+    <li>Open your news reader app (for example Feedly, Inoreader, NetNewsWire or Thunderbird).</li>
+    <li>Choose "Add feed" or "Subscribe" and paste the address above.</li>
+    <li>New items appear there after each update. To stop, remove the feed in your reader.</li>
+  </ol>
+  <p>Each item is either a protest day that took place or a date already called by organisers or unions, with a link to the country briefing. Items are in English.</p>
+  <h2>Latest in the feed</h2>
+  <ul class="items"><li class="s">Loading…</li></ul>
+</div>
+
+<div data-lang="fr" lang="fr" hidden>
+  <h1>suivre par <span>rss</span></h1>
+  <p class="intro">Recevez les nouvelles journées de mobilisation et les dates annoncées dans votre lecteur d'actualités, dès que les fiches sont mises à jour. Pas de compte, pas d'adresse e-mail, aucune inscription.</p>
+  <h2>Adresse du flux</h2>
+  <div class="copy"><input class="feedUrl" readonly aria-label="Adresse du flux"><button class="copyBtn" type="button">Copier</button></div>
+  <p class="done" aria-live="polite"></p>
+  <h2>Comment l'utiliser</h2>
+  <ol class="steps">
+    <li>Ouvrez votre lecteur d'actualités (par exemple Feedly, Inoreader, NetNewsWire ou Thunderbird).</li>
+    <li>Choisissez « Ajouter un flux » ou « S'abonner » et collez l'adresse ci-dessus.</li>
+    <li>Les nouveautés y apparaissent après chaque mise à jour. Pour arrêter, supprimez le flux dans votre lecteur.</li>
+  </ol>
+  <p>Chaque élément est soit une journée de mobilisation qui a eu lieu, soit une date déjà annoncée par les organisateurs ou les syndicats, avec un lien vers la fiche du pays. Les éléments sont en anglais.</p>
+  <h2>Derniers éléments du flux</h2>
+  <ul class="items"><li class="s">Chargement…</li></ul>
+</div>
+</main>
+<footer><div class="wrap"><span data-en="Protest Atlas is an independent project." data-fr="Protest Atlas est un projet indépendant.">Protest Atlas is an independent project.</span> <a href="index.html" data-en="Back to the watch" data-fr="Retour au suivi">Back to the watch</a></div></footer>
+<script>
+const ANALYTICS_URL="https://protestatlas.goatcounter.com/count";
+if(ANALYTICS_URL){const g=document.createElement("script");g.async=true;g.src="https://gc.zgo.at/count.js";g.dataset.goatcounter=ANALYTICS_URL;document.head.appendChild(g)}
+const FEED=new URL("feed.xml",location.href).href;
+document.querySelectorAll(".feedUrl").forEach(i=>{i.value=FEED;i.addEventListener("focus",()=>i.select())});
+const MSG={en:["Copied. Paste it into your news reader.","Select the address and copy it (Cmd+C or Ctrl+C)."],
+           fr:["Copié. Collez-le dans votre lecteur d'actualités.","Sélectionnez l'adresse et copiez-la (Cmd+C ou Ctrl+C)."]};
+document.querySelectorAll(".copyBtn").forEach(b=>b.addEventListener("click",async()=>{
+  const box=b.closest("[data-lang]"),inp=box.querySelector(".feedUrl"),out=box.querySelector(".done"),m=MSG[box.dataset.lang];
+  try{await navigator.clipboard.writeText(FEED);out.textContent=m[0]}catch(e){inp.focus();inp.select();out.textContent=m[1]}}));
+// Latest items, read from the feed itself so the page always matches it.
+const fmt=(d,l)=>d.toLocaleDateString(l==="fr"?"fr-FR":"en-GB",{day:"numeric",month:"long",year:"numeric"});
+fetch("feed.xml",{cache:"no-cache"}).then(r=>r.text()).then(t=>{
+  const doc=new DOMParser().parseFromString(t,"application/xml"),items=[...doc.querySelectorAll("item")].slice(0,10);
+  document.querySelectorAll(".items").forEach(ul=>{const l=ul.closest("[data-lang]").dataset.lang;ul.innerHTML="";
+    if(!items.length){ul.innerHTML=`<li class="s">${l==="fr"?"Aucun élément pour l'instant.":"Nothing in the feed yet."}</li>`;return}
+    items.forEach(it=>{const li=document.createElement("li"),a=document.createElement("a"),d=document.createElement("span"),s=document.createElement("span");
+      const link=it.querySelector("link")?.textContent||"#";a.href=link.replace(/^https?:\/\/[^/]+\//,"");a.textContent=it.querySelector("title")?.textContent||"";
+      const pd=new Date(it.querySelector("pubDate")?.textContent||"");d.className="d";d.textContent=isNaN(pd)?"":(l==="fr"?"Ajouté le ":"Added ")+fmt(pd,l);
+      s.className="s";const desc=it.querySelector("description")?.textContent||"";s.textContent=desc.length>220?desc.slice(0,217)+"…":desc;
+      li.append(d,a,s);ul.appendChild(li)})})
+}).catch(()=>document.querySelectorAll(".items").forEach(ul=>ul.innerHTML=`<li class="s"><a href="feed.xml">feed.xml</a></li>`));
+// Same language choice as the other pages (?lang=, then saved choice, then English).
+function pickLang(){const q=new URLSearchParams(location.search).get("lang");if(q==="fr"||q==="en")return q;
+  try{const s=localStorage.getItem("pa-lang");if(s==="fr"||s==="en")return s}catch(e){}
+  return "en"}
+function setLang(l,save){
+  document.documentElement.lang=l;document.title=l==="fr"?"Suivre Protest Atlas par RSS":"Follow Protest Atlas by RSS";
+  document.querySelectorAll("[data-lang]").forEach(d=>d.hidden=d.dataset.lang!==l);
+  document.querySelectorAll("[data-en]").forEach(el=>el.textContent=el.dataset[l]);
+  const b=document.getElementById("langBtn");b.textContent=l==="fr"?"EN":"FR";b.lang=l==="fr"?"en":"fr";
+  if(save){try{localStorage.setItem("pa-lang",l)}catch(e){}}
+}
+let LANG=pickLang();setLang(LANG,false);
+document.getElementById("langBtn").addEventListener("click",()=>{LANG=LANG==="fr"?"en":"fr";setLang(LANG,true)});
+</script>
+</body>
+</html>

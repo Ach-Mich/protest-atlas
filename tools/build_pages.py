@@ -289,7 +289,7 @@ def main():
         fh.write("User-agent: *\nAllow: /\n" + (f"Sitemap: {base}/sitemap.xml\n" if base else ""))
     if base:
         today = datetime.now(timezone.utc).date().isoformat()
-        urls = [f"{base}/", f"{base}/about.html"] + [f"{base}/c/{c.lower()}/" for c in sorted(data)]
+        urls = [f"{base}/", f"{base}/about.html", f"{base}/rss.html"] + [f"{base}/c/{c.lower()}/" for c in sorted(data)]
         with open("sitemap.xml", "w", encoding="utf-8") as fh:
             fh.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                      + "".join(f"<url><loc>{E(u)}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n")
