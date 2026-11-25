@@ -1,28 +1,666 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Protest Atlas</title>
-<meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Protest Atlas is coming soon.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%231E2226%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27none%27 stroke=%27%23fff%27 stroke-width=%273%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%272%27 fill=%27%23fff%27/%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/fonts.css">
+<meta name="description" content="Who's on the street in Europe: a daily protest watch across 38 countries: who is marching, why, how many, and what comes next.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Protest Atlas">
+<meta property="og:title" content="Protest Atlas: who's on the street in Europe">
+<meta property="og:description" content="National protests and strikes across 38 European countries, checked every morning.">
+<meta property="og:image" content="card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="application/rss+xml" title="Protest Atlas" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F4F5F6;--fg:#1E2226;--muted:#5A6066;--line:#E1E3E6;--orange:#F08A24}
-@media (prefers-color-scheme:dark){:root{--bg:#141619;--fg:#ECEEF0;--muted:#A3A9AF;--line:#2E3237}}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px}
-main{max-width:560px;width:100%}
-.brand{font-weight:800;font-stretch:112%;letter-spacing:-.02em;font-size:15px;text-transform:uppercase;margin:0 0 40px;display:flex;align-items:center;gap:8px}
-.brand i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--orange)}
-h1{font-weight:800;font-stretch:112%;letter-spacing:-.03em;line-height:1;font-size:clamp(36px,7vw,56px);margin:0 0 20px}
-p{font-size:17px;line-height:1.55;color:var(--muted);margin:0 0 12px}
-hr{border:0;border-top:1px solid var(--line);margin:28px 0}
-</style></head>
-<body><main>
-<p class="brand"><i></i>Protest Atlas</p>
-<h1>Coming soon.</h1>
-<p>Protest Atlas, a sourced watch of protests across Europe, is being prepared and will open shortly.</p>
-<hr>
-<p lang="fr">Protest Atlas, une veille sourcée des manifestations en Europe, est en préparation et ouvrira prochainement.</p>
-<p lang="de">Protest Atlas, ein Monitor für Proteste in Europa mit Quellenangaben, wird vorbereitet und startet in Kürze.</p>
-</main></body></html>
+:root{
+  /* Bauhaus (default): warm off-white, black text, red / yellow / blue only where they carry meaning */
+  --sand:#F1ECE1; --card:#FBF8F1; --tint:#F1ECE1; --ink:#161616; --soft:#3A3833; --mute:#625E56; --line:#D8D1C2; --edge:#161616;
+  --plum:#1F4E9C; --plum-soft:#DCE4F2; --sage:#161616; --sage-soft:#F2D774;
+  --s0:#BDB7AA; --s1:#F6E3A6; --s2:#F2C230; --s3:#D6312B; --s4:#161616; --clay-text:#B8261F;
+  --font:Jost,"Futura",sans-serif; --display:Jost,"Futura",sans-serif; --stretch:100%; --szhi:#fff;
+  --h1case:lowercase; --h1w:700; --h1t:-.03em; --h1s:clamp(52px,7.4vw,100px); --hl:#1F4E9C;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--sand);color:var(--ink);font:400 15px/1.55 var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--plum);outline-offset:2px}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:var(--sand);padding:10px 14px;font-weight:600}
+.skip:focus{top:10px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+small.k{font-size:12.5px;color:var(--mute)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--sand) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.scrolled{border-bottom-color:var(--edge)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:62px}
+.logo{font:900 22px/1 var(--display);text-transform:uppercase;letter-spacing:-.01em;text-decoration:none}
+nav{display:flex;gap:24px;font-size:14px}
+nav a{text-decoration:none;color:var(--soft)}
+nav a:hover{color:var(--ink)}
+.asof{font-size:13px;color:var(--mute);white-space:nowrap}
+.tools{display:flex;gap:8px;align-items:center}
+#find{font:inherit;font-size:14px;width:190px;padding:7px 10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+#find:focus{outline:2px solid var(--plum);outline-offset:0;border-color:var(--plum)}
+.lang{font-size:14px;font-weight:700;padding:7px 10px;border:1px solid var(--line);background:var(--card)}
+.lang:hover{border-color:var(--ink)}
+.key em{font-style:normal}
+.datanote{display:block;margin-top:10px;font-size:14px;color:var(--mute)}
+.datanote:empty{display:none}
+.menu{display:none;font-size:14px;font-weight:600;padding:7px 10px;border:1px solid var(--ink)}
+
+/* hero + indicators */
+.hero{padding:44px 0 32px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:end}
+.hero h1{font:var(--h1w,900) var(--h1s,clamp(60px,9vw,128px))/.86 var(--display);letter-spacing:var(--h1t,-.01em);text-transform:var(--h1case,uppercase)}
+.hero h1 span{color:var(--hl,inherit)}
+.hero p{font-size:17px;line-height:1.55;color:var(--soft);max-width:44ch}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0 24px;margin:8px 0 60px}
+.stat{padding:12px 20px 0 0;border-top:3px solid var(--edge)}
+.weekline{margin:-36px 0 56px;font-size:15px;color:var(--soft)}
+.weekline b{color:var(--ink)}
+.weekline button{text-decoration:underline;text-underline-offset:3px}
+.stat b{display:block;font:800 46px/1 var(--display);margin-bottom:6px}
+.stat span{font-size:13px;color:var(--mute)}
+
+/* section heads + filters */
+.bh{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:14px;flex-wrap:wrap}
+h2{font:800 34px/1 var(--display);text-transform:uppercase}
+.bh small{color:var(--mute);font-size:13px}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.chip{font-size:13px;padding:6px 11px;background:var(--card);border:1px solid var(--line);color:var(--soft)}
+.chip sup{font-size:10px;color:var(--mute);margin-left:3px}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--card)}
+.chip[aria-pressed="true"] sup{color:var(--s2)}
+.chip:hover:not([aria-pressed="true"]){border-color:var(--soft)}
+
+/* tiles */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cty{cursor:pointer;background:var(--card);padding:20px 22px 18px;display:flex;flex-direction:column;gap:12px;width:100%;border:1px solid var(--edge);border-top:5px solid var(--edge);transition:box-shadow .15s}
+.cty:hover{box-shadow:0 0 0 2px var(--ink)}
+.r{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.cty h3 a{text-decoration:none;color:inherit}
+.cty h3 a:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
+.cty h3{font:800 28px/1 var(--display);text-transform:uppercase}
+.badge{font-size:12px;font-weight:600;padding:4px 8px;background:var(--plum-soft);color:var(--plum);white-space:nowrap}
+.badge.hot{background:var(--ink);color:var(--card)}
+.active{font-size:13px;font-weight:600;color:var(--ink)}
+.cty .active{margin-top:-6px}
+.latest{display:flex;flex-direction:column;gap:2px;padding:10px 12px;background:var(--tint,var(--sand));}
+.latest b{font:700 17px/1.2 var(--display)}
+.latest span{font-size:13px;color:var(--soft)}
+.cty p{font-size:14px;color:var(--soft);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.why{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:10px;margin-top:auto}
+.why ul,.tags{list-style:none;display:flex;flex-wrap:wrap;gap:5px}
+.why li,.tag{font-size:12.5px;padding:3px 8px;background:var(--sage-soft);color:var(--sage)}
+.quiet{margin:22px 0 64px;display:flex;flex-direction:column;gap:8px}
+.quiet div{display:flex;flex-wrap:wrap;gap:4px 16px}
+.quiet button{font-size:14px;color:var(--mute)}
+.quiet button:hover{color:var(--ink);text-decoration:underline}
+.notice{margin:18px 0 0;padding:10px 14px;background:var(--s1);color:var(--ink);font-size:14px}
+.none{padding:30px;background:var(--card);color:var(--mute);grid-column:1/-1}
+
+/* calendar: one row per country, one square per day, weeks separated */
+.cal-scroll{overflow:visible;padding-bottom:6px}
+@media (max-width:760px){.cal-scroll{overflow-x:auto}}
+.pm{display:grid;gap:3px 2px;align-items:center;min-width:620px}
+.pm .rl{font-size:13px;font-weight:600;padding-right:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left}
+@media (max-width:760px){.pm .rl{position:sticky;left:0;z-index:1;background:var(--sand);align-self:stretch;display:flex;align-items:center}}
+.pm .rl:hover{text-decoration:underline}
+.pm .cl{aspect-ratio:1;background:var(--tint,#F1F1EF)}
+.pm .cl.fut{background:transparent;box-shadow:inset 0 0 0 1px var(--line)}
+.pm .cl.on{cursor:pointer}
+.pm .cl.on:hover,.pm .cl.on:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.pm .cl.next{background:var(--plum)}
+.pm .ax{font-size:11px;color:var(--mute);white-space:nowrap;padding-top:6px;overflow:visible}
+.pm .ax.now{color:var(--ink);font-weight:700;justify-self:end}
+.more{margin-top:12px;font-size:14px;font-weight:600;border-bottom:2px solid var(--ink);padding-bottom:1px}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--sand);font-size:13px;line-height:1.4;padding:8px 10px;z-index:60;max-width:260px;opacity:0;transition:opacity .1s}
+.tip b{display:block;font-weight:700}
+.key{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--mute);margin-top:12px}
+.key span{display:flex;gap:6px;align-items:center}
+.key i{width:11px;height:11px;display:inline-block}
+
+/* method + footer */
+.method{margin:80px 0 40px;border-top:3px solid var(--edge);padding-top:14px;display:grid;grid-template-columns:1fr 2fr;gap:24px}
+.method p{font-size:16px;line-height:1.6;color:var(--soft);max-width:62ch}
+footer p{margin:0 0 6px}
+.flinks{display:flex;flex-wrap:wrap;gap:4px 18px}
+footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color:var(--mute)}
+
+/* dossier */
+.scrim{position:fixed;inset:0;background:rgba(42,38,34,.3);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
+.scrim.open{opacity:1;pointer-events:auto}
+.dossier{position:fixed;top:0;right:0;bottom:0;width:min(680px,100%);background:var(--sand);border-left:1px solid var(--edge);z-index:50;transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1);overflow-y:auto;overscroll-behavior:contain}
+.dossier.open{transform:none;box-shadow:-20px 0 60px rgba(0,0,0,.12)}
+.d-head{position:sticky;top:0;background:var(--sand);display:flex;justify-content:space-between;align-items:center;padding:12px 28px;border-bottom:1px solid var(--line);z-index:2}
+.d-close{width:36px;height:36px;border:1px solid var(--line);background:var(--card);font-size:15px;text-align:center}
+.d-tools{display:flex;gap:8px;align-items:center}
+.d-share{font-size:14px;font-weight:600;padding:7px 12px;border:1px solid var(--ink)}
+.d-share:hover{background:var(--ink);color:var(--sand)}
+.d-close:hover{border-color:var(--ink)}
+.d-hero{padding:28px 28px 10px;display:flex;flex-direction:column;gap:14px}
+.d-top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.loc{width:180px;height:156px;flex:none}
+.loc .ctx{fill:#E9E9E6;stroke:none}
+.loc .oth{fill:#D6D6D2;stroke:var(--sand);stroke-width:3}
+.loc .sel{fill:var(--s3);stroke:var(--ink);stroke-width:4}
+.loc .ring{fill:none;stroke:var(--ink);stroke-width:7}
+.d-hero h2{font:900 clamp(52px,9vw,84px)/.88 var(--display);text-transform:uppercase}
+.d-hero>p.checked{font-size:13.5px;color:var(--mute);margin-top:-4px}
+.d-hero>p.checked.old{color:var(--clay-text);font-weight:600}
+.d-hero>p{font-size:16px;line-height:1.6;color:var(--soft)}
+.d-hero>p.d-why{color:var(--ink)}
+.d-next{background:var(--plum-soft);border-left:3px solid var(--plum);padding:12px 14px;font-size:14px;color:var(--soft)}
+.d-next b{color:var(--plum);font-weight:700}
+.d-sec{padding:22px 28px 6px;display:flex;flex-direction:column;gap:12px}
+.d-sec h3{font:800 22px/1.1 var(--display);text-transform:uppercase;border-top:3px solid var(--edge);padding-top:12px}
+.grp p{font-size:14px;color:var(--soft);margin-top:2px}
+.grp b{font-weight:600}
+.pr{display:grid;grid-template-columns:96px 1fr;gap:8px 14px;font-size:14px}
+.pr dt{color:var(--mute)}
+.pr dd{color:var(--soft)}
+.pr b{color:var(--ink);font-weight:600}
+.pr b.hot{color:var(--clay-text)}
+.day{display:grid;grid-template-columns:12px 1fr;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.day:last-child{border-bottom:0}
+.day .dot{width:12px;height:12px;border-radius:50%;margin-top:4px}
+.day b{font-weight:600;font-size:15px}
+.day p{font-size:14px;color:var(--soft);margin-top:4px}
+.fig strong{color:var(--ink);font-weight:700}
+.warn{color:var(--clay-text)!important}
+.srcs{font-size:12px!important;color:var(--mute)!important}
+.srcs a{color:var(--mute)}
+.srcs a:hover{color:var(--ink)}
+
+@media (max-width:960px){
+  .grid{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr;gap:20px 24px}
+  .method{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr;gap:16px;padding-top:32px}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  nav{display:none;position:absolute;top:62px;left:0;right:0;flex-direction:column;gap:0;background:var(--sand);border-bottom:2px solid var(--ink);padding:6px 16px 12px;z-index:30}
+  nav.open{display:flex}
+  nav a{padding:10px 0;font-size:17px;border-bottom:1px solid var(--line)}
+  .menu{display:block}
+  #find{width:130px}
+  .grid{grid-template-columns:1fr}
+  .stat b{font-size:30px}
+  .d-head,.d-hero,.d-sec{padding-left:16px;padding-right:16px}
+    .pr{grid-template-columns:80px 1fr}
+  .loc{width:108px;height:94px}
+}
+.logo,.hero h1,h2,.stat b,.cty h3,.latest b,.d-hero h2,.d-sec h3{font-stretch:var(--stretch,100%)}
+</style>
+</head>
+<body>
+<a class="skip" href="#countries" data-i18n="skip">Skip to countries</a>
+<header id="hdr"><div class="wrap bar">
+  <a class="logo" href="#top">Protest Atlas</a>
+  <nav id="nav" aria-label="Sections"><a href="#countries" data-i18n="navCountries">Countries</a><a href="#weeks" data-i18n="navWeeks">Week by week</a><a href="#method" data-i18n="navMethod">Method</a><a href="about.html" data-i18n="navAbout">About</a><a href="feed.xml">RSS</a></nav>
+  <div class="tools">
+    <input id="find" type="search" list="countryList" placeholder="Find a country" aria-label="Find a country" autocomplete="off" data-i18n-ph="find">
+    <datalist id="countryList"></datalist>
+    <button class="lang" id="langBtn" lang="fr">FR</button>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+  <span class="asof" id="asof" hidden></span>
+</div></header>
+
+<main class="wrap" id="top">
+  <p class="notice" id="notice" role="status" hidden></p>
+  <section class="hero">
+    <h1 data-i18n-html="h1">Who's on<br>the <span>street</span></h1>
+    <p><span data-i18n="lede">Every morning we screen 38 European countries for national protest, and brief who is marching, why, how many, and what comes next.</span> <span class="datanote" data-i18n="dataNote"></span></p>
+  </section>
+  <section class="stats" id="stats" aria-label="Key figures"></section>
+  <p class="weekline" id="weekline"></p>
+
+  <section id="countries">
+    <div class="bh"><h2 data-i18n="navCountries">Countries</h2><small id="idxCount"></small></div>
+    <div class="filters" id="filters" role="toolbar" aria-label="Filter by reason"></div>
+    <div class="grid" id="tiles"></div>
+    <div class="quiet" id="quiet"></div>
+  </section>
+
+  <section id="weeks">
+    <div class="bh"><h2 data-i18n="navWeeks">Week by week</h2><small id="calNote"></small></div>
+    <div class="cal-scroll"><div class="pm" id="pm" role="group" aria-describedby="calNote"></div></div>
+    <button class="more" id="more" hidden></button>
+    <div class="key"><span><i style="background:var(--s1)"></i><em data-i18n="k1">Under 10k</em></span><span><i style="background:var(--s2)"></i><em data-i18n="k2">10k–100k</em></span><span><i style="background:var(--s3)"></i><em data-i18n="k3">100k–500k</em></span><span><i style="background:var(--s4)"></i><em data-i18n="k4">500k+</em></span><span><i style="background:var(--s0)"></i><em data-i18n="k0">Size not reported</em></span><span><i style="background:var(--plum)"></i><em data-i18n="kNext">Announced date</em></span></div>
+  </section>
+
+  <section class="method" id="method">
+    <h2 data-i18n="howTitle">How this works</h2>
+    <p data-i18n="howText">Every morning we check news agencies, public broadcasters and official statements in 38 countries. A country goes on watch once a national protest or strike is reported. Turnout is always given twice, the official count and the organisers' count, with every source linked. Many protest days have no published figure at all, especially strikes and smaller marches: then the page says "Turnout not reported" rather than guess. "Very active" and pressure on government are our own readings, built with fixed rules, not official measures.</p>
+  </section>
+
+  <footer>
+    <p><span data-i18n-html="footIntro"><b>Protest Atlas</b> is an independent project.</span> <span data-i18n="footChecked">Data last checked</span> <span id="footCheck">–</span>. <span data-i18n="footSources">Sources are linked in each country briefing.</span></p>
+    <p class="flinks"><a href="about.html" data-i18n="navAbout">About</a><a href="#method" data-i18n="howTitle">How this works</a><a href="about.html#corrections" id="corrLink" data-i18n="corr">Send a correction</a><a href="map.html" data-i18n="mapView">Map view</a></p>
+  </footer>
+</main>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="dossier" id="dossier" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true"></aside>
+
+<script>
+// ---------- Interface language (English / French). Briefing texts from the data stay in English. ----------
+const L={
+en:{skip:"Skip to countries",navCountries:"Countries",navWeeks:"Week by week",navMethod:"Method",navAbout:"About",find:"Find a country",
+  h1:"Who's on<br>the <span>street</span>",
+  lede:"Every morning we screen 38 European countries for national protest, and brief who is marching, why, how many, and what comes next.",
+  dataNote:"",
+  k1:"Under 10k",k2:"10k–100k",k3:"100k–500k",k4:"500k+",k0:"Size not reported",kNext:"Announced date",
+  howTitle:"How this works",
+  howText:"Every morning we check news agencies, public broadcasters and official statements in 38 countries. A country goes on watch once a national protest or strike is reported. Turnout is always given twice, the official count and the organisers' count, with every source linked. Many protest days have no published figure at all, especially strikes and smaller marches: then the page says \"Turnout not reported\" rather than guess. \"Very active\" and pressure on government are our own readings, built with fixed rules, not official measures.",
+  footIntro:"<b>Protest Atlas</b> is an independent project.",footChecked:"Data last checked",footSources:"Sources are linked in each country briefing.",
+  corr:"Send a correction",mapView:"Map view",langOther:"FR",langOtherName:"Français",
+  organisers:"organisers",official:"official",
+  peak:(c,d,w,off)=>`Largest crowd in 30 days · ${c}, ${d} (${w}${off?"; "+off+" official":""})`,peakNone:"Largest crowd in 30 days",
+  arrests:n=>`Arrests reported over ${n} protest days`,dates:"Dates already announced",resign:"Movements calling for a resignation",
+  week:(f,t)=>`This week (${f} to ${t}):`,weekIn:"protest days in",weekNone:"no national protest day reported.",
+  all:"All",noCause:"No stated cause",resignCall:"Resignation call",next:d=>`Next ${d}`,
+  veryActive:n=>`Very active: ${n} protest days in 30 days`,newWeek:"New this week",moreActive:"More active than the week before",quieter:"Quieter than the week before",
+  latest:d=>`Latest protest, ${d}`,people:(n,w)=>`${n} people (${w})`,noTurnout:"Turnout not reported",why:"Why",
+  noneForReason:"No country on watch for this reason.",
+  idx:(n,label)=>`${n} ${label?(n===1?"country":"countries")+" for "+label.toLowerCase():"countries on watch, most active first"}.`,
+  idxActive:h=>`Very active means ${h} or more protest days in 30 days`,
+  quiet:"Screened, no national protest",
+  calNote:d=>`Last 30 days to ${d}, then the dates already announced.`,showTop:n=>`Show the ${n} most active`,showAll:n=>`Show all ${n} countries`,
+  notRecorded:"Last checked: not recorded.",today:"today",yesterday:"yesterday",daysAgo:n=>`${n} days ago`,
+  checked:(d,t,w)=>`Last checked ${d} at ${t} (${w}).`,
+  onWatch:"On watch",screened:"Screened, no national protest",share:"Share",copied:"Link copied",copy:"Copy this link:",shareTitle:c=>`${c} on Protest Atlas`,close:"Close",
+  noProtest:"No national protest found in our sources for the last 30 days.",whyProtest:"Why they protest:",noDemands:"no clear demands reported so far.",
+  nextOn:d=>`Next · ${d}`,who:"Who is protesting, and what they want",pressure:"Pressure on government",
+  demand:"Demand",response:"Response",government:"Government",policing:"Policing",heavy:"Heavy",opposition:"Opposition",involved:"Involved",
+  fragility:{strained:"Strained",fragile:"Fragile"},days:"Protest days",arrestsWord:"arrests",sources:"Sources:",
+  backup:d=>`The latest data couldn't load, so this is a saved copy (data from ${d}). Try reloading the page later.`,
+  failed:"The protest data couldn't load right now. Please try again in a few minutes.",
+  themes:{cost:"Cost of living",wages:"Wages & jobs",housing:"Housing",education:"Education",austerity:"Pensions & austerity",services:"Public services & health",governance:"Corruption & governance",war:"War, conscription & foreign policy",media:"Media freedom",rights:"Rights & equality"},
+  group:{unions:"Unions",students:"Students",citizens:"Citizens",sector:"Sector workers",opposition:"Opposition","far-right":"Far right",professions:"Professions"},
+  demandV:{policy:"Policy change",programme:"Change of programme",resignation:"Resignation"},
+  respV:{none:"No response yet",talks:"Talks offered",crisis:"Government crisis"}},
+fr:{skip:"Aller aux pays",navCountries:"Pays",navWeeks:"Semaine par semaine",navMethod:"Méthode",navAbout:"À propos",find:"Chercher un pays",
+  h1:"Qui est dans<br>la <span>rue</span>",
+  lede:"Chaque matin, nous passons en revue 38 pays européens pour repérer les mobilisations nationales : qui manifeste, pourquoi, combien, et ce qui vient ensuite.",
+  dataNote:"Les résumés, motifs et titres viennent de nos sources et restent en anglais pour l'instant.",
+  k1:"Moins de 10 000",k2:"10 000 à 100 000",k3:"100 000 à 500 000",k4:"Plus de 500 000",k0:"Taille non communiquée",kNext:"Date annoncée",
+  howTitle:"Comment ça marche",
+  howText:"Chaque matin, nous consultons les agences de presse, les médias publics et les communiqués officiels de 38 pays. Un pays passe sous surveillance dès qu'une manifestation ou une grève nationale est signalée. La participation est toujours donnée deux fois, le chiffre officiel et celui des organisateurs, avec chaque source en lien. Beaucoup de journées n'ont aucun chiffre publié, surtout les grèves et les petites marches : la page indique alors « Participation non communiquée » plutôt que de deviner. « Très actif » et la pression sur le gouvernement sont nos propres lectures, établies selon des règles fixes, pas des mesures officielles.",
+  footIntro:"<b>Protest Atlas</b> est un projet indépendant.",footChecked:"Données vérifiées le",footSources:"Les sources sont en lien dans chaque fiche pays.",
+  corr:"Signaler une erreur",mapView:"Vue carte",langOther:"EN",langOtherName:"English",
+  organisers:"organisateurs",official:"chiffre officiel",
+  peak:(c,d,w,off)=>`Plus grande foule en 30 jours · ${c}, ${d} (${w}${off?" ; "+off+" selon les autorités":""})`,peakNone:"Plus grande foule en 30 jours",
+  arrests:n=>`Interpellations signalées sur ${n} jours de mobilisation`,dates:"Dates déjà annoncées",resign:"Mouvements qui réclament une démission",
+  week:(f,t)=>`Cette semaine (du ${f} au ${t}) :`,weekIn:"mobilisations dans ces pays :",weekNone:"aucune mobilisation nationale signalée.",
+  all:"Tous",noCause:"Sans cause déclarée",resignCall:"Appel à la démission",next:d=>`Prochaine : ${d}`,
+  veryActive:n=>`Très actif : ${n} jours de mobilisation en 30 jours`,newWeek:"Nouveau cette semaine",moreActive:"Plus actif que la semaine précédente",quieter:"Plus calme que la semaine précédente",
+  latest:d=>`Dernière mobilisation, ${d}`,people:(n,w)=>`${n} personnes (${w})`,noTurnout:"Participation non communiquée",why:"Pourquoi",
+  noneForReason:"Aucun pays sous surveillance pour cette raison.",
+  idx:(n,label)=>`${n} pays ${label?"pour « "+label.toLowerCase()+" »":"sous surveillance, les plus actifs d'abord"}.`,
+  idxActive:h=>`Très actif = ${h} jours de mobilisation ou plus en 30 jours`,
+  quiet:"Passés en revue, sans mobilisation nationale",
+  calNote:d=>`Les 30 derniers jours jusqu'au ${d}, puis les dates déjà annoncées.`,showTop:n=>`Afficher les ${n} plus actifs`,showAll:n=>`Afficher les ${n} pays`,
+  notRecorded:"Dernière vérification : non enregistrée.",today:"aujourd'hui",yesterday:"hier",daysAgo:n=>`il y a ${n} jours`,
+  checked:(d,t,w)=>`Dernière vérification le ${d} à ${t} (${w}).`,
+  onWatch:"Sous surveillance",screened:"Passé en revue, sans mobilisation nationale",share:"Partager",copied:"Lien copié",copy:"Copiez ce lien :",shareTitle:c=>`${c} sur Protest Atlas`,close:"Fermer",
+  noProtest:"Aucune mobilisation nationale trouvée dans nos sources ces 30 derniers jours.",whyProtest:"Pourquoi ils manifestent :",noDemands:"aucune revendication claire signalée pour l'instant.",
+  nextOn:d=>`Prochaine · ${d}`,who:"Qui manifeste, et ce qu'ils demandent",pressure:"Pression sur le gouvernement",
+  demand:"Revendication",response:"Réponse",government:"Gouvernement",policing:"Maintien de l'ordre",heavy:"Musclé",opposition:"Opposition",involved:"Impliquée",
+  fragility:{strained:"Sous tension",fragile:"Fragile"},days:"Jours de mobilisation",arrestsWord:"interpellations",sources:"Sources :",
+  backup:d=>`Les dernières données n'ont pas pu être chargées : voici une copie enregistrée (données du ${d}). Réessayez plus tard.`,
+  failed:"Les données n'ont pas pu être chargées. Réessayez dans quelques minutes.",
+  themes:{cost:"Coût de la vie",wages:"Salaires et emploi",housing:"Logement",education:"Éducation",austerity:"Retraites et austérité",services:"Services publics et santé",governance:"Corruption et gouvernance",war:"Guerre, service militaire et politique étrangère",media:"Liberté de la presse",rights:"Droits et égalité"},
+  group:{unions:"Syndicats",students:"Étudiants",citizens:"Citoyens",sector:"Salariés d'un secteur",opposition:"Opposition","far-right":"Extrême droite",professions:"Professions"},
+  demandV:{policy:"Changement de politique",programme:"Changement de programme",resignation:"Démission"},
+  respV:{none:"Pas encore de réponse",talks:"Dialogue proposé",crisis:"Crise gouvernementale"}}
+};
+const pickLang=()=>{const q=new URLSearchParams(location.search).get("lang");if(q==="fr"||q==="en")return q;
+  try{const s=localStorage.getItem("pa-lang");if(s==="fr"||s==="en")return s}catch(e){}
+  return (navigator.language||"").toLowerCase().startsWith("fr")?"fr":"en"};
+let LANG=pickLang();
+const T=k=>L[LANG][k]??L.en[k];
+const LOC=()=>LANG==="fr"?"fr-FR":"en-GB";
+let REGION=null;try{REGION=new Intl.DisplayNames(["fr"],{type:"region"})}catch(e){}
+const cname=c=>{if(LANG==="fr"&&REGION){try{const n=REGION.of(c);if(n&&n!==c)return n}catch(e){}}return D[c].country};
+const byName=(a,b)=>cname(a).localeCompare(cname(b),LANG);
+function applyStatic(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=T(el.dataset.i18n));
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>el.innerHTML=T(el.dataset.i18nHtml));
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{el.placeholder=T(el.dataset.i18nPh);el.setAttribute("aria-label",T(el.dataset.i18nPh))});
+  const b=document.getElementById("langBtn");b.textContent=T("langOther");b.lang=LANG==="fr"?"en":"fr";b.title=T("langOtherName");b.setAttribute("aria-label",T("langOtherName"));
+}
+// Paste your corrections form link here (Google Form, Tally…). While empty, "Send a correction" goes to the About page.
+const CORRECTIONS_URL="";
+// Privacy-friendly visit counts (GoatCounter: no cookies, no personal data). Off while empty.
+// To turn on: create a free site at goatcounter.com, then paste e.g. "https://yourcode.goatcounter.com/count".
+const ANALYTICS_URL="";
+if(ANALYTICS_URL){const g=document.createElement("script");g.async=true;g.src="https://gc.zgo.at/count.js";g.dataset.goatcounter=ANALYTICS_URL;document.head.appendChild(g)}
+const THEME_KEYS=["cost","wages","housing","education","austerity","services","governance","war","media","rights"];
+const TH=new Proxy({},{get:(o,k)=>T("themes")[k]});
+const PAST=30,DAY=864e5,HOT=3; // HOT: protest days in 30 days that mark a tile "very active"
+let D={},REF,filter=null;
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pd=s=>new Date(s+"T00:00:00Z"),iso=t=>new Date(t).toISOString().slice(0,10);
+const fmtN=n=>n==null?"—":n.toLocaleString(LOC());
+const fmtD=(s,o={day:"numeric",month:"short"})=>pd(s).toLocaleDateString(LOC(),{...o,timeZone:"UTC"});
+const size=e=>Math.max(e.orgc||0,e.off||0)||null;
+const whose=e=>e.orgc&&e.orgc>=(e.off||0)?T("organisers"):T("official");
+const step=n=>n==null?0:n>=5e5?4:n>=1e5?3:n>=1e4?2:1;
+const short=n=>n>=1e6?(n/1e6).toFixed(1).replace(".0","")+"M":n>=1e3?Math.round(n/1e3)+"k":String(n);
+const col=s=>Math.round((pd(s)-REF)/DAY)+PAST-1;
+const evs=c=>(D[c].events||[]).slice().sort((a,b)=>b.date.localeCompare(a.date));
+const daysIn=(c,from,to)=>(D[c].events||[]).filter(e=>{const i=col(e.date);return i>=from&&i<=to}).length;
+function trend(c){                       // last 7 days of data vs the 7 days before
+  const now=daysIn(c,PAST-7,PAST-1),before=daysIn(c,PAST-14,PAST-8),older=daysIn(c,0,PAST-15);
+  if(now&&!before&&!older)return T("newWeek");
+  if(now>before)return T("moreActive");
+  if(now<before)return T("quieter");
+  return "";
+}
+const recentN=c=>(D[c].events||[]).filter(e=>{const i=col(e.date);return i>=0&&i<PAST}).length;
+const hasNext=c=>D[c].nextDate&&pd(D[c].nextDate)>REF;
+const watch=()=>Object.keys(D).filter(c=>D[c].tier==="watch").sort((a,b)=>recentN(b)-recentN(a)||(evs(b)[0]?.date||"").localeCompare(evs(a)[0]?.date||"")||byName(a,b));
+const reasons=c=>(D[c].reasons||[]).length?D[c].reasons:(D[c].themes||[]).map(t=>TH[t]);
+const srcHTML=src=>(src||[]).length?`<div class="src">${src.map(([t,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">↗ ${esc(t)}</a>`).join("")}</div>`:"";
+
+function renderStats(){
+  const r=Object.keys(D).flatMap(c=>(D[c].events||[]).map(e=>({...e,c}))).filter(e=>{const i=col(e.date);return i>=0&&i<PAST});
+  const p=r.reduce((m,e)=>(size(e)||0)>(size(m)||0)?e:m,{});
+  const arrests=r.reduce((s,e)=>s+(e.arrests||0),0);
+  const dates=Object.keys(D).filter(hasNext).length;
+  const resign=Object.values(D).filter(x=>x.pressure?.demand==="resignation").length;
+  const orgs=p.c&&p.orgc&&p.orgc>=(p.off||0);
+  const peakNote=p.c?L[LANG].peak(esc(cname(p.c)),fmtD(p.date),whose(p),orgs&&p.off?fmtN(p.off):""):T("peakNone");
+  $("#stats").innerHTML=[[fmtN(size(p)),peakNote],[fmtN(arrests),L[LANG].arrests(r.length)],[dates,T("dates")],[resign,T("resign")]]
+    .map(([b,s])=>`<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
+}
+
+const NONE="_none";
+const inFilter=(c,f)=>!f||(f===NONE?!(D[c].themes||[]).length:(D[c].themes||[]).includes(f));
+function renderWeek(){
+  const w=watch().filter(c=>daysIn(c,PAST-7,PAST-1));
+  const from=fmtD(iso(+REF-6*DAY)),to=fmtD(iso(+REF));
+  $("#weekline").innerHTML=`<b>${L[LANG].week(from,to)}</b> `+(w.length?`${T("weekIn")} ${w.map(c=>`<button data-c="${c}">${esc(cname(c))}</button>`).join(", ")}.`:T("weekNone"));
+}
+function renderFind(){
+  $("#countryList").innerHTML=Object.keys(D).sort(byName).map(c=>`<option value="${esc(cname(c))}">`).join("");
+}
+function renderFilters(){
+  const w=watch(),cnt=t=>w.filter(c=>inFilter(c,t)).length;
+  $("#filters").innerHTML=`<button class="chip" aria-pressed="${!filter}" data-f="">${T("all")}<sup>${w.length}</sup></button>`+
+    THEME_KEYS.filter(t=>cnt(t)).map(t=>`<button class="chip" aria-pressed="${filter===t}" data-f="${t}">${esc(TH[t])}<sup>${cnt(t)}</sup></button>`).join("")+
+    (cnt(NONE)?`<button class="chip" aria-pressed="${filter===NONE}" data-f="${NONE}">${T("noCause")}<sup>${cnt(NONE)}</sup></button>`:"");
+}
+
+function tile(c){
+  const x=D[c],last=evs(c)[0],why=reasons(c),sz=last&&size(last);
+  const badge=x.pressure?.demand==="resignation"?`<span class="badge hot">${T("resignCall")}</span>`:hasNext(c)?`<span class="badge">${L[LANG].next(fmtD(x.nextDate))}</span>`:"";
+  const n=recentN(c),hot=n>=HOT;
+  return `<article class="cty${hot?" hot":""}" data-c="${c}"><span class="r"><h3><a href="c/${c.toLowerCase()}/" data-c="${c}">${esc(cname(c))}</a></h3>${badge}</span>
+    ${hot||trend(c)?`<span class="active">${[hot?L[LANG].veryActive(n):"",trend(c)].filter(Boolean).join(". ")}</span>`:""}
+    ${last?`<span class="latest"><small class="k">${L[LANG].latest(fmtD(last.date))}</small><b>${esc(last.title)}</b><span>${sz?L[LANG].people(fmtN(sz),whose(last)):T("noTurnout")}</span></span>`:""}
+    <p>${esc(x.summary)}</p>
+    ${why.length?`<span class="why"><small class="k">${T("why")}</small><ul>${why.map(r=>`<li>${esc(r)}</li>`).join("")}</ul></span>`:""}</article>`;
+}
+
+function renderTiles(){
+  const w=watch().filter(c=>inFilter(c,filter));
+  $("#tiles").innerHTML=w.length?w.map(tile).join(""):`<p class="none">${T("noneForReason")}</p>`;
+  $("#idxCount").innerHTML=`${L[LANG].idx(w.length,filter?esc(filter===NONE?T("noCause"):TH[filter]):"")} <span class="active">${L[LANG].idxActive(HOT)}</span>`;
+  const q=Object.keys(D).filter(c=>D[c].tier!=="watch").sort(byName);
+  $("#quiet").innerHTML=`<small class="k">${T("quiet")}</small><div>${q.map(c=>`<button data-c="${c}">${esc(cname(c))}</button>`).join("")}</div>`;
+}
+
+const TOP=8;let showAll=false;
+// Text read by screen readers for one calendar square
+function cellLabel(c,e){
+  if(!e)return `${cname(c)}, ${fmtD(D[c].nextDate,{weekday:"long",day:"numeric",month:"long"})}: ${D[c].next||""}`;
+  return `${cname(c)}, ${fmtD(e.date,{weekday:"long",day:"numeric",month:"long"})}: ${e.title}. ${size(e)?L[LANG].people(fmtN(size(e)),whose(e)):T("noTurnout")}`;
+}
+function renderCal(){
+  const all=watch(),rows=showAll?all:all.slice(0,TOP);
+  const far=Math.max(0,...Object.keys(D).filter(hasNext).map(c=>Math.round((pd(D[c].nextDate)-REF)/DAY)));
+  const FUT=Math.max(7,far), N=PAST+FUT;
+  const dayOf=i=>iso(+REF+(i-PAST+1)*DAY), gapBefore=i=>i>0&&pd(dayOf(i)).getUTCDay()===1;
+  // columns: country name, then one per day, with a narrow spacer before each Monday
+  const tpl=["minmax(90px,150px)"];for(let i=0;i<N;i++){if(gapBefore(i))tpl.push("6px");tpl.push("minmax(0,1fr)")}
+  let h="";
+  for(const c of rows){
+    const cells=Array(PAST).fill(null);
+    for(const e of D[c].events||[]){const i=col(e.date);if(i>=0&&i<PAST&&(!cells[i]||(size(e)||0)>(size(cells[i])||0)))cells[i]=e}
+    const ni=hasNext(c)?col(D[c].nextDate):-1;
+    h+=`<button class="rl" data-c="${c}">${esc(cname(c))}</button>`;
+    for(let i=0;i<N;i++){
+      if(gapBefore(i))h+=`<span></span>`;
+      if(i>=PAST){h+=i===ni?`<i class="cl next on" data-c="${c}" data-n="1" role="button" tabindex="0" aria-label="${esc(cellLabel(c,null))}"></i>`:`<i class="cl fut" aria-hidden="true"></i>`;continue}
+      const e=cells[i];
+      h+=e?`<i class="cl on" style="background:var(--s${step(size(e))})" data-c="${c}" data-d="${e.date}" role="button" tabindex="0" aria-label="${esc(cellLabel(c,e))}"></i>`:`<i class="cl" aria-hidden="true"></i>`;
+    }
+  }
+  h+=`<span></span>`;
+  for(let i=0;i<N;i++){
+    if(gapBefore(i))h+=`<span></span>`;
+    if(i===PAST-1)h+=`<span class="ax now" aria-hidden="true">${fmtD(dayOf(i))}</span>`;
+    else if(gapBefore(i)&&Math.abs(i-(PAST-1))>2)h+=`<span class="ax" aria-hidden="true">${fmtD(dayOf(i))}</span>`;
+    else h+=`<span></span>`}
+  const pm=$("#pm");
+  pm.style.gridTemplateColumns=tpl.join(" ");
+  pm.innerHTML=h;
+  $("#calNote").textContent=L[LANG].calNote(fmtD(iso(REF)));
+  const m=$("#more");m.hidden=all.length<=TOP;m.textContent=showAll?L[LANG].showTop(TOP):L[LANG].showAll(all.length);m.setAttribute("aria-expanded",showAll);
+  const sc=$(".cal-scroll"),t=pm.querySelector(".ax.now");
+  sc.scrollLeft=0;if(pm.offsetWidth>sc.clientWidth+1&&t)sc.scrollLeft=t.offsetLeft-sc.clientWidth*.65;
+}
+
+// Panel, kept short: summary + next date, who + demands, pressure, then protest days.
+// Small locator map. Outlines come from data/europe-map.json (same drawing as map.html), loaded once.
+// Parked for now: set SHOW_LOCATOR to true to bring it back in the country panel.
+const SHOW_LOCATOR=false;
+let EU=null;
+const EU_DOT={ME:[1238,1612],XK:[1312,1618]};   // not drawn as shapes in the outline file: shown as a dot
+function drawLocator(c){
+  const svg=document.getElementById("loc");if(!svg)return;
+  if(!EU){fetch("data/europe-map.json").then(r=>r.json()).then(d=>{EU=d;drawLocator(c)}).catch(()=>svg.remove());return}
+  const box=EU.B[c],dot=EU_DOT[c];
+  svg.setAttribute("viewBox",`120 300 1880 1634`);
+  let h=`<path class="ctx" d="${EU.ctx}"/>`;
+  for(const k in EU.C)h+=`<path class="${k===c?"sel":"oth"}" d="${EU.C[k]}"/>`;
+  const sel=box?[(box[0]+box[2])/2,(box[1]+box[3])/2,Math.max(box[2]-box[0],box[3]-box[1])]:dot?[dot[0],dot[1],0]:null;
+  if(sel&&sel[2]<150)h+=`<circle class="ring" cx="${sel[0]}" cy="${sel[1]}" r="${Math.max(70,sel[2]*.85)}"/>`;
+  if(dot)h+=`<circle class="sel" cx="${dot[0]}" cy="${dot[1]}" r="16"/>`;
+  svg.innerHTML=h;
+}
+function checkedLine(x){
+  if(!x.checkedAt)return `<p class="checked old">${T("notRecorded")}</p>`;
+  const day=x.checkedAt.slice(0,10),ago=Math.floor((Date.now()-new Date(x.checkedAt))/DAY);
+  const when=ago<=0?T("today"):ago===1?T("yesterday"):L[LANG].daysAgo(ago);
+  return `<p class="checked${ago>2?" old":""}">${L[LANG].checked(pd(day).toLocaleDateString(LOC(),{weekday:"long",day:"numeric",month:"long",timeZone:"UTC"}),x.checkedAt.slice(11,16),when)}</p>`;
+}
+function dossier(c){
+  const x=D[c],p=x.pressure,e=evs(c);
+  let h=`<div class="d-head"><small class="k">${x.tier==="watch"?T("onWatch"):T("screened")}</small><span class="d-tools"><button class="d-share" data-share="${c}">${T("share")}</button><button class="d-close" data-close aria-label="${T("close")}">✕</button></span></div>
+  <div class="d-hero"><div class="d-top"><h2 id="dTitle">${esc(cname(c))}</h2>${SHOW_LOCATOR?`<svg class="loc" id="loc" role="img" aria-label="${esc(cname(c))}"></svg>`:""}</div>
+    ${checkedLine(x)}
+    <p${x.summary?' lang="en"':""}>${x.summary?esc(x.summary):T("noProtest")}</p>
+    ${x.tier==="watch"?`<p class="d-why"><b>${T("whyProtest")}</b> ${reasons(c).length?reasons(c).map(esc).join("; ")+".":T("noDemands")}</p>`:""}
+    ${x.next&&x.nextDate?`<p class="d-next"><b>${L[LANG].nextOn(fmtD(x.nextDate,{weekday:"short",day:"numeric",month:"long"}))}</b> ${esc(x.next)}</p>`:""}
+  </div>`;
+  if((x.groups||[]).length)h+=`<div class="d-sec"><h3>${T("who")}</h3>${x.groups.map(g=>`<div class="grp"><div class="r"><b>${esc(g.name)}</b><small class="k">${esc(g.since||"")}</small></div><p>${(g.items||[]).map(esc).join(" · ")}</p></div>`).join("")}</div>`;
+  if(p){
+    const rows=[[T("demand"),T("demandV")[p.demand],p.demandNote,p.demand==="resignation"],[T("response"),T("respV")[p.response],p.responseNote,p.response==="crisis"],
+      p.fragility&&[T("government"),T("fragility")[p.fragility]||p.fragility,p.fragilityNote,p.fragility==="fragile"],
+      p.crackdown&&[T("policing"),T("heavy"),p.crackdownNote,1],p.opposition&&[T("opposition"),T("involved"),"",0]].filter(r=>r&&r[1]);
+    h+=`<div class="d-sec"><h3>${T("pressure")}</h3><dl class="pr">${rows.map(([k,v,n,hot])=>`<dt>${k}</dt><dd><b class="${hot?"hot":""}">${esc(v)}</b>${n?`. ${esc(n)[0].toUpperCase()+esc(n).slice(1)}`:""}</dd>`).join("")}</dl>${srcLine(p.src)}</div>`;
+  }
+  if(e.length)h+=`<div class="d-sec"><h3>${T("days")}</h3>${e.map(v=>{
+    const n=[[v.off,T("official")],[v.orgc,T("organisers")],[v.arrests,T("arrestsWord")]].filter(([a])=>a!=null);
+    return `<div class="day"><i class="dot" style="background:var(--s${step(size(v))})"></i><div>
+      <div class="r"><b>${esc(v.title)}</b><small class="k">${fmtD(v.date)}</small></div>
+      <p class="fig">${n.length?n.map(([a,l])=>`<strong>${fmtN(a)}</strong> ${l}`).join(" · "):T("noTurnout")}</p>
+      ${v.extra?`<p>${esc(v.extra)}</p>`:""}${v.warn?`<p class="warn">${esc(v.warn)}</p>`:""}${srcLine(v.src)}</div></div>`}).join("")}</div>`;
+  return h+`<div style="height:40px"></div>`;
+}
+const srcLine=src=>(src||[]).length?`<p class="srcs">${T("sources")} ${src.map(([t,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>`).join(", ")}</p>`:"";
+
+let lastFocus=null;
+function open(c){
+  if(!D[c])return;
+  lastFocus=document.activeElement;
+  const d=$("#dossier");d.innerHTML=dossier(c);d.scrollTop=0;drawLocator(c);
+  d.classList.add("open");d.setAttribute("aria-hidden","false");$("#scrim").classList.add("open");
+  document.body.style.overflow="hidden";$("#hdr").inert=true;$("main").inert=true;
+  if(location.hash!=="#"+c)history.replaceState(null,"","#"+c);
+  setTimeout(()=>d.querySelector(".d-close")?.focus(),50);
+}
+function close(){
+  const d=$("#dossier");if(!d.classList.contains("open"))return;
+  d.classList.remove("open");d.setAttribute("aria-hidden","true");$("#scrim").classList.remove("open");
+  document.body.style.overflow="";$("#hdr").inert=false;$("main").inert=false;history.replaceState(null,"",location.pathname);
+  lastFocus?.focus?.();
+}
+document.addEventListener("click",e=>{
+  if(e.target.closest("[data-close]")||e.target.id==="scrim")return close();
+  if(e.target.id==="more"){showAll=!showAll;renderCal();return}
+  const f=e.target.closest("[data-f]");if(f){filter=f.dataset.f||null;renderFilters();renderTiles();return}
+  const t=e.target.closest("[data-c]");if(t&&!t.closest(".dossier")){if(e.target.closest("a[data-c]"))e.preventDefault();open(t.dataset.c)}
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+function findCountry(v){v=v.trim().toLowerCase();if(!v)return null;const names=c=>[D[c].country,cname(c)].map(n=>n.toLowerCase());
+  return Object.keys(D).find(c=>names(c).includes(v))||Object.keys(D).find(c=>names(c).some(n=>n.startsWith(v)))||(D[v.toUpperCase()]?v.toUpperCase():null)}
+$("#find").addEventListener("change",e=>{const c=findCountry(e.target.value);if(c){open(c);e.target.value="";e.target.blur()}});
+$("#find").addEventListener("keydown",e=>{if(e.key==="Enter"){const c=findCountry(e.target.value);if(c){open(c);e.target.value=""}}});
+$("#menuBtn").addEventListener("click",()=>{const n=$("#nav"),o=!n.classList.contains("open");n.classList.toggle("open",o);$("#menuBtn").setAttribute("aria-expanded",o)});
+$("#nav").addEventListener("click",e=>{if(e.target.closest("a")){$("#nav").classList.remove("open");$("#menuBtn").setAttribute("aria-expanded",false)}});
+document.addEventListener("click",async e=>{
+  const b=e.target.closest("[data-share]");if(!b)return;
+  const c=b.dataset.share,url=new URL(`c/${c.toLowerCase()}/`,location.href.split("#")[0].split("?")[0]).href;
+  const title=L[LANG].shareTitle(cname(c));
+  try{if(navigator.share){await navigator.share({title,url});return}await navigator.clipboard.writeText(url);b.textContent=T("copied")}
+  catch(err){if(err&&err.name==="AbortError")return;prompt(T("copy"),url)}
+  setTimeout(()=>b.textContent=T("share"),2000);
+});
+const tip=$("#tip");
+function showTip(e){
+  const cl=e.target.closest&&e.target.closest(".cl.on");if(!cl){tip.style.opacity=0;return}
+  const x=D[cl.dataset.c];
+  if(cl.dataset.n)tip.innerHTML=`<b>${esc(cname(cl.dataset.c))}, ${fmtD(x.nextDate)}</b>${esc(x.next)}`;
+  else{const v=(x.events||[]).find(y=>y.date===cl.dataset.d);tip.innerHTML=`<b>${esc(cname(cl.dataset.c))}, ${fmtD(v.date)}</b>${esc(v.title)}<br>${size(v)?L[LANG].people(fmtN(size(v)),whose(v)):T("noTurnout")}`}
+  const r=cl.getBoundingClientRect();tip.style.left=Math.max(8,Math.min(r.left,innerWidth-270))+"px";tip.style.top=(r.bottom+8)+"px";tip.style.opacity=1;
+}
+document.addEventListener("mouseover",showTip);
+document.addEventListener("focusin",showTip);
+document.addEventListener("keydown",e=>{const cl=e.target.closest&&e.target.closest(".cl.on");if(cl&&(e.key==="Enter"||e.key===" ")){e.preventDefault();open(cl.dataset.c)}});
+addEventListener("scroll",()=>tip.style.opacity=0,{passive:true});
+addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(D[h])open(h)});
+addEventListener("scroll",()=>$("#hdr").classList.toggle("scrolled",scrollY>10),{passive:true});
+
+// Live data first; if it can't load (offline, missing file, opened from disk), use the backup copy.
+function start(data,backupSavedAt){
+  D=data;BACKUP=backupSavedAt||null;
+  const latest=Object.values(D).map(x=>x.checkedAt||x.updatedAt||"").sort().pop();
+  REF=pd(latest.slice(0,10));
+  $("#asof").textContent="Data from "+fmtD(latest.slice(0,10),{day:"numeric",month:"long"});
+  const lc=Object.values(D).map(x=>x.checkedAt||"").sort().pop();
+  $("#footCheck").textContent=lc?`${pd(lc.slice(0,10)).toLocaleDateString(LOC(),{weekday:"long",day:"numeric",month:"long",timeZone:"UTC"})} ${LANG==="fr"?"à":"at"} ${lc.slice(11,16)}`:"–";
+  if(CORRECTIONS_URL){const a=$("#corrLink");a.href=CORRECTIONS_URL;a.target="_blank";a.rel="noopener"}
+  if(backupSavedAt){const n=$("#notice");n.hidden=false;n.textContent=L[LANG].backup(fmtD(latest.slice(0,10),{day:"numeric",month:"long"}))}
+  renderStats();renderWeek();renderFilters();renderTiles();renderCal();renderFind();
+  const h=location.hash.slice(1);if(D[h])open(h);
+}
+function useBackup(err){
+  console.warn("Live data unavailable, trying the saved copy:",err);
+  const sc=document.createElement("script");sc.src="data/briefings-fallback.js";
+  sc.onload=()=>window.PA_FALLBACK?start(window.PA_FALLBACK.data,window.PA_FALLBACK.savedAt):fail();
+  sc.onerror=fail;document.head.appendChild(sc);
+}
+function fail(){
+  $("#asof").textContent="Data unavailable";
+  $("#tiles").innerHTML=`<p class="none">${T("failed")}</p>`;
+}
+let BACKUP=null;
+function setLang(l){LANG=l;try{localStorage.setItem("pa-lang",l)}catch(e){}
+  const u=new URL(location);u.searchParams.delete("lang");history.replaceState(null,"",u);
+  applyStatic();if(!REF)return;start(D,BACKUP)}
+document.getElementById("langBtn").addEventListener("click",()=>setLang(LANG==="fr"?"en":"fr"));
+applyStatic();
+fetch("data/briefings.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(d=>start(d)).catch(useBackup);
+</script>
+<!-- Style preview: only active with ?styles (switcher) or ?style=<id> (fixed). Normal visitors get the default Sand style. -->
+<style>
+.stylebar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;background:#111;color:#eee;display:flex;gap:4px;padding:6px;font:500 13px/1 system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.25);max-width:calc(100vw - 24px);overflow-x:auto}
+.stylebar button{padding:8px 11px;display:flex;gap:7px;align-items:center;white-space:nowrap;color:#ccc}
+.stylebar button[aria-pressed="true"]{background:#eee;color:#111}
+.stylebar .sw{display:inline-flex}.stylebar .sw i{width:9px;height:9px;display:block}
+</style>
+<script>
+(()=>{
+const STYLES={
+  bauhaus:{name:"Bauhaus",fonts:"",v:{}},
+  signal:{name:"Signal",fonts:"family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600;700",
+    v:{"--sand":"#FFFFFF","--card":"#FFFFFF","--tint":"#F3F3F1","--ink":"#111111","--soft":"#3B3B3B","--mute":"#6E6E6E","--line":"#E3E3E0","--edge":"#111111",
+       "--plum":"#1D3FD1","--plum-soft":"#E8ECFC","--sage":"#111111","--sage-soft":"#F0F0EE",
+       "--s0":"#C8C8C4","--s1":"#FFE0D8","--s2":"#FF9C85","--s3":"#FF3B1F","--s4":"#A80F00","--clay-text":"#D12A0E",
+       "--display":"'Archivo','Arial Narrow',sans-serif","--font":"'Public Sans',sans-serif","--stretch":"72%","--h1case":"uppercase","--h1w":"900","--h1t":"-.01em","--h1s":"clamp(60px,9vw,128px)","--hl":"inherit"}},
+  tomato:{name:"Ink & Tomato",fonts:"family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600",
+    v:{"--sand":"#F6F4EF","--card":"#FFFFFF","--ink":"#1E2433","--soft":"#4A5163","--mute":"#7D8394","--line":"#E1DED6",
+       "--plum":"#17767A","--plum-soft":"#DDF0EF","--sage":"#3D4A63","--sage-soft":"#E6E9F0",
+       "--s0":"#C4C6CC","--s1":"#FBD3C6","--s2":"#F49A7C","--s3":"#E4572E","--s4":"#A3301A","--clay-text":"#C24420",
+       "--display":"'Space Grotesk',sans-serif","--font":"Inter,sans-serif","--h1t":"-.04em","--h1w":"700"}},
+  newsprint:{name:"Newsprint",fonts:"family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Source+Sans+3:wght@400;500;600",
+    v:{"--sand":"#F3EFE6","--card":"#FBF9F4","--ink":"#151412","--soft":"#45413A","--mute":"#7F786C","--line":"#D9D1C1",
+       "--plum":"#23395B","--plum-soft":"#DFE5EE","--sage":"#5B4A2E","--sage-soft":"#ECE4D3",
+       "--s0":"#BFB6A5","--s1":"#F0C9BE","--s2":"#DE8A78","--s3":"#B3261E","--s4":"#6E120D","--clay-text":"#A4161A",
+       "--display":"Newsreader,Georgia,serif","--font":"'Source Sans 3',sans-serif","--h1t":"-.025em","--h1w":"700"}},
+  mint:{name:"Mint & Coral",fonts:"family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600",
+    v:{"--sand":"#E7F0EB","--card":"#F8FBF9","--ink":"#16302A","--soft":"#3F5A52","--mute":"#6F8A82","--line":"#CFE0D8",
+       "--plum":"#4B4FC4","--plum-soft":"#E3E4FA","--sage":"#2E7A5C","--sage-soft":"#D5EDE2",
+       "--s0":"#B9C9C2","--s1":"#FBD5CB","--s2":"#F4A38E","--s3":"#E5684B","--s4":"#A93A22","--clay-text":"#B8452A",
+       "--display":"Syne,sans-serif","--font":"'DM Sans',sans-serif","--h1t":"-.03em","--h1w":"800","--h1s":"clamp(42px,5.6vw,76px)"}},
+  night:{name:"Night",fonts:"family=Unbounded:wght@500;600;700&family=Inter:wght@400;500;600",
+    v:{"--sand":"#15161A","--card":"#1E1F25","--ink":"#ECE9E2","--soft":"#BDB9B0","--mute":"#8A877F","--line":"#2E2F36",
+       "--plum":"#B69CFF","--plum-soft":"#2A2440","--sage":"#7FD1B9","--sage-soft":"#1B302B",
+       "--s0":"#4A4B52","--s1":"#4D3A14","--s2":"#94691C","--s3":"#E8A33A","--s4":"#FFD27A","--clay-text":"#F0B158","--szhi":"#15161A","--colbg":"rgba(255,255,255,.035)",
+       "--display":"Unbounded,sans-serif","--font":"Inter,sans-serif","--h1t":"-.02em","--h1w":"600","--h1s":"clamp(40px,5.4vw,74px)"}},
+  concrete:{name:"Concrete",fonts:"family=Space+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;500;600",
+    v:{"--sand":"#E2E2DE","--card":"#F1F1EE","--ink":"#111111","--soft":"#3D3D3A","--mute":"#727270","--line":"#C6C6C1",
+       "--plum":"#2C57C9","--plum-soft":"#DCE4F7","--sage":"#111111","--sage-soft":"#D4D4CF",
+       "--s0":"#A9A9A4","--s1":"#FFD6C5","--s2":"#FF9F78","--s3":"#FF5A1F","--s4":"#B53A0C","--clay-text":"#C8410B",
+       "--display":"'Space Mono',monospace","--font":"'IBM Plex Sans',sans-serif","--h1t":"-.04em","--h1w":"700","--h1case":"uppercase","--h1s":"clamp(40px,5.6vw,76px)"}},
+};
+const q=new URLSearchParams(location.search);
+if(!q.has("styles")&&!q.has("style"))return;
+const root=document.documentElement,loaded=new Set();
+function apply(id){
+  const st=STYLES[id]||STYLES.sand;
+  Object.keys(STYLES).forEach(k=>Object.keys(STYLES[k].v).forEach(v=>root.style.removeProperty(v)));
+  const base=id==="bauhaus"?{}:{"--stretch":"100%","--h1case":"none","--h1s":"clamp(48px,7vw,92px)","--h1w":"800","--hl":"var(--plum)","--edge":"var(--ink)","--tint":st.v["--sand"]};
+  ["--stretch","--h1case","--h1s","--h1w","--hl","--edge","--tint","--h1t","--colbg","--szhi"].forEach(v=>root.style.removeProperty(v));
+  Object.entries({...base,...st.v}).forEach(([k,v])=>root.style.setProperty(k,v));
+  if(st.fonts&&!loaded.has(id)){loaded.add(id);const l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?"+st.fonts+"&display=swap";document.head.appendChild(l)}
+  document.querySelectorAll(".stylebar [data-s]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.s===id));
+  const u=new URL(location);u.searchParams.set(q.has("styles")?"styles":"style",id);history.replaceState(null,"",u);
+}
+if(q.has("styles")){
+  const bar=document.createElement("div");bar.className="stylebar";bar.setAttribute("role","toolbar");bar.setAttribute("aria-label","Preview styles");
+  bar.innerHTML=Object.entries(STYLES).map(([id,st])=>{const v=id==="bauhaus"?["#F1ECE1","#D6312B","#1F4E9C","#161616"]:[st.v["--sand"],st.v["--s3"],st.v["--plum"],st.v["--sage"]];
+    return `<button data-s="${id}"><span class="sw">${v.map(c=>`<i style="background:${c}"></i>`).join("")}</span>${st.name}</button>`}).join("");
+  bar.addEventListener("click",e=>{const b=e.target.closest("[data-s]");if(b)apply(b.dataset.s)});
+  document.body.appendChild(bar);
+}
+apply(q.get("styles")||q.get("style")||"bauhaus");
+})();
+</script>
+</body>
+</html>
