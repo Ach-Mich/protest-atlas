@@ -88,14 +88,14 @@ def card_html(title, kicker, lines, next_line):
     return f"""<!doctype html><html><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=block" rel="stylesheet"><style>
 *{{margin:0;padding:0;box-sizing:border-box}}
-body{{width:1200px;height:630px;background:#F1ECE1;color:#161616;font-family:Futura,"Jost","Avenir Next",sans-serif;padding:64px 72px;position:relative;overflow:hidden}}
+body{{width:1200px;height:630px;background:#F8F5EE;color:#1F2A33;font-family:Futura,"Jost","Avenir Next",sans-serif;padding:64px 72px;position:relative;overflow:hidden}}
 .brand{{font-size:26px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}}
-.kick{{margin-top:54px;font-size:28px;color:#77736A}}
+.kick{{margin-top:54px;font-size:28px;color:#5B6770}}
 h1{{font-size:{110 if len(title) < 12 else 84}px;line-height:.95;font-weight:700;text-transform:uppercase;letter-spacing:-.01em;margin-top:10px}}
-.lines{{margin-top:26px;font-size:30px;line-height:1.35;color:#3A3833;max-width:1000px}}
+.lines{{margin-top:26px;font-size:30px;line-height:1.35;color:#3A4650;max-width:1000px}}
 .lines p{{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}}
-.next{{color:#1F4E9C;font-weight:700}}
-.bar{{position:absolute;left:0;right:0;bottom:0;height:18px;background:#161616}}
+.next{{color:#E85D24;font-weight:700}}
+.bar{{position:absolute;left:0;right:0;bottom:0;height:18px;background:#1F2A33}}
 </style></head><body><div class="brand">Protest Atlas</div><div class="kick">{E(kicker)}</div>
 <h1>{E(title)}</h1><div class="lines">{rows}{nxt}</div><div class="bar"></div></body></html>"""
 
@@ -118,24 +118,24 @@ def shoot(html_text, out_png):
 DEMAND = {"policy": "Policy change", "programme": "Change of programme", "resignation": "Resignation"}
 RESP = {"none": "No response yet", "talks": "Talks offered", "crisis": "Government crisis"}
 PAGE_CSS = """*{box-sizing:border-box;margin:0;padding:0}
-body{background:#F1ECE1;color:#161616;font:400 17px/1.6 Jost,Futura,"Avenir Next",sans-serif}
+body{background:#F8F5EE;color:#1F2A33;font:400 17px/1.6 Jost,Futura,"Avenir Next",sans-serif}
 a{color:inherit;text-underline-offset:3px}
 .wrap{max-width:780px;margin:0 auto;padding:0 20px}
-header{border-bottom:1px solid #D8D1C2}header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;max-width:1240px}
+header{border-bottom:1px solid #DDD7CB}header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;max-width:1240px}
 .logo{font-weight:800;text-transform:uppercase;text-decoration:none}
 h1{font:800 clamp(48px,9vw,84px)/.9 Jost,Futura,sans-serif;text-transform:uppercase;margin:40px 0 10px}
-.checked{font-size:14px;color:#625E56;margin-bottom:16px}
-.lede{font-size:19px;color:#3A3833;margin-bottom:12px}
-p{margin-bottom:10px;color:#3A3833}
-h2{font:700 22px/1.2 Jost,Futura,sans-serif;text-transform:uppercase;border-top:3px solid #161616;padding-top:12px;margin:34px 0 12px}
-.next b{color:#1F4E9C}
-.day{border-bottom:1px solid #D8D1C2;padding:12px 0}.day:last-child{border:0}
+.checked{font-size:14px;color:#5B6770;margin-bottom:16px}
+.lede{font-size:19px;color:#3A4650;margin-bottom:12px}
+p{margin-bottom:10px;color:#3A4650}
+h2{font:700 22px/1.2 Jost,Futura,sans-serif;text-transform:uppercase;border-top:3px solid #1F2A33;padding-top:12px;margin:34px 0 12px}
+.next b{color:#18695F}
+.day{border-bottom:1px solid #DDD7CB;padding:12px 0}.day:last-child{border:0}
 .day h3{font-size:17px;font-weight:600}
-.meta{font-size:14px;color:#625E56}
-.srcs{font-size:13px;color:#625E56}
-dl{display:grid;grid-template-columns:120px 1fr;gap:6px 14px}dt{color:#625E56}
-.cta{display:inline-block;margin:28px 0 8px;font-weight:700;border-bottom:3px solid #161616;text-decoration:none}
-footer{border-top:1px solid #D8D1C2;margin-top:50px;padding:18px 0 40px;font-size:14px;color:#625E56}"""
+.meta{font-size:14px;color:#5B6770}
+.srcs{font-size:13px;color:#5B6770}
+dl{display:grid;grid-template-columns:120px 1fr;gap:6px 14px}dt{color:#5B6770}
+.cta{display:inline-block;margin:28px 0 8px;font-weight:700;border-bottom:3px solid #1F2A33;text-decoration:none}
+footer{border-top:1px solid #DDD7CB;margin-top:50px;padding:18px 0 40px;font-size:14px;color:#5B6770}"""
 
 
 def src_line(src):

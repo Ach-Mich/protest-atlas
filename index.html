@@ -17,11 +17,11 @@
 <style>
 :root{
   /* Bauhaus (default): warm off-white, black text, red / yellow / blue only where they carry meaning */
-  --sand:#F1ECE1; --card:#FBF8F1; --tint:#F1ECE1; --ink:#161616; --soft:#3A3833; --mute:#625E56; --line:#D8D1C2; --edge:#161616;
-  --plum:#1F4E9C; --plum-soft:#DCE4F2; --sage:#161616; --sage-soft:#F2D774;
-  --s0:#BDB7AA; --s1:#F6E3A6; --s2:#F2C230; --s3:#D6312B; --s4:#161616; --clay-text:#B8261F;
+  --sand:#F8F5EE; --card:#FFFDF8; --tint:#EFEBE2; --ink:#1F2A33; --soft:#3A4650; --mute:#5B6770; --line:#DDD7CB; --edge:#1F2A33;
+  --plum:#18695F; --plum-soft:#DCEFEC; --sage:#1F2A33; --sage-soft:#F6E0D2;
+  --s0:#C9C4B8; --s1:#FBDCC8; --s2:#F7A072; --s3:#E85D24; --s4:#1F2A33; --clay-text:#B8461A;
   --font:Jost,"Futura",sans-serif; --display:Jost,"Futura",sans-serif; --stretch:100%; --szhi:#fff;
-  --h1case:lowercase; --h1w:700; --h1t:-.03em; --h1s:clamp(52px,7.4vw,100px); --hl:#1F4E9C;
+  --h1case:lowercase; --h1w:700; --h1t:-.03em; --h1s:clamp(52px,7.4vw,100px); --hl:#E85D24;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:70px}
@@ -54,7 +54,11 @@ nav a:hover{color:var(--ink)}
 .menu{display:none;font-size:14px;font-weight:600;padding:7px 10px;border:1px solid var(--ink)}
 
 /* hero + indicators */
-.hero{padding:44px 0 32px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:end}
+.hero{padding:44px 0 0;display:grid;grid-template-columns:1fr 1.15fr;gap:0;align-items:end;overflow-x:clip}
+.htext{position:relative;z-index:1;padding-bottom:36px}
+.htext p{margin-top:26px}
+.hphoto{margin:-44px 0 0 -22%;align-self:stretch;display:flex;pointer-events:none}
+.hphoto img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;object-position:right bottom}
 .hero h1{font:var(--h1w,900) var(--h1s,clamp(60px,9vw,128px))/.86 var(--display);letter-spacing:var(--h1t,-.01em);text-transform:var(--h1case,uppercase)}
 .hero h1 span{color:var(--hl,inherit)}
 .hero p{font-size:17px;line-height:1.55;color:var(--soft);max-width:44ch}
@@ -181,6 +185,9 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
   .stats{grid-template-columns:1fr 1fr;gap:20px 24px}
   .method{grid-template-columns:1fr}
   .hero{grid-template-columns:1fr;gap:16px;padding-top:32px}
+  .htext{padding-bottom:0}
+  .hphoto{margin:4px -16px 0;display:block}
+  .hphoto img{height:auto;object-fit:contain}
 }
 @media (max-width:640px){
   .wrap{padding:0 16px}
@@ -216,8 +223,13 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
 <main class="wrap" id="top">
   <p class="notice" id="notice" role="status" hidden></p>
   <section class="hero">
+    <div class="htext">
     <h1 data-i18n-html="h1">Who's on<br>the <span>street</span></h1>
     <p><span data-i18n="lede">Every morning we screen 38 European countries for national protest, and brief who is marching, why, how many, and what comes next.</span> <span class="datanote" data-i18n="dataNote"></span></p>
+    </div>
+    <figure class="hphoto">
+      <img src="images/crowd-photo.jpg" srcset="images/crowd-photo-sm.jpg 900w, images/crowd-photo.jpg 1800w" sizes="(max-width:760px) 100vw, 60vw" width="1800" height="1188" alt="Protesters seen from behind, one holding up a blank placard, in front of an orange circle and a city building" fetchpriority="high">
+    </figure>
   </section>
   <section class="stats" id="stats" aria-label="Key figures"></section>
   <p class="weekline" id="weekline"></p>
@@ -654,7 +666,7 @@ function apply(id){
 }
 if(q.has("styles")){
   const bar=document.createElement("div");bar.className="stylebar";bar.setAttribute("role","toolbar");bar.setAttribute("aria-label","Preview styles");
-  bar.innerHTML=Object.entries(STYLES).map(([id,st])=>{const v=id==="bauhaus"?["#F1ECE1","#D6312B","#1F4E9C","#161616"]:[st.v["--sand"],st.v["--s3"],st.v["--plum"],st.v["--sage"]];
+  bar.innerHTML=Object.entries(STYLES).map(([id,st])=>{const v=id==="bauhaus"?["#F8F5EE","#E85D24","#18695F","#1F2A33"]:[st.v["--sand"],st.v["--s3"],st.v["--plum"],st.v["--sage"]];
     return `<button data-s="${id}"><span class="sw">${v.map(c=>`<i style="background:${c}"></i>`).join("")}</span>${st.name}</button>`}).join("");
   bar.addEventListener("click",e=>{const b=e.target.closest("[data-s]");if(b)apply(b.dataset.s)});
   document.body.appendChild(bar);
