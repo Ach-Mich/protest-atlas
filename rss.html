@@ -4,7 +4,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Follow Protest Atlas by RSS</title>
-<meta name="description" content="Follow new protest days and announced dates across Europe in your news reader.">
+<meta name="description" content="Get new protest days and newly announced dates across Europe in your news reader. No account or email needed.">
+<link rel="canonical" href="https://protestatlas.org/rss.html">
+<link rel="alternate" hreflang="en" href="https://protestatlas.org/rss.html">
+<link rel="alternate" hreflang="fr" href="https://protestatlas.org/rss.html?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://protestatlas.org/rss.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Protest Atlas">
+<meta property="og:url" content="https://protestatlas.org/rss.html">
+<meta property="og:title" content="Follow Protest Atlas by RSS">
+<meta property="og:description" content="New protest days and announced dates across Europe, in your news reader.">
+<meta property="og:image" content="https://protestatlas.org/card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Protest Atlas: who's on the street in Europe">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Follow Protest Atlas by RSS">
+<meta name="twitter:description" content="New protest days and announced dates across Europe, in your news reader.">
+<meta name="twitter:image" content="https://protestatlas.org/card.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#FCFAF6">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://protestatlas.org/#website", "url": "https://protestatlas.org/", "name": "Protest Atlas", "alternateName": "protestatlas.org", "description": "Daily watch of national protests and strikes in 38 European countries.", "inLanguage": ["en", "fr"], "publisher": {"@id": "https://protestatlas.org/#org"}}, {"@type": "Organization", "@id": "https://protestatlas.org/#org", "name": "Protest Atlas", "url": "https://protestatlas.org/", "logo": {"@type": "ImageObject", "url": "https://protestatlas.org/icons/icon-512.png", "width": 512, "height": 512}, "description": "Independent, non-commercial project based in Belgium that follows protests and strikes across Europe."}, {"@type": "WebPage", "@id": "https://protestatlas.org/rss.html#page", "url": "https://protestatlas.org/rss.html", "name": "Follow Protest Atlas by RSS", "description": "Get new protest days and newly announced dates across Europe in your news reader. No account or email needed.", "isPartOf": {"@id": "https://protestatlas.org/#website"}, "inLanguage": "en", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://protestatlas.org/card.png"}}]}</script>
 <link rel="alternate" type="application/rss+xml" title="Protest Atlas" href="feed.xml">
 <link rel="preload" href="fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
@@ -108,6 +135,10 @@ function pickLang(){const q=new URLSearchParams(location.search).get("lang");if(
 function setLang(l,save){
   document.documentElement.lang=l;document.title=l==="fr"?"Suivre Protest Atlas par RSS":"Follow Protest Atlas by RSS";
   document.querySelectorAll("[data-lang]").forEach(d=>d.hidden=d.dataset.lang!==l);
+  const meta=document.querySelector('meta[name="description"]'),cn=document.querySelector('link[rel="canonical"]');
+  if(!meta.dataset.en)meta.dataset.en=meta.content;
+  meta.content=l==="fr"?"Recevez dans votre lecteur d'actualités les nouvelles journées de mobilisation et les dates annoncées en Europe. Sans compte ni e-mail.":meta.dataset.en;
+  cn.href="https://protestatlas.org/rss.html"+(new URLSearchParams(location.search).get("lang")==="fr"?"?lang=fr":"");
   document.querySelectorAll("[data-en]").forEach(el=>el.textContent=el.dataset[l]);
   const b=document.getElementById("langBtn");b.textContent=l==="fr"?"EN":"FR";b.lang=l==="fr"?"en":"fr";
   if(save){try{localStorage.setItem("pa-lang",l)}catch(e){}}

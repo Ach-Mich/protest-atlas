@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://protestatlas.org/</loc><lastmod>2026-11-27</lastmod></url>
-<url><loc>https://protestatlas.org/about.html</loc><lastmod>2026-11-27</lastmod></url>
-<url><loc>https://protestatlas.org/rss.html</loc><lastmod>2026-11-27</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url><loc>https://protestatlas.org/</loc><xhtml:link rel="alternate" hreflang="en" href="https://protestatlas.org/"/><xhtml:link rel="alternate" hreflang="fr" href="https://protestatlas.org/?lang=fr"/><xhtml:link rel="alternate" hreflang="x-default" href="https://protestatlas.org/"/><lastmod>2026-11-27</lastmod></url>
+<url><loc>https://protestatlas.org/?lang=fr</loc><xhtml:link rel="alternate" hreflang="en" href="https://protestatlas.org/"/><xhtml:link rel="alternate" hreflang="fr" href="https://protestatlas.org/?lang=fr"/><xhtml:link rel="alternate" hreflang="x-default" href="https://protestatlas.org/"/><lastmod>2026-11-27</lastmod></url>
+<url><loc>https://protestatlas.org/about.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://protestatlas.org/about.html"/><xhtml:link rel="alternate" hreflang="fr" href="https://protestatlas.org/about.html?lang=fr"/><xhtml:link rel="alternate" hreflang="x-default" href="https://protestatlas.org/about.html"/><lastmod>2026-11-27</lastmod></url>
+<url><loc>https://protestatlas.org/about.html?lang=fr</loc><xhtml:link rel="alternate" hreflang="en" href="https://protestatlas.org/about.html"/><xhtml:link rel="alternate" hreflang="fr" href="https://protestatlas.org/about.html?lang=fr"/><xhtml:link rel="alternate" hreflang="x-default" href="https://protestatlas.org/about.html"/><lastmod>2026-11-27</lastmod></url>
+<url><loc>https://protestatlas.org/rss.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://protestatlas.org/rss.html"/><xhtml:link rel="alternate" hreflang="fr" href="https://protestatlas.org/rss.html?lang=fr"/><xhtml:link rel="alternate" hreflang="x-default" href="https://protestatlas.org/rss.html"/><lastmod>2026-11-27</lastmod></url>
+<url><loc>https://protestatlas.org/rss.html?lang=fr</loc><xhtml:link rel="alternate" hreflang="en" href="https://protestatlas.org/rss.html"/><xhtml:link rel="alternate" hreflang="fr" href="https://protestatlas.org/rss.html?lang=fr"/><xhtml:link rel="alternate" hreflang="x-default" href="https://protestatlas.org/rss.html"/><lastmod>2026-11-27</lastmod></url>
 <url><loc>https://protestatlas.org/c/al/</loc><lastmod>2026-11-27</lastmod></url>
 <url><loc>https://protestatlas.org/c/at/</loc><lastmod>2026-11-27</lastmod></url>
 <url><loc>https://protestatlas.org/c/ba/</loc><lastmod>2026-11-27</lastmod></url>

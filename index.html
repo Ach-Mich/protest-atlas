@@ -3,14 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Protest Atlas</title>
-<meta name="description" content="Who's on the street in Europe: a daily protest watch across 38 countries: who is marching, why, how many, and what comes next.">
+<title>Protest Atlas: protests and strikes across Europe, checked daily</title>
+<meta name="description" content="Protest Atlas follows national protests and strikes in 38 European countries every day: who is marching, why, how many people, and the next dates already announced.">
+<link rel="canonical" href="https://protestatlas.org/">
+<link rel="alternate" hreflang="en" href="https://protestatlas.org/">
+<link rel="alternate" hreflang="fr" href="https://protestatlas.org/?lang=fr">
+<link rel="alternate" hreflang="x-default" href="https://protestatlas.org/">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Protest Atlas">
+<meta property="og:url" content="https://protestatlas.org/">
 <meta property="og:title" content="Protest Atlas: who's on the street in Europe">
-<meta property="og:description" content="National protests and strikes across 38 European countries, checked every morning.">
-<meta property="og:image" content="card.png">
+<meta property="og:description" content="National protests and strikes across 38 European countries, checked every morning: who, why, how many, and what comes next.">
+<meta property="og:image" content="https://protestatlas.org/card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Protest Atlas: who's on the street in Europe">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Protest Atlas: who's on the street in Europe">
+<meta name="twitter:description" content="National protests and strikes across 38 European countries, checked every morning: who, why, how many, and what comes next.">
+<meta name="twitter:image" content="https://protestatlas.org/card.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#FCFAF6">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://protestatlas.org/#website", "url": "https://protestatlas.org/", "name": "Protest Atlas", "alternateName": "protestatlas.org", "description": "Daily watch of national protests and strikes in 38 European countries.", "inLanguage": ["en", "fr"], "publisher": {"@id": "https://protestatlas.org/#org"}}, {"@type": "Organization", "@id": "https://protestatlas.org/#org", "name": "Protest Atlas", "url": "https://protestatlas.org/", "logo": {"@type": "ImageObject", "url": "https://protestatlas.org/icons/icon-512.png", "width": 512, "height": 512}, "description": "Independent, non-commercial project based in Belgium that follows protests and strikes across Europe."}, {"@type": "WebPage", "@id": "https://protestatlas.org/#page", "url": "https://protestatlas.org/", "name": "Protest Atlas: protests and strikes across Europe, checked daily", "description": "Protest Atlas follows national protests and strikes in 38 European countries every day: who is marching, why, how many people, and the next dates already announced.", "isPartOf": {"@id": "https://protestatlas.org/#website"}, "inLanguage": "en", "primaryImageOfPage": {"@type": "ImageObject", "url": "https://protestatlas.org/card.png"}}]}</script>
 <link rel="alternate" type="application/rss+xml" title="Protest Atlas" href="feed.xml">
 <link rel="preload" href="fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
@@ -332,7 +353,7 @@ en:{skip:"Skip to countries",navCountries:"Countries",navWeeks:"Week by week",na
   arrests:n=>`Arrests reported over ${n} protest days`,dates:"Dates already announced",resign:"Movements calling for a resignation",
   week:(f,t)=>`This week (${f} to ${t}):`,weekIn:"protest days in",weekNone:"no national protest day reported.",
   all:"All",noCause:"No stated cause",resignCall:"Resignation call",next:d=>`Next ${d}`,
-  veryActive:n=>`Very active: ${n} protest days in 30 days`,veryTag:"Very active",daysShort:n=>n===1?"1 protest day in 30 days":`${n} protest days in 30 days`,daysTile:n=>n===1?"protest day in 30 days":"protest days in 30 days",veryLow:"very active",naShort:"n/a",whyLbl:"Why:",viewTiles:"Tiles",viewList:"List",colCountry:"Country",colDays:"Protest days",colCrowd:"Largest crowd",colWhy:"Why",colLast:"Latest protest",colNext:"Next date",crowdLbl:(w,d)=>`people (${w}), ${d}`,peakLbl:(w,d)=>`largest crowd in 30 days, ${d} (${w})`,peakShort:(w,d)=>`largest crowd, ${d} (${w})`,noPeak:"No crowd count in the last 30 days",noCrowd:"Turnout not reported",noCrowdShort:"Not reported",turnoutWord:"turnout",newWeek:"New this week",moreActive:"More active than the week before",quieter:"Quieter than the week before",
+  veryActive:n=>`Very active: ${n} protest days in 30 days`,veryTag:"Very active",daysShort:n=>n===1?"1 protest day in 30 days":`${n} protest days in 30 days`,daysTile:n=>n===1?"protest day in 30 days":"protest days in 30 days",veryLow:"very active",pageTitle:"Protest Atlas: protests and strikes across Europe, checked daily",pageDesc:"Protest Atlas follows national protests and strikes in 38 European countries every day: who is marching, why, how many people, and the next dates already announced.",naShort:"n/a",whyLbl:"Why:",viewTiles:"Tiles",viewList:"List",colCountry:"Country",colDays:"Protest days",colCrowd:"Largest crowd",colWhy:"Why",colLast:"Latest protest",colNext:"Next date",crowdLbl:(w,d)=>`people (${w}), ${d}`,peakLbl:(w,d)=>`largest crowd in 30 days, ${d} (${w})`,peakShort:(w,d)=>`largest crowd, ${d} (${w})`,noPeak:"No crowd count in the last 30 days",noCrowd:"Turnout not reported",noCrowdShort:"Not reported",turnoutWord:"turnout",newWeek:"New this week",moreActive:"More active than the week before",quieter:"Quieter than the week before",
   latest:d=>`Latest protest, ${d}`,people:(n,w)=>`${n} people (${w})`,noTurnout:"Turnout not reported",why:"Why",
   noneForReason:"No country on watch for this reason.",
   idx:(n,label)=>`${n} ${label?(n===1?"country":"countries")+" for "+label.toLowerCase():"countries on watch, most active first"}.`,
@@ -366,7 +387,7 @@ fr:{skip:"Aller aux pays",navCountries:"Pays",navWeeks:"Semaine par semaine",nav
   arrests:n=>`Interpellations signalées sur ${n} jours de mobilisation`,dates:"Dates déjà annoncées",resign:"Mouvements qui réclament une démission",
   week:(f,t)=>`Cette semaine (du ${f} au ${t}) :`,weekIn:"mobilisations dans ces pays :",weekNone:"aucune mobilisation nationale signalée.",
   all:"Tous",noCause:"Sans cause déclarée",resignCall:"Appel à la démission",next:d=>`Prochaine : ${d}`,
-  veryActive:n=>`Très actif : ${n} jours de mobilisation en 30 jours`,veryTag:"Très actif",daysShort:n=>n===1?"1 jour de mobilisation sur 30 jours":`${n} jours de mobilisation sur 30 jours`,daysTile:n=>n===1?"jour de mobilisation sur 30 jours":"jours de mobilisation sur 30 jours",veryLow:"très actif",naShort:"n.c.",whyLbl:"Pourquoi :",viewTiles:"Fiches",viewList:"Liste",colCountry:"Pays",colDays:"Jours de mobilisation",colCrowd:"Plus grande foule",colWhy:"Pourquoi",colLast:"Dernière mobilisation",colNext:"Prochaine date",crowdLbl:(w,d)=>`personnes (${w}), ${d}`,peakLbl:(w,d)=>`plus grande foule sur 30 jours, ${d} (${w})`,peakShort:(w,d)=>`plus grande foule, ${d} (${w})`,noPeak:"Aucun chiffre de participation sur 30 jours",noCrowd:"Participation non communiquée",noCrowdShort:"Non communiquée",turnoutWord:"participation",newWeek:"Nouveau cette semaine",moreActive:"Plus actif que la semaine précédente",quieter:"Plus calme que la semaine précédente",
+  veryActive:n=>`Très actif : ${n} jours de mobilisation en 30 jours`,veryTag:"Très actif",daysShort:n=>n===1?"1 jour de mobilisation sur 30 jours":`${n} jours de mobilisation sur 30 jours`,daysTile:n=>n===1?"jour de mobilisation sur 30 jours":"jours de mobilisation sur 30 jours",veryLow:"très actif",pageTitle:"Protest Atlas : manifestations et grèves en Europe, suivies chaque jour",pageDesc:"Protest Atlas suit chaque jour les manifestations et grèves nationales dans 38 pays européens : qui manifeste, pourquoi, combien de personnes, et les prochaines dates annoncées.",naShort:"n.c.",whyLbl:"Pourquoi :",viewTiles:"Fiches",viewList:"Liste",colCountry:"Pays",colDays:"Jours de mobilisation",colCrowd:"Plus grande foule",colWhy:"Pourquoi",colLast:"Dernière mobilisation",colNext:"Prochaine date",crowdLbl:(w,d)=>`personnes (${w}), ${d}`,peakLbl:(w,d)=>`plus grande foule sur 30 jours, ${d} (${w})`,peakShort:(w,d)=>`plus grande foule, ${d} (${w})`,noPeak:"Aucun chiffre de participation sur 30 jours",noCrowd:"Participation non communiquée",noCrowdShort:"Non communiquée",turnoutWord:"participation",newWeek:"Nouveau cette semaine",moreActive:"Plus actif que la semaine précédente",quieter:"Plus calme que la semaine précédente",
   latest:d=>`Dernière mobilisation, ${d}`,people:(n,w)=>`${n} personnes (${w})`,noTurnout:"Participation non communiquée",why:"Pourquoi",
   noneForReason:"Aucun pays sous surveillance pour cette raison.",
   idx:(n,label)=>`${n} pays ${label?"pour « "+label.toLowerCase()+" »":"sous surveillance, les plus actifs d'abord"}.`,
@@ -398,6 +419,11 @@ const cname=c=>{if(LANG==="fr"&&REGION){try{const n=REGION.of(c);if(n&&n!==c)ret
 const byName=(a,b)=>cname(a).localeCompare(cname(b),LANG);
 function applyStatic(){
   document.documentElement.lang=LANG;
+  // title, description and canonical address follow the language, so search engines index the French version too
+  document.title=T("pageTitle");
+  const md=document.querySelector('meta[name="description"]');if(md)md.content=T("pageDesc");
+  const fromUrl=new URLSearchParams(location.search).get("lang")==="fr";
+  const cn=document.querySelector('link[rel="canonical"]');if(cn)cn.href="https://protestatlas.org/"+(fromUrl?"?lang=fr":"");
   document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=T(el.dataset.i18n));
   document.querySelectorAll("[data-i18n-html]").forEach(el=>el.innerHTML=T(el.dataset.i18nHtml));
   document.querySelectorAll("[data-i18n-ph]").forEach(el=>{el.placeholder=T(el.dataset.i18nPh);el.setAttribute("aria-label",T(el.dataset.i18nPh))});

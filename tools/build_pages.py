@@ -184,6 +184,15 @@ def share_page(code, x, site):
             body.append(f'<div class="day"><h3>{E(e["title"])}</h3><p class="meta">{E(long_date(e["date"]))}. {E(" · ".join(figs) if figs else "Turnout not reported")}</p>'
                         + (f'<p>{E(e["extra"])}</p>' if e.get("extra") else "") + src_line(e.get("src")) + "</div>")
     body.append(f'<p><a class="cta" href="{live}">See {E(x["country"])} on the live atlas</a></p>')
+    site = url.split("/c/")[0] if "/c/" in url else ""
+    ld = json.dumps({"@context": "https://schema.org", "@type": "WebPage", "url": url, "name": title, "description": desc,
+                     "inLanguage": "en", "dateModified": (x.get("checkedAt") or "")[:10] or None,
+                     "isPartOf": {"@type": "WebSite", "name": "Protest Atlas", "url": (site or "") + "/"},
+                     "about": {"@type": "Country", "name": x["country"]},
+                     "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
+                         {"@type": "ListItem", "position": 1, "name": "Protest Atlas", "item": (site or "") + "/"},
+                         {"@type": "ListItem", "position": 2, "name": x["country"], "item": url}]}},
+                    ensure_ascii=False).replace("</", "<\\/")
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -198,6 +207,11 @@ def share_page(code, x, site):
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="{E(url)}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<script type="application/ld+json">{ld}</script>
 <link rel="stylesheet" href="../../fonts/fonts.css">
 <script data-goatcounter="https://protestatlas.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <style>{PAGE_CSS}</style>
@@ -289,10 +303,21 @@ def main():
         fh.write("User-agent: *\nAllow: /\n" + (f"Sitemap: {base}/sitemap.xml\n" if base else ""))
     if base:
         today = datetime.now(timezone.utc).date().isoformat()
-        urls = [f"{base}/", f"{base}/about.html", f"{base}/rss.html"] + [f"{base}/c/{c.lower()}/" for c in sorted(data)]
+        latest = max((x.get("checkedAt") or "")[:10] for x in data.values()) or today
+        rows = []
+        for path in ("/", "/about.html", "/rss.html"):          # main pages, each with its French version
+            en, fr = f"{base}{path}", f"{base}{path}?lang=fr"
+            alt = (f'<xhtml:link rel="alternate" hreflang="en" href="{E(en)}"/>'
+                   f'<xhtml:link rel="alternate" hreflang="fr" href="{E(fr)}"/>'
+                   f'<xhtml:link rel="alternate" hreflang="x-default" href="{E(en)}"/>')
+            for u in (en, fr):
+                rows.append(f"<url><loc>{E(u)}</loc>{alt}<lastmod>{latest}</lastmod></url>")
+        for c in sorted(data):                                   # country pages, dated by their last check
+            d = (data[c].get("checkedAt") or "")[:10] or latest
+            rows.append(f"<url><loc>{E(base)}/c/{c.lower()}/</loc><lastmod>{d}</lastmod></url>")
         with open("sitemap.xml", "w", encoding="utf-8") as fh:
-            fh.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-                     + "".join(f"<url><loc>{E(u)}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n")
+            fh.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+                     'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(rows) + "\n</urlset>\n")
 
     print(f"Built {len(data)} country pages in c/, feed.xml"
           + (f", {made} preview pictures" if images else ", no pictures (Chrome not found or --no-images)"))
