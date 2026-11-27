@@ -1,6 +1,6 @@
 {
   "AL": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Albania",
     "events": [
       {
@@ -190,9 +190,9 @@
     "reasons": [
       "Corruption",
       "Education costs",
-      "Poor job prospects for young people"
+      "Jobs"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "story": [
       {
         "big": true,
@@ -253,10 +253,10 @@
       "wages"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-10T20:47:21+01:00"
+    "updatedAt": "2026-11-27T06:49:44+01:00"
   },
   "AT": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Austria",
     "events": [
       {
@@ -361,7 +361,7 @@
       "Military spending",
       "Education"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "Students and university staff marched in Vienna on 22 October for more university funding, and young people rallied in 14 cities on 20 November against rearmament and for education and social spending; police detained dozens in Vienna.",
     "themes": [
       "education",
@@ -371,7 +371,7 @@
     "updatedAt": "2026-11-24T06:50:04+01:00"
   },
   "BA": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Bosnia & Herzegovina",
     "events": [],
     "lastProtest": {
@@ -385,13 +385,13 @@
       "title": "Several days of protests in Sarajevo and other cities after a fatal tram accident"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "BE": {
-    "checkedAt": "2026-11-24T22:32:25+01:00",
+    "checkedAt": "2026-11-27T06:52:39+01:00",
     "country": "Belgium",
     "events": [
       {
@@ -414,7 +414,7 @@
             "https://www.lavenir.net/actu/belgique/2026/11/23/manifestation-nationale-du-23-novembre-les-transports-en-commun-perturbes-greve-du-trafic-aerien-direct-WLYE7H6MXFGUTJ4YDJJTDTZH54/"
           ],
           [
-            "RTBF, 23 Nov 2026 (arrests)",
+            "RTBF, 23 Nov 2026 (police and union counts, arrests)",
             "https://www.rtbf.be/article/manifestation-nationale-du-23-novembre-huit-arrestations-apres-les-incidents-a-la-gare-du-midi-a-bruxelles-11820031"
           ],
           [
@@ -423,7 +423,7 @@
           ]
         ],
         "title": "National demonstration in Brussels",
-        "warn": "Police count from L'Avenir (tier C) quoting the Brussels-Capital-Ixelles police; RTBF gives 50,000-70,000 without splitting sources. Arrest toll provisional."
+        "warn": "Arrest toll provisional (police)."
       },
       {
         "arrests": null,
@@ -639,7 +639,7 @@
       "VAT increase",
       "Working time"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:52:39+01:00",
     "story": [
       {
         "big": true,
@@ -731,10 +731,10 @@
       "cost"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-24T22:32:25+01:00"
+    "updatedAt": "2026-11-27T06:52:39+01:00"
   },
   "BG": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Bulgaria",
     "events": [
       {
@@ -801,11 +801,10 @@
       ]
     },
     "reasons": [
-      "A soft government response to attacks on ships in the Black Sea, blamed on Russia",
-      "Bulgaria's foreign policy toward Russia",
+      "Foreign policy toward Russia",
       "2027 budget: wages & pensions"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "A large crowd rallied outside the Presidency in Sofia on 20 October, accusing Prime Minister Roumen Radev and President Iliana Yotova of a soft response to Black Sea ship attacks blamed on Russia.",
     "themes": [
       "war",
@@ -814,10 +813,10 @@
       "wages"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-13T06:41:14+01:00"
+    "updatedAt": "2026-11-27T06:49:44+01:00"
   },
   "CH": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Switzerland",
     "events": [
       {
@@ -957,7 +956,7 @@
       "Education",
       "Climate action"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "Young people demonstrated in about ten cities on 20 November in a nationwide youth strike against rearmament and austerity, with about 40,000 taking part by the organisers' count; police used rubber bullets in Basel and Zurich. Earlier, climate and pro-Palestinian protests took place in September and October.",
     "themes": [
       "war",
@@ -969,7 +968,7 @@
     "updatedAt": "2026-11-24T06:50:04+01:00"
   },
   "CY": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Cyprus",
     "events": [
       {
@@ -999,7 +998,7 @@
     "reasons": [
       "Job security"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "Education ministry support-programme staff began an indefinite strike on 2 November and marched to the presidential palace on 5 November over job security and benefits.",
     "themes": [
       "wages"
@@ -1008,7 +1007,7 @@
     "updatedAt": "2026-11-24T06:50:04+01:00"
   },
   "CZ": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Czechia",
     "events": [
       {
@@ -1149,7 +1148,7 @@
       "Public media independence",
       "Government accountability"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "Organisers said about 400,000 people rallied on Letná plain in Prague on 15 November, the largest protest yet against the Babiš government's plan to scrap licence fees and fund Czech Television and Radio from the state budget; public media staff had struck on 3 November.",
     "themes": [
       "media",
@@ -1159,7 +1158,7 @@
     "updatedAt": "2026-11-17T06:47:46+01:00"
   },
   "DE": {
-    "checkedAt": "2026-11-24T22:32:25+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Germany",
     "events": [
       {
@@ -1312,7 +1311,7 @@
       "Climate",
       "Health"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "src": [
       [
         "Der Paritätische, Pflege-Demonstration 11 Nov 2026",
@@ -1350,7 +1349,7 @@
     "updatedAt": "2026-11-24T22:32:25+01:00"
   },
   "DK": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Denmark",
     "events": [
       {
@@ -1410,7 +1409,7 @@
       "Student grant (SU) cuts",
       "Education funding"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "Students struck and marched to Parliament on 4 November against government plans to cut the SU student grant for students with higher-earning parents, to free money for defence.",
     "themes": [
       "education",
@@ -1448,17 +1447,17 @@
       "tier": "screen",
       "updatedAt": "2026-11-09T08:00:00+01:00"
     },
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Estonia",
     "events": [],
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "ES": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Spain",
     "events": [
       {
@@ -1715,7 +1714,7 @@
       "Rail safety after the Urda crash",
       "Labour rights"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "story": [
       {
         "big": false,
@@ -1748,7 +1747,7 @@
     "updatedAt": "2026-11-20T06:52:46+01:00"
   },
   "FI": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Finland",
     "events": [],
     "lastProtest": {
@@ -1763,13 +1762,13 @@
       "warn": "Single source (photo caption)"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "FR": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:52:39+01:00",
     "country": "France",
     "events": [
       {
@@ -2132,6 +2131,32 @@
         "strike": true,
         "title": "Public-sector strike day with marches across France",
         "warn": "Interior Ministry figures as quoted by Euronews, AFP (via Al Jazeera) and Sud Radio; ministry release not found (checked: interieur.gouv.fr communiqués de presse, HTTP 403 on 20 Nov). No arrest figure reported."
+      },
+      {
+        "arrests": null,
+        "cause": "University places, Parcoursup and university funding",
+        "date": "2026-11-26",
+        "deaths": null,
+        "extra": "A few thousand students marched from Bastille towards the Panthéon (AFP); a few dozen gathered in Bordeaux. Ranks thinner than in previous weeks. The ministry said the share of disrupted universities fell to 16%.",
+        "minor": true,
+        "off": null,
+        "org": "Higher-education inter-union (FSU, CGT, FO, UNSA, SUD, Unef, Union étudiante, Fage and others) and Interfac Île-de-France",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "reach": "local",
+        "src": [
+          [
+            "France 24 (AFP), 26 Nov 2026",
+            "https://www.france24.com/fr/info-en-continu/20261126-mobilisation-de-la-jeunesse-les-organisations-veulent-maintenir-la-pression-malgr%C3%A9-le-recul-des-blocages"
+          ],
+          [
+            "Sortiraparis (call and route), 25 Nov 2026",
+            "https://www.sortiraparis.com/en/news/in-paris/articles/358466-student-protest-in-paris-on-november-26-what-do-we-know"
+          ]
+        ],
+        "title": "Higher-education and student march in Paris"
       }
     ],
     "groups": [
@@ -2173,7 +2198,7 @@
         "type": "unions"
       }
     ],
-    "next": "Eight public-service unions call a national strike and day of action on Tuesday 1 December over pay, and the CGT, CFDT and UNSA invite private-sector workers to join; the government meets the unions again on 11 December. The Interfac Île-de-France student assembly calls a mobilisation on 26 November.",
+    "next": "Eight public-service unions call a national strike and day of action on Tuesday 1 December over pay, and the CGT, CFDT and UNSA invite private-sector workers to join; student organisations say they will join that day. The government meets the unions again on 11 December.",
     "nextDate": "2026-12-01",
     "nextFor": {
       "by": "Public-service unions CGT, FO, CFDT, UNSA, FSU, Solidaires, CFE-CGC and FA-FP",
@@ -2191,6 +2216,10 @@
         [
           "Brut, 20 Nov 2026",
           "https://www.brut.media/fr/articles/france/societe/nouvel-appel-a-la-greve-dans-la-fonction-publique-le-1er-decembre"
+        ],
+        [
+          "France 24 (AFP), 26 Nov 2026",
+          "https://www.france24.com/fr/info-en-continu/20261126-mobilisation-de-la-jeunesse-les-organisations-veulent-maintenir-la-pression-malgr%C3%A9-le-recul-des-blocages"
         ]
       ]
     },
@@ -2244,7 +2273,7 @@
       "Public services",
       "Tax fairness"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:52:39+01:00",
     "story": [
       {
         "big": true,
@@ -2391,10 +2420,10 @@
       "services"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-24T06:52:06+01:00"
+    "updatedAt": "2026-11-27T06:52:39+01:00"
   },
   "GB": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "United Kingdom",
     "events": [
       {
@@ -2461,7 +2490,7 @@
     "reasons": [
       "NHS consultants' pay and conditions"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "Consultants in England plan a 48-hour strike from 25 November, saying talks with the government on pay and conditions have stalled. The last large demonstration was a pro-Palestine march in London on 10 October.",
     "themes": [
       "wages",
@@ -2471,7 +2500,7 @@
     "updatedAt": "2026-11-17T06:51:42+01:00"
   },
   "GR": {
-    "checkedAt": "2026-11-24T22:32:25+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Greece",
     "events": [
       {
@@ -2548,6 +2577,37 @@
         ],
         "title": "Students camp in Syntagma Square overnight over rents and student housing",
         "warn": "Single source (photo caption); no turnout reported"
+      },
+      {
+        "arrests": null,
+        "cause": "Pay, the 13th and 14th salaries, living costs, housing and public-sector hiring",
+        "date": "2026-11-25",
+        "deaths": null,
+        "extra": "Thousands rallied at Klafthmonos Square and the Propylaia in Athens and marched to parliament; rallies in more than 60 cities including Thessaloniki, Patras, Heraklion and Larissa. Metro, electric railway and tram ran only 09:00-18:00; ferries disrupted; flights affected at 15 regional airports. No incidents reported; no official or organisers' count.",
+        "off": null,
+        "org": "ADEDY, with hospital, teachers' and seafarers' unions, rail and metro staff, labour centres and private-sector federations",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "reach": "national",
+        "src": [
+          [
+            "athens24.gr, 25 Nov 2026",
+            "https://www.athens24.gr/news/apergia-adedy-oloklirythikan-oi-sygkentryseis-kai-i-poreia-pros-ti-voyli-stin-athina.html"
+          ],
+          [
+            "iEidiseis, 25 Nov 2026",
+            "https://www.ieidiseis.gr/ellada/921280/apergia-25-noemvrioy-oloklirothikan-oi-sygkentroseis-anoixan-oi-dromoi/"
+          ],
+          [
+            "ADEDY (strike call and rally posts)",
+            "https://adedy.gr/apergia25112026/"
+          ]
+        ],
+        "strike": true,
+        "title": "24-hour nationwide public-sector strike with rallies in 60+ cities",
+        "warn": "Press sources only (no wire or public-broadcaster report of the day found); no official count found."
       }
     ],
     "groups": [
@@ -2592,39 +2652,13 @@
         ],
         "name": "ADEDY (public-sector union confederation)",
         "short": "public-sector unions",
-        "since": "25 November strike call",
+        "since": "Strike on 25 November",
         "type": "unions"
       }
     ],
-    "next": "ADEDY's 24-hour nationwide public-sector strike on Wednesday 25 November is joined by hospital staff, teachers, seafarers (no ferries from Attica ports), rail and metro staff and private-sector labour centres; the central rally is at Propylaia in Athens at 10:30, with rallies in more than 60 cities (ERT). Demands include pay rises, the 13th and 14th salaries and action on living costs and housing.",
-    "nextDate": "2026-11-25",
-    "nextFor": {
-      "by": "ADEDY (public-sector union confederation), with the nurses' (POEDIN), hospital doctors' (OENGE) and secondary teachers' (OLME) federations, seafarers' unions (PENEN, PEMEN and others), rail and metro staff, 25 labour centres and 11 private-sector federations",
-      "demands": [
-        "Substantial pay rises",
-        "Restore the 13th and 14th salaries",
-        "Action on living costs and housing",
-        "Permanent hiring in the public sector"
-      ],
-      "src": [
-        [
-          "Proto Thema, 12 Oct 2026",
-          "https://protothema.gr/greece/article/1893460/apergia-stis-25-noemvriou-prokirussei-i-adedu"
-        ],
-        [
-          "Powergame, 10 Nov 2026",
-          "https://www.powergame.gr/ellada/1450725/apergia-25-noemvriou-poioi-symmetechoun/"
-        ],
-        [
-          "ERT, 24 Nov 2026",
-          "https://www.ertnews.gr/eidiseis/se-apergiako-kloio-i-xora-tin-tetarti-pos-tha-kinithoun-ta-mesa-metaforas-kai-ta-ploia-ti-isxyei-gia-ta-sxoleia/"
-        ]
-      ]
-    },
-    "nextReach": "national",
-    "nextStrike": true,
+    "next": "No new date announced in our sources yet.",
     "pressure": {
-      "assessedAt": "2026-11-10",
+      "assessedAt": "2026-11-27",
       "crackdown": false,
       "demand": "programme",
       "demandNote": "education funding, rents, pay and the 13th and 14th salaries",
@@ -2638,28 +2672,34 @@
         [
           "Proto Thema, 12 Oct 2026",
           "https://protothema.gr/greece/article/1893460/apergia-stis-25-noemvriou-prokirussei-i-adedu"
+        ],
+        [
+          "athens24.gr, 25 Nov 2026",
+          "https://www.athens24.gr/news/apergia-adedy-oloklirythikan-oi-sygkentryseis-kai-i-poreia-pros-ti-voyli-stin-athina.html"
         ]
       ]
     },
     "reasons": [
-      "Education funding",
-      "Housing & rents",
       "Wages",
-      "Hospital staffing"
+      "Cost of living",
+      "Housing & rents",
+      "Public-sector staffing",
+      "Education funding"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
-    "summary": "Students camped in Syntagma Square and joined teachers, public sector workers and hospital doctors in strikes and protests in more than 50 towns on 21 October over education funding, rents and pay; students and teachers rallied again on 5 November, and ADEDY has called a public-sector strike for 25 November.",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
+    "summary": "Public-sector workers held a 24-hour nationwide strike on 25 November, called by ADEDY with hospital, teachers' and seafarers' unions, over pay, the 13th and 14th salaries, living costs and housing, with rallies in more than 60 cities. Students and teachers had protested over education funding and rents in October and November.",
     "themes": [
-      "education",
-      "housing",
       "wages",
-      "services"
+      "cost",
+      "housing",
+      "services",
+      "education"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-24T22:32:25+01:00"
+    "updatedAt": "2026-11-27T06:49:44+01:00"
   },
   "HR": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Croatia",
     "events": [
       {
@@ -2756,7 +2796,7 @@
       "Corruption",
       "Education & health"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "School and university students boycotted classes and gathered in about a dozen cities on 20 November over living costs, housing, education and conscription. A civic initiative has called anti-corruption protests in several cities for 12 December.",
     "themes": [
       "cost",
@@ -2768,7 +2808,7 @@
     "updatedAt": "2026-11-24T06:50:04+01:00"
   },
   "HU": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Hungary",
     "events": [],
     "lastProtest": {
@@ -2783,13 +2823,13 @@
       "warn": "Single aggregator source"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "IE": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Ireland",
     "events": [
       {
@@ -2855,7 +2895,7 @@
     "reasons": [
       "Public sector pay"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "story": [
       {
         "big": false,
@@ -2889,17 +2929,17 @@
     "updatedAt": "2026-11-13T06:41:14+01:00"
   },
   "IS": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Iceland",
     "events": [],
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "IT": {
-    "checkedAt": "2026-11-24T22:32:25+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Italy",
     "events": [
       {
@@ -3124,7 +3164,7 @@
       "Budget law",
       "Military spending"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "story": [
       {
         "big": true,
@@ -3153,7 +3193,7 @@
     "updatedAt": "2026-11-24T22:32:25+01:00"
   },
   "LT": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Lithuania",
     "events": [
       {
@@ -3230,7 +3270,7 @@
     "reasons": [
       "Teachers' pay"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "The LŠDPS teachers' union began an indefinite national strike on 16 November, demanding at least a 10% pay rise from 2027; the draft budget offers 7.56%.",
     "themes": [
       "wages",
@@ -3240,39 +3280,39 @@
     "updatedAt": "2026-11-24T22:29:48+01:00"
   },
   "LV": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Latvia",
     "events": [],
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "MD": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Moldova",
     "events": [],
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "ME": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Montenegro",
     "events": [],
     "groups": [],
     "next": "No new date announced in our sources yet.",
     "reasons": [],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "themes": [],
     "tier": "screen"
   },
   "MK": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "North Macedonia",
     "events": [],
     "lastProtest": {
@@ -3286,13 +3326,13 @@
       "title": "Trade union blockade of Parliament in Skopje over wages"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "NL": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:54:46+01:00",
     "country": "Netherlands",
     "events": [
       {
@@ -3344,9 +3384,53 @@
         ],
         "title": "ANWB staff strike and union rally in The Hague",
         "warn": "Single source so far (local broadcaster Rodi)"
+      },
+      {
+        "arrests": null,
+        "cause": "Collective agreement for public transport: rosters and working conditions",
+        "date": "2026-11-23",
+        "deaths": null,
+        "extra": "48-hour strike on 23 and 24 November by bus and regional train drivers at Arriva, Transdev, EBS, Qbuzz and Keolis, covering more than 13,000 workers under the agreement; city transport in Amsterdam, The Hague and Rotterdam and NS trains not included. Rides cancelled; no turnout figure.",
+        "off": null,
+        "org": "FNV and CNV",
+        "orgc": null,
+        "paris": null,
+        "policeInj": null,
+        "protInj": null,
+        "reach": "national",
+        "src": [
+          [
+            "Omroep Brabant, 23 Nov 2026",
+            "https://www.omroepbrabant.nl/nieuws/6035290/ov-ligt-twee-dagen-plat-door-landelijke-staking-in-het-streekvervoer"
+          ],
+          [
+            "Treinreiziger.nl, 18 Nov 2026",
+            "https://www.treinreiziger.nl/maandag-en-dinsdag-staking-van-streekvervoer/"
+          ],
+          [
+            "NL Times (strike campaign), 9 Oct 2026",
+            "https://nltimes.nl/2026/10/09/bus-train-drivers-announce-weekly-strikes-christmas"
+          ]
+        ],
+        "title": "Two-day nationwide strike in regional public transport",
+        "warn": "Regional public broadcaster and trade press only; no NOS or NL Times report of the day found."
       }
     ],
-    "next": "FNV and CNV announce further strikes in regional public transport (streekvervoer) on 3, 4, 14, 15 and 18 December, after strike days on 23 and 24 November.",
+    "groups": [
+      {
+        "items": [
+          "Reject the employers' final offer",
+          "Workable schedules with enough recovery time",
+          "Keep protections for older drivers",
+          "Keep the irregular-hours allowance"
+        ],
+        "name": "FNV and CNV (regional public transport workers)",
+        "short": "transport unions",
+        "since": "Strikes since October",
+        "type": "sector"
+      }
+    ],
+    "next": "FNV and CNV call further nationwide strikes in regional public transport on 3, 4, 14, 15 and 18 December, after a two-day strike on 23 and 24 November.",
     "nextDate": "2026-12-03",
     "nextFor": {
       "by": "FNV and CNV (regional public transport workers)",
@@ -3363,20 +3447,40 @@
         ]
       ]
     },
-    "nextReach": "local",
+    "nextReach": "national",
+    "pressure": {
+      "assessedAt": "2026-11-27",
+      "crackdown": false,
+      "demand": "policy",
+      "demandNote": "a new collective agreement for regional public transport",
+      "opposition": false,
+      "response": "none",
+      "responseNote": "no new offer reported",
+      "src": [
+        [
+          "Omroep Brabant, 23 Nov 2026",
+          "https://www.omroepbrabant.nl/nieuws/6035290/ov-ligt-twee-dagen-plat-door-landelijke-staking-in-het-streekvervoer"
+        ],
+        [
+          "FNV, 18 Nov 2026",
+          "https://www.fnv.nl/nieuwsbericht/sectornieuws/vervoer/2026/11/nieuwe-stakingen-streekvervoer-in-november-en-dece"
+        ]
+      ]
+    },
     "reasons": [
+      "Working conditions in public transport",
       "Collective agreements"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
-    "summary": "A \"Gen Z\" youth protest in The Hague on 31 October turned chaotic, and ANWB staff struck on 9 November over a new collective agreement. Regional public transport workers are striking on several days in November and December over their collective agreement.",
+    "screenedAt": "2026-11-27T06:54:46+01:00",
+    "summary": "Regional bus and train drivers struck nationwide on 23 and 24 November over their collective agreement, and FNV and CNV have called more strike days in December. Earlier, a \"Gen Z\" youth protest in The Hague turned chaotic on 31 October and ANWB staff struck on 9 November.",
     "themes": [
       "wages"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-24T06:50:04+01:00"
+    "updatedAt": "2026-11-27T06:54:46+01:00"
   },
   "NO": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Norway",
     "events": [
       {
@@ -3441,7 +3545,7 @@
       "Postal service cuts",
       "Jobs"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "Fagforbundet held its first nationwide political strike on 16 November against 2027 budget cuts that would cut about 2,000 of 3,000 postal delivery jobs, with rallies at 40 locations.",
     "themes": [
       "services",
@@ -3451,7 +3555,7 @@
     "updatedAt": "2026-11-20T06:49:10+01:00"
   },
   "PL": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Poland",
     "events": [
       {
@@ -3507,7 +3611,7 @@
     "reasons": [
       "Abortion rights"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "Thousands of women protested in Warsaw and about 25 other cities on 22 October, the sixth anniversary of the near-total abortion ban, against stalled reforms.",
     "themes": [
       "rights"
@@ -3516,7 +3620,7 @@
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "PT": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Portugal",
     "events": [
       {
@@ -3524,7 +3628,7 @@
         "cause": "Purchasing power, working conditions and rail safety",
         "date": "2026-11-23",
         "deaths": null,
-        "extra": "242 of 1,062 scheduled trains (22.8%) cancelled by 19:00 on the first day per CP. On 24 November, the first full-stoppage day, 795 of 1,062 trains (74.9%) were cancelled by 19:00 per CP; only the 267 minimum-service trains ran. Full stoppage continues on 25 November.",
+        "extra": "242 of 1,062 scheduled trains (22.8%) cancelled by 19:00 on the first day per CP. On 24 November, the first full-stoppage day, 795 of 1,062 trains (74.9%) were cancelled by 19:00 per CP; only the 267 minimum-service trains ran. On 26 November, a partial day, 225 of 1,063 trains (21.2%) were cancelled by 19:00 per CP data reported by Lusa. The strike ends on 27 November.",
         "off": null,
         "org": "SMAQ (national train drivers' union)",
         "orgc": null,
@@ -3548,9 +3652,13 @@
           [
             "RTP, 24 Nov 2026",
             "https://www.rtp.pt/noticias/economia/suprimidos-70-dos-comboios-durante-a-manha-maquinistas-da-cp-cumprem-segundo-dia-de-greve_n1781294"
+          ],
+          [
+            "DN / Lusa, 26 Nov 2026",
+            "https://www.dn.pt/sociedade/greve-dos-maquinistas-da-cp-leva-supresso-de-21-dos-comboios-at-s-1900"
           ]
         ],
-        "title": "Train drivers' strike at CP begins (23-27 November)"
+        "title": "Train drivers' strike at CP (23-27 November)"
       },
       {
         "arrests": null,
@@ -3744,33 +3852,7 @@
         "type": "sector"
       }
     ],
-    "next": "The SMAQ train drivers' strike at CP continues with a second full stoppage on 25 November and runs until 27 November. The CGTP had called a rally outside parliament for the final 2027 budget vote on 24 November; no report of it found yet. No later national date announced in our sources yet.",
-    "nextDate": "2026-11-25",
-    "nextFor": {
-      "by": "SMAQ (national train drivers' union)",
-      "demands": [
-        "Recover purchasing power",
-        "Recognition of the profession",
-        "Better working conditions",
-        "Stronger rail safety"
-      ],
-      "src": [
-        [
-          "Público, 23 Nov 2026",
-          "https://www.publico.pt/2026/11/23/economia/noticia/greve-maquinistas-cp-30-comboios-suprimidos-ate-8h-paralisacao-total-terca-quarta-2195917"
-        ],
-        [
-          "Observador, 23 Nov 2026",
-          "https://observador.pt/2026/11/23/30-comboios-suprimidos-devido-a-greve-dos-maquinistas-da-cp"
-        ],
-        [
-          "Jornal Económico, 24 Nov 2026",
-          "https://jornaleconomico.sapo.pt/noticias/greve-dos-maquinistas-da-cp-cancela-quase-75-dos-comboios-ate-as-1900/"
-        ]
-      ]
-    },
-    "nextReach": "national",
-    "nextStrike": true,
+    "next": "The SMAQ train drivers' strike at CP ends on 27 November. No new national date announced in our sources yet.",
     "pressure": {
       "assessedAt": "2026-11-24",
       "crackdown": true,
@@ -3800,7 +3882,7 @@
       "Cost of living",
       "Housing"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "story": [
       {
         "big": true,
@@ -3853,7 +3935,7 @@
         "title": "Encampments cleared; November dates set"
       }
     ],
-    "summary": "Unions are protesting the 2027 budget over pay, pensions and public services: public administration workers struck on 20 November, with about 90% adhesion in schools by the unions' count, and CP train drivers began a five-day strike on 23 November. Housing movements held a national day of action on 14 November; the CGTP marched in Lisbon on 21 November.",
+    "summary": "Unions are protesting the 2027 budget over pay, pensions and public services: public administration workers struck on 20 November, with about 90% adhesion in schools by the unions' count, and CP train drivers struck from 23 to 27 November, with full stoppages on 24 and 25 November. Housing movements held a national day of action on 14 November; the CGTP marched in Lisbon on 21 November.",
     "themes": [
       "wages",
       "services",
@@ -3861,10 +3943,10 @@
       "housing"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-24T22:29:48+01:00"
+    "updatedAt": "2026-11-27T06:49:44+01:00"
   },
   "RO": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Romania",
     "events": [],
     "lastProtest": {
@@ -3879,13 +3961,13 @@
       "warn": "Single aggregator source"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "RS": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Serbia",
     "events": [],
     "lastProtest": {
@@ -3900,7 +3982,7 @@
     },
     "next": "No new date announced in our sources yet.",
     "reasons": [],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "src": [
       [
         "CNN, 25 Oct 2026",
@@ -3913,7 +3995,7 @@
     "updatedAt": "2026-11-09T08:00:00+01:00"
   },
   "SE": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Sweden",
     "events": [],
     "lastProtest": {
@@ -3927,13 +4009,13 @@
       "title": "About ten thousand marched in Stockholm for stronger climate action a month before the election"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "SI": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Slovenia",
     "events": [],
     "lastProtest": {
@@ -3948,13 +4030,13 @@
       "warn": "Single source (Wikipedia list)"
     },
     "next": "No new date announced in our sources yet.",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-07T22:50:00+01:00"
   },
   "SK": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Slovakia",
     "events": [
       {
@@ -4021,7 +4103,7 @@
       "Ties with Russia",
       "Rule of law & freedoms"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "Opposition parties led by Progressive Slovakia rallied on 17 November, the Velvet Revolution anniversary, in Bratislava and dozens of other towns against the Fico government, angered by the foreign minister's trip to Moscow to renew economic ties and by what they call curbs on freedoms.",
     "themes": [
       "governance",
@@ -4031,7 +4113,7 @@
     "updatedAt": "2026-11-20T06:49:10+01:00"
   },
   "TR": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Türkiye",
     "events": [],
     "lastProtest": {
@@ -4062,13 +4144,13 @@
       ]
     },
     "nextReach": "local",
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "",
     "tier": "screen",
     "updatedAt": "2026-11-24T06:53:58+01:00"
   },
   "UA": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Ukraine",
     "events": [
       {
@@ -4114,19 +4196,20 @@
       ]
     },
     "reasons": [
-      "Kyiv city hall's poor preparation of heating and power for the winter"
+      "Winter heating and power preparations in Kyiv",
+      "Accountability of city leadership"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "Hundreds rallied in Kyiv on 17 October demanding Mayor Vitali Klitschko resign over the city's winter preparations. Protest takes place under martial law.",
     "themes": [
       "services",
       "governance"
     ],
     "tier": "watch",
-    "updatedAt": "2026-11-07T22:50:00+01:00"
+    "updatedAt": "2026-11-27T06:49:44+01:00"
   },
   "XK": {
-    "checkedAt": "2026-11-24T22:29:48+01:00",
+    "checkedAt": "2026-11-27T06:49:44+01:00",
     "country": "Kosovo",
     "events": [
       {
@@ -4158,7 +4241,7 @@
     "reasons": [
       "War-crimes verdicts (reported)"
     ],
-    "screenedAt": "2026-11-24T22:29:48+01:00",
+    "screenedAt": "2026-11-27T06:49:44+01:00",
     "summary": "Protesters clashed with police in Pristina on 5 October, with police using tear gas and water cannon; reports link the protest to war-crimes verdicts, and a separate demonstration took place near parliament on 6 October before the presidential vote.",
     "themes": [
       "governance"

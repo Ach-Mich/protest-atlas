@@ -656,7 +656,8 @@
     "crowdCount": "sometimes",
     "notes": [
       "ekathimerini.com cannot be fetched from the sandbox (10 Nov 2026); search results for Greek strikes often return older years (2020, 2024): check the year.",
-      "adedy.gr home page can be opened (10 Nov 2026) but older strike calls drop off it quickly; protothema.gr reported the 25 Nov 2026 ADEDY call."
+      "adedy.gr home page can be opened (10 Nov 2026) but older strike calls drop off it quickly; protothema.gr reported the 25 Nov 2026 ADEDY call.",
+      "newsbeast.gr answers HTTP 403 to automated readers (27 Nov 2026); athens24.gr and ieidiseis.gr post-strike reports can be read, and adedy.gr posts rally coverage on the day."
     ]
   },
   "HR": {
@@ -845,7 +846,9 @@
       "nrc.nl"
     ],
     "crowdCount": "sometimes",
-    "notes": []
+    "notes": [
+      "Regional public transport strikes (FNV/CNV, Arriva, Transdev, EBS, Qbuzz, Keolis) are reported as nationwide by Omroep Brabant (omroepbrabant.nl, readable); NOS and NL Times did not surface a day-of report (27 Nov 2026)."
+    ]
   },
   "NO": {
     "official": [],
