@@ -25,7 +25,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from email.utils import format_datetime
 
 def find_chrome():
@@ -144,62 +144,140 @@ def src_line(src):
     return '<p class="srcs">Sources: ' + ", ".join(f'<a href="{E(u)}" rel="noopener">{E(t)}</a>' for t, u in src) + "</p>"
 
 
-def share_page(code, x, site):
-    """A full, readable page per country: indexable by search engines and shown when a link is shared."""
+# French names and the right preposition ("en France", "au Portugal", "aux Pays-Bas", "à Chypre")
+FR_IN = {"AL": "en Albanie", "AT": "en Autriche", "BA": "en Bosnie-Herzégovine", "BE": "en Belgique", "BG": "en Bulgarie",
+         "CH": "en Suisse", "CY": "à Chypre", "CZ": "en Tchéquie", "DE": "en Allemagne", "DK": "au Danemark",
+         "EE": "en Estonie", "ES": "en Espagne", "FI": "en Finlande", "FR": "en France", "GB": "au Royaume-Uni",
+         "GR": "en Grèce", "HR": "en Croatie", "HU": "en Hongrie", "IE": "en Irlande", "IS": "en Islande",
+         "IT": "en Italie", "LT": "en Lituanie", "LV": "en Lettonie", "MD": "en Moldavie", "ME": "au Monténégro",
+         "MK": "en Macédoine du Nord", "NL": "aux Pays-Bas", "NO": "en Norvège", "PL": "en Pologne", "PT": "au Portugal",
+         "RO": "en Roumanie", "RS": "en Serbie", "SE": "en Suède", "SI": "en Slovénie", "SK": "en Slovaquie",
+         "TR": "en Turquie", "UA": "en Ukraine", "XK": "au Kosovo"}
+FR_NAME = {"AL": "Albanie", "AT": "Autriche", "BA": "Bosnie-Herzégovine", "BE": "Belgique", "BG": "Bulgarie", "CH": "Suisse",
+           "CY": "Chypre", "CZ": "Tchéquie", "DE": "Allemagne", "DK": "Danemark", "EE": "Estonie", "ES": "Espagne",
+           "FI": "Finlande", "FR": "France", "GB": "Royaume-Uni", "GR": "Grèce", "HR": "Croatie", "HU": "Hongrie",
+           "IE": "Irlande", "IS": "Islande", "IT": "Italie", "LT": "Lituanie", "LV": "Lettonie", "MD": "Moldavie",
+           "ME": "Monténégro", "MK": "Macédoine du Nord", "NL": "Pays-Bas", "NO": "Norvège", "PL": "Pologne",
+           "PT": "Portugal", "RO": "Roumanie", "RS": "Serbie", "SE": "Suède", "SI": "Slovénie", "SK": "Slovaquie",
+           "TR": "Turquie", "UA": "Ukraine", "XK": "Kosovo"}
+EN_THE = {"GB", "NL"}                          # "in the United Kingdom", "in the Netherlands"
+FR_DAYS = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
+FR_MONTHS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"]
+DEMAND_FR = {"policy": "Changement de politique", "programme": "Changement de programme", "resignation": "Démission"}
+RESP_FR = {"none": "Pas encore de réponse", "talks": "Dialogue proposé", "crisis": "Crise gouvernementale"}
+FRAG_FR = {"stable": "Stable", "strained": "Sous tension", "fragile": "Fragile"}
+
+
+def long_date_fr(iso):
+    d = datetime.fromisoformat(iso[:10])
+    return f"{FR_DAYS[d.weekday()]} {d.day} {FR_MONTHS[d.month - 1]}"
+
+
+def nfr(n):                                    # 500 000 (French thousands separator)
+    return f"{n:,}".replace(",", " ")
+
+
+def page_urls(code, base):
+    en = f"{base}/c/{code.lower()}/" if base else f"c/{code.lower()}/"
+    fr = f"{base}/fr/c/{code.lower()}/" if base else f"fr/c/{code.lower()}/"
+    return en, fr
+
+
+def share_page(code, x, site, lang="en"):
+    """A full, readable page per country, in English (/c/xx/) or French (/fr/c/xx/), linked to each other."""
+    fr = lang == "fr"
     base = site.rstrip("/") if site else ""
-    url = f"{base}/c/{code.lower()}/" if base else f"c/{code.lower()}/"
+    en_url, fr_url = page_urls(code, base)
+    url = fr_url if fr else en_url
+    root = "../../../" if fr else "../../"
     img = f"{base}/c/{code.lower()}/card.png" if base else "card.png"
-    title = f"{x['country']}: who is protesting and why | Protest Atlas"
-    desc = description(x)
-    live = f"../../#{code}"
+    name = FR_NAME.get(code, x["country"]) if fr else x["country"]
+    where = FR_IN.get(code, "en " + name) if fr else ("in the " if code in EN_THE else "in ") + x["country"]
+    D = long_date_fr if fr else long_date
+    N = nfr if fr else (lambda n: f"{n:,}")
+    ev = sorted(x.get("events") or [], key=lambda e: e["date"], reverse=True)
+    last = ev[0] if ev else None
+    if fr:
+        title = f"Manifestations {where} : qui manifeste et pourquoi | Protest Atlas"
+        crowd = ""
+        if last:
+            n = max(last.get("orgc") or 0, last.get("off") or 0)
+            crowd = f", {nfr(n)} personnes" if n else ""
+        desc = (f"Manifestations et grèves {where}, mises à jour chaque jour : "
+                + (f"dernière mobilisation le {long_date_fr(last['date'])}{crowd}. " if last else "aucune mobilisation nationale récente. ")
+                + "Qui manifeste, pourquoi, et les prochaines dates.")
+        T = dict(kicker="Manifestations", checked="Dernière vérification le {d} à {h}.", none="Aucune mobilisation nationale trouvée dans nos sources sur les 30 derniers jours.",
+                 why="Pourquoi ils manifestent :", nowhy="pas de revendication claire signalée pour l'instant.", next="Prochaine mobilisation, {d}.",
+                 who="Qui manifeste, et ce qu'ils demandent", pressure="Pression sur le gouvernement", days="Journées de mobilisation",
+                 demand="Revendication", response="Réponse", gov="Gouvernement", police="Maintien de l'ordre", heavy="Dur",
+                 off="officiel", org="organisateurs", arr="interpellations", noturn="Participation non communiquée", src="Sources :",
+                 cta=f"Voir {name} sur l'atlas", all="Tous les pays", other="English", foot="Protest Atlas est un projet indépendant.",
+                 about="À propos", corr="Signaler une erreur", note="Les résumés et titres viennent de nos sources et restent en anglais pour l'instant.")
+    else:
+        title = f"Protests {where}: who is marching and why | Protest Atlas"
+        desc = description(x)
+        T = dict(kicker="Protests in", checked="Last checked {d} at {h}.", none="No national protest found in our sources for the last 30 days.",
+                 why="Why they protest:", nowhy="no clear demands reported so far.", next="Next protest, {d}.",
+                 who="Who is protesting, and what they want", pressure="Pressure on government", days="Protest days",
+                 demand="Demand", response="Response", gov="Government", police="Policing", heavy="Heavy",
+                 off="official", org="organisers", arr="arrests", noturn="Turnout not reported", src="Sources:",
+                 cta=f"See {x['country']} on the live atlas", all="All countries", other="Français", foot="Protest Atlas is an independent project.",
+                 about="About", corr="Send a correction", note="")
+    src = lambda s_: ('<p class="srcs">' + T["src"] + " " + ", ".join(f'<a href="{E(u)}" rel="noopener">{E(t)}</a>' for t, u in s_) + "</p>") if s_ else ""
     body = []
     if x.get("checkedAt"):
-        body.append(f'<p class="checked">Last checked {E(long_date(x["checkedAt"]))} at {E(x["checkedAt"][11:16])}.</p>')
-    body.append(f'<p class="lede">{E(x.get("summary") or "No national protest found in our sources for the last 30 days.")}</p>')
+        body.append(f'<p class="checked">{E(T["checked"].format(d=D(x["checkedAt"]), h=x["checkedAt"][11:16]))}</p>')
+    body.append(f'<p class="lede">{E(x.get("summary") or T["none"])}</p>')
+    if T["note"] and x.get("summary"):
+        body.append(f'<p class="checked">{E(T["note"])}</p>')
     if x.get("tier") == "watch":
         r = reasons(x)
-        body.append(f'<p><b>Why they protest:</b> {E("; ".join(r)) + "." if r else "no clear demands reported so far."}</p>')
+        body.append(f'<p><b>{T["why"]}</b> {E("; ".join(r)) + "." if r else T["nowhy"]}</p>')
     if x.get("nextDate") and x.get("next"):
-        body.append(f'<p class="next"><b>Next protest, {E(long_date(x["nextDate"]))}.</b> {E(x["next"])}</p>')
+        body.append(f'<p class="next"><b>{E(T["next"].format(d=D(x["nextDate"])))}</b> {E(x["next"])}</p>')
     groups = x.get("groups") or []
     if groups:
-        body.append("<h2>Who is protesting, and what they want</h2>")
+        body.append(f"<h2>{T['who']}</h2>")
         for g in groups:
             body.append(f'<p><b>{E(g.get("name",""))}</b> <span class="meta">{E(g.get("since",""))}</span><br>{E(" · ".join(g.get("items") or []))}</p>')
     p = x.get("pressure")
     if p:
-        rows = [("Demand", DEMAND.get(p.get("demand"), ""), p.get("demandNote")),
-                ("Response", RESP.get(p.get("response"), ""), p.get("responseNote"))]
+        dm, rs = (DEMAND_FR, RESP_FR) if fr else (DEMAND, RESP)
+        rows = [(T["demand"], dm.get(p.get("demand"), ""), p.get("demandNote")),
+                (T["response"], rs.get(p.get("response"), ""), p.get("responseNote"))]
         if p.get("fragility"):
-            rows.append(("Government", p["fragility"].capitalize(), p.get("fragilityNote")))
+            rows.append((T["gov"], FRAG_FR.get(p["fragility"], p["fragility"]) if fr else p["fragility"].capitalize(), p.get("fragilityNote")))
         if p.get("crackdown"):
-            rows.append(("Policing", "Heavy", p.get("crackdownNote")))
-        body.append("<h2>Pressure on government</h2><dl>" + "".join(
-            f"<dt>{k}</dt><dd><b>{E(v)}</b>{'. ' + E(n[0].upper() + n[1:]) if n else ''}</dd>" for k, v, n in rows if v) + "</dl>" + src_line(p.get("src")))
-    events = sorted(x.get("events") or [], key=lambda e: e["date"], reverse=True)
-    if events:
-        body.append("<h2>Protest days</h2>")
-        for e in events:
-            figs = [f"{n:,} {l}" for n, l in ((e.get("off"), "official"), (e.get("orgc"), "organisers"), (e.get("arrests"), "arrests")) if n is not None]
-            body.append(f'<div class="day"><h3>{E(e["title"])}</h3><p class="meta">{E(long_date(e["date"]))}. {E(" · ".join(figs) if figs else "Turnout not reported")}</p>'
-                        + (f'<p>{E(e["extra"])}</p>' if e.get("extra") else "") + src_line(e.get("src")) + "</div>")
-    body.append(f'<p><a class="cta" href="{live}">See {E(x["country"])} on the live atlas</a></p>')
-    site = url.split("/c/")[0] if "/c/" in url else ""
+            rows.append((T["police"], T["heavy"], p.get("crackdownNote")))
+        body.append(f"<h2>{T['pressure']}</h2><dl>" + "".join(
+            f"<dt>{k}</dt><dd><b>{E(v)}</b>{'. ' + E(n[0].upper() + n[1:]) if n else ''}</dd>" for k, v, n in rows if v) + "</dl>" + src(p.get("src")))
+    if ev:
+        body.append(f"<h2>{T['days']}</h2>")
+        for e in ev:
+            figs = [f"{N(n)} {l}" for n, l in ((e.get("off"), T["off"]), (e.get("orgc"), T["org"]), (e.get("arrests"), T["arr"])) if n is not None]
+            body.append(f'<div class="day"><h3>{E(e["title"])}</h3><p class="meta">{E(D(e["date"]))}. {E(" · ".join(figs) if figs else T["noturn"])}</p>'
+                        + (f'<p>{E(e["extra"])}</p>' if e.get("extra") else "") + src(e.get("src")) + "</div>")
+    live = f"{root}{'?lang=fr' if fr else ''}#{code}"
+    body.append(f'<p><a class="cta" href="{live}">{E(T["cta"])}</a></p>')
+    home = (base or "") + "/"
     ld = json.dumps({"@context": "https://schema.org", "@type": "WebPage", "url": url, "name": title, "description": desc,
-                     "inLanguage": "en", "dateModified": (x.get("checkedAt") or "")[:10] or None,
-                     "isPartOf": {"@type": "WebSite", "name": "Protest Atlas", "url": (site or "") + "/"},
-                     "about": {"@type": "Country", "name": x["country"]},
+                     "inLanguage": lang, "dateModified": (x.get("checkedAt") or "")[:10] or None,
+                     "isPartOf": {"@type": "WebSite", "name": "Protest Atlas", "url": home},
+                     "about": {"@type": "Country", "name": name},
                      "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
-                         {"@type": "ListItem", "position": 1, "name": "Protest Atlas", "item": (site or "") + "/"},
-                         {"@type": "ListItem", "position": 2, "name": x["country"], "item": url}]}},
+                         {"@type": "ListItem", "position": 1, "name": "Protest Atlas", "item": home + ("?lang=fr" if fr else "")},
+                         {"@type": "ListItem", "position": 2, "name": name, "item": url}]}},
                     ensure_ascii=False).replace("</", "<\\/")
+    other = en_url if fr else fr_url
+    kicker = "Manifestations " + where if fr else "Protests " + where
     return f"""<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
+<html lang="{lang}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{E(title)}</title>
 <meta name="description" content="{E(desc)}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Protest Atlas">
+<meta property="og:locale" content="{'fr_FR' if fr else 'en_GB'}">
 <meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:url" content="{E(url)}">
@@ -207,20 +285,25 @@ def share_page(code, x, site):
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="{E(url)}">
+<link rel="alternate" hreflang="en" href="{E(en_url)}">
+<link rel="alternate" hreflang="fr" href="{E(fr_url)}">
+<link rel="alternate" hreflang="x-default" href="{E(en_url)}">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <script type="application/ld+json">{ld}</script>
-<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="{root}fonts/fonts.css">
 <script data-goatcounter="https://protestatlas.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<style>{PAGE_CSS}</style>
+<style>{PAGE_CSS}
+h1 small{{display:block;font:600 18px/1.2 Jost,Futura,sans-serif;text-transform:none;color:#5B6770;margin-bottom:10px}}
+header nav{{display:flex;gap:18px;font-size:15px}}</style>
 </head><body>
-<header><div class="wrap"><a class="logo" href="../../">Protest Atlas</a><a href="../../#countries">All countries</a></div></header>
-<main class="wrap"><h1>{E(x['country'])}</h1>
+<header><div class="wrap"><a class="logo" href="{root}{'?lang=fr' if fr else ''}">Protest Atlas</a><nav><a href="{root}{'?lang=fr' if fr else ''}#countries">{T['all']}</a><a href="{E(other)}" hreflang="{'en' if fr else 'fr'}" lang="{'en' if fr else 'fr'}">{T['other']}</a></nav></div></header>
+<main class="wrap"><h1><small>{E(kicker)}</small>{E(name)}</h1>
 {chr(10).join(body)}
 </main>
-<footer><div class="wrap">Protest Atlas is an independent project. <a href="../../about.html">About</a> · <a href="../../about.html#corrections">Send a correction</a></div></footer>
+<footer><div class="wrap">{T['foot']} <a href="{root}about.html{'?lang=fr' if fr else ''}">{T['about']}</a> · <a href="{root}about.html{'?lang=fr' if fr else ''}#corrections{'-fr' if fr else ''}">{T['corr']}</a></div></footer>
 </body></html>
 """
 
@@ -259,6 +342,47 @@ def feed(data, site):
     return "\n".join(out) + "\n"
 
 
+def home_static(data, path="index.html"):
+    """Write plain-text, linked content into the home page (between <!--static:...--> markers), so search engines
+    can read the countries and figures without running JavaScript. The live page replaces it as soon as it loads."""
+    if not os.path.exists(path):
+        return
+    ref = max((x.get("checkedAt") or "")[:10] for x in data.values())
+    R = datetime.fromisoformat(ref)
+    age = lambda d: (R - datetime.fromisoformat(d[:10])).days
+    size = lambda e: max(e.get("orgc") or 0, e.get("off") or 0)
+    watch = [c for c, x in data.items() if x.get("tier") == "watch"]
+    recent = {c: [e for e in data[c].get("events") or [] if 0 <= age(e["date"]) < 30] for c in watch}
+    watch.sort(key=lambda c: max([e["date"] for e in data[c].get("events") or []] or [""]), reverse=True)   # most recent first...
+    watch.sort(key=lambda c: -len(recent[c]))                                                             # ...then most active first
+    week = [data[c]["country"] for c in watch if any(0 <= age(e["date"]) < 7 for e in recent[c])]
+    peak = max(((size(e), c, e) for c in watch for e in recent[c] if size(e)), default=None, key=lambda t: t[0])
+    start = R - timedelta(days=6)
+    line = f"<b>This week ({start.day} {start.strftime('%b')} to {R.day} {R.strftime('%b')}):</b> "
+    line += ("protest days in " + ", ".join(E(n) for n in week) + "." if week else "no national protest day.")
+    if peak:
+        n, c, e = peak
+        line += f" Largest crowd in the last 30 days: {E(data[c]['country'])}, {n:,} people ({E(long_date(e['date']))})."
+    tiles = []
+    for c in watch:
+        x = data[c]; ev = sorted(x.get("events") or [], key=lambda e: e["date"], reverse=True)
+        k = len(recent[c]); last = ev[0] if ev else None
+        tiles.append(f'<article class="cty" data-c="{c}"><span class="r"><h3><a href="c/{c.lower()}/">Protests in {"the " if c in EN_THE else ""}{E(x["country"])}</a></h3></span>'
+                     f'<p class="lastline"><b>{k} protest day{"s" if k != 1 else ""} in 30 days.</b>'
+                     + (f' Latest, {E(long_date(last["date"]))}: {E(last["title"])}.' if last else "")
+                     + (f' Why: {E(", ".join(reasons(x)[:3]))}.' if reasons(x) else "") + "</p></article>")
+    quiet = sorted(c for c, x in data.items() if x.get("tier") != "watch")
+    quiet_html = '<small class="k">Screened, no national protest</small><div>' + " ".join(
+        f'<a href="c/{c.lower()}/">{E(data[c]["country"])}</a>' for c in quiet) + "</div>"
+    with open(path, encoding="utf-8") as fh:
+        s = fh.read()
+    import re as _re
+    for key, val in (("week", line), ("tiles", "".join(tiles)), ("quiet", quiet_html)):
+        s = _re.sub(rf"<!--static:{key}-->.*?<!--/static:{key}-->", lambda m: f"<!--static:{key}-->{val}<!--/static:{key}-->", s, flags=_re.S)
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write(s)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--site", default=os.environ.get("PROTEST_ATLAS_SITE", ""),
@@ -274,6 +398,10 @@ def main():
         for d in os.listdir("c"):
             if d.upper() not in data and os.path.isdir(os.path.join("c", d)):
                 shutil.rmtree(os.path.join("c", d))
+    if os.path.isdir(os.path.join("fr", "c")):
+        for d in os.listdir(os.path.join("fr", "c")):
+            if d.upper() not in data and os.path.isdir(os.path.join("fr", "c", d)):
+                shutil.rmtree(os.path.join("fr", "c", d))
     images = not a.no_images and bool(CHROME)
     made = 0
     for code, x in data.items():
@@ -281,6 +409,10 @@ def main():
         os.makedirs(folder, exist_ok=True)
         with open(os.path.join(folder, "index.html"), "w", encoding="utf-8") as fh:
             fh.write(share_page(code, x, a.site))
+        frf = os.path.join("fr", "c", code.lower())
+        os.makedirs(frf, exist_ok=True)
+        with open(os.path.join(frf, "index.html"), "w", encoding="utf-8") as fh:
+            fh.write(share_page(code, x, a.site, "fr"))
         if images:
             e = latest_event(x)
             if x.get("tier") == "watch":
@@ -298,6 +430,7 @@ def main():
               "card.png")
     with open("feed.xml", "w", encoding="utf-8") as fh:
         fh.write(feed(data, a.site))
+    home_static(data)
     base = a.site.rstrip("/")
     with open("robots.txt", "w", encoding="utf-8") as fh:
         fh.write("User-agent: *\nAllow: /\n" + (f"Sitemap: {base}/sitemap.xml\n" if base else ""))
@@ -312,9 +445,14 @@ def main():
                    f'<xhtml:link rel="alternate" hreflang="x-default" href="{E(en)}"/>')
             for u in (en, fr):
                 rows.append(f"<url><loc>{E(u)}</loc>{alt}<lastmod>{latest}</lastmod></url>")
-        for c in sorted(data):                                   # country pages, dated by their last check
+        for c in sorted(data):                                   # country pages in both languages, dated by their last check
             d = (data[c].get("checkedAt") or "")[:10] or latest
-            rows.append(f"<url><loc>{E(base)}/c/{c.lower()}/</loc><lastmod>{d}</lastmod></url>")
+            en, fr = page_urls(c, base)
+            alt = (f'<xhtml:link rel="alternate" hreflang="en" href="{E(en)}"/>'
+                   f'<xhtml:link rel="alternate" hreflang="fr" href="{E(fr)}"/>'
+                   f'<xhtml:link rel="alternate" hreflang="x-default" href="{E(en)}"/>')
+            for u in (en, fr):
+                rows.append(f"<url><loc>{E(u)}</loc>{alt}<lastmod>{d}</lastmod></url>")
         with open("sitemap.xml", "w", encoding="utf-8") as fh:
             fh.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
                      'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(rows) + "\n</urlset>\n")
