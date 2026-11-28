@@ -26,7 +26,10 @@
 <meta name="twitter:description" content="National protests and strikes across 38 European countries, checked every morning: who, why, how many, and what comes next.">
 <meta name="twitter:image" content="https://protestatlas.org/card.png">
 <link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/icons/icon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/icons/icon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/icons/icon-96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
@@ -59,7 +62,8 @@ small.k{font-size:12.5px;color:var(--mute)}
 header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--sand) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
 header.scrolled{border-bottom-color:var(--edge)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:62px}
-.logo{font:900 22px/1 var(--display);text-transform:uppercase;letter-spacing:-.01em;text-decoration:none}
+.logo{font:900 22px/1 var(--display);text-transform:uppercase;letter-spacing:-.01em;text-decoration:none;display:inline-flex;align-items:center;gap:9px}
+.logo .mark{width:15px;height:22px;flex:none}
 nav{display:flex;gap:24px;font-size:14px}
 nav a{text-decoration:none;color:var(--soft)}
 nav a:hover{color:var(--ink)}
@@ -269,7 +273,8 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
   nav.open{display:flex}
   nav a{padding:10px 0;font-size:17px;border-bottom:1px solid var(--line)}
   .menu{display:block}
-  #find{width:120px;min-width:0}
+  #find{width:100px;min-width:0}
+  .logo{gap:7px}
   .bar{gap:12px}
   .grid{grid-template-columns:minmax(0,1fr)}
   .stat b{font-size:30px}
@@ -283,7 +288,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 40px;font-size:13px;color
 <body>
 <a class="skip" href="#countries" data-i18n="skip">Skip to countries</a>
 <header id="hdr"><div class="wrap bar">
-  <a class="logo" href="#top">Protest Atlas</a>
+  <a class="logo" href="#top"><svg class="mark" viewBox="22 14 48 72" aria-hidden="true"><rect x="22" y="14" width="22" height="72" fill="#1F2A33"/><path d="M44 14a26 26 0 0 1 0 52z" fill="#E85D24"/></svg>Protest Atlas</a>
   <nav id="nav" aria-label="Sections"><a href="#countries" data-i18n="navCountries">Countries</a><a href="#weeks" data-i18n="navWeeks">Week by week</a><a href="#method" data-i18n="navMethod">Method</a><a href="about.html" data-i18n="navAbout">About</a><a href="rss.html">RSS</a></nav>
   <div class="tools">
     <input id="find" type="search" list="countryList" placeholder="Find a country" aria-label="Find a country" autocomplete="off" data-i18n-ph="find">

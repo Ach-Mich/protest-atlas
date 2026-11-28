@@ -122,7 +122,8 @@ body{background:#FCFAF6;color:#1F2A33;font:400 17px/1.6 Jost,Futura,"Avenir Next
 a{color:inherit;text-underline-offset:3px}
 .wrap{max-width:780px;margin:0 auto;padding:0 20px}
 header{border-bottom:1px solid #DDD7CB}header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;max-width:1240px}
-.logo{font-weight:800;text-transform:uppercase;text-decoration:none}
+.logo{font-weight:800;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.logo .mark{width:13px;height:19px;flex:none}
 h1{font:800 clamp(48px,9vw,84px)/.9 Jost,Futura,sans-serif;text-transform:uppercase;margin:40px 0 10px}
 .checked{font-size:14px;color:#5B6770;margin-bottom:16px}
 .lede{font-size:19px;color:#3A4650;margin-bottom:12px}
@@ -290,7 +291,9 @@ def share_page(code, x, site, lang="en"):
 <link rel="alternate" hreflang="x-default" href="{E(en_url)}">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/icons/icon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/icons/icon-48.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <script type="application/ld+json">{ld}</script>
 <link rel="stylesheet" href="{root}fonts/fonts.css">
@@ -299,7 +302,7 @@ def share_page(code, x, site, lang="en"):
 h1 small{{display:block;font:600 18px/1.2 Jost,Futura,sans-serif;text-transform:none;color:#5B6770;margin-bottom:10px}}
 header nav{{display:flex;gap:18px;font-size:15px}}</style>
 </head><body>
-<header><div class="wrap"><a class="logo" href="{root}{'?lang=fr' if fr else ''}">Protest Atlas</a><nav><a href="{root}{'?lang=fr' if fr else ''}#countries">{T['all']}</a><a href="{E(other)}" hreflang="{'en' if fr else 'fr'}" lang="{'en' if fr else 'fr'}">{T['other']}</a></nav></div></header>
+<header><div class="wrap"><a class="logo" href="{root}{'?lang=fr' if fr else ''}"><svg class="mark" viewBox="22 14 48 72" aria-hidden="true"><rect x="22" y="14" width="22" height="72" fill="#1F2A33"/><path d="M44 14a26 26 0 0 1 0 52z" fill="#E85D24"/></svg>Protest Atlas</a><nav><a href="{root}{'?lang=fr' if fr else ''}#countries">{T['all']}</a><a href="{E(other)}" hreflang="{'en' if fr else 'fr'}" lang="{'en' if fr else 'fr'}">{T['other']}</a></nav></div></header>
 <main class="wrap"><h1><small>{E(kicker)}</small>{E(name)}</h1>
 {chr(10).join(body)}
 </main>
